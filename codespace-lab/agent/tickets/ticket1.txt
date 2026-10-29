@@ -1,0 +1,7 @@
+TICKET #4471 — Customer C-1002 (Bluebird Bakery Chain)
+Subject: Invoice PDF shows wrong logo
+Opened: 2 days ago | Priority set by customer: Low
+
+Message: Our monthly invoice PDFs render with the old logo after your last
+update. Cosmetic, but our franchisees noticed. No rush — just wanted it on
+your radar before next month's billing run.

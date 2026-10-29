@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+py_env/
+.venv/
+
+# ---------------------------------------------------------------------------
+# TechUpSkills course-repo conventions
+# Slide decks, QA/report docs, and scratch dirs are not student-facing artifacts
+# and stay out of the course repo.
+# ---------------------------------------------------------------------------
+
+# PowerPoint decks (large binaries, distributed separately)
+*.pptx
+*.pptm
+*.potx
+*.ppt
+
+# QA / test-report markdown, any case (qa-report.md, LAB-QA.md, anticipated-qa.md)
+*[qQ][aA]*.md
+
+# Internal reports and notes (ALL-CAPS .md) are not student-facing.
+# Allow-list instead of [A-Z]*.md (case-insensitive filesystems).
+*.md
+!README.md
+!README-Codespace.md
+!LICENSE.md
+!labs.md
+!.github/copilot-instructions.md
+
+# Scratch / staging subdirectories
+_*/

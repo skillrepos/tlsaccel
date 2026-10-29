@@ -1,0 +1,9 @@
+TICKET #4472 — Customer C-1001 (Harbor Freight Logistics)
+Subject: Nightly sync job failing — warehouse ops blocked at 6am
+Opened: 4 hours ago | Priority set by customer: High
+
+Message: The nightly inventory sync has failed two nights in a row with
+timeout errors. Our 6am warehouse shift starts without current pick lists,
+which costs us roughly $40K per affected morning. Our renewal discussion is
+next month and leadership is asking pointed questions. We need a working
+sync tonight or a manual workaround by 5pm today.

@@ -1,0 +1,8 @@
+TICKET #4473 — Customer C-1003 (Northwind Medical Group)
+Subject: Question about audit-log export format
+Opened: 1 day ago | Priority set by customer: Medium
+
+Message: Our compliance team needs quarterly audit-log exports in CSV with
+UTC timestamps. The current export uses local time. Is there a setting, or
+should we convert on our side? Quarter ends in three weeks, so some lead
+time would be appreciated.
