@@ -11,8 +11,8 @@ Tools the agent is ALLOWED to use (its entire blast radius):
   - check_customer(id)    look up a customer in the mock database
   - draft_email(...)      DRAFT a reply (Tier 2: a human approves; it is never sent)
 
-Run it:  python agent/leader_demo_agent.py
-         python agent/leader_demo_agent.py --goal "Summarize all three tickets for an executive"
+Run it:  python codespace-lab/agent/leader_demo_agent.py
+         python codespace-lab/agent/leader_demo_agent.py --goal "Summarize all three tickets for an executive"
 """
 
 import argparse
@@ -37,6 +37,7 @@ CUSTOMERS = {
 }
 
 DRAFTS = []
+TICKETS_READ = set()
 
 
 def list_tickets(_arg=""):
@@ -48,6 +49,7 @@ def read_ticket(name):
     path = os.path.join(TICKET_DIR, name)
     if not os.path.exists(path):
         return f"No ticket named {name}. Use list_tickets to see valid names."
+    TICKETS_READ.add(name)
     with open(path) as f:
         return f.read()
 
@@ -82,9 +84,11 @@ On every turn reply with EXACTLY ONE of:
 Available tools:
 {tools}
 
-Rules: one action per turn. Read tickets before judging them. Check the
-customer record for any ticket you consider urgent. Keep the FINAL answer
-under 200 words.
+Rules: one action per turn. Read EVERY ticket before judging any of them.
+Urgency = business impact (money lost, operations blocked, deadlines) first,
+then customer tier and the priority the customer set. Check the customer
+record for the ticket you judge most urgent. Keep the FINAL answer under
+200 words.
 """.format(tools="\n".join("  - " + d for _, d in TOOLS.values()))
 
 
@@ -93,7 +97,7 @@ def chat(messages):
     req = urllib.request.Request(
         OLLAMA_URL,
         data=json.dumps({"model": MODEL, "messages": messages, "stream": False,
-                         "options": {"temperature": 0.2}}).encode(),
+                         "options": {"temperature": 0, "seed": 42}}).encode(),
         headers={"Content-Type": "application/json"},
     )
     with urllib.request.urlopen(req, timeout=600) as r:
@@ -115,11 +119,12 @@ def banner(label, color):
 # ----------------------------------------------------------------- main ----
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--goal", default="Find which of the three sample support tickets is most urgent and draft a response plan.")
+    ap.add_argument("--goal", default="Find the most urgent of the three support tickets, "
+                    "check that customer's record, and draft a reply to the customer.")
     goal = ap.parse_args().goal
 
     print(f"\nGOAL: {goal}")
-    print(f"MODEL: {MODEL} (local, via Ollama) — each THINK step may take 30s-2min on this hardware.\n")
+    print(f"MODEL: {MODEL} (local, via Ollama) — each THINK step takes about 5-60 seconds on this machine.\n")
 
     messages = [{"role": "system", "content": SYSTEM},
                 {"role": "user", "content": "GOAL: " + goal}]
@@ -128,9 +133,16 @@ def main():
         banner(f"THINK (step {step})", "think")
         print("(model is thinking...)", flush=True)
         reply = chat(messages)
-        print(reply.strip())
         messages.append({"role": "assistant", "content": reply})
 
+        if "FINAL:" in reply and len(TICKETS_READ) < 3:
+            # Guardrail: no verdict until every ticket has been read
+            print("(tried to answer early; told to read every ticket first)")
+            messages.append({"role": "user", "content":
+                             "You have not read every ticket yet. Read all of them before your FINAL answer."})
+            continue
+
+        print("(final answer ready)" if "FINAL:" in reply else reply.strip())
         if "FINAL:" in reply:
             banner("DONE — agent's final answer", "done")
             print(reply.split("FINAL:", 1)[1].strip())

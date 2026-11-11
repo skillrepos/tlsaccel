@@ -1,0 +1,7 @@
+# Instructor-only files - keep out of the public attendee repo
+*.pptx
+*-script.md
+anticipated-qa.md
+instructor-notes.md
+extra-invented-facts.png
+.DS_Store

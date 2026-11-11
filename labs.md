@@ -1,9 +1,13 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.0 - 12/02/26
+## Revision 1.2 - 11/11/26
 
-These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one.
+These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
+
+The screenshots show Claude. Other assistants look different and word their answers differently — what matters is the pattern each step teaches, not an exact match.
 
 **One rule on data:** use the scenarios provided here or non-confidential examples from your own work. Treat today's tools as public.
+
+**Before Lab 1:** if your assistant is connected to your email, files, or calendar, turn those connections off for today (in Claude: the **+** button under the chat box → **Connectors**). Otherwise some prompts will search your own mail and documents.
 
 Labs 5–8 also use the worksheets in the `worksheets/` folder (or your printed copies).
 
@@ -15,11 +19,11 @@ Labs 5–8 also use the worksheets in the `worksheets/` folder (or your printed 
 | 2 | Ground it and verify | 12 min |
 | 3 | The leadership writing suite | 12 min |
 | 4 | Decision support and premortem | 12 min |
-| 5 | Score your use cases | 15 min |
+| 5 | Score your use cases | 12 min |
 | 6 | Define pilot metrics | 12 min |
 | 7 | Governance gut-check | 12 min |
-| 8 | Your 90-day AI plan | 15 min |
-| 9 | (Optional) See what your teams see | 15 min |
+| 8 | Your 90-day AI plan | 12 min |
+| 9 | (Optional) See what your teams see | 12 min |
 
 <br><br>
 
@@ -37,7 +41,9 @@ Labs 5–8 also use the worksheets in the `worksheets/` folder (or your printed 
 Write a status update about the project.
 ```
 
-Read the result. Notice how generic it is — the model had nothing to work with, so it predicted an average answer for an average asker.
+Read the result. You'll get either a generic, fill-in-the-blanks update or — as Claude does here — a list of questions about what the project even is. Either way, the model can't do the job without context.
+
+![Lazy prompt result](./images/acc1.png?raw=true "Lazy prompt: Claude asks for the missing context")
 
 <br><br>
 
@@ -61,29 +67,36 @@ Format: Subject line, then three sections — Progress, Risks, Asks.
 Under 200 words. Direct, no hype.
 ```
 
+![Structured brief result](./images/acc2.png?raw=true "Structured brief: a usable VP status update")
+
 <br><br>
 
-5. Compare the two outputs. Note the difference role, context, task, and format made.
+5. Compare the two outputs. Note the difference role, context, task, and format made. Also look for any detail that wasn't in your brief (in the run above, "validated against production records" was invented).
 
 <br><br>
 
 6. Now iterate instead of accepting draft one. Send:
 
 ```
-Critique this update as a skeptical VP would. What's unclear, missing, or buried?
+Critique this update as a skeptical VP would. List the five biggest things
+that are unclear, missing, or buried, one line each.
 ```
+
+![Skeptical VP critique](./images/acc3.png?raw=true "The critique flags vague and missing items")
 
 <br><br>
 
 7. Then send:
 
 ```
-Rewrite the update fixing those issues. Keep it under 200 words.
+Rewrite the update fixing those issues. Keep it under 200 words. Do not invent facts: wherever information is missing, write [NEED: what's missing] instead.
 ```
+
+![Rewrite with NEED markers](./images/acc4.png?raw=true "The rewrite marks missing facts instead of inventing them")
 
 <br><br>
 
-8. Compare the final version to your lazy prompt result from step 2. Those two prompts — critique, then rewrite — cost 20 seconds.
+8. Read the final version. Every [NEED: …] is a question only you can answer. Without that last sentence in the prompt, models fill the gaps the critique found with made-up specifics — dates, percentages, names — that read as fact. Also check that nothing invented in the first draft survived into this one.
 
 <br><br>
 
@@ -92,6 +105,7 @@ Rewrite the update fixing those issues. Keep it under 200 words.
 - Output quality tracked input quality: role + context + task + format beat one vague line.
 - The model predicts a response for an *average* asker unless you make yourself specific.
 - The critique → rewrite loop is the cheapest quality upgrade available — use it every time.
+- Asked to "fix" missing information, a model will invent it. "Don't invent facts — mark what's missing" turns that risk into a to-do list.
 - This pattern (brief, draft, critique, final) repeats through every lab today.
 
 <p align="center">**[END OF LAB]**</p></br></br>
@@ -117,7 +131,9 @@ What is the exact parental leave policy at Brightline Logistics Inc.?
 Include the number of weeks and who qualifies.
 ```
 
-If it produces specifics, be suspicious — Brightline Logistics is fictional. If it declines or hedges, that's the better behavior; models vary, which is itself a lesson.
+If it produces specifics, be suspicious — Brightline Logistics is fictional. If it declines or hedges, as Claude does here, that's the better behavior; models vary, which is itself a lesson.
+
+![Ungrounded question about a fictional company](./images/acc5.png?raw=true "Claude searches, finds nothing, and declines to guess")
 
 <br><br>
 
@@ -144,6 +160,8 @@ what approval do they need? Cite the section for each part of your answer.
 
 4. Check the answer against the document. The right answer: **they are not yet eligible** (Section 1 — 12 months required). A good grounded answer catches this; a sloppy one jumps to "8 weeks, split allowed."
 
+![Grounded answer with citations](./images/acc6.png?raw=true "Grounded answer catches the eligibility trap and cites each section")
+
 <br><br>
 
 5. If the answer missed the eligibility trap, push back:
@@ -162,6 +180,8 @@ Watch it correct itself — and note that *you* caught it because the citations 
 List every specific claim in your answer (numbers, dates, section references)
 as a checklist I can verify against the document.
 ```
+
+![Claim checklist](./images/acc7.png?raw=true "A checklist of every claim to verify against the document")
 
 <br><br>
 
@@ -201,8 +221,10 @@ Format: under 150 words, scannable, no fluff.
 2. Run the quality loop:
 
 ```
-Critique it as a COO would, then rewrite it fixing the critique.
+Critique it as a COO would in three bullets, then rewrite it fixing the critique. Don't invent facts — mark anything missing as [NEED: ...].
 ```
+
+![COO critique and rewrite](./images/acc8.png?raw=true "The rewrite marks what's missing instead of making it up")
 
 <br><br>
 
@@ -210,13 +232,19 @@ Critique it as a COO would, then rewrite it fixing the critique.
 
 ```
 New task. I need to tell a peer director that my team cannot meet the
-March 1 integration date she is counting on. Realistic date is March 22.
+March 1 integration date her team needs for a customer launch. Realistic
+date is March 22.
 Reasons: the SSO slip from our vendor and one unfilled role. I want to
 preserve the relationship, own the miss, and propose that her team starts
 against our test environment on March 1 as a bridge.
 
-Draft this as a short email: honest, no blame-shifting, specific ask at the end.
+Draft this as a short email (under 150 words): honest, no blame-shifting,
+specific ask at the end.
 ```
+
+Some assistants show the email in a card, sometimes with more than one version to choose from.
+
+![Difficult email draft](./images/acc9.png?raw=true "The pushback email: owns the miss, proposes the bridge, ends with an ask")
 
 <br><br>
 
@@ -234,8 +262,11 @@ any non-confidential one]. Keep the content, change the voice.
 ```
 Take the final version and produce three variants of its core message:
 (a) two sentences for a board update, (b) a short Slack message to my own
-team, (c) a reassuring note to the affected customer. Label each.
+team, (c) a reassuring note to the affected customer. Label each, and keep
+each under 60 words.
 ```
+
+![Three audience variants](./images/acc10.png?raw=true "One message re-toned for board, team, and customer")
 
 <br><br>
 
@@ -269,16 +300,15 @@ platform team build it with an LLM API (~2 engineers, 1 quarter, then upkeep),
 
 Task: Compare A, B, and C with costs, risks, time to value, and the key
 assumptions behind each. Then recommend one and justify it.
+Keep it under 250 words: bottom line first, then a short comparison table,
+then the three assumptions that matter most.
 ```
+
+![Options analysis](./images/acc11.png?raw=true "Bottom line first, then costs and assumptions for each option")
 
 <br><br>
 
-2. Read the comparison. Before accepting anything, make the assumptions explicit:
-
-```
-List every assumption your recommendation depends on, ranked by how much
-the recommendation changes if the assumption is wrong.
-```
+2. Read the comparison. Spot-check one number yourself (45 agents × $18 × 12 months = $9,720 a year). Then look at the three assumptions: which one, if wrong, would flip the recommendation?
 
 <br><br>
 
@@ -286,16 +316,19 @@ the recommendation changes if the assumption is wrong.
 
 ```
 It is six months later and we followed your recommendation. It failed badly.
-Write the honest internal retrospective: what went wrong, in order of likelihood.
+Write the honest internal retrospective: the top three causes, in order of
+likelihood, two sentences each.
 ```
+
+![Premortem retrospective](./images/acc12.png?raw=true "The premortem ranks likely failure causes")
 
 <br><br>
 
 4. Turn the premortem into protection:
 
 ```
-For the top three failure causes, give one concrete safeguard we could put
-in place on day one of this decision.
+For each of those three causes, give one concrete safeguard we could put
+in place on day one of this decision. One line each.
 ```
 
 <br><br>
@@ -304,7 +337,7 @@ in place on day one of this decision.
 
 ```
 Now argue for a DIFFERENT option than the one you recommended, as my
-toughest board member would — no softening.
+toughest board member would — no softening. Under 150 words.
 ```
 
 <br><br>
@@ -317,19 +350,20 @@ toughest board member would — no softening.
 
 - AI produced an options analysis, a premortem, safeguards, and a counter-argument in minutes — work that usually waits for a staff meeting.
 - Asking for assumptions, failure modes, and the opposing case removes the model's agreeable default.
+- Length limits ("under 250 words," "one line each") keep the output short enough to actually read — without them, this lab produces several thousand words.
 - Step 6 is the design: AI widened and stress-tested the thinking; the decision stayed with you.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
 **Lab 5 — Score your use cases**
 
-**Purpose: Turn vague AI ideas from your organization into a scored, comparable shortlist. (15 minutes)**
+**Purpose: Turn vague AI ideas from your organization into a scored, comparable shortlist. (12 minutes)**
 
 1. Open **Worksheet 1: Use-Case Scorecard** (`worksheets/worksheet1-use-case-scorecard.md` or your printed copy).
 
 <br><br>
 
-2. On your own (no AI yet), list 3–5 candidate AI use cases from your organization. Use the green-flag pattern from the deck: high-volume, repetitive, verifiable work. One line each, named as a workflow: "triage inbound support tickets," not "use AI in support."
+2. On your own (no AI yet), list 3 candidate AI use cases from your organization. Use the green-flag pattern from the deck: high-volume, repetitive, verifiable work. One line each, named as a workflow: "triage inbound support tickets," not "use AI in support."
 
 <br><br>
 
@@ -341,12 +375,16 @@ toughest board member would — no softening.
 
 ```
 You are a skeptical AI program reviewer. For the use case below, ask me the
-five hardest questions you'd ask before funding it, covering: business value,
-data readiness, buy-vs-build, risk, and measurability.
+five hardest questions you'd ask before funding it, one line each, covering:
+business value, data readiness, buy-vs-build, risk, and measurability.
 
 Use case: [paste your top-scored candidate — generic description only,
 no confidential details]
 ```
+
+The screenshot uses a sample use case ("triage inbound support tickets"); yours will differ.
+
+![Skeptical reviewer questions](./images/acc13.png?raw=true "Five hard funding questions for a sample use case")
 
 <br><br>
 
@@ -354,15 +392,11 @@ no confidential details]
 
 <br><br>
 
-6. Repeat steps 4–5 for your #2 candidate.
+6. Circle your winner on the worksheet and complete the bottom line: "**[Use case]** wins because **[one sentence]**."
 
 <br><br>
 
-7. Circle your winner on the worksheet and complete the bottom line: "**[Use case]** wins because **[one sentence]**."
-
-<br><br>
-
-8. Compare scorecards with a neighbor: one minute each. Where your scores differ on similar use cases, ask why — the disagreement is the insight.
+7. Compare scorecards with a neighbor: one minute each. Where your scores differ on similar use cases, ask why — the disagreement is the insight.
 
 <br><br>
 
@@ -408,9 +442,14 @@ You are a skeptical CFO. Here is a pilot metrics plan:
 [paste your definition-of-done sentence and your primary metric, baseline
 plan, target, and guardrail]
 
-Attack it: where is it gameable, unmeasurable, or likely to show a result
-that isn't really caused by the AI? Then suggest the smallest fixes.
+Attack it: name the three biggest ways it is gameable, unmeasurable, or
+likely to show a result the AI didn't cause. Give the smallest fix for each.
+Under 150 words.
 ```
+
+The screenshot uses a sample plan (median handling time 11 → 8 minutes, first-contact resolution as the guardrail).
+
+![CFO red-team](./images/acc14.png?raw=true "The CFO finds where the sample plan is gameable")
 
 <br><br>
 
@@ -451,7 +490,7 @@ all customers for 6 months.
 
 <br><br>
 
-2. On your own, mark every red flag you see. Aim for at least five.
+2. On your own, take 90 seconds to mark every red flag you see. Aim for at least five.
 
 <br><br>
 
@@ -464,11 +503,14 @@ all customers for 6 months.
 ```
 Review this AI agent proposal as a security-minded AI governance reviewer.
 List every risk, map each to (a) the prompt-injection "lethal trifecta" and
-(b) an autonomy tier decision (assist / review / autonomous). Then propose
-the minimal changes that would make a safe 90-day pilot.
+(b) an autonomy tier decision (assist / review / autonomous). Answer as a
+table (risk | trifecta leg | tier), at most 6 rows. Then list the three
+changes that matter most for a safe 90-day pilot, one line each.
 
 [paste the proposal]
 ```
+
+![Governance review of InboxZero](./images/acc15.png?raw=true "The review finds all three trifecta legs and maps each risk")
 
 <br><br>
 
@@ -480,7 +522,7 @@ the minimal changes that would make a safe 90-day pilot.
 
 <br><br>
 
-7. Open **Worksheet 3: Governance Playbook** (`worksheets/worksheet3-governance-playbook.md`). Fill in Box 1 (Inventory) with the AI already in use in your org — including shadow use you suspect — and Box 2 (Usage policy headlines): three rules you'd publish this week.
+7. Open **Worksheet 3: Governance Playbook** (`worksheets/worksheet3-governance-playbook.md`). In Box 1 (Inventory), list two or three AI tools already in use in your org — including shadow use you suspect. In Box 2 (Usage policy headlines), write three rules you'd publish this week.
 
 <br><br>
 
@@ -494,21 +536,21 @@ the minimal changes that would make a safe 90-day pilot.
 
 **Lab 8 — Your 90-day AI plan**
 
-**Purpose: Leave with a concrete 30/60/90 plan and the paragraph you'll send your leadership team. (15 minutes)**
+**Purpose: Leave with a concrete 30/60/90 plan and the paragraph you'll send your leadership team. (12 minutes)**
 
 1. Open the 30/60/90 section of **Worksheet 3**. Have your Lab 5 scorecard and Lab 6 charter beside you.
 
 <br><br>
 
-2. Fill in Days 1–30 (SEE): your daily AI habit, who starts the inventory, when the one-page policy ships, and who sees your scored shortlist.
+2. Fill in two lines of Days 1–30 (SEE): your daily AI habit and the date the one-page policy ships. The rest is homework.
 
 <br><br>
 
-3. Fill in Days 31–60 (SCOPE): your pilot's owner, baseline collection dates, and the buy/partner/build lean.
+3. Fill in two lines of Days 31–60 (SCOPE): your pilot's owner and the baseline collection dates.
 
 <br><br>
 
-4. Fill in Days 61–90 (SHIP): the weekly review slot and the day-90 decision meeting — put a real date on it.
+4. Fill in one line of Days 61–90 (SHIP): the day-90 decision meeting — put a real date on it.
 
 <br><br>
 
@@ -524,9 +566,15 @@ Confident, no hype.
 Notes: [paste the key lines from your worksheets]
 ```
 
+![Announcement paragraph](./images/acc16.png?raw=true "Worksheet notes turned into a leadership-ready paragraph (sample notes)")
+
 <br><br>
 
-6. Run the loop once: `Critique this paragraph as a skeptical CTO, then rewrite it.`
+6. Run the loop once:
+
+```
+Critique this paragraph as a skeptical CTO in three bullets, then rewrite it. Don't invent facts — mark anything missing as [NEED: ...].
+```
 
 <br><br>
 
@@ -542,74 +590,84 @@ Notes: [paste the key lines from your worksheets]
 
 - The 30/60/90 turned today's material into named owners and dated commitments.
 - The announcement paragraph is the real test: if it names a workflow, metric, owner, and stop rule in 120 words, your plan is coherent.
-- Booking the day-30 checkpoint is the single step that predicts whether the rest happens.
+- Putting the day-90 decision meeting on calendars now is what turns the plan into a commitment.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
 **Lab 9 (Optional) — See what your teams see**
 
-**Purpose: Watch a real AI agent run its think → act → observe loop in a live dev environment — no coding. (15 minutes)**
+**Purpose: Watch a real AI agent run its think → act → observe loop in a live dev environment — no coding. (12 minutes)**
 
-> Note: this lab uses GitHub Codespaces — a complete development environment that runs in your browser. You need a free GitHub account (github.com/signup). The environment takes 3–5 minutes to start; read ahead while it builds.
+> Note: this lab uses GitHub Codespaces — a complete development environment that runs in your browser. You need a free GitHub account (see the README's **Before you arrive** section). The first startup takes 3–5 minutes; read ahead while it builds.
 
 1. Open the lab repository in your browser:
 
 ```
-<CODESPACE-REPO-URL>
+https://github.com/skillrepos/tlsaccel
 ```
 
 <br><br>
 
-2. Click the green **Code** button, select the **Codespaces** tab, and click **Create codespace on main**. A VS Code environment opens in your browser. Wait for setup to finish — the terminal at the bottom shows progress, and a local AI model downloads automatically (3–5 minutes).
+2. Click the green **Code** button, select the **Codespaces** tab, and click **Create codespace on main**. A VS Code window opens in your browser tab.
+
+![Create a codespace](./images/acc17.png?raw=true "Code button, Codespaces tab, Create codespace on main")
 
 <br><br>
 
-3. When the terminal shows a prompt, type (or copy) this and press Enter:
+3. If VS Code asks **"Do you trust the authors of the files in this folder?"**, click **Trust Folder & Continue**. Then wait for setup to finish: the terminal at the bottom shows **Running postCreateCommand…** while a small AI model downloads (3–5 minutes).
+
+<br><br>
+
+4. When setup is done (the terminal shows **Ollama is running.**), click into the terminal, type (or copy) this, and press Enter:
 
 ```
-python agent/leader_demo_agent.py
+python codespace-lab/agent/leader_demo_agent.py
 ```
 
 <br><br>
 
-4. The agent receives a goal: *"Find which of the three sample support tickets is most urgent and draft a response plan."* Watch the loop scroll by, labeled at each step:
+5. The agent's goal: *find the most urgent of three sample support tickets, check that customer's record, and draft a reply.* Watch the loop scroll by:
 
-- **THINK** — the model's plan for the next step
-- **ACT** — a tool call: reading a ticket file, checking the (mock) customer database
-- **OBSERVE** — the tool's result feeding back in
+- **THINK** — the model decides its next step
+- **ACT** — a tool call: reading a ticket, looking up the (sample) customer database
+- **OBSERVE** — the tool's result goes back to the model
 
-The local model thinks slowly — 30 seconds to 2 minutes per step on this hardware is normal. That wait is itself informative: this is what "AI compute" means physically.
+Each step takes a few seconds — longer on a busy machine. That wait is what "AI compute" means physically.
 
-<br><br>
-
-5. When it finishes, read the agent's final plan in the terminal. Then look at the one-screen summary it prints: which tools it was ALLOWED to use, and which actions it drafted but did NOT take (sending email is Tier 2 — a human approves).
+![The agent loop](./images/acc18.png?raw=true "THINK, ACT, OBSERVE repeating as the agent reads tickets")
 
 <br><br>
 
-6. Run it once more with a different goal:
+6. When it finishes, read the summary at the bottom: the tools the agent was ALLOWED to use, and the email draft waiting for a human to approve (sending is a Tier 2 action). Read the draft closely — does it promise anything nobody approved, such as a fix by a certain time?
+
+![Governance summary and draft](./images/acc19.png?raw=true "Allowed tools, one draft awaiting human approval")
+
+<br><br>
+
+7. Run it once more with a different goal:
 
 ```
-python agent/leader_demo_agent.py --goal "Summarize all three tickets for an executive"
+python codespace-lab/agent/leader_demo_agent.py --goal "Summarize all three tickets for an executive"
 ```
 
-Notice the same loop, different tool choices — the agent decided its own path.
+Same loop, different tool choices — this time it has no reason to look up a customer or draft an email. The agent chose its own path.
 
 <br><br>
 
-7. Connect it back: this loop — with real tools, real credentials, and real autonomy decisions — is exactly what your teams propose when they say "agent." The tool list and the Tier-2 approval you just saw are the governance surface you control.
+8. Connect it back: this loop — with real tools, real credentials, and real autonomy decisions — is what your teams propose when they say "agent." The tool list and the Tier 2 approval you just saw are the governance surface you control.
 
 <br><br>
 
-8. When done, close the browser tab. (Codespaces auto-stop when idle; nothing to clean up.)
+9. When done, close the browser tab. Codespaces stop on their own when idle.
 
 <br><br>
 
 **What just happened**
 
-- You ran an AI agent: a model in a loop with tools, exactly as drawn on the deck's agent slide.
+- You ran an AI agent: a model in a loop with tools, as drawn on the deck's agent slide.
 - The agent chose its own steps toward the goal — that's agency, and why the tool list matters.
-- The email step waited for human approval: autonomy Tier 2, visible in running code.
-- Everything ran on a local open-weight model in the environment — no data left the machine.
+- The email waited for human approval: autonomy Tier 2, visible in running code. Its draft can still promise things on your behalf — which is exactly why a person reviews it.
+- Everything ran on a small open-weight model inside the environment; no ticket data left it.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 

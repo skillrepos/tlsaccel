@@ -28,7 +28,7 @@ Score each candidate **1–5** on every criterion. Higher is better. **Risk is s
 > **______________________________________** wins because
 > ______________________________________________________________________
 
-**Notes from the AI stress-test (Lab 5, steps 4–6):**
+**Notes from the AI stress-test (Lab 5, steps 4–5):**
 
 - Score I changed and why: _______________________________________________
 - Hardest question I couldn't answer yet: ________________________________

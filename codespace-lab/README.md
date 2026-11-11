@@ -13,7 +13,7 @@ OBSERVE — on a local model.
 4. In the terminal at the bottom, run:
 
 ```
-python agent/leader_demo_agent.py
+python codespace-lab/agent/leader_demo_agent.py
 ```
 
 Follow the rest of the steps in the workshop's `labs.md` (Lab 9).
@@ -22,7 +22,7 @@ Follow the rest of the steps in the workshop's `labs.md` (Lab 9).
 
 - `agent/leader_demo_agent.py` — the whole agent, one readable file
 - `agent/tickets/` — three sample support tickets the agent works on
-- `.devcontainer/` + `scripts/` — Codespace setup (Python + Ollama with `llama3.2:3b`)
+- `scripts/` — Codespace setup scripts (Python + Ollama with `llama3.2:3b`), run by the repo's top-level `.devcontainer/devcontainer.json`
 
 ## System requirements
 
@@ -32,9 +32,9 @@ locally; the local model means no data leaves the environment.
 ## Troubleshooting
 
 - **"connection refused" on port 11434** — Ollama isn't running yet:
-  `bash scripts/startOllama.sh`, wait 5 seconds, retry.
-- **Model responses are slow** — normal; a 4-core Codespace takes 30s–2min
-  per THINK step. The wait is part of the lesson.
+  `bash codespace-lab/scripts/startOllama.sh`; retry when it prints "Ollama is running."
+- **Model responses are slow** — normal; a 4-core Codespace takes a few seconds
+  per THINK step (longer when busy). The wait is part of the lesson.
 - **Agent makes an odd tool choice** — also part of the lesson; run it again
   and compare paths.
 
