@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.2 - 11/11/26
+## Revision 1.5 - 11/15/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
@@ -9,7 +9,7 @@ The screenshots show Claude. Other assistants look different and word their answ
 
 **Before Lab 1:** if your assistant is connected to your email, files, or calendar, turn those connections off for today (in Claude: the **+** button under the chat box → **Connectors**). Otherwise some prompts will search your own mail and documents.
 
-Labs 5–8 also use the worksheets in the `worksheets/` folder (or your printed copies).
+Labs 5–8 also use the worksheets in the `worksheets/` folder (or your printed copies). The same folder has a one-page reference sheet to keep.
 
 **Lab contents**
 
@@ -23,7 +23,7 @@ Labs 5–8 also use the worksheets in the `worksheets/` folder (or your printed 
 | 6 | Define pilot metrics | 12 min |
 | 7 | Governance gut-check | 12 min |
 | 8 | Your 90-day AI plan | 12 min |
-| 9 | (Optional) See what your teams see | 12 min |
+| 9 | (Optional — your instructor shows it live) See what your teams see | 12 min |
 
 <br><br>
 
@@ -96,7 +96,7 @@ Rewrite the update fixing those issues. Keep it under 200 words. Do not invent f
 
 <br><br>
 
-8. Read the final version. Every [NEED: …] is a question only you can answer. Without that last sentence in the prompt, models fill the gaps the critique found with made-up specifics — dates, percentages, names — that read as fact. Also check that nothing invented in the first draft survived into this one.
+8. Read the final version. Every [NEED: …] is a question only you can answer. Without that last sentence in the prompt, models fill the gaps the critique found with made-up specifics — dates, percentages, names — that read as fact. Also check that nothing invented in the first draft survived into this one. Then pick the one [NEED] whose answer would improve the update most — that is business context only you can supply.
 
 <br><br>
 
@@ -112,7 +112,7 @@ Rewrite the update fixing those issues. Keep it under 200 words. Do not invent f
 
 **Lab 2 — Ground it and verify**
 
-**Purpose: Watch a confident wrong answer happen, then fix it with grounding and citations. (12 minutes)**
+**Purpose: See what an assistant does when it doesn't have the facts, then fix it with grounding and citations. (12 minutes)**
 
 1. Start a new chat and ask — without giving it any documents:
 
@@ -248,7 +248,7 @@ Some assistants show the email in a card, sometimes with more than one version t
 
 <br><br>
 
-4. Make it sound like you. Give it your voice:
+4. (Optional — skip to step 5 if you are short on time.) Make it sound like you. Give it your voice:
 
 ```
 Rewrite it to match my style: [paste 3–5 sentences from an email YOU wrote —
@@ -260,7 +260,7 @@ any non-confidential one]. Keep the content, change the voice.
 5. Now the re-tone drill. Send:
 
 ```
-Take the final version and produce three variants of its core message:
+Take the latest version of the email and produce three variants of its core message:
 (a) two sentences for a board update, (b) a short Slack message to my own
 team, (c) a reassuring note to the affected customer. Label each, and keep
 each under 60 words.
@@ -351,6 +351,7 @@ toughest board member would — no softening. Under 150 words.
 - AI produced an options analysis, a premortem, safeguards, and a counter-argument in minutes — work that usually waits for a staff meeting.
 - Asking for assumptions, failure modes, and the opposing case removes the model's agreeable default.
 - Length limits ("under 250 words," "one line each") keep the output short enough to actually read — without them, this lab produces several thousand words.
+- The comparison still left costs out. "2 engineers, 1 quarter, then upkeep" hides the other work those engineers won't do, security review, training, usage fees, and support. Ask "what costs are missing?" of every AI business case.
 - Step 6 is the design: AI widened and stress-tested the thinking; the decision stayed with you.
 
 <p align="center">**[END OF LAB]**</p></br></br>
@@ -392,11 +393,15 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 <br><br>
 
-6. Circle your winner on the worksheet and complete the bottom line: "**[Use case]** wins because **[one sentence]**."
+6. Run the **blocker check** on the worksheet for your top-scored candidate. A high score never overrides a blocker: if any box is ticked, move to your next candidate.
 
 <br><br>
 
-7. Compare scorecards with a neighbor: one minute each. Where your scores differ on similar use cases, ask why — the disagreement is the insight.
+7. Circle your winner on the worksheet and complete the bottom line: "**[Use case]** wins because **[one sentence]**."
+
+<br><br>
+
+8. Look back at your winner's five scores. Mark the one you are least sure of, and write down what you would need to find out to settle it. The instructor will ask for a show of hands on which of the five it was.
 
 <br><br>
 
@@ -404,6 +409,7 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 - Five scores forced the five conversations that decide pilot success — before any money moves.
 - The AI's skeptical-reviewer questions exposed soft scores (data readiness is usually the one that drops).
+- The blocker check catches what a total hides: one unusable data source or one missing owner outweighs four good scores.
 - You now hold a ranked shortlist grounded in your own organization — the input for Lab 6.
 
 <p align="center">**[END OF LAB]**</p></br></br>
@@ -416,7 +422,7 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 <br><br>
 
-2. Fill in the header: your winning use case from Lab 5, a named owner (a real name), and the 90-day window.
+2. Fill in the header: your winning use case from Lab 5, the workflow owner and the executive sponsor (real names — often two different people), and the 90-day window.
 
 <br><br>
 
@@ -457,7 +463,11 @@ The screenshot uses a sample plan (median handling time 11 → 8 minutes, first-
 
 <br><br>
 
-8. Read your final definition-of-done out loud once. If it names a workflow, a number, a date, an owner, and a stop rule — you are ahead of most funded AI pilots.
+8. Fill in the two short boxes near the bottom of the worksheet: **What the pilot needs** and **If it succeeds**. Rough answers are fine.
+
+<br><br>
+
+9. Read your final definition-of-done out loud once. If it names a workflow, a number, a date, an owner, and a stop rule — you are ahead of most funded AI pilots.
 
 <br><br>
 
@@ -467,25 +477,26 @@ The screenshot uses a sample plan (median handling time 11 → 8 minutes, first-
 - The guardrail stops the classic trap: speed up, quality down, "success."
 - The stop rule makes killing a failed pilot a planned outcome, not an embarrassment.
 - The CFO red-team caught the gameable parts while fixing them was still free.
+- A sponsor, a resource estimate, and a plan for success are what separate a pilot from an experiment nobody picks up afterward.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
 **Lab 7 — Governance gut-check**
 
-**Purpose: Apply the injection questions and autonomy tiers to a realistic agent proposal — and start your governance playbook. (12 minutes)**
+**Purpose: Apply the injection questions and autonomy tiers to a realistic agent proposal, make the approval call, and start your governance playbook. (12 minutes)**
 
 1. Read this proposal, which contains several planted red flags:
 
 ```
-PROPOSAL: "InboxZero" support agent (from our platform team)
+PROPOSAL: "PayFast" invoice agent (from our finance systems team)
 
-The agent monitors the shared support inbox, reads each incoming email and
-any attachments, looks up the customer in our CRM and billing system using
-an admin service account, drafts and SENDS replies automatically for
-anything it classifies as routine, and files refunds up to $500 without
-approval to reduce handling time. It can also browse vendor documentation
-sites to research error messages. Logging to be added in phase 2. Pilot on
-all customers for 6 months.
+The agent monitors the shared accounts-payable inbox, reads each incoming
+email and any attached invoice, looks up the supplier in our purchasing and
+accounting systems using an admin service account, SENDS emails to
+suppliers automatically about anything it classifies as routine, and pays
+invoices up to $5,000 without approval to shorten payment time. It can also
+browse supplier websites to confirm bank and contact details. Logging to be
+added in phase 2. Pilot on all suppliers for 6 months.
 ```
 
 <br><br>
@@ -510,19 +521,23 @@ changes that matter most for a safe 90-day pilot, one line each.
 [paste the proposal]
 ```
 
-![Governance review of InboxZero](./images/acc15.png?raw=true "The review finds all three trifecta legs and maps each risk")
+![Governance review of PayFast](./images/acc15.png?raw=true "The review finds all three trifecta legs and maps each risk")
 
 <br><br>
 
-5. Compare its list with yours. Key flags: all three trifecta legs present (reads external email/attachments/web + CRM and billing access + sends email), admin service account instead of least privilege, auto-send and auto-refund at Tier 3 autonomy on day one, logging deferred, all customers instead of a scoped pilot, 6 months instead of 90 days.
+5. Compare its list with yours. Key flags: all three trifecta legs present (reads external email/attachments/web + purchasing and accounting access + sends email and payments), admin service account instead of least privilege, auto-send and auto-pay at Tier 3 autonomy on day one, bank details taken from websites an outsider controls, logging deferred, all suppliers instead of a scoped pilot, 6 months instead of 90 days.
 
 <br><br>
 
-6. Decide what a safe version looks like: which actions move to Tier 2 (human approves), what access gets narrowed, what gets logged from day one. Two or three bullets.
+6. Make the call: **approve, approve with conditions, or reject**. Write it on Worksheet 3 with two sentences on why. If you chose conditions, name them — for example which actions move to Tier 2 (human approves), what access gets narrowed, what gets logged from day one.
 
 <br><br>
 
-7. Open **Worksheet 3: Governance Playbook** (`worksheets/worksheet3-governance-playbook.md`). In Box 1 (Inventory), list two or three AI tools already in use in your org — including shadow use you suspect. In Box 2 (Usage policy headlines), write three rules you'd publish this week.
+7. Hold your call for the re-run of the poll. When the room splits, listen for what the other side weighted that you did not.
+
+<br><br>
+
+8. Open **Worksheet 3: Governance Playbook** (`worksheets/worksheet3-governance-playbook.md`). In Box 1 (Inventory), list two or three AI tools already in use in your org — including shadow use you suspect. In Box 2 (Usage policy headlines), write three rules you'd publish this week.
 
 <br><br>
 
@@ -530,7 +545,8 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 - A proposal that sounds efficient held all three legs of the lethal trifecta plus Tier-3 autonomy, day one.
 - The fix pattern is standard: narrow access, insert human approval on consequential actions, log everything, scope the pilot.
-- Your playbook now has its first two boxes — the rest is homework with a deadline, not a mystery.
+- You made a decision, not just a list of risks — and others in the room made a different one. That is what an approval meeting is.
+- Your playbook now has its first two boxes — the other four get decide-by dates in Lab 8.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
@@ -542,7 +558,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 <br><br>
 
-2. Fill in two lines of Days 1–30 (SEE): your daily AI habit and the date the one-page policy ships. The rest is homework.
+2. Fill in two lines of Days 1–30 (SEE): your daily AI habit and the date the one-page policy ships.
 
 <br><br>
 
@@ -554,7 +570,11 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 <br><br>
 
-5. Draft the announcement. Start a new chat:
+5. Turn back to the six boxes at the top of Worksheet 3. Beside Boxes 3–6, write the date you will decide each one by.
+
+<br><br>
+
+6. Draft the announcement. Start a new chat:
 
 ```
 Turn these notes into one tight paragraph (under 120 words) I can send my
@@ -570,7 +590,7 @@ Notes: [paste the key lines from your worksheets]
 
 <br><br>
 
-6. Run the loop once:
+7. Run the loop once:
 
 ```
 Critique this paragraph as a skeptical CTO in three bullets, then rewrite it. Don't invent facts — mark anything missing as [NEED: ...].
@@ -578,11 +598,11 @@ Critique this paragraph as a skeptical CTO in three bullets, then rewrite it. Do
 
 <br><br>
 
-7. Copy the final paragraph onto the worksheet (or email it to yourself right now — that's better).
+8. Copy the final paragraph onto the worksheet (or email it to yourself right now — that's better).
 
 <br><br>
 
-8. If you're willing: share your pilot one-liner with the room when asked. Thirty seconds, and the feedback is free.
+9. If you're willing: pitch your pilot in the review round that follows — thirty seconds covering the workflow, owner, metric, and stop rule. The room gives one strength and one concern.
 
 <br><br>
 
@@ -591,12 +611,15 @@ Critique this paragraph as a skeptical CTO in three bullets, then rewrite it. Do
 - The 30/60/90 turned today's material into named owners and dated commitments.
 - The announcement paragraph is the real test: if it names a workflow, metric, owner, and stop rule in 120 words, your plan is coherent.
 - Putting the day-90 decision meeting on calendars now is what turns the plan into a commitment.
+- Every open box of your governance playbook now has a date: a started playbook, not a blank one.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
 **Lab 9 (Optional) — See what your teams see**
 
 **Purpose: Watch a real AI agent run its think → act → observe loop in a live dev environment — no coding. (12 minutes)**
+
+> Your instructor runs this lab live on the big screen, so you can simply watch. To run it yourself — now or after the workshop — follow the steps below.
 
 > Note: this lab uses GitHub Codespaces — a complete development environment that runs in your browser. You need a free GitHub account (see the README's **Before you arrive** section). The first startup takes 3–5 minutes; read ahead while it builds.
 
@@ -658,7 +681,11 @@ Same loop, different tool choices — this time it has no reason to look up a cu
 
 <br><br>
 
-9. When done, close the browser tab. Codespaces stop on their own when idle.
+9. Answer four questions as the sponsor: What was the agent allowed to touch? Which action needed approval? What could have gone wrong? Would you authorize this agent in your organization?
+
+<br><br>
+
+10. When done, close the browser tab. Codespaces stop on their own when idle.
 
 <br><br>
 

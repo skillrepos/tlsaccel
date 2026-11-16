@@ -1,6 +1,10 @@
 # Worksheet 1 — AI Use-Case Scorecard
 *Enterprise Leader AI Accelerator · Lab 5*
 
+**Before we start (write this first):** How confident am I today that I could sponsor an AI pilot and defend it to my CFO? (1 = not at all, 5 = fully) → **Start of day: ____**  **End of day: ____**
+
+---
+
 Score each candidate **1–5** on every criterion. Higher is better. **Risk is scored in reverse: 5 = low risk.**
 
 | Criterion | What a 5 looks like | What a 1 looks like |
@@ -22,6 +26,20 @@ Score each candidate **1–5** on every criterion. Higher is better. **Risk is s
 | 5 |                                  |       |      |       |      |       |           |
 
 **First-pilot rule:** a first pilot needs **4+ on Risk and 4+ on Measurability**, whatever its total.
+
+**Quick version, for judging one proposal someone brings you:** ask four questions instead of five (fold Data readiness into Feasibility). The rule is the same: Risk and Measurability must pass, however good the Value story is.
+
+## Blocker check (Lab 5, step 6)
+
+**A high score never overrides a blocker.** For your top-scored candidate, tick anything that is true:
+
+- ☐ We cannot legally or contractually use the data it needs
+- ☐ Nobody in the business would be accountable for it
+- ☐ It would make decisions on its own that a person should make
+- ☐ We have no way to measure the result
+- ☐ Plain automation (fixed rules, no AI) would do the job
+
+Any box ticked → fix that first, or move to your next candidate.
 
 ## The winner
 

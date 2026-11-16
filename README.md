@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator
-**Tech Leader Summit · Wednesday, December 2, 2026 · Workshop (4 × 90 min) · Revision 1.2**
+**Tech Leader Summit · Wednesday, December 2, 2026 · Workshop (4 × 90 min) · Revision 1.3**
 
 The essential one-day leader's playbook for understanding and applying AI — for managers, project leaders, and business stakeholders who make AI decisions without doing the implementation.
 
@@ -8,7 +8,7 @@ The essential one-day leader's playbook for understanding and applying AI — fo
 | File / folder | What it is |
 |---|---|
 | `labs.md` | All 9 hands-on labs, step by step, with prompts to copy and screenshots |
-| `worksheets/` | 3 fill-in worksheets: use-case scorecard, pilot metrics charter, governance playbook + 30/60/90 |
+| `worksheets/` | 3 fill-in worksheets (use-case scorecard, pilot metrics charter, governance playbook + 30/60/90) and a one-page reference sheet to keep |
 | `codespace-lab/` | Files for the optional Lab 9 (runs in GitHub Codespaces) |
 | `images/` | Screenshots used in labs.md |
 
@@ -16,7 +16,7 @@ The essential one-day leader's playbook for understanding and applying AI — fo
 
 ## Before you arrive (about 10 minutes)
 
-You need **one free account** for Labs 1–8, and a second free account **only if** you want to do the optional Lab 9. **No API keys, credit cards, or software installs are needed.**
+You need **one free account** for Labs 1–8. Lab 9 is shown live by the instructor; you need a second free account **only if** you want to run it yourself. **No API keys, credit cards, or software installs are needed.**
 
 ### 1. An AI assistant account (required, Labs 1–8)
 
@@ -37,7 +37,7 @@ To set up a free Claude account:
 
 ### 2. A GitHub account (optional, Lab 9 only)
 
-Lab 9 lets you watch a real AI agent run in a browser-based workspace called a Codespace. Skip this if you don't plan to do Lab 9.
+In Lab 9 a real AI agent runs in a browser-based workspace called a Codespace. The instructor runs it on the big screen, so you can simply watch. Set up this account only if you want to run it yourself, during or after the workshop.
 
 1. Go to **https://github.com/signup**.
 2. Enter your email, a password, and a username when prompted.
@@ -60,7 +60,7 @@ If either is blocked, bring a personal laptop or tablet, or ask your IT team bef
 ## During the workshop
 
 - Open **labs.md** in this repo (or the printed copy) and follow along. Every prompt is written out for you to copy.
-- Keep the **worksheets** open — Labs 5–8 fill them in. Copy the files or print them; they're yours to keep.
+- Keep the **worksheets** open — Labs 5–8 fill them in. Copy the files or print them; they're yours to keep, along with the one-page `leader-reference-sheet.md`.
 - **One rule on data:** use the sample scenarios in the labs, or non-confidential examples from your own work. Treat the tools as public for the day.
 
 ## Troubleshooting
