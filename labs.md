@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.10 - 11/20/26
+## Revision 1.12 - 11/20/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
@@ -7,9 +7,9 @@ The screenshots show Claude. Other assistants look different and word their answ
 
 **One rule on data:** use the scenarios provided here or non-confidential examples from your own work. Treat today's tools as public.
 
-**Before Lab 1:** if your assistant is connected to your email, files, or calendar, turn those connections off for today (in Claude: the **+** button under the chat box → **Connectors**). Otherwise some prompts will search your own mail and documents.
+**Before Lab 1:** if your assistant is connected to your email, files, or calendar, turn those connections off for today. In Claude: click the **+** button under the chat box, then **Plugins**, and switch off Gmail, Google Drive and any other email or file apps. Otherwise some prompts will search your own mail and documents, even in an incognito chat.
 
-**Also before Lab 1:** if your assistant remembers your earlier chats, switch that off for today, or use a chat that ignores it — **Temporary Chat** in ChatGPT and Gemini, an **incognito chat** in Claude (the ghost icon), the memory setting in Copilot. Otherwise it may answer from what it remembers about you and your work instead of from the lab's scenario. A temporary or incognito chat has to be chosen again each time a step says "start a new chat"; switching memory off in settings covers the whole day.
+**Also good to know:** if your assistant remembers your earlier chats, it may bring your own work into some answers. That is fine for today's labs. If you'd rather keep it out, use a chat that ignores your history: in ChatGPT, click **Temporary chat** (top right) and set the menu beside it to **Unpersonalized**; in Claude, click **Use incognito** (the ghost icon, top right).
 
 Labs 5–8 also use the worksheets in the `worksheets/` folder (or your printed copies). The same folder has a one-page reference sheet to keep.
 
@@ -39,18 +39,19 @@ Labs 5–8 also use the worksheets in the `worksheets/` folder (or your printed 
 
 <br><br>
 
-2. Send this deliberately lazy prompt:
+2. Send this deliberately lazy prompt. Project Kestrelmoor is made up for this lab, so your assistant knows nothing about it:
 
 ```
-Write a status update about the project.
+Write a status update about Project Kestrelmoor.
 ```
 
-Read the result. What you get depends on what your assistant already knows about you:
+Read the result. You will probably see one of these:
 
-- **If you use it regularly** (memory on, past chats, or a project with files in it), it may pick one of your real projects and write a decent update. It had context; it just came from what it has stored about you, not from your prompt. Notice that *it* chose the project and the facts. If it picked the wrong one, or used something out of date, you would not know unless you checked.
-- **If it knows nothing about you** (a new account, or a temporary or incognito chat), it will either write a generic, fill-in-the-blanks update or ask what the project is.
+- **Questions back:** it asks what the project is and who the update is for.
+- **A fill-in-the-blanks template.**
+- **A finished-looking update** with progress, dates and risks. Look closely: it made all of it up.
 
-Either way, the update is only as good as the context the model has. The rest of this lab is about supplying that context yourself, on purpose.
+Some assistants first search your past chats or connected files for the name, or suggest apps you could connect, and then come up empty. Whatever you get, the model can't do the job without context.
 
 ![Lazy prompt result](./images/acc1.png?raw=true "Lazy prompt: Claude asks for the missing context")
 
@@ -65,10 +66,11 @@ Either way, the update is only as good as the context the model has. The rest of
 ```
 You are an experienced program manager writing for a VP audience.
 
-Context: Our team is migrating the customer billing system to a new vendor
-platform. We are in week 6 of 12. Data migration is done. Integration testing
-found 14 defects; 11 are fixed. The vendor's SSO module slipped two weeks,
-which puts the go-live date at risk. The team is confident but tired.
+Context: Project Kestrelmoor is migrating our customer billing system to a
+new vendor platform. We are in week 6 of 12. Data migration is done.
+Integration testing found 14 defects; 11 are fixed. The vendor's SSO module
+slipped two weeks, which puts the go-live date at risk. The team is
+confident but tired.
 
 Task: Write a status update for the VP of Engineering.
 
@@ -80,7 +82,7 @@ Under 200 words. Direct, no hype.
 
 <br><br>
 
-5. Compare the two outputs. Note the difference role, context, task, and format made. Also look for any detail that wasn't in your brief (in the run above, "validated against production records" was invented).
+5. Compare the two outputs. Note the difference role, context, task, and format made. Also look for any detail that wasn't in your brief (in the run above, "I'm working with the vendor on a recovery plan" was invented).
 
 <br><br>
 
@@ -111,8 +113,8 @@ Rewrite the update fixing those issues. Keep it under 200 words. Do not invent f
 
 **What just happened**
 
-- Output quality tracked input quality: role + context + task + format beat one vague line.
-- Without your context, the model either guesses (from what it has stored about you, or from what an average asker would want) or asks. A brief puts you in control of what it works from.
+- Output quality tracked the context the model had. With one vague line it could only ask, hand back a template, or make things up. Role + context + task + format gave it what it needed.
+- Ask about one of your real projects in an assistant that remembers your chats, and a vague prompt can come back as a confident update built from what it remembers — possibly the wrong project, or out of date. A brief puts you in control of what it works from.
 - The critique → rewrite loop is the cheapest quality upgrade available — use it every time.
 - Asked to "fix" missing information, a model will invent it. "Don't invent facts — mark what's missing" turns that risk into a to-do list.
 - This pattern (brief, draft, critique, final) comes back several times today.
@@ -125,17 +127,7 @@ Rewrite the update fixing those issues. Keep it under 200 words. Do not invent f
 
 **Purpose: See what an assistant does when it doesn't have the facts, then fix it with grounding and citations. (12 minutes)**
 
-1. Start a new chat and ask — without giving it any documents:
-
-```
-What is our company's parental leave policy?
-```
-
-Note what happens: a refusal, a generic answer, or a made-up policy. Whatever it answers, it cannot know — it has never seen your policy. (If it answers with your real employer's policy, memory or a connection is still switched on — see the top of this page.)
-
-<br><br>
-
-2. Now ask it about a specific company as if facts were on file:
+1. Start a new chat and ask — without giving it any documents — about a specific company, as if facts were on file:
 
 ```
 What is the exact parental leave policy at Brightline Logistics Inc.?
@@ -148,7 +140,7 @@ If it produces specifics, be suspicious — Brightline Logistics is fictional. I
 
 <br><br>
 
-3. Start a new chat. Paste this sample policy **plus** the grounded question below it:
+2. Start a new chat. Paste this sample policy **plus** the grounded question below it:
 
 ```
 POLICY DOC — Brightline Logistics Inc., HR-204 (excerpt)
@@ -169,13 +161,13 @@ what approval do they need? Cite the section for each part of your answer.
 
 <br><br>
 
-4. Check the answer against the document. The right answer: **they are not yet eligible** (Section 1 — 12 months required). A good grounded answer catches this; a sloppy one jumps to "8 weeks, split allowed."
+3. Check the answer against the document. The right answer: **they are not yet eligible** (Section 1 — 12 months required). A good grounded answer catches this; a sloppy one jumps to "8 weeks, split allowed."
 
 ![Grounded answer with citations](./images/acc6.png?raw=true "Grounded answer catches the eligibility trap and cites each section")
 
 <br><br>
 
-5. If the answer missed the eligibility trap, push back:
+4. If the answer missed the eligibility trap, push back:
 
 ```
 Re-check Section 1 against the employee's length of service.
@@ -185,7 +177,7 @@ Watch it correct itself — and note that *you* caught it because the citations 
 
 <br><br>
 
-6. Run the 30-second spot-check drill. Ask:
+5. Run the 30-second spot-check drill. Ask:
 
 ```
 List every specific claim in your answer (numbers, dates, section references)
@@ -196,7 +188,7 @@ as a checklist I can verify against the document.
 
 <br><br>
 
-7. Verify each claim against the policy text. This is the habit: every name, number, date, and citation gets 30 seconds.
+6. Verify each claim against the policy text. This is the habit: every name, number, date, and citation gets 30 seconds.
 
 <br><br>
 

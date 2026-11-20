@@ -71,7 +71,7 @@ If either is blocked, bring a personal laptop or tablet, or ask your IT team bef
 |---|---|
 | "You've reached your usage limit" | Switch to another assistant (ChatGPT, Gemini, Copilot) for the rest of the lab |
 | The assistant uses your files or email in an answer | Turn off connected apps in the chat menu for the workshop, or use a new chat |
-| The assistant answers from what it remembers about you or your work | Use a Temporary Chat (ChatGPT, Gemini) or an incognito chat (Claude), or turn memory off in settings |
+| The assistant brings in your own work or past chats | Fine for the labs. To keep it out: ChatGPT — **Temporary chat**, with the menu beside it set to **Unpersonalized**; Claude — **Use incognito** (ghost icon), with connectors off |
 | Your answers look different from the screenshots | Normal — AI answers vary. Check that the *pattern* the step describes is there |
 | Lab 9: VS Code asks "Do you trust the authors…?" | Click **Trust Folder & Continue** |
 | Lab 9: "connection refused" when running the agent | Run `bash codespace-lab/scripts/startOllama.sh`. When it prints **Ollama is running.**, try again. If it says Ollama is not installed, run the command it shows (about 2 minutes) |
