@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.12 - 11/20/26
+## Revision 1.13 - 11/20/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
@@ -25,7 +25,7 @@ Labs 5–8 also use the worksheets in the `worksheets/` folder (or your printed 
 | 6 | [Define pilot metrics](#lab6) | 12 min |
 | 7 | [Governance gut-check](#lab7) | 12 min |
 | 8 | [Your 90-day AI plan](#lab8) | 12 min |
-| 9 | [(Optional — for after the workshop) See what your teams see](#lab9) | 12 min |
+| 9 | [(Optional — for after the workshop) See what your team sees](#lab9) | 12 min |
 
 <br><br>
 
@@ -64,7 +64,7 @@ Some assistants first search your past chats or connected files for the name, or
 4. Send this structured brief — same request, done the way you'd brief a capable new hire:
 
 ```
-You are an experienced program manager writing for a VP audience.
+You are an experienced program manager writing for a leadership audience.
 
 Context: Project Kestrelmoor is migrating our customer billing system to a
 new vendor platform. We are in week 6 of 12. Data migration is done.
@@ -72,13 +72,13 @@ Integration testing found 14 defects; 11 are fixed. The vendor's SSO module
 slipped two weeks, which puts the go-live date at risk. The team is
 confident but tired.
 
-Task: Write a status update for the VP of Engineering.
+Task: Write a status update for the head of engineering.
 
 Format: Subject line, then three sections — Progress, Risks, Asks.
 Under 200 words. Direct, no hype.
 ```
 
-![Structured brief result](./images/acc2.png?raw=true "Structured brief: a usable VP status update")
+![Structured brief result](./images/acc2.png?raw=true "Structured brief: a usable status update")
 
 <br><br>
 
@@ -89,11 +89,11 @@ Under 200 words. Direct, no hype.
 6. Now iterate instead of accepting draft one. Send:
 
 ```
-Critique this update as a skeptical VP would. List the five biggest things
+Critique this update as a skeptical head of engineering would. List the five biggest things
 that are unclear, missing, or buried, one line each.
 ```
 
-![Skeptical VP critique](./images/acc3.png?raw=true "The critique flags vague and missing items")
+![Skeptical critique](./images/acc3.png?raw=true "The critique flags vague and missing items")
 
 <br><br>
 
@@ -197,7 +197,7 @@ as a checklist I can verify against the document.
 - Ungrounded questions about your organization produce guesses dressed as answers.
 - Grounding ("using only this… cite the section") turned trust into verification.
 - The eligibility trap shows why citations matter: checkable answers fail loudly instead of silently.
-- Company-scale grounding is RAG — the same idea your teams automate across thousands of documents.
+- Company-scale grounding is RAG — the same idea, automated across thousands of documents.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
@@ -207,7 +207,7 @@ as a checklist I can verify against the document.
 
 **Purpose: Check an AI-drafted recommendation the way you check any work that goes out under your name. (12 minutes)**
 
-1. Read this memo. Someone on your team drafted it with AI and wants you to forward it to the executive team under your name.
+1. Read this memo. Someone on your team drafted it with AI and wants you to forward it to leadership under your name.
 
 ```
 TO: You        FROM: Jordan, Sales Operations
@@ -241,12 +241,12 @@ The vendor's 20% discount ends Friday, so we need a decision this week.
 3. Start a new chat. Send the prompt below with the memo pasted under it:
 
 ```
-I am about to forward the recommendation below to our executive team
+I am about to forward the recommendation below to our leadership
 under my name. Someone on my team drafted it with AI. Review it for me
 before I sign. In a table of at most 8 rows, short phrases only, list
 each number or claim I should check, what looks wrong or unsupported,
 and how to check it. Check the arithmetic yourself and show it in one
-line. Then list what is missing that a CFO would ask for, three lines
+line. Then list what is missing that finance would ask for, three lines
 at most. Do not invent facts: if you cannot tell, say so. Under 250
 words in total.
 
@@ -326,7 +326,7 @@ Compare it with the original: less impressive, and far more useful.
 1. Start a new chat and paste the scenario:
 
 ```
-You are an analytical advisor to a VP. Be direct and expose your assumptions.
+You are an analytical advisor to a department head. Be direct and expose your assumptions.
 
 Scenario: Our 300-person company needs AI-assisted summarization of customer
 support tickets (8,000/month). Options on the table: (A) buy the add-on from
@@ -373,7 +373,7 @@ in place on day one of this decision. One line each.
 
 ```
 Now argue for a DIFFERENT option than the one you recommended, as my
-toughest board member would — no softening. Under 150 words.
+toughest critic would — no softening. Under 150 words.
 ```
 
 <br><br>
@@ -456,13 +456,13 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 **Lab 6 — Define pilot metrics**
 
-**Purpose: Give your winning use case metrics a CFO would accept — baseline, target, guardrail, stop rule. (12 minutes)**
+**Purpose: Give your winning use case metrics finance would accept — baseline, target, guardrail, stop rule. (12 minutes)**
 
 1. Open **Worksheet 2: Pilot Metrics Charter** (`worksheets/worksheet2-pilot-metrics.md`).
 
 <br><br>
 
-2. Fill in the header: your winning use case from Lab 5, the workflow owner and the executive sponsor (real names — often two different people), and the 90-day window.
+2. Fill in the header: your winning use case from Lab 5, the workflow owner and the sponsor (real names — often two different people), and the 90-day window.
 
 <br><br>
 
@@ -483,7 +483,7 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 6. Red-team it with AI. Start a new chat:
 
 ```
-You are a skeptical CFO. Here is a pilot metrics plan:
+You are a skeptical finance reviewer. Here is a pilot metrics plan:
 
 [paste your definition-of-done sentence and your primary metric, baseline
 plan, target, and guardrail]
@@ -495,7 +495,7 @@ Under 150 words.
 
 The screenshot uses a sample plan (median handling time 11 → 8 minutes, first-contact resolution as the guardrail).
 
-![CFO red-team](./images/acc14.png?raw=true "The CFO finds where the sample plan is gameable")
+![Finance red-team](./images/acc14.png?raw=true "The reviewer finds where the sample plan is gameable")
 
 <br><br>
 
@@ -516,7 +516,7 @@ The screenshot uses a sample plan (median handling time 11 → 8 minutes, first-
 - Baseline-first design makes the result provable either way — the missing piece in most failed pilots.
 - The guardrail stops the classic trap: speed up, quality down, "success."
 - The stop rule makes killing a failed pilot a planned outcome, not an embarrassment.
-- The CFO red-team caught the gameable parts while fixing them was still free.
+- The finance red-team caught the gameable parts while fixing them was still free.
 - A sponsor, a resource estimate, and a plan for success are what separate a pilot from an experiment nobody picks up afterward.
 
 <p align="center">**[END OF LAB]**</p></br></br>
@@ -596,7 +596,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 **Lab 8 — Your 90-day AI plan**
 
-**Purpose: Leave with a concrete 30/60/90 plan and the paragraph you'll send your leadership team. (12 minutes)**
+**Purpose: Leave with a concrete 30/60/90 plan and the paragraph you'll send your manager or team. (12 minutes)**
 
 1. Open the 30/60/90 section of **Worksheet 3**. Have your Lab 5 scorecard and Lab 6 charter beside you.
 
@@ -622,7 +622,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 ```
 Turn these notes into one tight paragraph (under 120 words) I can send my
-leadership team: we are piloting AI deliberately. Include: the use case,
+manager and team: we are piloting AI deliberately. Include: the use case,
 the owner, the 90-day window with baseline and metric, the stop rule, and
 one sentence on governance (approved tools + usage policy shipping now).
 Confident, no hype.
@@ -630,14 +630,14 @@ Confident, no hype.
 Notes: [paste the key lines from your worksheets]
 ```
 
-![Announcement paragraph](./images/acc16.png?raw=true "Worksheet notes turned into a leadership-ready paragraph (sample notes)")
+![Announcement paragraph](./images/acc16.png?raw=true "Worksheet notes turned into a ready-to-send paragraph (sample notes)")
 
 <br><br>
 
 7. Run the loop once:
 
 ```
-Critique this paragraph as a skeptical CTO in three bullets, then rewrite it. Don't invent facts — mark anything missing as [NEED: ...].
+Critique this paragraph as a skeptical reader in three bullets, then rewrite it. Don't invent facts — mark anything missing as [NEED: ...].
 ```
 
 <br><br>
@@ -661,7 +661,7 @@ Critique this paragraph as a skeptical CTO in three bullets, then rewrite it. Do
 
 <a name="lab9"></a>
 
-**Lab 9 (Optional) — See what your teams see**
+**Lab 9 (Optional) — See what your team sees**
 
 **Purpose: Watch a real AI agent run its think → act → observe loop in a live dev environment — no coding. (12 minutes)**
 
@@ -723,7 +723,7 @@ Same loop, different tool choices — this time it has no reason to look up a cu
 
 <br><br>
 
-8. Connect it back: this loop — with real tools, real credentials, and real autonomy decisions — is what your teams propose when they say "agent." The tool list and the Tier 2 approval you just saw are the governance surface you control.
+8. Connect it back: this loop — with real tools, real credentials, and real autonomy decisions — is what your team proposes when it says "agent." The tool list and the Tier 2 approval you just saw are the governance surface you control.
 
 <br><br>
 

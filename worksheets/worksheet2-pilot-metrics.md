@@ -7,7 +7,7 @@
 |---|---|
 | Use case (from Worksheet 1) | |
 | Workflow owner — runs the pilot day to day (a name, not a team) | |
-| Executive sponsor — holds the budget, clears roadblocks (a name) | |
+| Sponsor — holds the budget, clears roadblocks (a name) | |
 | Pilot team | |
 | Start date / day-90 date | |
 | Buy / partner / build lean | |
@@ -45,7 +45,7 @@ The number that must NOT get worse while the primary metric improves:
 
 We stop early if, by day ______, we see: ______________________________________
 
-## CFO red-team findings (Lab 6, step 6)
+## Finance red-team findings (Lab 6, step 6)
 
 - Most gameable part and the fix: ______________________________________________
 - Attribution risk (would the metric move anyway?) and the fix: ________________

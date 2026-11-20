@@ -1,7 +1,7 @@
 # Worksheet 1 — AI Use-Case Scorecard
 *Enterprise Leader AI Accelerator · Lab 5*
 
-**Before we start (write this first):** How confident am I today that I could sponsor an AI pilot and defend it to my CFO? (1 = not at all, 5 = fully) → **Start of day: ____**  **End of day: ____**
+**Before we start (write this first):** How confident am I today that I could sponsor an AI pilot and defend it to finance? (1 = not at all, 5 = fully) → **Start of day: ____**  **End of day: ____**
 
 ---
 
@@ -9,7 +9,7 @@ Score each candidate **1–5** on every criterion. Higher is better. **Risk is s
 
 | Criterion | What a 5 looks like | What a 1 looks like |
 |---|---|---|
-| **Value** | A number someone senior is measured on moves | "It would be innovative" |
+| **Value** | A number the budget owner is measured on moves | "It would be innovative" |
 | **Data readiness** | Data exists, is clean, and we may use it | Data is scattered, dirty, or legally unclear |
 | **Feasibility** | A bought tool does it, or one team can own it end to end | Needs custom build + three teams + new data pipelines |
 | **Risk** (5 = low) | Internal, human-reviewed, reversible | Customer-facing, regulated, irreversible |
