@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.9 - 11/19/26
+## Revision 1.10 - 11/20/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
@@ -45,7 +45,12 @@ Labs 5–8 also use the worksheets in the `worksheets/` folder (or your printed 
 Write a status update about the project.
 ```
 
-Read the result. You'll get either a generic, fill-in-the-blanks update or — as Claude does here — a list of questions about what the project even is. Either way, the model can't do the job without context. (If it wrote about one of your real projects instead, it is using what it remembers from your earlier chats. That is context too — it came from memory instead of from you. Switch memory off as described at the top of this page and run this step again.)
+Read the result. What you get depends on what your assistant already knows about you:
+
+- **If you use it regularly** (memory on, past chats, or a project with files in it), it may pick one of your real projects and write a decent update. It had context; it just came from what it has stored about you, not from your prompt. Notice that *it* chose the project and the facts. If it picked the wrong one, or used something out of date, you would not know unless you checked.
+- **If it knows nothing about you** (a new account, or a temporary or incognito chat), it will either write a generic, fill-in-the-blanks update or ask what the project is.
+
+Either way, the update is only as good as the context the model has. The rest of this lab is about supplying that context yourself, on purpose.
 
 ![Lazy prompt result](./images/acc1.png?raw=true "Lazy prompt: Claude asks for the missing context")
 
@@ -107,7 +112,7 @@ Rewrite the update fixing those issues. Keep it under 200 words. Do not invent f
 **What just happened**
 
 - Output quality tracked input quality: role + context + task + format beat one vague line.
-- The model predicts a response for an *average* asker unless you make yourself specific.
+- Without your context, the model either guesses (from what it has stored about you, or from what an average asker would want) or asks. A brief puts you in control of what it works from.
 - The critique → rewrite loop is the cheapest quality upgrade available — use it every time.
 - Asked to "fix" missing information, a model will invent it. "Don't invent facts — mark what's missing" turns that risk into a to-do list.
 - This pattern (brief, draft, critique, final) comes back several times today.
