@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.5 - 11/15/26
+## Revision 1.9 - 11/19/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
@@ -9,25 +9,29 @@ The screenshots show Claude. Other assistants look different and word their answ
 
 **Before Lab 1:** if your assistant is connected to your email, files, or calendar, turn those connections off for today (in Claude: the **+** button under the chat box → **Connectors**). Otherwise some prompts will search your own mail and documents.
 
+**Also before Lab 1:** if your assistant remembers your earlier chats, switch that off for today, or use a chat that ignores it — **Temporary Chat** in ChatGPT and Gemini, an **incognito chat** in Claude (the ghost icon), the memory setting in Copilot. Otherwise it may answer from what it remembers about you and your work instead of from the lab's scenario. A temporary or incognito chat has to be chosen again each time a step says "start a new chat"; switching memory off in settings covers the whole day.
+
 Labs 5–8 also use the worksheets in the `worksheets/` folder (or your printed copies). The same folder has a one-page reference sheet to keep.
 
 **Lab contents**
 
 | Lab | Title | Time |
 |-----|-------|------|
-| 1 | Brief it like a chief of staff | 12 min |
-| 2 | Ground it and verify | 12 min |
-| 3 | The leadership writing suite | 12 min |
-| 4 | Decision support and premortem | 12 min |
-| 5 | Score your use cases | 12 min |
-| 6 | Define pilot metrics | 12 min |
-| 7 | Governance gut-check | 12 min |
-| 8 | Your 90-day AI plan | 12 min |
-| 9 | (Optional — your instructor shows it live) See what your teams see | 12 min |
+| 1 | [Giving AI the context it needs](#lab1) | 12 min |
+| 2 | [Ground it and verify](#lab2) | 12 min |
+| 3 | [Review AI work before you sign it](#lab3) | 12 min |
+| 4 | [Decision support and premortem](#lab4) | 12 min |
+| 5 | [Score your use cases](#lab5) | 12 min |
+| 6 | [Define pilot metrics](#lab6) | 12 min |
+| 7 | [Governance gut-check](#lab7) | 12 min |
+| 8 | [Your 90-day AI plan](#lab8) | 12 min |
+| 9 | [(Optional — for after the workshop) See what your teams see](#lab9) | 12 min |
 
 <br><br>
 
-**Lab 1 — Brief it like a chief of staff**
+<a name="lab1"></a>
+
+**Lab 1 — Giving AI the context it needs**
 
 **Purpose: See for yourself how much output quality depends on how you ask. (12 minutes)**
 
@@ -41,7 +45,7 @@ Labs 5–8 also use the worksheets in the `worksheets/` folder (or your printed 
 Write a status update about the project.
 ```
 
-Read the result. You'll get either a generic, fill-in-the-blanks update or — as Claude does here — a list of questions about what the project even is. Either way, the model can't do the job without context.
+Read the result. You'll get either a generic, fill-in-the-blanks update or — as Claude does here — a list of questions about what the project even is. Either way, the model can't do the job without context. (If it wrote about one of your real projects instead, it is using what it remembers from your earlier chats. That is context too — it came from memory instead of from you. Switch memory off as described at the top of this page and run this step again.)
 
 ![Lazy prompt result](./images/acc1.png?raw=true "Lazy prompt: Claude asks for the missing context")
 
@@ -51,7 +55,7 @@ Read the result. You'll get either a generic, fill-in-the-blanks update or — a
 
 <br><br>
 
-4. Send this structured brief — same request, done like you'd brief a new chief of staff:
+4. Send this structured brief — same request, done the way you'd brief a capable new hire:
 
 ```
 You are an experienced program manager writing for a VP audience.
@@ -106,9 +110,11 @@ Rewrite the update fixing those issues. Keep it under 200 words. Do not invent f
 - The model predicts a response for an *average* asker unless you make yourself specific.
 - The critique → rewrite loop is the cheapest quality upgrade available — use it every time.
 - Asked to "fix" missing information, a model will invent it. "Don't invent facts — mark what's missing" turns that risk into a to-do list.
-- This pattern (brief, draft, critique, final) repeats through every lab today.
+- This pattern (brief, draft, critique, final) comes back several times today.
 
 <p align="center">**[END OF LAB]**</p></br></br>
+
+<a name="lab2"></a>
 
 **Lab 2 — Ground it and verify**
 
@@ -120,7 +126,7 @@ Rewrite the update fixing those issues. Keep it under 200 words. Do not invent f
 What is our company's parental leave policy?
 ```
 
-Note what happens: a refusal, a generic answer, or a made-up policy. Whatever it answers, it cannot know — it has never seen your policy.
+Note what happens: a refusal, a generic answer, or a made-up policy. Whatever it answers, it cannot know — it has never seen your policy. (If it answers with your real employer's policy, memory or a connection is still switched on — see the top of this page.)
 
 <br><br>
 
@@ -198,90 +204,123 @@ as a checklist I can verify against the document.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
-**Lab 3 — The leadership writing suite**
+<a name="lab3"></a>
 
-**Purpose: Produce three real pieces of leadership writing with the brief → draft → critique → final cycle. (12 minutes)**
+**Lab 3 — Review AI work before you sign it**
 
-1. Start a new chat. Turn messy notes into a status update — paste:
+**Purpose: Check an AI-drafted recommendation the way you check any work that goes out under your name. (12 minutes)**
 
-```
-You are a director writing a weekly status note to senior leadership.
-
-Raw notes: hiring req for data engineer still open 7 weeks... vendor demo
-went well but pricing 30% over budget... Kim's team shipped the reporting
-dashboard early... two customer escalations this week, both resolved, same
-root cause (timeout config)... offsite planning eating too much team time.
-
-Task: a status note with sections Wins / Watch items / Asks.
-Format: under 150 words, scannable, no fluff.
-```
-
-<br><br>
-
-2. Run the quality loop:
+1. Read this memo. Someone on your team drafted it with AI and wants you to forward it to the executive team under your name.
 
 ```
-Critique it as a COO would in three bullets, then rewrite it fixing the critique. Don't invent facts — mark anything missing as [NEED: ...].
-```
+TO: You        FROM: Jordan, Sales Operations
+RE: Roll out DraftPilot to all 400 sales reps
 
-![COO critique and rewrite](./images/acc8.png?raw=true "The rewrite marks what's missing instead of making it up")
+Recommendation: approve a company-wide rollout this month.
 
-<br><br>
+Results: Our pilot ran for six weeks with 40 volunteer reps. All 12
+pilot participants said DraftPilot saved them about 3 hours a week on
+emails and proposals. Industry research shows 73% of sales teams win
+more deals with AI drafting.
 
-3. Next, the difficult message. In the same chat:
+Value: 400 reps x 3 hours x 48 weeks x $60 an hour = $5.2 million a
+year in time saved.
 
-```
-New task. I need to tell a peer director that my team cannot meet the
-March 1 integration date her team needs for a customer launch. Realistic
-date is March 22.
-Reasons: the SSO slip from our vendor and one unfilled role. I want to
-preserve the relationship, own the miss, and propose that her team starts
-against our test environment on March 1 as a bridge.
+Cost: $30 per rep per month, or $144,000 a year. There are no other
+costs.
 
-Draft this as a short email (under 150 words): honest, no blame-shifting,
-specific ask at the end.
-```
+Risk: There is no data risk, because the vendor has passed a security
+audit.
 
-Some assistants show the email in a card, sometimes with more than one version to choose from.
-
-![Difficult email draft](./images/acc9.png?raw=true "The pushback email: owns the miss, proposes the bridge, ends with an ask")
-
-<br><br>
-
-4. (Optional — skip to step 5 if you are short on time.) Make it sound like you. Give it your voice:
-
-```
-Rewrite it to match my style: [paste 3–5 sentences from an email YOU wrote —
-any non-confidential one]. Keep the content, change the voice.
+The vendor's 20% discount ends Friday, so we need a decision this week.
 ```
 
 <br><br>
 
-5. Now the re-tone drill. Send:
-
-```
-Take the latest version of the email and produce three variants of its core message:
-(a) two sentences for a board update, (b) a short Slack message to my own
-team, (c) a reassuring note to the affected customer. Label each, and keep
-each under 60 words.
-```
-
-![Three audience variants](./images/acc10.png?raw=true "One message re-toned for board, team, and customer")
+2. On your own, before any AI: take two minutes and mark everything you would check or question before signing. Aim for at least four.
 
 <br><br>
 
-6. Read all three variants. Same facts, three audiences — notice what the model kept, cut, and softened for each.
+3. Start a new chat. Send the prompt below with the memo pasted under it:
+
+```
+I am about to forward the recommendation below to our executive team
+under my name. Someone on my team drafted it with AI. Review it for me
+before I sign. In a table of at most 8 rows, short phrases only, list
+each number or claim I should check, what looks wrong or unsupported,
+and how to check it. Check the arithmetic yourself and show it in one
+line. Then list what is missing that a CFO would ask for, three lines
+at most. Do not invent facts: if you cannot tell, say so. Under 250
+words in total.
+
+[paste the memo here]
+```
+
+<br><br>
+
+4. Compare its list with yours. Tick what it found that you missed, and what you found that it missed.
+
+<br><br>
+
+5. Check one number yourself on your phone's calculator: 400 × 3 × 48 × $60. Compare your answer with the memo's.
+
+<br><br>
+
+6. Ask about the statistic:
+
+```
+Where does the 73% figure come from? Name the source only if you can
+point me to it; otherwise say plainly that you cannot.
+```
+
+A good answer says it cannot find one. If your assistant names a study, ask yourself whether you would forward that without opening it.
+
+<br><br>
+
+7. Make the call: **sign, send back, or reject.** Write it down with one sentence on why. (This step has no prompt.)
+
+<br><br>
+
+8. Draft the note back:
+
+```
+Write a short note from me to Jordan, under 120 words. Thank them, then
+list the three things that must be fixed before I can sign, each with
+what I need to see. Direct and respectful. No lecture.
+```
+
+<br><br>
+
+9. Read the note and change one line so it sounds like you.
+
+<br><br>
+
+10. Write one rule you will set for your team about AI-drafted work that comes to you.
+
+<br><br>
+
+11. (Optional — if you finish early.) Ask for an honest version:
+
+```
+Rewrite Jordan's memo using only what the pilot actually supports. Do
+not invent facts — mark anything missing as [NEED: ...]. Under 150 words.
+```
+
+Compare it with the original: less impressive, and far more useful.
 
 <br><br>
 
 **What just happened**
 
-- The brief → draft → critique → final cycle held up across three different writing jobs.
-- A few sentences of your own writing is enough for a usable voice match.
-- Re-toning one message for several audiences is a minutes-level task now — the judgment about *what* to say stays yours.
-- For sensitive messages: AI drafts the structure, you write the heart.
+- The memo read well and had at least six problems: 40 volunteers but "all 12 participants"; time savings people estimated for themselves; a statistic with no source; $5.2 million that is really $3,456,000; "no other costs"; and "no data risk". The Friday deadline is pressure, not evidence.
+- AI makes weak work look finished. Polish no longer tells you anything about quality.
+- The assistant was a useful second reviewer — after you looked first. Looking first keeps your own judgment in practice.
+- It could check the arithmetic and the logic. It could not tell you what happened in the pilot. Only asking Jordan can.
+- Your rule from step 10 is the start of a team habit: "tell me what the AI wrote and what you checked."
 
 <p align="center">**[END OF LAB]**</p></br></br>
+
+<a name="lab4"></a>
 
 **Lab 4 — Decision support and premortem**
 
@@ -356,6 +395,8 @@ toughest board member would — no softening. Under 150 words.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
+<a name="lab5"></a>
+
 **Lab 5 — Score your use cases**
 
 **Purpose: Turn vague AI ideas from your organization into a scored, comparable shortlist. (12 minutes)**
@@ -413,6 +454,8 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 - You now hold a ranked shortlist grounded in your own organization — the input for Lab 6.
 
 <p align="center">**[END OF LAB]**</p></br></br>
+
+<a name="lab6"></a>
 
 **Lab 6 — Define pilot metrics**
 
@@ -480,6 +523,8 @@ The screenshot uses a sample plan (median handling time 11 → 8 minutes, first-
 - A sponsor, a resource estimate, and a plan for success are what separate a pilot from an experiment nobody picks up afterward.
 
 <p align="center">**[END OF LAB]**</p></br></br>
+
+<a name="lab7"></a>
 
 **Lab 7 — Governance gut-check**
 
@@ -550,6 +595,8 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
+<a name="lab8"></a>
+
 **Lab 8 — Your 90-day AI plan**
 
 **Purpose: Leave with a concrete 30/60/90 plan and the paragraph you'll send your leadership team. (12 minutes)**
@@ -615,11 +662,13 @@ Critique this paragraph as a skeptical CTO in three bullets, then rewrite it. Do
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
+<a name="lab9"></a>
+
 **Lab 9 (Optional) — See what your teams see**
 
 **Purpose: Watch a real AI agent run its think → act → observe loop in a live dev environment — no coding. (12 minutes)**
 
-> Your instructor runs this lab live on the big screen, so you can simply watch. To run it yourself — now or after the workshop — follow the steps below.
+> This lab is for after the workshop. In the session your instructor shows a different agent live, just before Lab 7. To watch one run step by step in real code, follow the steps below in your own time.
 
 > Note: this lab uses GitHub Codespaces — a complete development environment that runs in your browser. You need a free GitHub account (see the README's **Before you arrive** section). The first startup takes 3–5 minutes; read ahead while it builds.
 

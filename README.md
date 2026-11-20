@@ -3,6 +3,8 @@
 
 The essential one-day leader's playbook for understanding and applying AI — for managers, project leaders, and business stakeholders who make AI decisions without doing the implementation.
 
+**Go to a lab:** [Lab 1](labs.md#lab1) · [Lab 2](labs.md#lab2) · [Lab 3](labs.md#lab3) · [Lab 4](labs.md#lab4) · [Lab 5](labs.md#lab5) · [Lab 6](labs.md#lab6) · [Lab 7](labs.md#lab7) · [Lab 8](labs.md#lab8) · [Lab 9](labs.md#lab9)
+
 ## What's here
 
 | File / folder | What it is |
@@ -16,7 +18,7 @@ The essential one-day leader's playbook for understanding and applying AI — fo
 
 ## Before you arrive (about 10 minutes)
 
-You need **one free account** for Labs 1–8. Lab 9 is shown live by the instructor; you need a second free account **only if** you want to run it yourself. **No API keys, credit cards, or software installs are needed.**
+You need **one free account** for Labs 1–8. Lab 9 is optional and meant for after the workshop; you need a second free account **only if** you want to run it. **No API keys, credit cards, or software installs are needed.**
 
 ### 1. An AI assistant account (required, Labs 1–8)
 
@@ -37,7 +39,7 @@ To set up a free Claude account:
 
 ### 2. A GitHub account (optional, Lab 9 only)
 
-In Lab 9 a real AI agent runs in a browser-based workspace called a Codespace. The instructor runs it on the big screen, so you can simply watch. Set up this account only if you want to run it yourself, during or after the workshop.
+In Lab 9 a real AI agent runs in a browser-based workspace called a Codespace. It is not run in the session. Set up this account only if you want to try it afterward.
 
 1. Go to **https://github.com/signup**.
 2. Enter your email, a password, and a username when prompted.
@@ -69,6 +71,7 @@ If either is blocked, bring a personal laptop or tablet, or ask your IT team bef
 |---|---|
 | "You've reached your usage limit" | Switch to another assistant (ChatGPT, Gemini, Copilot) for the rest of the lab |
 | The assistant uses your files or email in an answer | Turn off connected apps in the chat menu for the workshop, or use a new chat |
+| The assistant answers from what it remembers about you or your work | Use a Temporary Chat (ChatGPT, Gemini) or an incognito chat (Claude), or turn memory off in settings |
 | Your answers look different from the screenshots | Normal — AI answers vary. Check that the *pattern* the step describes is there |
 | Lab 9: VS Code asks "Do you trust the authors…?" | Click **Trust Folder & Continue** |
 | Lab 9: "connection refused" when running the agent | Run `bash codespace-lab/scripts/startOllama.sh`. When it prints **Ollama is running.**, try again. If it says Ollama is not installed, run the command it shows (about 2 minutes) |

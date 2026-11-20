@@ -9,7 +9,7 @@
 | **Assistant** — a chat product built on a model | **RAG** — retrieving your documents so answers use your data | **Token** — the word-chunks AI reads, writes, and bills by |
 | **Copilot** — AI built into a tool you already use | **Fine-tuning** — extra training to specialize a model | **Hallucination** — fluent, confident, and wrong |
 
-## Brief it like a new chief of staff
+## Brief it like a capable new hire
 
 **Role** (who it should be) · **Context** (what it needs to know) · **Task** (exactly what you want) · **Format** (what good looks like).
 Then: "Critique this draft." → "Rewrite it fixing those issues. Don't invent facts — mark anything missing as [NEED: …]."
@@ -20,6 +20,12 @@ Then: "Critique this draft." → "Rewrite it fixing those issues. Don't invent f
 2. Check every name, number, date, quote, and link against a source.
 3. Ask it to argue against itself: "What's weakest here? What did you assume?"
 4. Whoever ships it owns it. "The AI said so" is never a defense.
+
+## Before you sign AI-drafted work
+
+Ask: "What did the AI write, and what did you check?" · Redo one number yourself · Ask where each figure came from · Look for what is missing: costs, risks, the other side · Then sign it, send it back, or reject it.
+
+*Writing tips:* for a hard message, let AI draft the structure and write the heart yourself. To sound like you, paste 3–5 sentences of your own writing and ask it to match that voice.
 
 ## Does this need AI?
 
@@ -41,6 +47,8 @@ Then: "Critique this draft." → "Rewrite it fixing those issues. Don't invent f
 6. How will we know it worked — baseline, target, guardrail?
 7. What will it cost to run and to scale — not just to pilot?
 
+*On question 7:* ask what one task costs — measured, not estimated — and ask again whenever the model changes. The price list is not the bill.
+
 ## A pilot that can prove value
 
 One workflow · one team · 90 days · one owner (plus a sponsor) · one primary metric · one guardrail · a stop rule written before you start.
@@ -53,6 +61,7 @@ The technology works on real cases · people use it in their daily work · the m
 
 - What untrusted content does it read? What private data can it reach? Can it send anything out? (All three together is the danger zone.)
 - **Tier 1 — Assist:** AI drafts, a person does. **Tier 2 — Review:** AI prepares the action, a named person approves. **Tier 3 — Autonomous:** low-risk, reversible actions only, with logs and spot checks — earned per use case.
+- **Four limits before any agent runs:** a step limit per task · a dollar cap per task · a monthly cap with an alert · a named person who gets the alert.
 
 ---
 *(c) 2026 Tech Skills Transformations and Brent C. Laster. All rights reserved.*

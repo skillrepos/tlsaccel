@@ -54,6 +54,8 @@ We stop early if, by day ______, we see: ______________________________________
 
 - Money (licenses, usage fees, vendor help): ____________________________________
 - People and time (who, how many hours a week): _________________________________
+- AI running cost — per task: __________ · monthly cap: __________ · who gets the alert: __________
+  *(Cost per task not measured yet? Leave it blank — it is your first question for the team.)*
 
 ## If it succeeds (Lab 6, step 8)
 
