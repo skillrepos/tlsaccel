@@ -10,7 +10,8 @@ The essential one-day leader's playbook for understanding and applying AI — fo
 | File / folder | What it is |
 |---|---|
 | `labs.md` | All 9 hands-on labs, step by step, with prompts to copy and screenshots |
-| `worksheets/` | 3 fill-in worksheets (use-case scorecard, pilot metrics charter, governance playbook + 30/60/90) and a one-page reference sheet to keep |
+| [Worksheets page](https://skillrepos.github.io/tlsaccel/) | The 3 worksheets for Labs 5–8 (use-case scorecard, pilot metrics charter, governance playbook + 30/60/90) to fill in on your phone or laptop, with examples built in |
+| `worksheets/` | The same worksheets as plain files, and a one-page reference sheet to keep |
 | `codespace-lab/` | Files for the optional Lab 9 (runs in GitHub Codespaces) |
 | `images/` | Screenshots used in labs.md |
 
@@ -62,7 +63,7 @@ If either is blocked, bring a personal laptop or tablet, or ask your IT team bef
 ## During the workshop
 
 - Open **labs.md** in this repo (or the printed copy) and follow along. Every prompt is written out for you to copy.
-- Keep the **worksheets** open — Labs 5–8 fill them in. Copy the files or print them; they're yours to keep, along with the one-page `leader-reference-sheet.md`.
+- Keep the **[worksheets page](https://skillrepos.github.io/tlsaccel/)** open — Labs 5–8 fill it in. You type into the boxes, and your answers are saved on your own device. At the end, save the page as a PDF or copy your answers into an email to yourself; they're yours to keep, along with the one-page `leader-reference-sheet.md`.
 - **One rule on data:** use the sample scenarios in the labs, or non-confidential examples from your own work. Treat the tools as public for the day.
 
 ## Troubleshooting

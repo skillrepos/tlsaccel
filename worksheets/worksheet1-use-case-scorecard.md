@@ -5,15 +5,15 @@
 
 ---
 
-Score each candidate **1–5** on every criterion. Higher is better. **Risk is scored in reverse: 5 = low risk.**
+List **three** candidates, then score each **1–5** on every criterion. Higher is better. **Risk is scored in reverse: 5 = low risk.**
 
-| Criterion | What a 5 looks like | What a 1 looks like |
-|---|---|---|
-| **Value** | A number the budget owner is measured on moves | "It would be innovative" |
-| **Data readiness** | Data exists, is clean, and we may use it | Data is scattered, dirty, or legally unclear |
-| **Feasibility** | A bought tool does it, or one team can own it end to end | Needs custom build + three teams + new data pipelines |
-| **Risk** (5 = low) | Internal, human-reviewed, reversible | Customer-facing, regulated, irreversible |
-| **Measurability** | Baseline exists; result visible in 90 days | No baseline; benefits "strategic" |
+| Criterion | What it means | What a 5 looks like | What a 1 looks like |
+|---|---|---|---|
+| **Value** | Which business number it improves (time, cost, quality or revenue), and whether the budget owner cares about that number | A number the budget owner is measured on moves | "It would be innovative" |
+| **Data readiness** | Whether the data it needs exists, is clean, and is yours to use | Data exists, is clean, and we may use it | Data is scattered, dirty, or legally unclear |
+| **Feasibility** | How easy it is to put in place: can a bought tool do it, and can one team own it? | A bought tool does it, or one team can own it end to end | Needs custom build + three teams + new data pipelines |
+| **Risk** (5 = low) | What happens when it is wrong, and what sensitive data it touches | Internal, human-reviewed, reversible | Customer-facing, regulated, irreversible |
+| **Measurability** | Whether there is a "before" number today, and a result you can see within 90 days | Baseline exists; result visible in 90 days | No baseline; benefits "strategic" |
 
 ## Candidates
 
@@ -22,8 +22,6 @@ Score each candidate **1–5** on every criterion. Higher is better. **Risk is s
 | 1 |                                  |       |      |       |      |       |           |
 | 2 |                                  |       |      |       |      |       |           |
 | 3 |                                  |       |      |       |      |       |           |
-| 4 |                                  |       |      |       |      |       |           |
-| 5 |                                  |       |      |       |      |       |           |
 
 **First-pilot rule:** a first pilot needs **4+ on Risk and 4+ on Measurability**, whatever its total.
 

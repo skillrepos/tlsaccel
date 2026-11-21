@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.13 - 11/20/26
+## Revision 1.14 - 11/20/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
@@ -11,7 +11,7 @@ The screenshots show Claude. Other assistants look different and word their answ
 
 **Also good to know:** if your assistant remembers your earlier chats, it may bring your own work into some answers. That is fine for today's labs. If you'd rather keep it out, use a chat that ignores your history: in ChatGPT, click **Temporary chat** (top right) and set the menu beside it to **Unpersonalized**; in Claude, click **Use incognito** (the ghost icon, top right).
 
-Labs 5–8 also use the worksheets in the `worksheets/` folder (or your printed copies). The same folder has a one-page reference sheet to keep.
+Labs 5–8 also use three worksheets. Fill them in on the **[worksheets page](https://skillrepos.github.io/tlsaccel/)**: you type into the boxes on your phone or laptop, and your answers are saved on your own device. No use case of your own ready? Each worksheet there has examples you can use instead. The `worksheets/` folder has a one-page reference sheet to keep.
 
 **Lab contents**
 
@@ -398,15 +398,23 @@ toughest critic would — no softening. Under 150 words.
 
 **Purpose: Turn vague AI ideas from your organization into a scored, comparable shortlist. (12 minutes)**
 
-1. Open **Worksheet 1: Use-Case Scorecard** (`worksheets/worksheet1-use-case-scorecard.md` or your printed copy).
+1. Open **[Worksheet 1: Use-Case Scorecard](https://skillrepos.github.io/tlsaccel/#ws1)**. Keep this page open too — you will switch between the two.
 
 <br><br>
 
-2. On your own (no AI yet), list 3 candidate AI use cases from your organization. Use the green-flag pattern from the deck: high-volume, repetitive, verifiable work. One line each, named as a workflow: "triage inbound support tickets," not "use AI in support."
+2. On your own (no AI yet), list 3 candidate AI use cases from your organization. Use the green-flag pattern from the deck: high-volume, repetitive, verifiable work. One line each, named as a workflow: "triage inbound support tickets," not "use AI in support." Nothing comes to mind, or nothing you can share? Open the yellow **Need an example?** box on the worksheet.
 
 <br><br>
 
-3. Score each candidate 1–5 on the five criteria — Value, Data readiness, Feasibility, Risk (5 = low risk), Measurability. Gut scores are fine; speed over precision.
+3. Score each candidate 1–5 on the five criteria below. Higher is better. Gut scores are fine; speed over precision.
+
+| Criterion | What it means |
+|---|---|
+| **Value** | Which business number it improves (time, cost, quality or revenue), and whether the budget owner cares about that number |
+| **Data readiness** | Whether the data it needs exists, is clean, and is yours to use |
+| **Feasibility** | How easy it is to put in place: can a bought tool do it, and can one team own it? |
+| **Risk** | What happens when it is wrong, and what sensitive data it touches. **Scored in reverse: 5 = low risk** |
+| **Measurability** | Whether there is a "before" number today, and a result you can see within 90 days |
 
 <br><br>
 
@@ -435,11 +443,11 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 <br><br>
 
-7. Circle your winner on the worksheet and complete the bottom line: "**[Use case]** wins because **[one sentence]**."
+7. Press **My winner** on your top candidate and complete the line below it: "**[Use case]** wins because **[one sentence]**."
 
 <br><br>
 
-8. Look back at your winner's five scores. Mark the one you are least sure of, and write down what you would need to find out to settle it. The instructor will ask for a show of hands on which of the five it was.
+8. Look back at your winner's five scores. Mark the one you are least sure of, and write down what you would need to find out to settle it. You will enter which of the five it was in a poll on your phone.
 
 <br><br>
 
@@ -458,7 +466,7 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 **Purpose: Give your winning use case metrics finance would accept — baseline, target, guardrail, stop rule. (12 minutes)**
 
-1. Open **Worksheet 2: Pilot Metrics Charter** (`worksheets/worksheet2-pilot-metrics.md`).
+1. Open **[Worksheet 2: Pilot Metrics Charter](https://skillrepos.github.io/tlsaccel/#ws2)**. Short of details? Its **Need an example?** box can fill your empty boxes with a sample pilot.
 
 <br><br>
 
@@ -571,7 +579,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 <br><br>
 
-6. Make the call: **approve, approve with conditions, or reject**. Write it on Worksheet 3 with two sentences on why. If you chose conditions, name them — for example which actions move to Tier 2 (human approves), what access gets narrowed, what gets logged from day one.
+6. Make the call: **approve, approve with conditions, or reject**. Write it on **[Worksheet 3](https://skillrepos.github.io/tlsaccel/#ws3)** with two sentences on why. If you chose conditions, name them — for example which actions move to Tier 2 (human approves), what access gets narrowed, what gets logged from day one.
 
 <br><br>
 
@@ -579,7 +587,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 <br><br>
 
-8. Open **Worksheet 3: Governance Playbook** (`worksheets/worksheet3-governance-playbook.md`). In Box 1 (Inventory), list two or three AI tools already in use in your org — including shadow use you suspect. In Box 2 (Usage policy headlines), write three rules you'd publish this week.
+8. Stay on **Worksheet 3: Governance Playbook**. In Box 1 (Inventory), list two or three AI tools already in use in your org — including shadow use you suspect. In Box 2 (Usage policy headlines), write three rules you'd publish this week.
 
 <br><br>
 
@@ -598,7 +606,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 **Purpose: Leave with a concrete 30/60/90 plan and the paragraph you'll send your manager or team. (12 minutes)**
 
-1. Open the 30/60/90 section of **Worksheet 3**. Have your Lab 5 scorecard and Lab 6 charter beside you.
+1. Open the 30/60/90 section of **[Worksheet 3](https://skillrepos.github.io/tlsaccel/#ws3)**. Have your Lab 5 scorecard and Lab 6 charter beside you.
 
 <br><br>
 
