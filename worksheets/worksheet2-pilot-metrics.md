@@ -5,7 +5,7 @@
 
 Fill it in on the worksheets page, which saves what you type on your own device: https://skillrepos.github.io/tlsaccel/#ws2
 
-## Pilot header (Lab 6, step 2)
+## Lab 6, step 2: Pilot header
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
@@ -17,7 +17,7 @@ Fill it in on the worksheets page, which saves what you type on your own device:
 | **Day-90 date** | Required | The last day of the pilot: 89 days after the start date (the start date is day 1). On the worksheets page this is worked out for you; change it if your pilot must end on another day | March 31, 2027 (this team chose the end of the quarter, a few days short of 90) | |
 | **Buy / partner / build** | Optional | How you will get the AI tool. Buy: a product that already does this job. Partner: a vendor fits a tool to your data and way of working. Build: your own engineers make it. Most first pilots buy | Buy: the add-on our helpdesk vendor sells | |
 
-## Primary metric (pick ONE) (Lab 6, steps 3–4)
+## Lab 6, steps 3–4: Primary metric (pick ONE)
 
 | Family | Example metrics |
 |---|---|
@@ -33,7 +33,7 @@ Fill it in on the worksheets page, which saves what you type on your own device:
 | **Baseline value** | Required | What your primary metric is today, before AI. Not sure? Write your best guess and add "guess": measuring it is the pilot's first job | 11 minutes (handling time per ticket today) | |
 | **90-day target** | Required | What you want your primary metric to be by day 90, in the same unit as the baseline value. A number, not "better" | 8 minutes (down from 11) | |
 
-## Quality guardrail (Lab 6, step 5)
+## Lab 6, step 5: Quality guardrail
 
 The number that must NOT get worse while the primary metric improves:
 
@@ -42,7 +42,7 @@ The number that must NOT get worse while the primary metric improves:
 | **Guardrail** | Required | A second measurement, one that shows quality. It must not get worse while your primary metric improves | First-contact resolution (the share of tickets solved in one reply) | |
 | **Current value** | Optional | What your guardrail is today. A guess is fine if you mark it | 72% (of tickets are solved in one reply today) | |
 
-## Definition of done (Lab 6, step 6)
+## Lab 6, step 6: Definition of done
 
 > "By **[date]**, **[workflow]** handled with AI assistance shows **[metric]** moving from **[baseline]** to **[target]**, with **[guardrail]** maintained — or we stop and write down what we learned."
 
@@ -50,7 +50,7 @@ The number that must NOT get worse while the primary metric improves:
 |---|---|---|---|---|
 | **My definition of done** | Required | One sentence built from the boxes above: the day-90 date, the use case, the primary metric with its baseline value and 90-day target, and the guardrail | By March 31, 2027, support-ticket triage handled with AI assistance shows median handling time per support ticket moving from 11 minutes to 8 minutes, with first-contact resolution held at or above 72% — or we stop and write down what we learned. | |
 
-## Stop rule (Lab 6, step 7)
+## Lab 6, step 7: Stop rule
 
 A stop rule is the result that would make you end the pilot early, decided before you start.
 
@@ -59,16 +59,18 @@ A stop rule is the result that would make you end the pilot early, decided befor
 | **Stop check on day** | Required | The day of the pilot, about halfway through, when you look at the primary metric and the guardrail and decide whether to carry on. A number from 1 to 89 | 42 | |
 | **We stop early if we see** | Required | What the primary metric or the guardrail would have to show on that day for you to stop the pilot early | Handling time is still 11 minutes or more, or fewer than 72% of tickets are solved in one reply for two weeks running | |
 
-## Finance red-team findings (Lab 6, steps 8–9)
+## Lab 6, steps 8–9: Finance red-team findings
 
-A red-team is a deliberate attack on your own plan, to find its weak spots before someone else does. In step 8 an AI reviewer plays a skeptic from finance.
+A red-team is a deliberate attack on your own plan, to find its weak spots before someone else does. In step 8 an AI reviewer plays a skeptic from finance and names three weak spots, each with a fix. In step 9 you write down the two that matter most.
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
 | **Most gameable part and the fix** | Required | "Gameable" means the primary metric could look better without the work getting better. Write the weak spot the AI reviewer found in your plan, and how you will close it | Agents can look faster by splitting one problem into two tickets. Fix: also count reopened tickets and tickets per customer problem. | |
 | **Attribution risk and the fix** | Required | Would the primary metric have improved anyway, without the AI? Write why it might, and how you will tell the difference | Ticket volume dips every January, so handling times fall anyway. Fix: compare the pilot shift with a shift that does not use the tool. | |
 
-## What the pilot needs (Lab 6, step 10)
+## Lab 6, step 10: What the pilot needs
+
+**For step 10 of Lab 6, after the AI review.** What it will take to run the pilot for 90 days: money, people, and a limit on what the AI tool may spend. Rough answers are fine.
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
@@ -78,7 +80,9 @@ A red-team is a deliberate attack on your own plan, to find its weak spots befor
 | **Monthly cap** | Optional | The most you will let the AI tool spend in one month | $500 | |
 | **Who gets the alert** | Optional | The one person who is told when the month's spending gets close to the cap | Dana Ruiz | |
 
-## If it succeeds (Lab 6, step 10)
+## Lab 6, step 10: If it succeeds
+
+**Also for step 10 of Lab 6.** What happens after day 90 if the pilot works: who keeps it going, and what it costs once everyone uses it.
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|

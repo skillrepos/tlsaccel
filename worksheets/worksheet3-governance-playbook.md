@@ -9,7 +9,7 @@ Fill it in on the worksheets page, which saves what you type on your own device:
 
 Fill in Boxes 1–2 in Lab 7. In Lab 8, put a **decide-by date** on Boxes 3–6: the date by which you will have settled that box back at work. You leave with a started playbook and a date on every open decision.
 
-### Box 1 — Inventory (where is AI used today?) (Lab 7, step 8)
+### Lab 7, step 8: Box 1 — Inventory (where is AI used today?)
 
 **Required: at least two tools.** List two or three AI tools already in use where you work. For each one, give the **tool and what it is used for**, its **owner** (the one person answerable for it; "nobody yet" is a real answer), and the **data it touches** (what information it can see). **Autonomy tier** is how much the tool does on its own. **1 assist:** AI drafts, a person does the work. **2 review:** AI prepares the action, a named person approves it. **3 autonomous:** AI acts, and people check afterwards.
 
@@ -31,7 +31,7 @@ Examples of a filled-in row:
 | Helpdesk AI add-on (the pilot) | Dana Ruiz, Support Ops | Customer tickets | 1 assist |
 | Personal ChatGPT accounts used for customer emails | No owner | Possibly customer names and prices | Not sure |
 
-### Box 2 — Usage policy headlines (three rules you'd publish this week) (Lab 7, step 9)
+### Lab 7, step 9: Box 2 — Usage policy headlines (three rules you'd publish this week)
 
 A usage policy is the short list of rules for using AI at work. Write three of those rules as headlines: one line each, plain enough to follow without asking anyone.
 
@@ -41,7 +41,7 @@ A usage policy is the short list of rules for using AI at work. Write three of t
 | **Rule 2** | Required | One rule in one line, for example about what information must never go into an AI tool | No customer, employee or financial data in a personal AI account. | |
 | **Rule 3** | Required | One rule in one line, for example about who checks AI work before it is used | You own what you send. Check every name, number and date before it goes out. | |
 
-### Box 3 — Approval path (Lab 8, step 5)
+### Lab 8, step 5: Box 3 — Approval path
 
 The approval path is how a new AI idea gets a yes or a no: it is scored on Worksheet 1, someone checks it for risk, and an answer comes back within a set number of days.
 
@@ -51,7 +51,7 @@ The approval path is how a new AI idea gets a yes or a no: it is scored on Works
 | **Risk check by** | Optional | Who looks at a new AI idea for risk before it is approved: one person or a small group | The review group (Box 6) | |
 | **Target turnaround (days)** | Optional | How many days someone with a new AI idea should wait for a yes or a no | 5 | |
 
-### Box 4 — Standard vendor questions (Lab 8, step 5)
+### Lab 8, step 5: Box 4 — Standard vendor questions
 
 The questions you will put to every company that sells you an AI tool. Tick the ones you want on your standard list. The ticks are optional today.
 
@@ -65,7 +65,7 @@ The questions you will put to every company that sells you an AI tool. Tick the 
 - ☐ Do you support MCP / standard integration? (MCP is the common standard for connecting AI tools to your systems)
 - ☐ What's our exit path? (how we get our data out and stop using the tool)
 
-### Box 5 — Incident path (Lab 8, step 5)
+### Lab 8, step 5: Box 5 — Incident path
 
 An incident is AI going wrong: it leaks information, makes something up that gets used, or takes a wrong action. The incident path says who gets the first call.
 
@@ -75,7 +75,7 @@ An incident is AI going wrong: it leaks information, makes something up that get
 | **First call goes to** | Optional | The one person or desk anyone can call the moment AI leaks, makes things up or misfires | The IT help desk | |
 | **Rehearsed on (date)** | Optional | The date you will walk through a made-up incident to test the path | February 12, 2027 | |
 
-### Box 6 — Roles (Lab 8, step 5)
+### Lab 8, step 5: Box 6 — Roles
 
 Who looks after AI use: a small review group that approves new AI ideas and keeps this playbook up to date.
 
@@ -84,7 +84,7 @@ Who looks after AI use: a small review group that approves new AI ideas and keep
 | **Box 6: decide by** | Required | The date by which the review group will be named | December 18, 2026 | |
 | **Review group** | Optional | Three to five people from different parts of the organization: names or job titles | Dana Ruiz (Support Ops), plus one person each from IT, Finance and HR | |
 
-## My call on the PayFast proposal (Lab 7, step 6)
+## Lab 7, step 6: My call on the PayFast proposal
 
 **Required.** PayFast is the invoice agent proposed in Lab 7. Decide as if the proposal were on your desk. There is no example here: this one is your call.
 
@@ -94,11 +94,11 @@ Who looks after AI use: a small review group that approves new AI ideas and keep
 |---|---|---|---|---|
 | **Because** | Required | Two sentences on why. If you chose "approve with conditions", name the conditions: what must change before the agent runs | — | |
 
-## Your 30 / 60 / 90 (Lab 8, steps 1–4)
+## Lab 8, steps 1–4: Your 30 / 60 / 90
 
 Three blocks of 30 days, counted from today. **See** what AI is already doing, **scope** one pilot, then **ship** it: start the pilot in real work. Boxes marked Required are the ones Lab 8 asks for today; the rest are for back at work.
 
-### Days 1–30 — SEE
+### Lab 8, step 2: Days 1–30 — SEE
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
@@ -108,7 +108,7 @@ Three blocks of 30 days, counted from today. **See** what AI is already doing, *
 | **One-page policy ships on** | Required | The date your usage policy (Box 2, written out on one page) goes to everyone | December 4, 2026 | |
 | **Shortlist shared with** | Optional | Who will see your scored use cases from Worksheet 1 | My manager and my team | |
 
-### Days 31–60 — SCOPE
+### Lab 8, step 3: Days 31–60 — SCOPE
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
@@ -119,7 +119,7 @@ Three blocks of 30 days, counted from today. **See** what AI is already doing, *
 | **Approval path + review group live on** | Optional | The date Boxes 3 and 6 are in use | January 15, 2027 | |
 | **Buy / partner / build decision by** | Optional | The date you settle how you will get the AI tool for the pilot | December 11, 2026 | |
 
-### Days 61–90 — SHIP
+### Lab 8, step 4: Days 61–90 — SHIP
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
@@ -135,7 +135,7 @@ Three blocks of 30 days, counted from today. **See** what AI is already doing, *
 - ☐ The metric moved and the guardrail held
 - ☐ Someone owns it, and the cost at full volume is known
 
-## The announcement paragraph (Lab 8, steps 6–8)
+## Lab 8, steps 6–8: The announcement paragraph
 
 The short message that tells your manager and team about the pilot. An AI assistant drafts it from your notes in step 6 and tightens it in step 7.
 
@@ -143,7 +143,7 @@ The short message that tells your manager and team about the pilot. An AI assist
 |---|---|---|---|---|
 | **My announcement paragraph** | Required | Paste the final paragraph from the AI chat here, after the rewrite in step 7. The lab shows a finished one | — | |
 
-## Feedback from the pilot review round (after Lab 8)
+## After Lab 8: Feedback from the pilot review round
 
 After Lab 8, volunteers describe their pilot in thirty seconds and the room gives one strength and one concern. If you present, write down what you hear.
 

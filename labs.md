@@ -11,7 +11,7 @@ The screenshots show Claude. Other assistants look different and word their answ
 
 **Also good to know:** if your assistant remembers your earlier chats, it may bring your own work into some answers. That is fine for today's labs. If you'd rather keep it out, use a chat that ignores your history: in ChatGPT, click **Temporary chat** (top right) and set the menu beside it to **Unpersonalized**; in Claude, click **Use incognito** (the ghost icon, top right).
 
-Labs 5–8 also use three worksheets. Fill them in on the **[worksheets page](https://skillrepos.github.io/tlsaccel/)**: you type into the boxes on your phone or laptop, and your answers are saved on your own device. Boxes marked **Required** are the ones the labs ask you to fill in; boxes marked **Optional** are for back at work. No use case of your own ready? Each worksheet there has examples you can use instead. The `worksheets/` folder has a one-page reference sheet to keep.
+Labs 5–8 also use three worksheets. Fill them in on the **[worksheets page](https://skillrepos.github.io/tlsaccel/)**: you type into the boxes on your phone or laptop, and your answers are saved on your own device. Boxes marked **Required** are the ones the labs ask you to fill in; boxes marked **Optional** are for back at work. At any point, press **Check for required info** on a worksheet to see which Required boxes are still empty, listed by lab step. No use case of your own ready? Each worksheet there has examples you can use instead. The `worksheets/` folder has a one-page reference sheet to keep.
 
 **Lab contents**
 
@@ -498,7 +498,7 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 <br><br>
 
-8. Red-team it with AI. Start a new chat:
+8. Now have an AI reviewer attack your plan the way a skeptic in finance would (a "red-team"). Start a new chat:
 
 ```
 You are a skeptical finance reviewer. Here is a pilot metrics plan:
@@ -517,11 +517,11 @@ Under 150 words.
 
 <br><br>
 
-9. Apply the fixes that convinced you. Update the worksheet, then press **Check for required info**: it lists Required boxes that are still empty and boxes that don't agree with each other.
+9. Read the reviewer's answer: three weak spots in your plan, each with a fix. Where you agree, change the matching box on the worksheet. Then fill in **Finance red-team findings**: where your number could look better without the work getting better, and where it might have improved anyway, each with your fix.
 
 <br><br>
 
-10. Fill in the two short sections near the bottom of the worksheet: **What the pilot needs** and **If it succeeds**. Rough answers are fine.
+10. Fill in the two short sections near the bottom of the worksheet, both labelled **Lab 6, step 10**: **What the pilot needs** and **If it succeeds**. Rough answers are fine.
 
 <br><br>
 
@@ -593,7 +593,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 <br><br>
 
-7. Hold your call for the re-run of the poll. When the room splits, listen for what the other side weighted that you did not.
+7. Keep your decision to yourself until the poll is run again. When the room splits, listen for what the other side gave more weight to than you did.
 
 <br><br>
 
@@ -658,7 +658,7 @@ Notes: [paste the key lines from your worksheets]
 
 <br><br>
 
-7. Run the loop once:
+7. Now have the AI criticize the paragraph and then rewrite it, once:
 
 ```
 Critique this paragraph as a skeptical reader in three bullets, then rewrite it. Don't invent facts — mark anything missing as [NEED: ...].

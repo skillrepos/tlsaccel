@@ -31,7 +31,7 @@ Three candidates, each with all five scores.
 
 **Quick version, for judging one proposal someone brings you:** ask four questions instead of five (fold Data readiness into Feasibility). The rule is the same: Risk and Measurability must pass, however good the Value story is.
 
-## Blocker check (Lab 5, step 6)
+## Lab 5, step 6: Blocker check
 
 A blocker is something that rules a use case out for now, however well it scores. **A high score never overrides a blocker.** For your top-scored candidate, tick anything that is true. Reading the list is the required part; a tick is only for something that is true:
 
@@ -43,14 +43,14 @@ A blocker is something that rules a use case out for now, however well it scores
 
 Any box ticked → fix that first, or move to your next candidate.
 
-## The winner (Lab 5, step 7)
+## Lab 5, step 7: The winner
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
 | **My winner** | Required | The candidate you choose as your first pilot | Triage inbound support tickets | |
 | **…wins because (one sentence)** | Required | Why this use case should be your first pilot: one sentence that says what makes it a safe bet | It is high-volume, an agent checks every draft, and handling time is already measured. | |
 
-## Notes from the AI stress-test (Lab 5, steps 4–5 and 8)
+## Lab 5, steps 4–5 and 8: Notes from the AI stress-test
 
 The AI reviewer in step 4 asks five hard questions about your top candidate. These boxes hold what you learned from them.
 
