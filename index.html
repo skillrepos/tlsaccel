@@ -8,6 +8,7 @@
 <style>
   :root { --navy:#002060; --blue:#003366; --orange:#ED7D31; --purple:#7030A0; --pale:#DCE9F7; --line:#D9D9D9; --ink:#222; --grey:#5b6470; --green:#2E7D32; --red:#C00000; --field:#9aa5b4; --ex:#FFF6D6; --exline:#E0B400; --exink:#5a4500; }
   * { box-sizing: border-box; }
+  [hidden] { display:none !important; }
   html { scroll-behavior:smooth; }
   body { margin:0; font-family: -apple-system, "Segoe UI", Calibri, Roboto, Arial, sans-serif; color:var(--ink); background:#f5f7fa; font-size:17px; line-height:1.5; }
   header.top { background:var(--navy); color:#fff; padding:18px 16px 14px; }
@@ -28,7 +29,14 @@
   a.ghost, button.ghost { background:#fff; color:var(--blue); border:1.5px solid var(--blue); font-weight:600; font-size:15px; padding:8px 12px; }
   button.ghost:disabled { color:#8a94a3; border-color:#c3cad4; background:#fff; }
   button.quiet { background:none; color:var(--grey); border:0; text-decoration:underline; font-weight:400; font-size:14.5px; padding:8px 4px; }
-  button.small { font-size:14.5px; padding:6px 11px; }
+  button.small, a.small { font-size:14.5px; padding:6px 11px; }
+  .keep { margin-top:26px; padding-top:14px; border-top:2px solid var(--orange); }
+  .keep .tools { margin-top:8px; }
+  .redwarn { color:var(--red); font-weight:700; margin:8px 0 2px; }
+  #savedpill { position:fixed; right:12px; bottom:12px; z-index:6; background:var(--green); color:#fff; font-size:14px; font-weight:600; border-radius:16px; padding:6px 12px; opacity:0; transition:opacity .25s; pointer-events:none; }
+  #savedpill.on { opacity:.95; }
+  #nosave { display:none; background:#F9E3E3; color:var(--red); border:1px solid var(--red); border-radius:10px; padding:10px 12px; font-weight:600; margin:12px 0 0; }
+  #nosave.on { display:block; }
 
   section.ws { scroll-margin-top:52px; }
   .labhead { display:flex; align-items:center; gap:10px; margin:0 0 4px; }
@@ -137,6 +145,10 @@
     .card { border:0; padding:0; margin:0 0 12pt; }
     .start { display:none; }
     section.ws { break-before:page; } section.ws.first { break-before:auto; }
+    /* "Save this worksheet as a PDF": only that worksheet goes on paper */
+    body.only-ws1 section.ws:not(#ws1), body.only-ws2 section.ws:not(#ws2), body.only-ws3 section.ws:not(#ws3) { display:none !important; }
+    body.only-ws1 section.ws, body.only-ws2 section.ws, body.only-ws3 section.ws { break-before:auto; }
+    #savedpill, #nosave { display:none !important; }
     header.top { background:none; color:#000; padding:0 0 6pt; } header.top h1 { color:var(--navy); }
     .item, table, .crit, .row, .checks, h3 + * { break-inside:avoid; } h3, h4, label.f, h3 + p { break-after:avoid; }
     input, textarea, select { border:1px solid #888 !important; }
@@ -168,13 +180,14 @@
   <h2>Start here</h2>
   <p>The lab steps are in <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md" target="_blank" rel="noopener">labs.md</a>. This page is where you write your answers for Labs 5 to 8. It works on a phone or a laptop.</p>
   <ol>
-    <li><b>Type your answers into the boxes.</b> They are saved on this device as you type. Nothing you type here is sent anywhere, and there is no sign-in.</li>
+    <li><b>Type your answers into the boxes.</b> They are saved on this device as you type, so refreshing the page does not lose them. Neither does closing it, unless you are in a private (incognito) window. Nothing you type here is sent anywhere, and there is no sign-in.</li>
     <li><b>No example of your own?</b> Each worksheet has a yellow <b>“Need an example?”</b> box. It gives you ideas to start from, or a made-up company to use instead, so you can still do every step.</li>
-    <li><b>Keep your work:</b> at the end, save this page as a PDF or copy your answers into an email to yourself. The buttons are below and at the bottom of the page.</li>
+    <li><b>Keep your work:</b> each worksheet ends with a button that saves it as a PDF with your answers, and a blank fill-in PDF to download. Save your PDFs before you leave today: until then your answers live only in this browser, on this device.</li>
   </ol>
+  <div id="nosave" role="alert">This browser is not saving what you type (a private window does this). Your answers will be gone when you close or refresh the page. Open the page in a normal window, or save each worksheet as a PDF before you close it.</div>
   <div class="rule">One rule on data: use non-confidential examples from your own work, or the examples on this page. Treat today’s AI tools as public.</div>
   <div class="tools">
-    <button class="ghost" data-act="print">Save as PDF or print</button>
+    <button class="ghost" data-act="print">Save all three as one PDF, or print</button>
     <button class="ghost" data-act="copy">Copy my answers</button>
   </div>
 </div>
@@ -238,6 +251,22 @@
   <p><b>First-pilot rule:</b> a first pilot needs <b>4+ on Risk and 4+ on Measurability</b>, whatever its total.</p>
   <p class="hint"><b>Quick version, for judging one proposal someone brings you:</b> ask four questions instead of five (fold Data readiness into Feasibility). The rule is the same: Risk and Measurability must pass, however good the Value story is.</p>
 
+  <div id="stress" hidden>
+    <h3>Stress-test with AI <span class="step">· Lab 5, step 4</span></h3>
+    <p id="stresswho"></p>
+    <label class="f" for="generic">My use case, described in general terms <span class="hint">— edit this until it says enough and gives nothing away</span></label>
+    <textarea id="generic" rows="3" data-k="w1.generic" data-label="Use case description for the AI" placeholder="What the work is, how often it happens, and who checks the result"></textarea>
+    <div class="note warn" id="stale" hidden>You changed your choice. This description was written for your earlier one. Rewrite it, or press “Start again from my candidate” below.</div>
+    <p class="redwarn">Before you copy: remove any confidential details. No company, customer or people’s names, and no real figures.</p>
+    <div class="tools noprint">
+      <button data-act="copystress">Copy the step 4 prompt with my use case in it</button>
+      <button class="ghost" data-act="copygeneric">Copy the description only</button>
+      <button class="quiet" id="regen" hidden>Start again from my candidate</button>
+    </div>
+    <div class="saved noprint" id="stressmsg" role="status"></div>
+    <textarea class="copybox" id="stressbox" readonly aria-label="The text that was copied"></textarea>
+  </div>
+
   <h3>Blocker check <span class="step">· Lab 5, step 6</span></h3>
   <p><b>A high score never overrides a blocker.</b> For your top-scored candidate, tick anything that is true:</p>
   <div class="checks" id="blockers">
@@ -266,6 +295,14 @@
       <select id="unsure" data-k="w1.unsure" data-label="Score I am least sure of" data-ex="Data readiness"><option value="">–</option><option>Value</option><option>Data readiness</option><option>Feasibility</option><option>Risk</option><option>Measurability</option><option>I’m sure of all five</option></select></div>
     <div><label class="f" for="findout">What I would need to find out to settle it</label>
       <input type="text" id="findout" data-k="w1.findout" data-label="What I need to find out" data-ex="Pull 200 past tickets and count how many carry the right label."></div>
+  </div>
+  <div class="keep noprint">
+    <b>Keep Worksheet 1</b>
+    <div class="tools">
+      <button data-printws="ws1">Save Worksheet 1 as a PDF, with my answers</button>
+      <a class="btn ghost" href="worksheets/worksheet1-use-case-scorecard.pdf" download>Download a blank fill-in PDF</a>
+    </div>
+    <p class="hint">The first button opens your device’s print screen: choose <b>Save as PDF</b> there. On an iPhone, tap the Share button on the print preview, then <b>Save to Files</b>. The blank fill-in PDF is for working away from this page; it does not bring along what you typed here.</p>
   </div>
 </section>
 
@@ -388,6 +425,14 @@
     <label><input type="checkbox" data-k="w2.q5" data-label="Clear answer to question 5 (what needs approval)"><span>5. How much can it do on its own — what needs a person to approve?</span></label>
     <label><input type="checkbox" data-k="w2.q6" data-label="Clear answer to question 6 (how we know it worked)"><span>6. How will we know it worked — baseline, target, guardrail?</span></label>
     <label><input type="checkbox" data-k="w2.q7" data-label="Clear answer to question 7 (cost to run and scale)"><span>7. What will it cost to run and to scale — not just to pilot?</span></label>
+  </div>
+  <div class="keep noprint">
+    <b>Keep Worksheet 2</b>
+    <div class="tools">
+      <button data-printws="ws2">Save Worksheet 2 as a PDF, with my answers</button>
+      <a class="btn ghost" href="worksheets/worksheet2-pilot-metrics.pdf" download>Download a blank fill-in PDF</a>
+    </div>
+    <p class="hint">The first button opens your device’s print screen: choose <b>Save as PDF</b> there. On an iPhone, tap the Share button on the print preview, then <b>Save to Files</b>. The blank fill-in PDF is for working away from this page; it does not bring along what you typed here.</p>
   </div>
 </section>
 
@@ -534,13 +579,21 @@
   <input type="text" id="fb1" data-k="w3.fb1" data-label="One strength the room saw">
   <label class="f" for="fb2">One concern to deal with</label>
   <input type="text" id="fb2" data-k="w3.fb2" data-label="One concern to deal with">
+  <div class="keep noprint">
+    <b>Keep Worksheet 3</b>
+    <div class="tools">
+      <button data-printws="ws3">Save Worksheet 3 as a PDF, with my answers</button>
+      <a class="btn ghost" href="worksheets/worksheet3-governance-playbook.pdf" download>Download a blank fill-in PDF</a>
+    </div>
+    <p class="hint">The first button opens your device’s print screen: choose <b>Save as PDF</b> there. On an iPhone, tap the Share button on the print preview, then <b>Save to Files</b>. The blank fill-in PDF is for working away from this page; it does not bring along what you typed here.</p>
+  </div>
 </section>
 
 <div class="card noprint">
   <b>Keep your work</b>
   <p class="hint">Your answers are saved in this browser on this device only. To take them with you, save the page as a PDF or copy your answers into an email to yourself.</p>
   <div class="tools">
-    <button data-act="print">Save as PDF or print</button>
+    <button data-act="print">Save all three as one PDF, or print</button>
     <button class="ghost" data-act="copy">Copy my answers</button>
     <button class="quiet" data-act="clear">Clear my answers</button>
   </div>
@@ -548,6 +601,7 @@
   <textarea class="copybox" id="copyBox" readonly aria-label="My answers as text"></textarea>
 </div>
 
+<div id="savedpill" class="noprint" aria-hidden="true">✓ Saved on this device</div>
 <footer>(c) 2026 Tech Skills Transformations and Brent C. Laster. All rights reserved.</footer>
 </main>
 
@@ -635,11 +689,19 @@ for (const f of document.querySelectorAll('[data-ex]')) {
 // ---------- save and restore ----------
 let store = {};
 try { store = JSON.parse(localStorage.getItem(KEY) || '{}') || {}; } catch { store = {}; }
-let canSave = true;
+let canSave = true, pillTimer = null;
+try { localStorage.setItem(KEY + '-test', '1'); localStorage.removeItem(KEY + '-test'); } catch { canSave = false; }
+function showSaveState(flash) {
+  $('nosave').classList.toggle('on', !canSave);
+  $('status').textContent = canSave ? 'Saved on this device.' : 'This browser is not saving answers (private window?). Save a PDF or copy them before you close the page.';
+  if (flash && canSave) {
+    const p = $('savedpill'); p.classList.add('on'); clearTimeout(pillTimer); pillTimer = setTimeout(() => p.classList.remove('on'), 1800);
+  }
+}
 function persist() {
   try { localStorage.setItem(KEY, JSON.stringify(store)); canSave = true; }
   catch { canSave = false; }
-  $('status').textContent = canSave ? 'Saved on this device.' : 'This browser is not saving answers (private mode?). Copy or print them before you close the page.';
+  showSaveState(true);
 }
 const fields = () => [...document.querySelectorAll('[data-k]')];
 const radios = () => [...document.querySelectorAll('input[type=radio]')];
@@ -658,6 +720,20 @@ function restore() {
 }
 
 function candName(n) { return (store['w1.c' + n + '.name'] || '').trim(); }
+// Lab 5, step 4: the prompt as it is written in labs.md, up to the part the attendee fills in
+const STEP4 = "You are a skeptical AI program reviewer. For the use case below, ask me the\nfive hardest questions you'd ask before funding it, one line each, covering:\nbusiness value, data readiness, buy-vs-build, risk, and measurability.\n\nUse case: ";
+// the candidate step 4 is about: the declared winner, or until then the fully scored candidate with the highest total
+function topCandidate() {
+  const w = store['w1.winner']; if (w && candName(w)) return w;
+  let best = null, bestTotal = -1;
+  for (const n of ['1', '2', '3']) {
+    const s = CRIT.map(([k]) => parseInt(store['w1.c' + n + '.' + k], 10));
+    if (!candName(n) || s.some((x) => !(x >= 1))) continue;
+    const t = s.reduce((a, b) => a + b, 0); if (t > bestTotal) { best = n; bestTotal = t; }
+  }
+  return best;
+}
+function startText(n) { const name = candName(n), note = store['w1.c' + n + '.note']; return note ? name + '. ' + note : name; }
 function winnerName() { const n = store['w1.winner']; return n ? candName(n) : ''; }
 
 function refresh() {
@@ -678,6 +754,22 @@ function refresh() {
     facts.hidden = !note; facts.textContent = note || '';
     item.classList.toggle('win', store['w1.winner'] === n);
   }
+  // Lab 5, step 4: a description to check and copy, once there is a winner or a fully scored front-runner
+  const top = topCandidate(), g = $('generic');
+  $('stress').hidden = !top;
+  if (top) {
+    const start = startText(top), cur = store['w1.generic'] || '';
+    const untouched = !cur.trim() ? document.activeElement !== g : cur === store['_w1start'];
+    if (untouched && cur !== start) { g.value = start; store['w1.generic'] = start; }
+    if (untouched && (store['_w1start'] !== start || store['_w1for'] !== top)) {
+      store['_w1start'] = start; store['_w1for'] = top;      // which candidate the text in the box describes
+      try { localStorage.setItem(KEY, JSON.stringify(store)); } catch { /* shown elsewhere */ }
+    }
+    $('stale').hidden = untouched || !store['_w1for'] || store['_w1for'] === top;
+    $('stresswho').innerHTML = (store['w1.winner'] === top ? 'Your winner: ' : 'Your top-scored candidate so far: ') + '<b>' + esc(candName(top)) + '</b>';
+    $('regen').hidden = (store['w1.generic'] || '') === start;
+    grow(g);
+  }
   const w = winnerName();
   $('winline').className = w ? '' : 'hint';
   $('winline').innerHTML = w ? 'My winner: <b>' + esc(w) + '</b>' : 'Press <b>My winner</b> on one of your candidates above.';
@@ -690,6 +782,7 @@ function onEdit(e) {
   if (f.dataset && f.dataset.k) {
     store[f.dataset.k] = f.type === 'checkbox' ? f.checked : f.value;
     delete fromEx()[f.dataset.k];
+    if (f.dataset.k === 'w1.generic') store['_w1for'] = topCandidate();   // typed by the attendee, about the current choice
     const m = /^w1\.c(\d)\.name$/.exec(f.dataset.k);
     if (m) delete store['w1.c' + m[1] + '.note'];   // an edited name is the attendee's own, not the example
     grow(f); persist();
@@ -814,7 +907,14 @@ function answersAsText() {
 }
 
 // Printing: a text box cannot wrap or grow on paper, so show each typed answer as plain text instead.
+const pageTitle = document.title;
 function clearPrint() { document.body.classList.remove('printing'); document.querySelectorAll('.printval').forEach((d) => d.remove()); }
+function clearOnly() { document.body.classList.remove('only-ws1', 'only-ws2', 'only-ws3'); document.title = pageTitle; }
+// One worksheet on its own. The page title becomes the suggested file name for the PDF.
+function prepOnly(id) {
+  clearOnly(); document.body.classList.add('only-' + id);
+  document.title = 'Accelerator ' + $(id).dataset.ws.replace(/:/g, ' -').replace(/\//g, '-');
+}
 function prepPrint() {
   clearPrint();
   for (const f of document.querySelectorAll('input[type=text][data-k], textarea[data-k]')) {
@@ -826,7 +926,7 @@ function prepPrint() {
   document.body.classList.add('printing');
 }
 window.addEventListener('beforeprint', prepPrint);
-window.addEventListener('afterprint', clearPrint);
+window.addEventListener('afterprint', () => { clearPrint(); clearOnly(); });
 
 let clearArmed = null;
 document.addEventListener('click', async (e) => {
@@ -841,12 +941,18 @@ document.addEventListener('click', async (e) => {
   }
   if (t.dataset.showex) { const id = t.dataset.showex, on = !$(id).classList.contains('showex'); store['_show.' + id] = on; persist(); setShowEx(id, on); return; }
   if (t.dataset.fill) { const id = t.dataset.fill; $('ex' + id.slice(2) + 'msg').textContent = fillExample(id); return; }
+  if (t.dataset.printws) { prepOnly(t.dataset.printws); window.print(); return; }
+  if (t.id === 'regen') { const n = topCandidate(); if (n) { store['w1.generic'] = store['_w1start'] = startText(n); store['_w1for'] = n; persist(); restore(); } return; }
   if (t.id === 'usewin') { setField('w2.usecase', winnerName(), false); delete fromEx()['w2.usecase']; persist(); refresh(); return; }
   if (t.id === 'builddod') { setField('w2.dod', buildDod(), false); delete fromEx()['w2.dod']; persist(); refresh(); return; }
 
   const act = t.dataset.act; if (!act) return;
   if (act === 'print') {
-    window.print();
+    clearOnly(); window.print();
+  } else if (act === 'copystress' || act === 'copygeneric') {
+    const d = val('w1.generic');
+    await copyInto(d && (act === 'copystress' ? STEP4 + d : d), 'stressbox', 'stressmsg', 'Describe your use case in the box first.',
+      act === 'copystress' ? 'Copied. Paste it into a new chat as it is.' : 'Copied. Paste it after “Use case:” in the step 4 prompt.');
   } else if (act === 'copyplan') {
     await copyInto(planText(), 'planbox', 'planmsg', 'Nothing to copy yet. Fill in the boxes above first.', 'Copied. Paste it into the step 6 prompt in place of the square brackets.');
   } else if (act === 'copynotes') {
@@ -868,12 +974,14 @@ document.addEventListener('click', async (e) => {
     store = {}; try { localStorage.removeItem(KEY); } catch { /* nothing to remove */ }
     restore();
     document.querySelectorAll('.copybox').forEach((b) => { b.style.display = 'none'; b.value = ''; });
-    document.querySelectorAll('.exmsg, #planmsg, #notesmsg').forEach((m) => { m.textContent = ''; });
+    document.querySelectorAll('.exmsg, #planmsg, #notesmsg, #stressmsg').forEach((m) => { m.textContent = ''; });
     $('status').textContent = 'All answers cleared.';
   }
 });
 
 restore();
+showSaveState(false);
+if (canSave) $('status').textContent = '';
 </script>
 </body>
 </html>

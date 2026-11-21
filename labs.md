@@ -429,6 +429,8 @@ Use case: [paste your top-scored candidate — generic description only,
 no confidential details]
 ```
 
+The worksheet builds this prompt for you: once a candidate has all five scores, a **Stress-test with AI** box appears under your candidates. Check its description for confidential details, then copy it.
+
 The screenshot uses a sample use case ("triage inbound support tickets"); yours will differ.
 
 ![Skeptical reviewer questions](./images/acc13.png?raw=true "Five hard funding questions for a sample use case")
