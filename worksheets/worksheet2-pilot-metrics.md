@@ -1,21 +1,21 @@
 # Worksheet 2 — Pilot Metrics Charter
 *Enterprise Leader AI Accelerator · Lab 6*
 
-**What this is:** a one-page plan for your pilot. It says who runs it, which one measurement should improve, what must not get worse, and when you would stop. Each box says what goes in it and gives an example from a made-up company. Nothing has to be exact today: a best guess, marked "guess", is a good answer.
+**What this is:** a one-page plan for your pilot. It says who runs it, which one measurement should improve, what must not get worse, and when you would stop. Each box says what goes in it and gives an example from a made-up company. Boxes marked **Required** are the ones the lab asks for today; **Optional** ones are for back at work. Nothing has to be exact today: a best guess, marked "guess", is a good answer.
 
 Fill it in on the worksheets page, which saves what you type on your own device: https://skillrepos.github.io/tlsaccel/#ws2
 
 ## Pilot header (Lab 6, step 2)
 
-| Box | What goes in it | Example | Your answer |
-|---|---|---|---|
-| **Use case** | The use case you picked as your winner on Worksheet 1 | Triage inbound support tickets | |
-| **Workflow owner** | The one person who will run the pilot day to day. One person, not a team: a name or a job title | Dana Ruiz, Support Operations | |
-| **Sponsor** | The one person who pays for the pilot and can clear roadblocks, often the workflow owner's manager: a name or a job title | Priya Shah, who runs Customer Service | |
-| **Pilot team** | The one group of people who will use the AI tool during the pilot, and about how many they are. No names needed | One support shift: 12 of the 45 agents, plus the helpdesk administrator | |
-| **Start date** | The first day the pilot team uses the AI tool in real work | January 5, 2027 | |
-| **Day-90 date** | The last day of the pilot: 89 days after the start date (the start date is day 1). On the worksheets page this is worked out for you; change it if your pilot must end on another day | March 31, 2027 (this team chose the end of the quarter, a few days short of 90) | |
-| **Buy / partner / build** | How you will get the AI tool. Buy: a product that already does this job. Partner: a vendor fits a tool to your data and way of working. Build: your own engineers make it. Most first pilots buy | Buy: the add-on our helpdesk vendor sells | |
+| Box | Needed in the lab? | What goes in it | Example | Your answer |
+|---|---|---|---|---|
+| **Use case** | Required | The use case you picked as your winner on Worksheet 1 | Triage inbound support tickets | |
+| **Workflow owner** | Required | The one person who will run the pilot day to day. One person, not a team: a name or a job title | Dana Ruiz, Support Operations | |
+| **Sponsor** | Required | The one person who pays for the pilot and can clear roadblocks, often the workflow owner's manager: a name or a job title | Priya Shah, who runs Customer Service | |
+| **Pilot team** | Required | The one group of people who will use the AI tool during the pilot, and about how many they are. No names needed | One support shift: 12 of the 45 agents, plus the helpdesk administrator | |
+| **Start date** | Required | The first day the pilot team uses the AI tool in real work | January 5, 2027 | |
+| **Day-90 date** | Required | The last day of the pilot: 89 days after the start date (the start date is day 1). On the worksheets page this is worked out for you; change it if your pilot must end on another day | March 31, 2027 (this team chose the end of the quarter, a few days short of 90) | |
+| **Buy / partner / build** | Optional | How you will get the AI tool. Buy: a product that already does this job. Partner: a vendor fits a tool to your data and way of working. Build: your own engineers make it. Most first pilots buy | Buy: the add-on our helpdesk vendor sells | |
 
 ## Primary metric (pick ONE) (Lab 6, steps 3–4)
 
@@ -26,64 +26,64 @@ Fill it in on the worksheets page, which saves what you type on your own device:
 | Quality | error/rework rate, first-pass acceptance |
 | Adoption | weekly active users, % of volume through the tool |
 
-| Box | What goes in it | Example | Your answer |
-|---|---|---|---|
-| **My primary metric** | The one measurement that should improve if the pilot works. Say what is measured and in what unit (minutes, dollars, percent or a count) | Median handling time per support ticket (minutes) | |
-| **Baseline plan** | How you will find out what your primary metric is today, before AI: who looks it up, from where, and for which two weeks | The helpdesk administrator pulls handling times for the pilot shift from the helpdesk, for two weeks in December | |
-| **Baseline value** | What your primary metric is today, before AI. Not sure? Write your best guess and add "guess": measuring it is the pilot's first job | 11 minutes (handling time per ticket today) | |
-| **90-day target** | What you want your primary metric to be by day 90, in the same unit as the baseline value. A number, not "better" | 8 minutes (down from 11) | |
+| Box | Needed in the lab? | What goes in it | Example | Your answer |
+|---|---|---|---|---|
+| **My primary metric** | Required | The one measurement that should improve if the pilot works. Say what is measured and in what unit (minutes, dollars, percent or a count) | Median handling time per support ticket (minutes) | |
+| **Baseline plan** | Required | How you will find out what your primary metric is today, before AI: who looks it up, from where, and for which two weeks | The helpdesk administrator pulls handling times for the pilot shift from the helpdesk, for two weeks in December | |
+| **Baseline value** | Required | What your primary metric is today, before AI. Not sure? Write your best guess and add "guess": measuring it is the pilot's first job | 11 minutes (handling time per ticket today) | |
+| **90-day target** | Required | What you want your primary metric to be by day 90, in the same unit as the baseline value. A number, not "better" | 8 minutes (down from 11) | |
 
 ## Quality guardrail (Lab 6, step 5)
 
 The number that must NOT get worse while the primary metric improves:
 
-| Box | What goes in it | Example | Your answer |
-|---|---|---|---|
-| **Guardrail** | A second measurement, one that shows quality. It must not get worse while your primary metric improves | First-contact resolution (the share of tickets solved in one reply) | |
-| **Current value** | What your guardrail is today. A guess is fine if you mark it | 72% (of tickets are solved in one reply today) | |
+| Box | Needed in the lab? | What goes in it | Example | Your answer |
+|---|---|---|---|---|
+| **Guardrail** | Required | A second measurement, one that shows quality. It must not get worse while your primary metric improves | First-contact resolution (the share of tickets solved in one reply) | |
+| **Current value** | Optional | What your guardrail is today. A guess is fine if you mark it | 72% (of tickets are solved in one reply today) | |
 
 ## Definition of done (Lab 6, step 6)
 
 > "By **[date]**, **[workflow]** handled with AI assistance shows **[metric]** moving from **[baseline]** to **[target]**, with **[guardrail]** maintained — or we stop and write down what we learned."
 
-| Box | What goes in it | Example | Your answer |
-|---|---|---|---|
-| **My definition of done** | One sentence built from the boxes above: the day-90 date, the use case, the primary metric with its baseline value and 90-day target, and the guardrail | By March 31, 2027, support-ticket triage handled with AI assistance shows median handling time per support ticket moving from 11 minutes to 8 minutes, with first-contact resolution held at or above 72% — or we stop and write down what we learned. | |
+| Box | Needed in the lab? | What goes in it | Example | Your answer |
+|---|---|---|---|---|
+| **My definition of done** | Required | One sentence built from the boxes above: the day-90 date, the use case, the primary metric with its baseline value and 90-day target, and the guardrail | By March 31, 2027, support-ticket triage handled with AI assistance shows median handling time per support ticket moving from 11 minutes to 8 minutes, with first-contact resolution held at or above 72% — or we stop and write down what we learned. | |
 
 ## Stop rule (Lab 6, step 7)
 
 A stop rule is the result that would make you end the pilot early, decided before you start.
 
-| Box | What goes in it | Example | Your answer |
-|---|---|---|---|
-| **Stop check on day** | The day of the pilot, about halfway through, when you look at the primary metric and the guardrail and decide whether to carry on. A number from 1 to 89 | 42 | |
-| **We stop early if we see** | What the primary metric or the guardrail would have to show on that day for you to stop the pilot early | Handling time is still 11 minutes or more, or fewer than 72% of tickets are solved in one reply for two weeks running | |
+| Box | Needed in the lab? | What goes in it | Example | Your answer |
+|---|---|---|---|---|
+| **Stop check on day** | Required | The day of the pilot, about halfway through, when you look at the primary metric and the guardrail and decide whether to carry on. A number from 1 to 89 | 42 | |
+| **We stop early if we see** | Required | What the primary metric or the guardrail would have to show on that day for you to stop the pilot early | Handling time is still 11 minutes or more, or fewer than 72% of tickets are solved in one reply for two weeks running | |
 
 ## Finance red-team findings (Lab 6, steps 8–9)
 
 A red-team is a deliberate attack on your own plan, to find its weak spots before someone else does. In step 8 an AI reviewer plays a skeptic from finance.
 
-| Box | What goes in it | Example | Your answer |
-|---|---|---|---|
-| **Most gameable part and the fix** | "Gameable" means the primary metric could look better without the work getting better. Write the weak spot the AI reviewer found in your plan, and how you will close it | Agents can look faster by splitting one problem into two tickets. Fix: also count reopened tickets and tickets per customer problem. | |
-| **Attribution risk and the fix** | Would the primary metric have improved anyway, without the AI? Write why it might, and how you will tell the difference | Ticket volume dips every January, so handling times fall anyway. Fix: compare the pilot shift with a shift that does not use the tool. | |
+| Box | Needed in the lab? | What goes in it | Example | Your answer |
+|---|---|---|---|---|
+| **Most gameable part and the fix** | Required | "Gameable" means the primary metric could look better without the work getting better. Write the weak spot the AI reviewer found in your plan, and how you will close it | Agents can look faster by splitting one problem into two tickets. Fix: also count reopened tickets and tickets per customer problem. | |
+| **Attribution risk and the fix** | Required | Would the primary metric have improved anyway, without the AI? Write why it might, and how you will tell the difference | Ticket volume dips every January, so handling times fall anyway. Fix: compare the pilot shift with a shift that does not use the tool. | |
 
 ## What the pilot needs (Lab 6, step 10)
 
-| Box | What goes in it | Example | Your answer |
-|---|---|---|---|
-| **Money** | What the pilot will cost in money over the 90 days: licenses, usage fees, vendor help. A rough figure is fine | $18 per agent per month × 12 agents = $216 a month | |
-| **People and time** | Who will work on the pilot, and about how many hours a week each | Dana, 4 hours a week; each pilot agent, one hour of training | |
-| **AI running cost per task** | What the AI tool charges to do the job once, for example one ticket or one document. "Not measured yet" is a fine answer today: it is your first question for the team | Not measured yet: first question for the vendor | |
-| **Monthly cap** | The most you will let the AI tool spend in one month | $500 | |
-| **Who gets the alert** | The one person who is told when the month's spending gets close to the cap | Dana Ruiz | |
+| Box | Needed in the lab? | What goes in it | Example | Your answer |
+|---|---|---|---|---|
+| **Money** | Required | What the pilot will cost in money over the 90 days: licenses, usage fees, vendor help. A rough figure is fine | $18 per agent per month × 12 agents = $216 a month | |
+| **People and time** | Required | Who will work on the pilot, and about how many hours a week each | Dana, 4 hours a week; each pilot agent, one hour of training | |
+| **AI running cost per task** | Optional | What the AI tool charges to do the job once, for example one ticket or one document. "Not measured yet" is a fine answer today: it is your first question for the team | Not measured yet: first question for the vendor | |
+| **Monthly cap** | Optional | The most you will let the AI tool spend in one month | $500 | |
+| **Who gets the alert** | Optional | The one person who is told when the month's spending gets close to the cap | Dana Ruiz | |
 
 ## If it succeeds (Lab 6, step 10)
 
-| Box | What goes in it | Example | Your answer |
-|---|---|---|---|
-| **Who runs it after day 90** | Who keeps the AI tool running once the pilot is over | Support Operations, under Dana Ruiz | |
-| **Rough cost at full volume, and who pays** | What the AI tool will cost when everyone who should use it does, and whose budget covers it | $18 × 45 agents = $810 a month, about $9,700 a year, from the Customer Service budget | |
+| Box | Needed in the lab? | What goes in it | Example | Your answer |
+|---|---|---|---|---|
+| **Who runs it after day 90** | Required | Who keeps the AI tool running once the pilot is over | Support Operations, under Dana Ruiz | |
+| **Rough cost at full volume, and who pays** | Required | What the AI tool will cost when everyone who should use it does, and whose budget covers it | $18 × 45 agents = $810 a month, about $9,700 a year, from the Customer Service budget | |
 
 ## Seven questions for the team proposing the pilot (take-home)
 

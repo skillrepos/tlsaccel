@@ -1,7 +1,7 @@
 # Worksheet 1 — AI Use-Case Scorecard
 *Enterprise Leader AI Accelerator · Lab 5*
 
-**Before we start (write this first):** How confident am I today that I could sponsor an AI pilot and defend it to finance? (1 = not at all, 5 = fully) → **Start of day: ____**  **End of day: ____**
+**Before we start (write this first):** How confident am I today that I could sponsor an AI pilot and defend it to finance? (1 = not at all, 5 = fully) → **Start of day (required): ____**  **End of day (at the close): ____**
 
 ---
 
@@ -15,7 +15,9 @@ List **three** candidates, then score each **1–5** on every criterion. Higher 
 | **Risk** (5 = low) | What happens when it is wrong, and what sensitive data it touches | Internal, human-reviewed, reversible | Customer-facing, regulated, irreversible |
 | **Measurability** | Whether there is a "before" number today, and a result you can see within 90 days | Baseline exists; result visible in 90 days | No baseline; benefits "strategic" |
 
-## Candidates
+## Candidates (required)
+
+Three candidates, each with all five scores.
 
 | # | Use case (name it as a workflow) | Value | Data | Feas. | Risk | Meas. | **Total** |
 |---|----------------------------------|:-----:|:----:|:-----:|:----:|:-----:|:---------:|
@@ -31,7 +33,7 @@ List **three** candidates, then score each **1–5** on every criterion. Higher 
 
 ## Blocker check (Lab 5, step 6)
 
-A blocker is something that rules a use case out for now, however well it scores. **A high score never overrides a blocker.** For your top-scored candidate, tick anything that is true:
+A blocker is something that rules a use case out for now, however well it scores. **A high score never overrides a blocker.** For your top-scored candidate, tick anything that is true. Reading the list is the required part; a tick is only for something that is true:
 
 - ☐ We cannot legally or contractually use the data it needs
 - ☐ Nobody in the business would be accountable for it
@@ -43,22 +45,22 @@ Any box ticked → fix that first, or move to your next candidate.
 
 ## The winner (Lab 5, step 7)
 
-| Box | What goes in it | Example | Your answer |
-|---|---|---|---|
-| **My winner** | The candidate you choose as your first pilot | Triage inbound support tickets | |
-| **…wins because (one sentence)** | Why this use case should be your first pilot: one sentence that says what makes it a safe bet | It is high-volume, an agent checks every draft, and handling time is already measured. | |
+| Box | Needed in the lab? | What goes in it | Example | Your answer |
+|---|---|---|---|---|
+| **My winner** | Required | The candidate you choose as your first pilot | Triage inbound support tickets | |
+| **…wins because (one sentence)** | Required | Why this use case should be your first pilot: one sentence that says what makes it a safe bet | It is high-volume, an agent checks every draft, and handling time is already measured. | |
 
 ## Notes from the AI stress-test (Lab 5, steps 4–5 and 8)
 
 The AI reviewer in step 4 asks five hard questions about your top candidate. These boxes hold what you learned from them.
 
-| Box | What goes in it | Example | Your answer |
-|---|---|---|---|
-| **Score I changed and why** | If the AI's questions made you change one of your five scores: which score, from what to what, and why. Nothing changed? Write "none" | Data readiness, 4 down to 3: agents do not all label tickets the same way. | |
-| **Hardest question I couldn't answer yet** | The one question from the AI reviewer that you could not answer today | What does one AI-drafted reply cost at 8,000 tickets a month? | |
-| **Who in my org can answer it** | The person who could answer that question: a name or a job title | The helpdesk administrator, and the vendor's account manager. | |
-| **Score I am least sure of** | Of your winner's five scores, the one you trust least. You will enter this one in the poll on your phone | Data readiness | |
-| **What I would need to find out to settle it** | What you would have to check or measure to be sure of that score | Pull 200 past tickets and count how many carry the right label. | |
+| Box | Needed in the lab? | What goes in it | Example | Your answer |
+|---|---|---|---|---|
+| **Score I changed and why** | Required | If the AI's questions made you change one of your five scores: which score, from what to what, and why. Nothing changed? Write "none" | Data readiness, 4 down to 3: agents do not all label tickets the same way. | |
+| **Hardest question I couldn't answer yet** | Required | The one question from the AI reviewer that you could not answer today | What does one AI-drafted reply cost at 8,000 tickets a month? | |
+| **Who in my org can answer it** | Optional | The person who could answer that question: a name or a job title | The helpdesk administrator, and the vendor's account manager. | |
+| **Score I am least sure of** | Required | Of your winner's five scores, the one you trust least. You will enter this one in the poll on your phone | Data readiness | |
+| **What I would need to find out to settle it** | Required | What you would have to check or measure to be sure of that score | Pull 200 past tickets and count how many carry the right label. | |
 
 ---
 *(c) 2026 Tech Skills Transformations and Brent C. Laster. All rights reserved.*

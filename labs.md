@@ -11,7 +11,7 @@ The screenshots show Claude. Other assistants look different and word their answ
 
 **Also good to know:** if your assistant remembers your earlier chats, it may bring your own work into some answers. That is fine for today's labs. If you'd rather keep it out, use a chat that ignores your history: in ChatGPT, click **Temporary chat** (top right) and set the menu beside it to **Unpersonalized**; in Claude, click **Use incognito** (the ghost icon, top right).
 
-Labs 5–8 also use three worksheets. Fill them in on the **[worksheets page](https://skillrepos.github.io/tlsaccel/)**: you type into the boxes on your phone or laptop, and your answers are saved on your own device. No use case of your own ready? Each worksheet there has examples you can use instead. The `worksheets/` folder has a one-page reference sheet to keep.
+Labs 5–8 also use three worksheets. Fill them in on the **[worksheets page](https://skillrepos.github.io/tlsaccel/)**: you type into the boxes on your phone or laptop, and your answers are saved on your own device. Boxes marked **Required** are the ones the labs ask you to fill in; boxes marked **Optional** are for back at work. No use case of your own ready? Each worksheet there has examples you can use instead. The `worksheets/` folder has a one-page reference sheet to keep.
 
 **Lab contents**
 
@@ -517,7 +517,7 @@ Under 150 words.
 
 <br><br>
 
-9. Apply the fixes that convinced you. Update the worksheet, then press **Check my charter**: it flags boxes that are empty or don't agree with each other.
+9. Apply the fixes that convinced you. Update the worksheet, then press **Check for required info**: it lists Required boxes that are still empty and boxes that don't agree with each other.
 
 <br><br>
 
@@ -620,7 +620,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 **Purpose: Leave with a concrete 30/60/90 plan and the paragraph you'll send your manager or team. (12 minutes)**
 
-1. Open the 30/60/90 section of **[Worksheet 3](https://skillrepos.github.io/tlsaccel/#ws3)**. Have your Lab 5 scorecard and Lab 6 charter beside you. Every box says what goes in it; this lab asks for the six marked ★.
+1. Open the 30/60/90 section of **[Worksheet 3](https://skillrepos.github.io/tlsaccel/#ws3)**. Have your Lab 5 scorecard and Lab 6 charter beside you. Every box says what goes in it; this lab asks for the ones marked **Required**.
 
 <br><br>
 
