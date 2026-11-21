@@ -51,7 +51,14 @@
   .hint { color:var(--grey); font-size:15px; }
   label.f { display:block; font-weight:600; font-size:15px; margin:10px 0 3px; }
   label.f .hint { font-weight:400; }
-  input[type=text], textarea, select { font:inherit; font-size:16px; width:100%; padding:9px 10px; border:1.5px solid var(--field); border-radius:8px; background:#fff; color:var(--ink); }
+  label.f + .what { margin-top:-2px; }
+  .what { color:var(--grey); font-size:14.5px; line-height:1.35; margin:0 0 5px; }
+  h4 .step { font-weight:400; font-size:14px; }
+  .why { background:var(--pale); border-radius:10px; padding:10px 12px; margin:10px 0 4px; color:#12305a; }
+  .issues { background:var(--ex); border:1px solid var(--exline); color:var(--exink); border-radius:8px; padding:8px 12px; margin-top:8px; font-size:15.5px; }
+  .issues ul { margin:4px 0 0; padding-left:20px; } .issues li { margin:3px 0; }
+  .issues.ok { background:#E7F3E8; border-color:var(--green); color:#1b5e20; font-weight:600; }
+  input[type=text], input[type=date], textarea, select { font:inherit; font-size:16px; width:100%; padding:9px 10px; border:1.5px solid var(--field); border-radius:8px; background:#fff; color:var(--ink); }
   textarea { min-height:46px; resize:vertical; line-height:1.4; overflow:hidden; }
   input:focus, textarea:focus, select:focus { outline:2px solid var(--orange); outline-offset:1px; border-color:var(--orange); }
   .fromex { background:var(--ex) !important; }
@@ -133,7 +140,8 @@
     body { background:#fff; font-size:10pt; line-height:1.35; -webkit-print-color-adjust:exact; print-color-adjust:exact; }
     h3 { margin:12pt 0 3pt; padding-top:7pt; font-size:12pt; } h4 { margin:8pt 0 1pt; font-size:10.5pt; }
     .labhead h2 { font-size:15pt; } .meta { margin-bottom:4pt; }
-    input[type=text], textarea, select { font-size:10pt; padding:4px 7px; } textarea { min-height:26px; }
+    input[type=text], input[type=date], textarea, select { font-size:10pt; padding:4px 7px; } textarea { min-height:26px; }
+    .what { font-size:8.5pt; margin:0 0 2pt; } .why { padding:5px 9px; font-size:9.5pt; }
     label.f { font-size:9.5pt; margin:5pt 0 1pt; } .hint, .crit .ends { font-size:9pt; }
     .item { padding:6px 9px; margin:6px 0; } .crit > div { padding:4px 9px; }
     .checks label { margin:3px 0; font-size:10pt; } .checks input { width:14px; height:14px; margin-top:2px; }
@@ -153,7 +161,7 @@
     .item, table, .crit, .row, .checks, h3 + * { break-inside:avoid; } h3, h4, label.f, h3 + p { break-after:avoid; }
     input, textarea, select { border:1px solid #888 !important; }
     /* on paper a typed answer is shown as wrapping text, so nothing is cut off */
-    body.printing input[type=text][data-k], body.printing textarea[data-k] { display:none !important; }
+    body.printing input[type=text][data-k], body.printing input[type=date][data-k], body.printing textarea[data-k] { display:none !important; }
     .printval { display:block; border:1px solid #888; border-radius:6px; padding:3px 7px; min-height:20px; white-space:pre-wrap; overflow-wrap:anywhere; }
     .printval.empty { min-height:26px; } .printval.tall.empty { min-height:52px; }
     .fromex { background:#fff !important; }
@@ -227,6 +235,7 @@
       </table></div>
     </details>
     <div class="exbtns"><button class="ghost small" data-showex="ws1">Show an example under each box</button></div>
+    <p class="hint">The boxes lower down (the winner and your notes) each show an example from the same made-up company.</p>
     <div class="exmsg" id="ex1msg" role="status"></div>
   </details>
 
@@ -268,7 +277,7 @@
   </div>
 
   <h3>Blocker check <span class="step">· Lab 5, step 6</span></h3>
-  <p><b>A high score never overrides a blocker.</b> For your top-scored candidate, tick anything that is true:</p>
+  <p>A blocker is something that rules a use case out for now, however well it scores. <b>A high score never overrides a blocker.</b> For your top-scored candidate, tick anything that is true:</p>
   <div class="checks" id="blockers">
     <label><input type="checkbox" data-k="w1.b1" data-label="Blocker ticked: we cannot legally or contractually use the data"><span>We cannot legally or contractually use the data it needs</span></label>
     <label><input type="checkbox" data-k="w1.b2" data-label="Blocker ticked: nobody would be accountable for it"><span>Nobody in the business would be accountable for it</span></label>
@@ -281,21 +290,26 @@
   <h3>The winner <span class="step">· Lab 5, step 7</span></h3>
   <p id="winline" class="hint">Press <b>My winner</b> on one of your candidates above.</p>
   <label class="f" for="because">…wins because (one sentence)</label>
+  <p class="what">Why this use case should be your first pilot: one sentence that says what makes it a safe bet.</p>
   <textarea id="because" rows="2" data-k="w1.because" data-label="Wins because" data-ex="It is high-volume, an agent checks every draft, and handling time is already measured."></textarea>
 
   <h3>Notes from the AI stress-test <span class="step">· Lab 5, steps 4–5 and 8</span></h3>
+  <p>The AI reviewer in step 4 asks five hard questions about your top candidate. These boxes hold what you learned from them.</p>
   <label class="f" for="changed">Score I changed and why</label>
+  <p class="what">If the AI’s questions made you change one of your five scores: which score, from what to what, and why. Nothing changed? Write “none”.</p>
   <input type="text" id="changed" data-k="w1.changed" data-label="Score I changed and why" data-ex="Data readiness, 4 down to 3: agents do not all label tickets the same way.">
   <label class="f" for="hardest">Hardest question I couldn’t answer yet</label>
+  <p class="what">The one question from the AI reviewer that you could not answer today.</p>
   <input type="text" id="hardest" data-k="w1.hardest" data-label="Hardest question I couldn't answer yet" data-ex="What does one AI-drafted reply cost at 8,000 tickets a month?">
   <label class="f" for="who">Who in my org can answer it</label>
+  <p class="what">The person who could answer that question: a name or a job title.</p>
   <input type="text" id="who" data-k="w1.who" data-label="Who can answer it" data-ex="The helpdesk administrator, and the vendor’s account manager.">
-  <div class="row">
-    <div class="narrow"><label class="f" for="unsure">Score I am least sure of</label>
-      <select id="unsure" data-k="w1.unsure" data-label="Score I am least sure of" data-ex="Data readiness"><option value="">–</option><option>Value</option><option>Data readiness</option><option>Feasibility</option><option>Risk</option><option>Measurability</option><option>I’m sure of all five</option></select></div>
-    <div><label class="f" for="findout">What I would need to find out to settle it</label>
-      <input type="text" id="findout" data-k="w1.findout" data-label="What I need to find out" data-ex="Pull 200 past tickets and count how many carry the right label."></div>
-  </div>
+  <label class="f" for="unsure">Score I am least sure of</label>
+  <p class="what">Of your winner’s five scores, the one you trust least. You will enter this one in the poll on your phone.</p>
+  <select id="unsure" data-k="w1.unsure" data-label="Score I am least sure of" data-ex="Data readiness"><option value="">–</option><option>Value</option><option>Data readiness</option><option>Feasibility</option><option>Risk</option><option>Measurability</option><option>I’m sure of all five</option></select>
+  <label class="f" for="findout">What I would need to find out to settle it</label>
+  <p class="what">What you would have to check or measure to be sure of that score.</p>
+  <input type="text" id="findout" data-k="w1.findout" data-label="What I need to find out" data-ex="Pull 200 past tickets and count how many carry the right label.">
   <div class="keep noprint">
     <b>Keep Worksheet 1</b>
     <div class="tools">
@@ -311,37 +325,44 @@
   <div class="labhead"><span class="badge">Lab 6</span><h2>Worksheet 2: Pilot metrics charter</h2></div>
   <p class="meta">Goes with <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab6" target="_blank" rel="noopener">Lab 6: Define pilot metrics</a>.</p>
 
-  <details class="ex noprint" id="ex2">
-    <summary>Need an example? A finished charter from the made-up company</summary>
-    <p>The example pilot is Brightline’s <b>support-ticket triage</b>, the same one shown in the lab screenshots: AI sorts each ticket and drafts a reply, and an agent reviews every draft.</p>
-    <p>Two ways to use it: look at an example under each box while you write your own, or fill the empty boxes with it and carry on with the lab. Filling never changes a box you have already written in. Boxes filled from the example are shaded yellow until you edit them.</p>
+  <div class="why"><b>What this is:</b> a one-page plan for your pilot. It says who runs it, which one measurement should improve, what must not get worse, and when you would stop. Each box says what goes in it and gives an example from a made-up company. Nothing has to be exact today: a best guess, marked “guess”, is a good answer.</div>
+
+  <details class="ex noprint" id="ex2" open>
+    <summary>The examples under each box, and what to do if you are stuck</summary>
+    <p>Under each box is an example from a made-up company, Brightline Logistics. Its pilot is <b>support-ticket triage</b>, the same one shown in the lab screenshots: AI sorts each ticket and drafts a reply, and an agent reviews every draft.</p>
+    <p>Stuck, or nothing of your own to use? Fill your empty boxes with the example and carry on with the lab. Filling never changes a box you have already written in. Boxes filled from the example are shaded yellow until you edit them.</p>
     <div class="exbtns">
-      <button class="ghost small" data-showex="ws2">Show an example under each box</button>
       <button class="small" data-fill="ws2">Fill my empty boxes with the example</button>
+      <button class="ghost small" data-showex="ws2">Show an example under each box</button>
     </div>
     <div class="exmsg" id="ex2msg" role="status"></div>
   </details>
 
   <h3>Pilot header <span class="step">· Lab 6, step 2</span></h3>
-  <label class="f" for="usecase">Use case (from Worksheet 1)</label>
+  <label class="f" for="usecase">Use case</label>
+  <p class="what">The use case you picked as your winner on Worksheet 1.</p>
   <input type="text" id="usecase" data-k="w2.usecase" data-label="Use case" data-ex="Triage inbound support tickets">
   <button class="ghost small noprint" id="usewin" style="margin-top:6px" disabled>Use my Worksheet 1 winner</button>
-  <label class="f" for="owner">Workflow owner <span class="hint">— runs the pilot day to day (a name, not a team)</span></label>
+  <label class="f" for="owner">Workflow owner</label>
+  <p class="what">The one person who will run the pilot day to day. One person, not a team: a name or a job title.</p>
   <input type="text" id="owner" data-k="w2.owner" data-label="Workflow owner" data-ex="Dana Ruiz, Support Operations">
-  <label class="f" for="sponsor">Sponsor <span class="hint">— holds the budget, clears roadblocks (a name)</span></label>
+  <label class="f" for="sponsor">Sponsor</label>
+  <p class="what">The one person who pays for the pilot and can clear roadblocks, often the workflow owner’s manager: a name or a job title.</p>
   <input type="text" id="sponsor" data-k="w2.sponsor" data-label="Sponsor" data-ex="Priya Shah, who runs Customer Service">
   <label class="f" for="team">Pilot team</label>
-  <input type="text" id="team" data-k="w2.team" data-label="Pilot team" data-ex="12 of the 45 support agents (one shift), plus the helpdesk administrator">
-  <div class="row">
-    <div><label class="f" for="startd">Start date</label>
-      <input type="text" id="startd" data-k="w2.start" data-label="Start date" data-ex="January 5"></div>
-    <div><label class="f" for="day90">Day-90 date</label>
-      <input type="text" id="day90" data-k="w2.day90" data-label="Day-90 date" data-ex="March 31"></div>
-  </div>
-  <label class="f" for="bpb">Buy / partner / build lean</label>
-  <input type="text" id="bpb" data-k="w2.bpb" data-label="Buy / partner / build" data-ex="Buy: the add-on from our helpdesk vendor">
+  <p class="what">The one group of people who will use the AI tool during the pilot, and about how many they are. No names needed.</p>
+  <input type="text" id="team" data-k="w2.team" data-label="Pilot team" data-ex="One support shift: 12 of the 45 agents, plus the helpdesk administrator">
+  <label class="f" for="start">Start date</label>
+  <p class="what">The first day the pilot team uses the AI tool in real work.</p>
+  <input type="date" id="start" data-k="w2.start" data-label="Start date" data-ex="2027-01-05" data-exshow="January 5, 2027">
+  <label class="f" for="day90">Day-90 date</label>
+  <p class="what">The last day of the pilot: 89 days after the start date (the start date is day 1). On the worksheets page this is worked out for you; change it if your pilot must end on another day.</p>
+  <input type="text" id="day90" data-k="w2.day90" data-label="Day-90 date" data-ex="March 31, 2027 (this team chose the end of the quarter, a few days short of 90)">
+  <label class="f" for="bpb">Buy / partner / build</label>
+  <p class="what">How you will get the AI tool. Buy: a product that already does this job. Partner: a vendor fits a tool to your data and way of working. Build: your own engineers make it. Most first pilots buy.</p>
+  <input type="text" id="bpb" data-k="w2.bpb" data-label="Buy / partner / build" data-ex="Buy: the add-on our helpdesk vendor sells">
 
-  <h3>Primary metric (pick ONE) <span class="step">· Lab 6, step 3</span></h3>
+  <h3>Primary metric (pick ONE) <span class="step">· Lab 6, steps 3–4</span></h3>
   <div class="scroll"><table>
     <tr><th>Family</th><th>Example metrics</th></tr>
     <tr><td>Time</td><td>hours per task, cycle time, backlog age</td></tr>
@@ -350,70 +371,89 @@
     <tr><td>Adoption</td><td>weekly active users, % of volume through the tool</td></tr>
   </table></div>
   <label class="f" for="metric">My primary metric</label>
-  <input type="text" id="metric" data-k="w2.metric" data-label="Primary metric" data-ex="Median handling time per ticket">
-  <label class="f" for="bplan">Baseline plan <span class="hint">— two weeks of “before” data: who collects it, how</span></label>
-  <textarea id="bplan" rows="2" data-k="w2.bplan" data-label="Baseline plan" data-ex="Two weeks of December helpdesk timestamps for the pilot shift, pulled by the helpdesk administrator."></textarea>
-  <div class="row">
-    <div><label class="f" for="bval">Baseline value</label>
-      <input type="text" id="bval" data-k="w2.bval" data-label="Baseline value" data-ex="11 minutes"></div>
-    <div><label class="f" for="target">90-day target</label>
-      <input type="text" id="target" data-k="w2.target" data-label="90-day target" data-ex="8 minutes"></div>
-  </div>
+  <p class="what">The one measurement that should improve if the pilot works. Say what is measured and in what unit (minutes, dollars, percent or a count).</p>
+  <input type="text" id="metric" data-k="w2.metric" data-label="My primary metric" data-ex="Median handling time per support ticket (minutes)">
+  <label class="f" for="bplan">Baseline plan</label>
+  <p class="what">How you will find out what your primary metric is today, before AI: who looks it up, from where, and for which two weeks.</p>
+  <textarea rows="2" id="bplan" data-k="w2.bplan" data-label="Baseline plan" data-ex="The helpdesk administrator pulls handling times for the pilot shift from the helpdesk, for two weeks in December"></textarea>
+  <label class="f" for="bval">Baseline value</label>
+  <p class="what">What your primary metric is today, before AI. Not sure? Write your best guess and add “guess”: measuring it is the pilot’s first job.</p>
+  <input type="text" id="bval" data-k="w2.bval" data-label="Baseline value" data-ex="11 minutes (handling time per ticket today)">
+  <label class="f" for="target">90-day target</label>
+  <p class="what">What you want your primary metric to be by day 90, in the same unit as the baseline value. A number, not “better”.</p>
+  <input type="text" id="target" data-k="w2.target" data-label="90-day target" data-ex="8 minutes (down from 11)">
 
-  <h3>Quality guardrail <span class="step">· Lab 6, step 4</span></h3>
+  <h3>Quality guardrail <span class="step">· Lab 6, step 5</span></h3>
   <p>The number that must NOT get worse while the primary metric improves:</p>
-  <div class="row">
-    <div><label class="f" for="guard">Guardrail</label>
-      <input type="text" id="guard" data-k="w2.guard" data-label="Guardrail" data-ex="First-contact resolution (the share of tickets solved in one reply)"></div>
-    <div class="narrow"><label class="f" for="gval">Current value</label>
-      <input type="text" id="gval" data-k="w2.gval" data-label="Guardrail, current value" data-ex="72%"></div>
-  </div>
+  <label class="f" for="guard">Guardrail</label>
+  <p class="what">A second measurement, one that shows quality. It must not get worse while your primary metric improves.</p>
+  <input type="text" id="guard" data-k="w2.guard" data-label="Guardrail" data-ex="First-contact resolution (the share of tickets solved in one reply)">
+  <label class="f" for="gval">Current value</label>
+  <p class="what">What your guardrail is today. A guess is fine if you mark it.</p>
+  <input type="text" id="gval" data-k="w2.gval" data-label="Current value" data-ex="72% (of tickets are solved in one reply today)">
 
-  <h3>Definition of done <span class="step">· Lab 6, step 5</span></h3>
+  <h3>Definition of done <span class="step">· Lab 6, step 6</span></h3>
   <div class="dod">“By <b>[date]</b>, <b>[workflow]</b> handled with AI assistance shows <b>[metric]</b> moving from <b>[baseline]</b> to <b>[target]</b>, with <b>[guardrail]</b> maintained — or we stop and write down what we learned.”</div>
   <button class="ghost small noprint" id="builddod">Build the sentence from my boxes</button>
-  <label class="f" for="dod">My definition of done (fill in every bracket)</label>
-  <textarea id="dod" rows="3" data-k="w2.dod" data-label="Definition of done" data-ex="By March 31, support-ticket triage handled with AI assistance shows median handling time moving from 11 minutes to 8 minutes, with first-contact resolution held at or above 72% — or we stop and write down what we learned."></textarea>
+  <label class="f" for="dod">My definition of done</label>
+  <p class="what">One sentence built from the boxes above: the day-90 date, the use case, the primary metric with its baseline value and 90-day target, and the guardrail.</p>
+  <textarea rows="3" id="dod" data-k="w2.dod" data-label="My definition of done" data-ex="By March 31, 2027, support-ticket triage handled with AI assistance shows median handling time per support ticket moving from 11 minutes to 8 minutes, with first-contact resolution held at or above 72% — or we stop and write down what we learned."></textarea>
 
-  <h3>Stop rule</h3>
-  <div class="row">
-    <div class="narrow"><label class="f" for="stopday">We stop early if, by day</label>
-      <input type="text" id="stopday" data-k="w2.stopday" data-label="Stop rule, by day" data-ex="42 (February 15)"></div>
-    <div><label class="f" for="stopsee">…we see</label>
-      <input type="text" id="stopsee" data-k="w2.stopsee" data-label="Stop rule, we see" data-ex="No improvement in handling time, or first-contact resolution below 72% two weeks running"></div>
-  </div>
+  <h3>Stop rule <span class="step">· Lab 6, step 7</span></h3>
+  <p>A stop rule is the result that would make you end the pilot early, decided before you start.</p>
+  <label class="f" for="stopday">Stop check on day</label>
+  <p class="what">The day of the pilot, about halfway through, when you look at the primary metric and the guardrail and decide whether to carry on. A number from 1 to 89.</p>
+  <input type="text" id="stopday" data-k="w2.stopday" data-label="Stop check on day" data-ex="42">
+  <div class="calc hint" id="stopdate" data-label="   that day is"></div>
+  <label class="f" for="stopsee">We stop early if we see</label>
+  <p class="what">What the primary metric or the guardrail would have to show on that day for you to stop the pilot early.</p>
+  <input type="text" id="stopsee" data-k="w2.stopsee" data-label="We stop early if we see" data-ex="Handling time is still 11 minutes or more, or fewer than 72% of tickets are solved in one reply for two weeks running">
 
-  <h3>Finance red-team findings <span class="step">· Lab 6, steps 6–7</span></h3>
+  <h3>Finance red-team findings <span class="step">· Lab 6, steps 8–9</span></h3>
+  <p>A red-team is a deliberate attack on your own plan, to find its weak spots before someone else does. In step 8 an AI reviewer plays a skeptic from finance.</p>
   <div class="noprint">
-    <button class="ghost small" data-act="copyplan">Copy my plan to paste into the step 6 prompt</button>
+    <button class="ghost small" data-act="copyplan">Copy my plan to paste into the step 8 prompt</button>
     <div class="saved" id="planmsg" role="status"></div>
-    <textarea class="copybox" id="planbox" readonly aria-label="My plan, to paste into the step 6 prompt"></textarea>
+    <textarea class="copybox" id="planbox" readonly aria-label="My plan, to paste into the step 8 prompt"></textarea>
+    <div id="planissues"></div>
   </div>
   <label class="f" for="game">Most gameable part and the fix</label>
-  <textarea id="game" rows="2" data-k="w2.game" data-label="Most gameable part and the fix" data-ex="Agents can look faster by splitting one problem into two tickets. Fix: also count reopened tickets and tickets per customer problem."></textarea>
-  <label class="f" for="attr">Attribution risk (would the metric move anyway?) and the fix</label>
-  <textarea id="attr" rows="2" data-k="w2.attr" data-label="Attribution risk and the fix" data-ex="Ticket volume dips every January, so times fall anyway. Fix: compare the pilot shift with a shift that does not use the tool."></textarea>
+  <p class="what">“Gameable” means the primary metric could look better without the work getting better. Write the weak spot the AI reviewer found in your plan, and how you will close it.</p>
+  <textarea rows="2" id="game" data-k="w2.game" data-label="Most gameable part and the fix" data-ex="Agents can look faster by splitting one problem into two tickets. Fix: also count reopened tickets and tickets per customer problem."></textarea>
+  <label class="f" for="attr">Attribution risk and the fix</label>
+  <p class="what">Would the primary metric have improved anyway, without the AI? Write why it might, and how you will tell the difference.</p>
+  <textarea rows="2" id="attr" data-k="w2.attr" data-label="Attribution risk and the fix" data-ex="Ticket volume dips every January, so handling times fall anyway. Fix: compare the pilot shift with a shift that does not use the tool."></textarea>
 
-  <h3>What the pilot needs <span class="step">· Lab 6, step 8</span></h3>
-  <label class="f" for="money">Money (licenses, usage fees, vendor help)</label>
-  <input type="text" id="money" data-k="w2.money" data-label="Money" data-ex="$18 per agent per month × 12 agents = $216 a month">
-  <label class="f" for="people">People and time (who, how many hours a week)</label>
-  <input type="text" id="people" data-k="w2.people" data-label="People and time" data-ex="Dana, 4 hours a week; each pilot agent, one hour of training">
-  <div class="row">
-    <div><label class="f" for="cpt">AI running cost per task</label>
-      <input type="text" id="cpt" data-k="w2.cpt" data-label="AI running cost per task" data-ex="Not measured yet: first question for the vendor"></div>
-    <div><label class="f" for="cap">Monthly cap</label>
-      <input type="text" id="cap" data-k="w2.cap" data-label="Monthly cap" data-ex="$500"></div>
-    <div><label class="f" for="alert">Who gets the alert</label>
-      <input type="text" id="alert" data-k="w2.alert" data-label="Who gets the alert" data-ex="Dana Ruiz"></div>
+  <div class="noprint" style="margin-top:14px">
+    <button data-act="checkcharter">Check my charter</button>
+    <p class="hint" style="margin-top:6px">Looks for empty boxes and boxes that do not agree with each other. It cannot tell whether your numbers are true: the AI reviewer in step 8, and your own team, are the test of that.</p>
+    <div id="charterout" role="status"></div>
   </div>
-  <p class="hint">Cost per task not measured yet? Leave it blank — it is your first question for the team.</p>
 
-  <h3>If it succeeds <span class="step">· Lab 6, step 8</span></h3>
+  <h3>What the pilot needs <span class="step">· Lab 6, step 10</span></h3>
+  <label class="f" for="money">Money</label>
+  <p class="what">What the pilot will cost in money over the 90 days: licenses, usage fees, vendor help. A rough figure is fine.</p>
+  <input type="text" id="money" data-k="w2.money" data-label="Money" data-ex="$18 per agent per month × 12 agents = $216 a month">
+  <label class="f" for="people">People and time</label>
+  <p class="what">Who will work on the pilot, and about how many hours a week each.</p>
+  <input type="text" id="people" data-k="w2.people" data-label="People and time" data-ex="Dana, 4 hours a week; each pilot agent, one hour of training">
+  <label class="f" for="cpt">AI running cost per task</label>
+  <p class="what">What the AI tool charges to do the job once, for example one ticket or one document. “Not measured yet” is a fine answer today: it is your first question for the team.</p>
+  <input type="text" id="cpt" data-k="w2.cpt" data-label="AI running cost per task" data-ex="Not measured yet: first question for the vendor">
+  <label class="f" for="cap">Monthly cap</label>
+  <p class="what">The most you will let the AI tool spend in one month.</p>
+  <input type="text" id="cap" data-k="w2.cap" data-label="Monthly cap" data-ex="$500">
+  <label class="f" for="alert">Who gets the alert</label>
+  <p class="what">The one person who is told when the month’s spending gets close to the cap.</p>
+  <input type="text" id="alert" data-k="w2.alert" data-label="Who gets the alert" data-ex="Dana Ruiz">
+
+  <h3>If it succeeds <span class="step">· Lab 6, step 10</span></h3>
   <label class="f" for="after">Who runs it after day 90</label>
+  <p class="what">Who keeps the AI tool running once the pilot is over.</p>
   <input type="text" id="after" data-k="w2.after" data-label="Who runs it after day 90" data-ex="Support Operations, under Dana Ruiz">
   <label class="f" for="fullcost">Rough cost at full volume, and who pays</label>
-  <input type="text" id="fullcost" data-k="w2.fullcost" data-label="Cost at full volume, and who pays" data-ex="$18 × 45 agents = $810 a month, about $9,700 a year, from the Customer Service budget">
+  <p class="what">What the AI tool will cost when everyone who should use it does, and whose budget covers it.</p>
+  <input type="text" id="fullcost" data-k="w2.fullcost" data-label="Rough cost at full volume, and who pays" data-ex="$18 × 45 agents = $810 a month, about $9,700 a year, from the Customer Service budget">
 
   <h3>Seven questions for the team proposing the pilot <span class="step">· take-home</span></h3>
   <p>Tick each one you already have a clear answer to. The unticked ones are your next conversation.</p>
@@ -441,123 +481,154 @@
   <div class="labhead"><span class="badge">Labs 7–8</span><h2>Worksheet 3: One-page governance playbook + 30/60/90</h2></div>
   <p class="meta">Goes with <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab7" target="_blank" rel="noopener">Lab 7: Governance gut-check</a> and <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab8" target="_blank" rel="noopener">Lab 8: Your 90-day AI plan</a>.</p>
 
-  <details class="ex noprint" id="ex3">
-    <summary>Need an example? A started playbook and plan from the made-up company</summary>
-    <p>Brightline’s playbook and 90-day plan for the same support-ticket pilot. This team moved fast: “before” numbers in December, pilot from January 5. Your dates can follow the 30 / 60 / 90 headings.</p>
-    <p>There is no example for your call on the PayFast proposal, the announcement paragraph, or the room’s feedback. Those come from the lab itself.</p>
+  <div class="why"><b>What this is:</b> two things on one sheet. A <b>governance playbook</b>: six boxes that set out how AI is used where you work — what is in use, what is allowed, who approves new ideas, and who gets the call when something goes wrong. And a <b>30 / 60 / 90</b>: what you will do in the next 90 days, with dates. You start both today and finish them back at work. Each box says what goes in it and gives an example from a made-up company.</div>
+
+  <details class="ex noprint" id="ex3" open>
+    <summary>The examples under each box, and what to do if you are stuck</summary>
+    <p>Under each box is an example from the made-up company, Brightline Logistics: its playbook, and its 90-day plan for the support-ticket pilot from Worksheet 2. This team moved fast: it measured its “before” numbers in December and started the pilot on January 5. Your dates can follow the 30 / 60 / 90 headings.</p>
+    <p>Stuck, or nothing of your own to use? Fill your empty boxes with the example and carry on with the lab. Filling never changes a box you have already written in. Boxes filled from the example are shaded yellow until you edit them.</p>
     <div class="exbtns">
-      <button class="ghost small" data-showex="ws3">Show an example under each box</button>
       <button class="small" data-fill="ws3">Fill my empty boxes with the example</button>
+      <button class="ghost small" data-showex="ws3">Show an example under each box</button>
     </div>
     <div class="exmsg" id="ex3msg" role="status"></div>
   </details>
 
   <h3>The six boxes</h3>
-  <p>Fill in Boxes 1–2 in Lab 7. In Lab 8, put a <b>decide-by date</b> on Boxes 3–6. You leave with a started playbook and a date on every open decision.</p>
+  <p>Fill in Boxes 1–2 in Lab 7. In Lab 8, put a <b>decide-by date</b> on Boxes 3–6: the date by which you will have settled that box back at work. You leave with a started playbook and a date on every open decision.</p>
 
   <h4>Box 1 — Inventory (where is AI used today?) <span class="step hint">· Lab 7, step 8</span></h4>
+  <p>List two or three AI tools already in use where you work. For each one, give the <b>tool and what it is used for</b>, its <b>owner</b> (the one person answerable for it; “nobody yet” is a real answer), and the <b>data it touches</b> (what information it can see). <b>Autonomy tier</b> is how much the tool does on its own. <b>1 assist:</b> AI drafts, a person does the work. <b>2 review:</b> AI prepares the action, a named person approves it. <b>3 autonomous:</b> AI acts, and people check afterwards.</p>
   <div id="inv"></div>
 
-  <h4>Box 2 — Usage policy headlines (three rules you’d publish this week) <span class="step hint">· Lab 7, step 8</span></h4>
+  <h4>Box 2 — Usage policy headlines (three rules you’d publish this week) <span class="step hint">· Lab 7, step 9</span></h4>
+  <p>A usage policy is the short list of rules for using AI at work. Write three of those rules as headlines: one line each, plain enough to follow without asking anyone.</p>
   <label class="f" for="p1">Rule 1</label>
-  <input type="text" id="p1" data-k="w3.p1" data-label="Policy rule 1" data-ex="Use the tools on the approved list. Anything else needs a yes from the review group first.">
+  <p class="what">One rule in one line, for example about which AI tools people may use.</p>
+  <input type="text" id="p1" data-k="w3.p1" data-label="Rule 1" data-ex="Use the tools on the approved list. Anything else needs a yes from the review group first.">
   <label class="f" for="p2">Rule 2</label>
-  <input type="text" id="p2" data-k="w3.p2" data-label="Policy rule 2" data-ex="No customer, employee or financial data in a personal AI account.">
+  <p class="what">One rule in one line, for example about what information must never go into an AI tool.</p>
+  <input type="text" id="p2" data-k="w3.p2" data-label="Rule 2" data-ex="No customer, employee or financial data in a personal AI account.">
   <label class="f" for="p3">Rule 3</label>
-  <input type="text" id="p3" data-k="w3.p3" data-label="Policy rule 3" data-ex="You own what you send. Check every name, number and date before it goes out.">
+  <p class="what">One rule in one line, for example about who checks AI work before it is used.</p>
+  <input type="text" id="p3" data-k="w3.p3" data-label="Rule 3" data-ex="You own what you send. Check every name, number and date before it goes out.">
 
   <h4>Box 3 — Approval path <span class="step hint">· Lab 8, step 5</span></h4>
-  <div class="row">
-    <div class="narrow"><label class="f" for="d3">Decide by</label>
-      <input type="text" id="d3" data-k="w3.d3" data-label="Box 3 (approval path), decide by" data-ex="January 15"></div>
-    <div><label class="f" for="riskby">New AI idea → scorecard (Worksheet 1) + risk check by</label>
-      <input type="text" id="riskby" data-k="w3.riskby" data-label="   risk check by" data-ex="The review group"></div>
-    <div class="narrow"><label class="f" for="turn">Target turnaround (days)</label>
-      <input type="text" id="turn" data-k="w3.turn" data-label="   target turnaround, days" data-ex="5"></div>
-  </div>
+  <p>The approval path is how a new AI idea gets a yes or a no: it is scored on Worksheet 1, someone checks it for risk, and an answer comes back within a set number of days.</p>
+  <label class="f" for="d3">Box 3: decide by</label>
+  <p class="what">The date by which you will have agreed this approval path back at work.</p>
+  <input type="text" id="d3" data-k="w3.d3" data-label="Box 3: decide by" data-ex="January 15, 2027">
+  <label class="f" for="riskby">Risk check by</label>
+  <p class="what">Who looks at a new AI idea for risk before it is approved: one person or a small group.</p>
+  <input type="text" id="riskby" data-k="w3.riskby" data-label="Risk check by" data-ex="The review group (Box 6)">
+  <label class="f" for="turn">Target turnaround (days)</label>
+  <p class="what">How many days someone with a new AI idea should wait for a yes or a no.</p>
+  <input type="text" id="turn" data-k="w3.turn" data-label="Target turnaround (days)" data-ex="5">
 
   <h4>Box 4 — Standard vendor questions <span class="step hint">· Lab 8, step 5</span></h4>
-  <div class="row"><div class="narrow"><label class="f" for="d4">Decide by</label>
-    <input type="text" id="d4" data-k="w3.d4" data-label="Box 4 (vendor questions), decide by" data-ex="December 9"></div></div>
+  <p>The questions you will put to every company that sells you an AI tool. Tick the ones you want on your standard list.</p>
+  <label class="f" for="d4">Box 4: decide by</label>
+  <p class="what">The date by which your standard list of vendor questions will be agreed.</p>
+  <input type="text" id="d4" data-k="w3.d4" data-label="Box 4: decide by" data-ex="December 9, 2026">
   <div class="checks">
     <label><input type="checkbox" data-k="w3.v1" data-label="   vendor question ticked: train on our data"><span>Do you train on our data?</span></label>
     <label><input type="checkbox" data-k="w3.v2" data-label="   vendor question ticked: where data lives"><span>Where does data live?</span></label>
     <label><input type="checkbox" data-k="w3.v3" data-label="   vendor question ticked: what is logged"><span>What’s logged and can we export it?</span></label>
-    <label><input type="checkbox" data-k="w3.v4" data-label="   vendor question ticked: MCP / standard integration"><span>Do you support MCP / standard integration?</span></label>
-    <label><input type="checkbox" data-k="w3.v5" data-label="   vendor question ticked: exit path"><span>What’s our exit path?</span></label>
+    <label><input type="checkbox" data-k="w3.v4" data-label="   vendor question ticked: MCP / standard integration"><span>Do you support MCP / standard integration? (MCP is the common standard for connecting AI tools to your systems)</span></label>
+    <label><input type="checkbox" data-k="w3.v5" data-label="   vendor question ticked: exit path"><span>What’s our exit path? (how we get our data out and stop using the tool)</span></label>
   </div>
 
   <h4>Box 5 — Incident path <span class="step hint">· Lab 8, step 5</span></h4>
-  <div class="row">
-    <div class="narrow"><label class="f" for="d5">Decide by</label>
-      <input type="text" id="d5" data-k="w3.d5" data-label="Box 5 (incident path), decide by" data-ex="January 29"></div>
-    <div><label class="f" for="first">If AI leaks, fabricates, or misfires, first call goes to</label>
-      <input type="text" id="first" data-k="w3.first" data-label="   first call goes to" data-ex="The IT help desk"></div>
-    <div class="narrow"><label class="f" for="reh">Rehearsed on (date)</label>
-      <input type="text" id="reh" data-k="w3.reh" data-label="   rehearsed on" data-ex="February 12"></div>
-  </div>
+  <p>An incident is AI going wrong: it leaks information, makes something up that gets used, or takes a wrong action. The incident path says who gets the first call.</p>
+  <label class="f" for="d5">Box 5: decide by</label>
+  <p class="what">The date by which the incident path will be agreed.</p>
+  <input type="text" id="d5" data-k="w3.d5" data-label="Box 5: decide by" data-ex="January 29, 2027">
+  <label class="f" for="first">First call goes to</label>
+  <p class="what">The one person or desk anyone can call the moment AI leaks, makes things up or misfires.</p>
+  <input type="text" id="first" data-k="w3.first" data-label="First call goes to" data-ex="The IT help desk">
+  <label class="f" for="reh">Rehearsed on (date)</label>
+  <p class="what">The date you will walk through a made-up incident to test the path.</p>
+  <input type="text" id="reh" data-k="w3.reh" data-label="Rehearsed on (date)" data-ex="February 12, 2027">
 
   <h4>Box 6 — Roles <span class="step hint">· Lab 8, step 5</span></h4>
-  <div class="row">
-    <div class="narrow"><label class="f" for="d6">Decide by</label>
-      <input type="text" id="d6" data-k="w3.d6" data-label="Box 6 (roles), decide by" data-ex="December 18"></div>
-    <div><label class="f" for="group">Review group (3–5 names, cross-functional)</label>
-      <input type="text" id="group" data-k="w3.group" data-label="   review group" data-ex="Dana Ruiz (Support Ops), plus one person each from IT, Finance and HR"></div>
-  </div>
+  <p>Who looks after AI use: a small review group that approves new AI ideas and keeps this playbook up to date.</p>
+  <label class="f" for="d6">Box 6: decide by</label>
+  <p class="what">The date by which the review group will be named.</p>
+  <input type="text" id="d6" data-k="w3.d6" data-label="Box 6: decide by" data-ex="December 18, 2026">
+  <label class="f" for="group">Review group</label>
+  <p class="what">Three to five people from different parts of the organization: names or job titles.</p>
+  <input type="text" id="group" data-k="w3.group" data-label="Review group" data-ex="Dana Ruiz (Support Ops), plus one person each from IT, Finance and HR">
 
   <h3>My call on the PayFast proposal <span class="step">· Lab 7, step 6</span></h3>
+  <p>PayFast is the invoice agent proposed in Lab 7. Decide as if the proposal were on your desk. There is no example here: this one is your call.</p>
   <div class="seg" data-label="My call on PayFast">
     <label><input type="radio" name="w3.call" value="Approve"><span>Approve</span></label>
     <label><input type="radio" name="w3.call" value="Approve with conditions"><span>Approve with conditions</span></label>
     <label><input type="radio" name="w3.call" value="Reject"><span>Reject</span></label>
   </div>
-  <label class="f" for="callwhy">Because (two sentences; if you chose conditions, name them)</label>
-  <textarea id="callwhy" rows="3" data-k="w3.callwhy" data-label="   because"></textarea>
+  <label class="f" for="callwhy">Because</label>
+  <p class="what">Two sentences on why. If you chose “approve with conditions”, name the conditions: what must change before the agent runs.</p>
+  <textarea rows="3" id="callwhy" data-k="w3.callwhy" data-label="Because"></textarea>
 
   <h3>Your 30 / 60 / 90 <span class="step">· Lab 8, steps 1–4</span></h3>
+  <p>Three blocks of 30 days, counted from today. <b>See</b> what AI is already doing, <b>scope</b> one pilot, then <b>ship</b> it: start the pilot in real work. Lab 8 asks for the six boxes marked ★ today; the rest are for back at work.</p>
+
   <h4>Days 1–30 — SEE</h4>
-  <label class="f" for="habit">Daily AI habit (which task, which tool)</label>
-  <input type="text" id="habit" data-k="w3.habit" data-label="Days 1–30: daily AI habit" data-ex="Summarize my weekly status reports in our approved assistant">
-  <div class="row">
-    <div><label class="f" for="invby">Inventory started by (date)</label>
-      <input type="text" id="invby" data-k="w3.invby" data-label="Days 1–30: inventory started by" data-ex="December 11"></div>
-    <div><label class="f" for="invown">Inventory owner</label>
-      <input type="text" id="invown" data-k="w3.invown" data-label="Days 1–30: inventory owner" data-ex="The IT service desk lead"></div>
-  </div>
-  <label class="f" for="polship">One-page policy ships on</label>
-  <input type="text" id="polship" data-k="w3.polship" data-label="Days 1–30: one-page policy ships on" data-ex="December 4">
+  <div class="hint" id="range-see"></div>
+  <label class="f" for="habit">Daily AI habit ★</label>
+  <p class="what">One task of your own that you will do with AI every working day, and the tool you will use.</p>
+  <input type="text" id="habit" data-k="w3.habit" data-label="Daily AI habit ★" data-ex="Summarize my weekly status reports in our approved assistant">
+  <label class="f" for="invby">Inventory started by (date)</label>
+  <p class="what">The date someone starts listing every AI tool in use: Box 1, done properly.</p>
+  <input type="text" id="invby" data-k="w3.invby" data-label="Inventory started by (date)" data-ex="December 11, 2026">
+  <label class="f" for="invown">Inventory owner</label>
+  <p class="what">The one person who will put that list together.</p>
+  <input type="text" id="invown" data-k="w3.invown" data-label="Inventory owner" data-ex="The IT service desk lead">
+  <label class="f" for="polship">One-page policy ships on ★</label>
+  <p class="what">The date your usage policy (Box 2, written out on one page) goes to everyone.</p>
+  <input type="text" id="polship" data-k="w3.polship" data-label="One-page policy ships on ★" data-ex="December 4, 2026">
   <label class="f" for="short">Shortlist shared with</label>
-  <input type="text" id="short" data-k="w3.short" data-label="Days 1–30: shortlist shared with" data-ex="My leadership team">
+  <p class="what">Who will see your scored use cases from Worksheet 1.</p>
+  <input type="text" id="short" data-k="w3.short" data-label="Shortlist shared with" data-ex="My manager and my team">
 
   <h4>Days 31–60 — SCOPE</h4>
-  <div class="row">
-    <div><label class="f" for="chby">Pilot charter signed by owner</label>
-      <input type="text" id="chby" data-k="w3.chby" data-label="Days 31–60: charter signed by" data-ex="Dana Ruiz"></div>
-    <div class="narrow"><label class="f" for="chon">On (date)</label>
-      <input type="text" id="chon" data-k="w3.chon" data-label="Days 31–60: charter signed on" data-ex="December 11"></div>
-  </div>
-  <div class="row">
-    <div><label class="f" for="bfrom">Baseline collection, from</label>
-      <input type="text" id="bfrom" data-k="w3.bfrom" data-label="Days 31–60: baseline collection from" data-ex="December 14"></div>
-    <div><label class="f" for="bto">To</label>
-      <input type="text" id="bto" data-k="w3.bto" data-label="Days 31–60: baseline collection to" data-ex="December 28"></div>
-  </div>
+  <div class="hint" id="range-scope"></div>
+  <label class="f" for="chby">Pilot charter signed by owner ★</label>
+  <p class="what">The pilot charter is Worksheet 2. Write the workflow owner who will sign it off.</p>
+  <input type="text" id="chby" data-k="w3.chby" data-label="Pilot charter signed by owner ★" data-ex="Dana Ruiz">
+  <label class="f" for="chon">Charter signed on (date)</label>
+  <p class="what">The date the workflow owner signs the charter.</p>
+  <input type="text" id="chon" data-k="w3.chon" data-label="Charter signed on (date)" data-ex="December 11, 2026">
+  <label class="f" for="bfrom">Baseline collection, from ★</label>
+  <p class="what">The first day of the two weeks in which you measure your primary metric before AI (the baseline plan on Worksheet 2).</p>
+  <input type="text" id="bfrom" data-k="w3.bfrom" data-label="Baseline collection, from ★" data-ex="December 14, 2026">
+  <label class="f" for="bto">Baseline collection, to ★</label>
+  <p class="what">The last day of those two weeks.</p>
+  <input type="text" id="bto" data-k="w3.bto" data-label="Baseline collection, to ★" data-ex="December 28, 2026">
   <label class="f" for="live">Approval path + review group live on</label>
-  <input type="text" id="live" data-k="w3.live" data-label="Days 31–60: approval path + review group live on" data-ex="January 15">
+  <p class="what">The date Boxes 3 and 6 are in use.</p>
+  <input type="text" id="live" data-k="w3.live" data-label="Approval path + review group live on" data-ex="January 15, 2027">
   <label class="f" for="bpbby">Buy / partner / build decision by</label>
-  <input type="text" id="bpbby" data-k="w3.bpbby" data-label="Days 31–60: buy / partner / build decision by" data-ex="December 11">
+  <p class="what">The date you settle how you will get the AI tool for the pilot.</p>
+  <input type="text" id="bpbby" data-k="w3.bpbby" data-label="Buy / partner / build decision by" data-ex="December 11, 2026">
 
   <h4>Days 61–90 — SHIP</h4>
+  <div class="hint" id="range-ship"></div>
   <label class="f" for="runs">Pilot runs in the real workflow from</label>
-  <input type="text" id="runs" data-k="w3.runs" data-label="Days 61–90: pilot runs from" data-ex="January 5">
+  <p class="what">The start date on Worksheet 2: the first day the pilot team uses the AI tool in real work.</p>
+  <input type="text" id="runs" data-k="w3.runs" data-label="Pilot runs in the real workflow from" data-ex="January 5, 2027">
+  <div class="hint" id="runshint"></div>
   <label class="f" for="slot">Weekly review slot</label>
-  <input type="text" id="slot" data-k="w3.slot" data-label="Days 61–90: weekly review slot" data-ex="Tuesdays at 9:00, 30 minutes">
-  <label class="f" for="d90m"><b>Day-90 decision meeting (on calendars now)</b></label>
-  <input type="text" id="d90m" data-k="w3.d90m" data-label="Days 61–90: day-90 decision meeting" data-ex="April 2">
-  <label class="f" for="story">Decision: scale / iterate / stop → story told with numbers to</label>
-  <input type="text" id="story" data-k="w3.story" data-label="Days 61–90: story told with numbers to" data-ex="The leadership team and Finance">
-
-  <p style="margin-top:14px"><b>Day-90 test before you scale</b> — all four must be true:</p>
+  <p class="what">The day and time each week when you look at the primary metric, the guardrail and how many people are using the tool.</p>
+  <input type="text" id="slot" data-k="w3.slot" data-label="Weekly review slot" data-ex="Tuesdays at 9:00, 30 minutes">
+  <label class="f" for="d90m">Day-90 decision meeting (on calendars now) ★</label>
+  <p class="what">The date of the meeting where you decide to scale the pilot up, change it, or stop it: on or just after the day-90 date on Worksheet 2. Book it now.</p>
+  <input type="text" id="d90m" data-k="w3.d90m" data-label="Day-90 decision meeting (on calendars now) ★" data-ex="April 2, 2027">
+  <div class="hint" id="d90hint"></div>
+  <label class="f" for="story">Scale / iterate / stop: story told with numbers to</label>
+  <p class="what">Who will hear the result, good or bad, with the numbers.</p>
+  <input type="text" id="story" data-k="w3.story" data-label="Scale / iterate / stop: story told with numbers to" data-ex="My manager, my team and Finance">
+  <p><b>Day-90 test before you scale</b> — all four must be true. Nothing to tick today: this is the test you apply at that meeting.</p>
   <div class="checks">
     <label><input type="checkbox" data-k="w3.t1" data-label="Day-90 test ticked: the technology works on real cases"><span>The technology works on real cases</span></label>
     <label><input type="checkbox" data-k="w3.t2" data-label="Day-90 test ticked: people use it in their daily work"><span>People use it in their daily work</span></label>
@@ -566,19 +637,31 @@
   </div>
 
   <h3>The announcement paragraph <span class="step">· Lab 8, steps 6–8</span></h3>
+  <p>The short message that tells your manager and team about the pilot. An AI assistant drafts it from your notes in step 6 and tightens it in step 7.</p>
   <div class="noprint">
     <button class="ghost small" data-act="copynotes">Copy my notes to paste into the step 6 prompt</button>
     <div class="saved" id="notesmsg" role="status"></div>
     <textarea class="copybox" id="notesbox" readonly aria-label="My notes, to paste into the step 6 prompt"></textarea>
   </div>
-  <label class="f" for="ann">Paste your final, red-teamed paragraph here</label>
-  <textarea id="ann" rows="5" data-k="w3.ann" data-label="Announcement paragraph"></textarea>
+  <label class="f" for="ann">My announcement paragraph</label>
+  <p class="what">Paste the final paragraph from the AI chat here, after the rewrite in step 7. The lab shows a finished one.</p>
+  <textarea rows="5" id="ann" data-k="w3.ann" data-label="My announcement paragraph"></textarea>
 
-  <h3>Feedback from the pilot review round</h3>
+  <h3>Feedback from the pilot review round <span class="step">· after Lab 8</span></h3>
+  <p>After Lab 8, volunteers describe their pilot in thirty seconds and the room gives one strength and one concern. If you present, write down what you hear.</p>
   <label class="f" for="fb1">One strength the room saw</label>
+  <p class="what">What people liked about your pilot, in a few words.</p>
   <input type="text" id="fb1" data-k="w3.fb1" data-label="One strength the room saw">
   <label class="f" for="fb2">One concern to deal with</label>
+  <p class="what">The worry someone raised that you will need an answer to.</p>
   <input type="text" id="fb2" data-k="w3.fb2" data-label="One concern to deal with">
+
+  <div class="noprint" style="margin-top:14px">
+    <button data-act="checkplan">Check Worksheet 3</button>
+    <p class="hint" style="margin-top:6px">Lists the boxes Labs 7 and 8 ask for that are still empty. It cannot tell whether your dates are realistic.</p>
+    <div id="planout" role="status"></div>
+  </div>
+
   <div class="keep noprint">
     <b>Keep Worksheet 3</b>
     <div class="tools">
@@ -668,7 +751,7 @@ const INV = [
   ['shadow', 'Suspected shadow use', ['Personal ChatGPT accounts used for customer emails', 'No owner', 'Possibly customer names and prices', 'Not sure']],
 ];
 $('inv').innerHTML = INV.map(([k, title, ex]) => `
-  <div class="item"><div class="t">${title}${k === 'shadow' ? ' <span class="hint" style="font-weight:400">— AI tools people use without approval</span>' : ''}</div>
+  <div class="item"><div class="t">${title}${k === 'shadow' ? ' <span class="hint" style="font-weight:400">— AI tools people use for work without approval</span>' : ''}</div>
     <div class="row">
       <div><label class="f" for="inv${k}t">Tool / use</label><input type="text" id="inv${k}t" data-k="w3.${k}.tool" data-label="${title}" data-ex="${esc(ex[0])}"></div>
       <div><label class="f" for="inv${k}o">Owner</label><input type="text" id="inv${k}o" data-k="w3.${k}.owner" data-label="   owner" data-ex="${esc(ex[1])}"></div>
@@ -682,7 +765,7 @@ $('inv').innerHTML = INV.map(([k, title, ex]) => `
 // an "Example:" line under every box that has one
 for (const f of document.querySelectorAll('[data-ex]')) {
   const d = document.createElement('div'); d.className = 'exline';
-  d.innerHTML = '<b>Example:</b> ' + esc(f.dataset.ex);
+  d.innerHTML = '<b>Example:</b> ' + esc(f.dataset.exshow || f.dataset.ex);
   f.insertAdjacentElement('afterend', d);
 }
 
@@ -715,10 +798,16 @@ function restore() {
     grow(f);
   }
   for (const r of radios()) r.checked = store[r.name] === r.value;
-  for (const s of document.querySelectorAll('section.ws')) setShowEx(s.id, !!store['_show.' + s.id]);
+  // every worksheet shows its examples unless the person has hidden them
+  for (const s of document.querySelectorAll('section.ws')) setShowEx(s.id, store['_show.' + s.id] ?? true);
   refresh();
 }
 
+// dates: the start date is day 1, so day 90 is 89 days later
+const parseISO = (v) => /^\d{4}-\d{2}-\d{2}$/.test(v || '') ? new Date(v + 'T12:00:00') : null;
+const fmtDate = (d) => d.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+const dayN = (start, n) => { const d = new Date(start); d.setDate(d.getDate() + n - 1); return d; };
+const shownValue = (f) => { const d = f.type === 'date' ? parseISO(f.value) : null; return d ? fmtDate(d) : String(f.value); };
 function candName(n) { return (store['w1.c' + n + '.name'] || '').trim(); }
 // Lab 5, step 4: the prompt as it is written in labs.md, up to the part the attendee fills in
 const STEP4 = "You are a skeptical AI program reviewer. For the use case below, ask me the\nfive hardest questions you'd ask before funding it, one line each, covering:\nbusiness value, data readiness, buy-vs-build, risk, and measurability.\n\nUse case: ";
@@ -770,6 +859,21 @@ function refresh() {
     $('regen').hidden = (store['w1.generic'] || '') === start;
     grow(g);
   }
+  // Worksheet 2: day 90 follows the start date until the person types their own; the stop check day gets its date
+  const sd = parseISO(store['w2.start']), d90 = $('day90');
+  if (sd) {
+    const auto = fmtDate(dayN(sd, 90)), cur = store['w2.day90'] || '';
+    const untouched = !cur.trim() ? document.activeElement !== d90 : cur === store['_w2d90'];
+    if (untouched && (cur !== auto || store['_w2d90'] !== auto)) {
+      d90.value = auto; store['w2.day90'] = auto; store['_w2d90'] = auto;
+      try { localStorage.setItem(KEY, JSON.stringify(store)); } catch { /* shown elsewhere */ }
+    }
+  }
+  // Worksheet 3: the dates Worksheet 2 already holds, shown beside the boxes that repeat them
+  $('runshint').textContent = sd ? 'Your Worksheet 2 start date: ' + fmtDate(sd) + '.' : '';
+  $('d90hint').textContent = val('w2.day90') ? 'Your Worksheet 2 day-90 date: ' + plainDay90() + '.' : '';
+  const sn = parseInt(store['w2.stopday'], 10);
+  $('stopdate').textContent = sd && sn >= 1 && sn <= 366 ? 'Day ' + sn + ' is ' + fmtDate(dayN(sd, sn)) + '.' : '';
   const w = winnerName();
   $('winline').className = w ? '' : 'hint';
   $('winline').innerHTML = w ? 'My winner: <b>' + esc(w) + '</b>' : 'Press <b>My winner</b> on one of your candidates above.';
@@ -828,6 +932,8 @@ function fillExample(id) {
 
 // ---------- text to paste into the AI chat ----------
 const val = (k) => (store[k] || '').trim();
+const shown = (k) => { const d = parseISO(val(k)); return d ? fmtDate(d) : val(k); };
+const plainDay90 = () => val('w2.day90').replace(/\s*\(.*\)\s*$/, '');   // drop a note in brackets after the date
 function planText() {
   const lines = [
     ['Definition of done', val('w2.dod')],
@@ -836,20 +942,62 @@ function planText() {
     ['Baseline value', val('w2.bval')],
     ['90-day target', val('w2.target')],
     ['Guardrail', [val('w2.guard'), val('w2.gval') && 'now ' + val('w2.gval')].filter(Boolean).join(', ')],
-    ['Stop rule', [val('w2.stopday') && 'by day ' + val('w2.stopday'), val('w2.stopsee')].filter(Boolean).join(': ')],
+    ['Stop rule', [val('w2.stopday') && 'check on day ' + val('w2.stopday'), val('w2.stopsee') && 'we stop if we see: ' + val('w2.stopsee')].filter(Boolean).join('; ')],
   ].filter(([, v]) => v);
   return lines.map(([l, v]) => l + ': ' + v).join('\n');
+}
+// Worksheet 2: boxes that are empty or do not agree with each other. It cannot judge whether a number is true.
+function charterIssues() {
+  const key = [['w2.usecase', 'Use case'], ['w2.owner', 'Workflow owner'], ['w2.sponsor', 'Sponsor'], ['w2.team', 'Pilot team'], ['w2.start', 'Start date'],
+    ['w2.metric', 'My primary metric'], ['w2.bplan', 'Baseline plan'], ['w2.bval', 'Baseline value'], ['w2.target', '90-day target'], ['w2.guard', 'Guardrail'],
+    ['w2.dod', 'My definition of done'], ['w2.stopday', 'Stop check on day'], ['w2.stopsee', 'We stop early if we see']];
+  const out = [], empty = key.filter(([k]) => !val(k)).map(([, l]) => l);
+  if (empty.length) out.push('Still empty: ' + empty.join(', ') + '.');
+  const owner = val('w2.owner'), sponsor = val('w2.sponsor'), b = val('w2.bval'), t = val('w2.target');
+  if (/\b(team|committee|department|group|council|board|everyone)\b/i.test(owner)) out.push('Workflow owner: “' + owner + '” reads like a group. Give one person: a name or a job title.');
+  if (owner && sponsor && owner.toLowerCase() === sponsor.toLowerCase()) out.push('Owner and sponsor are the same person. That can work, but they are often two different people.');
+  const num = (v) => { const m = v.replace(/,/g, '').match(/\d+(\.\d+)?/); return m ? parseFloat(m[0]) : null; };
+  const unit = (v) => v.toLowerCase().replace(/\(.*?\)|guess|about|around|roughly|[\d.,~≈]/g, '').replace(/\s+/g, ' ').trim();
+  if (b && num(b) === null) out.push('Baseline value has no number in it. Write today’s number, or your best guess marked “guess”.');
+  if (t && num(t) === null) out.push('The 90-day target has no number in it. “Better” is not a target; a number is.');
+  if (b && t && num(b) !== null && num(t) !== null) {
+    if (num(b) === num(t) && unit(b) === unit(t)) out.push('Your target is the same as your baseline, so nothing would change.');
+    else if (unit(b) && unit(t) && unit(b) !== unit(t)) out.push('Baseline (“' + b + '”) and target (“' + t + '”) look like different units. Use the same unit for both.');
+  }
+  if (val('w2.guard') && val('w2.guard').toLowerCase() === val('w2.metric').toLowerCase()) out.push('The guardrail is the same as your main metric. Pick a second number, one that shows quality.');
+  if (/\[[^\]]*\]/.test(val('w2.dod'))) out.push('Your definition of done still has a bracket to fill in.');
+  const sday = val('w2.stopday'), sn = sday ? num(sday) : null;
+  if (sday && (sn === null || sn < 1 || sn >= 90)) out.push('The stop check day should be a number from 1 to 89, so that it comes before day 90.');
+  return out;
+}
+// Worksheet 3: which of the boxes Labs 7 and 8 ask for are still empty
+function planIssues() {
+  const missing = (list) => list.filter(([k]) => !val(k)).map(([, l]) => l);
+  const tools = ['r1', 'r2', 'r3', 'shadow'].filter((r) => val('w3.' + r + '.tool')).length;
+  const l7 = missing([['w3.call', 'My call on the PayFast proposal'], ['w3.callwhy', 'Because'], ['w3.p1', 'Rule 1'], ['w3.p2', 'Rule 2'], ['w3.p3', 'Rule 3']]);
+  if (tools < 2) l7.unshift('Box 1 inventory (' + tools + ' of at least 2 tools)');
+  const l8 = missing([['w3.habit', 'Daily AI habit'], ['w3.polship', 'One-page policy ships on'], ['w3.chby', 'Pilot charter signed by owner'],
+    ['w3.bfrom', 'Baseline collection, from'], ['w3.bto', 'Baseline collection, to'], ['w3.d90m', 'Day-90 decision meeting'],
+    ['w3.d3', 'Box 3: decide by'], ['w3.d4', 'Box 4: decide by'], ['w3.d5', 'Box 5: decide by'], ['w3.d6', 'Box 6: decide by'], ['w3.ann', 'My announcement paragraph']]);
+  const out = [];
+  if (l7.length) out.push('Lab 7, still empty: ' + l7.join(', ') + '.');
+  if (l8.length) out.push('Lab 8, still empty: ' + l8.join(', ') + '.');
+  return out;
+}
+function showIssues(id, issues, lead, okText) {
+  $(id).innerHTML = issues.length ? '<div class="issues"><b>' + lead + '</b><ul>' + issues.map((i) => '<li>' + esc(i) + '</li>').join('') + '</ul></div>'
+    : (okText ? '<div class="issues ok">' + okText + '</div>' : '');
 }
 function notesText() {
   const lines = [
     ['Use case', val('w2.usecase')],
     ['Owner', val('w2.owner')],
     ['Sponsor', val('w2.sponsor')],
-    ['Pilot window', [val('w2.start'), val('w2.day90')].filter(Boolean).join(' to ')],
+    ['Pilot window', [shown('w2.start'), plainDay90()].filter(Boolean).join(' to ')],
     ['Baseline plan', val('w2.bplan')],
     ['Metric', [val('w2.metric'), val('w2.bval') && 'from ' + val('w2.bval'), val('w2.target') && 'to ' + val('w2.target')].filter(Boolean).join(' ')],
     ['Guardrail', [val('w2.guard'), val('w2.gval') && 'now ' + val('w2.gval')].filter(Boolean).join(', ')],
-    ['Stop rule', [val('w2.stopday') && 'by day ' + val('w2.stopday'), val('w2.stopsee')].filter(Boolean).join(': ')],
+    ['Stop rule', [val('w2.stopday') && 'check on day ' + val('w2.stopday') + ($('stopdate').textContent ? ' (' + $('stopdate').textContent.replace(/^Day \d+ is |\.$/g, '') + ')' : ''), val('w2.stopsee') && 'we stop if we see: ' + val('w2.stopsee')].filter(Boolean).join('; ')],
     ['Day-90 decision meeting', val('w3.d90m')],
     ['One-page usage policy ships on', val('w3.polship')],
     ['Usage policy headlines', [val('w3.p1'), val('w3.p2'), val('w3.p3')].filter(Boolean).join(' / ')],
@@ -859,7 +1007,8 @@ function notesText() {
 function buildDod() {
   // mid-sentence, so "Median handling time" reads "median handling time" (but "HR questions" stays as typed)
   const low = (t) => /^[A-Z][a-z]/.test(t) ? t[0].toLowerCase() + t.slice(1) : t;
-  const b = (k, name) => (k === 'w2.day90' ? val(k) : low(val(k))) || '[' + name + ']';
+  const plain = (v) => v.replace(/\s*\([^)]*\)/g, '').trim();   // "11 minutes (guess)" goes in as "11 minutes"
+  const b = (k, name) => (k === 'w2.day90' ? plainDay90() : low(plain(val(k)))) || '[' + name + ']';
   return 'By ' + b('w2.day90', 'date') + ', ' + b('w2.usecase', 'workflow') + ' handled with AI assistance shows ' + b('w2.metric', 'metric') +
     ' moving from ' + b('w2.bval', 'baseline') + ' to ' + b('w2.target', 'target') + ', with ' + b('w2.guard', 'guardrail') +
     ' maintained — or we stop and write down what we learned.';
@@ -890,7 +1039,7 @@ function answersAsText() {
     for (const el of ws.querySelectorAll('[data-k][data-label], .seg[data-label], .calc[data-label]')) {
       if (el.dataset.k) {
         if (el.type === 'checkbox') { if (el.checked) lines.push(el.dataset.label); }
-        else if (String(el.value).trim()) lines.push(el.dataset.label + ': ' + String(el.value).trim().replace(/\n/g, '; ') + (ex[el.dataset.k] ? '  [example]' : ''));
+        else if (String(el.value).trim()) lines.push(el.dataset.label + ': ' + shownValue(el).trim().replace(/\n/g, '; ') + (ex[el.dataset.k] ? '  [example]' : ''));
       } else if (el.classList.contains('calc')) {
         if (el.textContent.trim()) lines.push('   ' + el.textContent.trim());
       } else {
@@ -917,10 +1066,10 @@ function prepOnly(id) {
 }
 function prepPrint() {
   clearPrint();
-  for (const f of document.querySelectorAll('input[type=text][data-k], textarea[data-k]')) {
+  for (const f of document.querySelectorAll('input[type=text][data-k], input[type=date][data-k], textarea[data-k]')) {
     const d = document.createElement('div');
     d.className = 'printval' + (f.value.trim() ? '' : ' empty') + (f.tagName === 'TEXTAREA' && f.rows > 1 ? ' tall' : '');
-    d.textContent = f.value;
+    d.textContent = shownValue(f);
     f.insertAdjacentElement('afterend', d);
   }
   document.body.classList.add('printing');
@@ -954,7 +1103,12 @@ document.addEventListener('click', async (e) => {
     await copyInto(d && (act === 'copystress' ? STEP4 + d : d), 'stressbox', 'stressmsg', 'Describe your use case in the box first.',
       act === 'copystress' ? 'Copied. Paste it into a new chat as it is.' : 'Copied. Paste it after “Use case:” in the step 4 prompt.');
   } else if (act === 'copyplan') {
-    await copyInto(planText(), 'planbox', 'planmsg', 'Nothing to copy yet. Fill in the boxes above first.', 'Copied. Paste it into the step 6 prompt in place of the square brackets.');
+    await copyInto(planText(), 'planbox', 'planmsg', 'Nothing to copy yet. Fill in the boxes above first.', 'Copied. Paste it into the step 8 prompt in place of the square brackets.');
+    showIssues('planissues', planText() ? charterIssues() : [], 'Before you paste, worth a look:', '');
+  } else if (act === 'checkplan') {
+    showIssues('planout', planIssues(), 'Worth a look:', 'Every box Labs 7 and 8 ask for is filled in.');
+  } else if (act === 'checkcharter') {
+    showIssues('charterout', charterIssues(), 'Worth a look:', 'The key boxes are filled in and agree with each other.');
   } else if (act === 'copynotes') {
     await copyInto(notesText(), 'notesbox', 'notesmsg', 'Nothing to copy yet. Fill in Worksheet 2 and the plan above first.', 'Copied. Paste it after “Notes:” in the step 6 prompt.');
   } else if (act === 'copy') {
@@ -974,11 +1128,19 @@ document.addEventListener('click', async (e) => {
     store = {}; try { localStorage.removeItem(KEY); } catch { /* nothing to remove */ }
     restore();
     document.querySelectorAll('.copybox').forEach((b) => { b.style.display = 'none'; b.value = ''; });
-    document.querySelectorAll('.exmsg, #planmsg, #notesmsg, #stressmsg').forEach((m) => { m.textContent = ''; });
+    document.querySelectorAll('.exmsg, #planmsg, #notesmsg, #stressmsg, #charterout, #planissues, #planout').forEach((m) => { m.textContent = ''; });
     $('status').textContent = 'All answers cleared.';
   }
 });
 
+// Worksheet 3: the three 30-day blocks as dates, counted from today
+(() => {
+  const today = new Date(); today.setHours(12, 0, 0, 0);
+  const md = (d) => d.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
+  [['see', 1, 30], ['scope', 31, 60], ['ship', 61, 90]].forEach(([id, a, b]) => {
+    $('range-' + id).textContent = 'Counting from today: ' + md(dayN(today, a)) + ' to ' + fmtDate(dayN(today, b)) + '.';
+  });
+})();
 restore();
 showSaveState(false);
 if (canSave) $('status').textContent = '';

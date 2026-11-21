@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.14 - 11/20/26
+## Revision 1.15 - 11/20/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
@@ -437,11 +437,11 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 <br><br>
 
-5. Answer its questions honestly (to yourself or in the chat). Adjust any score the questions changed.
+5. Answer its questions honestly (to yourself or in the chat). Adjust any score the questions changed, then fill in **Notes from the AI stress-test** on the worksheet: the score you changed, and the hardest question you could not answer.
 
 <br><br>
 
-6. Run the **blocker check** on the worksheet for your top-scored candidate. A high score never overrides a blocker: if any box is ticked, move to your next candidate.
+6. Run the **blocker check** on the worksheet for your top-scored candidate. A blocker rules a use case out for now, however well it scores: if any box is ticked, move to your next candidate.
 
 <br><br>
 
@@ -468,29 +468,37 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 **Purpose: Give your winning use case metrics finance would accept — baseline, target, guardrail, stop rule. (12 minutes)**
 
-1. Open **[Worksheet 2: Pilot Metrics Charter](https://skillrepos.github.io/tlsaccel/#ws2)**. Short of details? Its **Need an example?** box can fill your empty boxes with a sample pilot.
+1. Open **[Worksheet 2: Pilot Metrics Charter](https://skillrepos.github.io/tlsaccel/#ws2)**. Every box says what goes in it and shows an example. Stuck? **Fill my empty boxes with the example** gives you a sample pilot to work with.
 
 <br><br>
 
-2. Fill in the header: your winning use case from Lab 5, the workflow owner and the sponsor (real names — often two different people), and the 90-day window.
+2. Fill in the header: your winning use case from Lab 5, the workflow owner and the sponsor (one person each, often two different people — a name or a job title such as "Head of HR" is fine), the pilot team, and the start date. The worksheet works out day 90.
 
 <br><br>
 
-3. Choose ONE primary metric from the four families (time, cost, quality, adoption). Write how you'll measure the baseline for two weeks before the pilot starts.
+3. Choose ONE primary metric from the four families (time, cost, quality, adoption): the one number that should improve if the pilot works.
 
 <br><br>
 
-4. Add one quality guardrail — the number that must NOT get worse while the primary metric improves.
+4. Fill in the baseline — that number as it is today, before AI. Write how you'll measure it for two weeks, today's value, and the 90-day target in the same unit. Not sure of today's value? Write your best guess and mark it "guess".
 
 <br><br>
 
-5. Draft your definition-of-done sentence on the worksheet:
+5. Add one quality guardrail — the number that must NOT get worse while the primary metric improves.
+
+<br><br>
+
+6. Draft your definition-of-done sentence on the worksheet. **Build the sentence from my boxes** gives you a first version to edit:
 
 > "By [date], [workflow] handled with AI assistance shows [metric] moving from [baseline] to [target], with [guardrail] maintained — or we stop and write down what we learned."
 
 <br><br>
 
-6. Red-team it with AI. Start a new chat:
+7. Fill in the stop rule: a check day about halfway through, and what you would have to see on that day to stop early.
+
+<br><br>
+
+8. Red-team it with AI. Start a new chat:
 
 ```
 You are a skeptical finance reviewer. Here is a pilot metrics plan:
@@ -503,21 +511,21 @@ likely to show a result the AI didn't cause. Give the smallest fix for each.
 Under 150 words.
 ```
 
-The screenshot uses a sample plan (median handling time 11 → 8 minutes, first-contact resolution as the guardrail).
+**Copy my plan** on the worksheet gathers those lines for you. The screenshot uses a sample plan (median handling time 11 → 8 minutes, first-contact resolution as the guardrail).
 
 ![Finance red-team](./images/acc14.png?raw=true "The reviewer finds where the sample plan is gameable")
 
 <br><br>
 
-7. Apply the fixes that convinced you. Update the worksheet.
+9. Apply the fixes that convinced you. Update the worksheet, then press **Check my charter**: it flags boxes that are empty or don't agree with each other.
 
 <br><br>
 
-8. Fill in the two short boxes near the bottom of the worksheet: **What the pilot needs** and **If it succeeds**. Rough answers are fine.
+10. Fill in the two short sections near the bottom of the worksheet: **What the pilot needs** and **If it succeeds**. Rough answers are fine.
 
 <br><br>
 
-9. Read your final definition-of-done out loud once. If it names a workflow, a number, a date, an owner, and a stop rule — you are ahead of most funded AI pilots.
+11. Read your final definition-of-done out loud once. If it names a workflow, a number, a date, an owner, and a stop rule — you are ahead of most funded AI pilots.
 
 <br><br>
 
@@ -589,7 +597,11 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 <br><br>
 
-8. Stay on **Worksheet 3: Governance Playbook**. In Box 1 (Inventory), list two or three AI tools already in use in your org — including shadow use you suspect. In Box 2 (Usage policy headlines), write three rules you'd publish this week.
+8. Stay on **Worksheet 3: Governance Playbook**. In Box 1 (Inventory), list two or three AI tools already in use where you work — including shadow use you suspect. For each one the worksheet asks for its owner, the data it touches, and its autonomy tier.
+
+<br><br>
+
+9. In Box 2 (Usage policy headlines), write three rules you'd publish this week: one line each, plain enough to follow without asking anyone.
 
 <br><br>
 
@@ -608,23 +620,23 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 **Purpose: Leave with a concrete 30/60/90 plan and the paragraph you'll send your manager or team. (12 minutes)**
 
-1. Open the 30/60/90 section of **[Worksheet 3](https://skillrepos.github.io/tlsaccel/#ws3)**. Have your Lab 5 scorecard and Lab 6 charter beside you.
+1. Open the 30/60/90 section of **[Worksheet 3](https://skillrepos.github.io/tlsaccel/#ws3)**. Have your Lab 5 scorecard and Lab 6 charter beside you. Every box says what goes in it; this lab asks for the six marked ★.
 
 <br><br>
 
-2. Fill in two lines of Days 1–30 (SEE): your daily AI habit and the date the one-page policy ships.
+2. Fill in two lines of Days 1–30 (SEE): your daily AI habit (one task you will do with AI every working day) and the date the one-page policy ships.
 
 <br><br>
 
-3. Fill in two lines of Days 31–60 (SCOPE): your pilot's owner and the baseline collection dates.
+3. Fill in two lines of Days 31–60 (SCOPE): your pilot's owner and the baseline collection dates (the two weeks in which you measure your primary metric before AI).
 
 <br><br>
 
-4. Fill in one line of Days 61–90 (SHIP): the day-90 decision meeting — put a real date on it.
+4. Fill in one line of Days 61–90 (SHIP): the day-90 decision meeting, where you decide to scale the pilot up, change it, or stop it. Put a real date on it.
 
 <br><br>
 
-5. Turn back to the six boxes at the top of Worksheet 3. Beside Boxes 3–6, write the date you will decide each one by.
+5. Turn back to the six boxes at the top of Worksheet 3. In Boxes 3–6, fill in **decide by**: the date by which you will have settled that box back at work.
 
 <br><br>
 
@@ -639,6 +651,8 @@ Confident, no hype.
 
 Notes: [paste the key lines from your worksheets]
 ```
+
+**Copy my notes** on the worksheet gathers those lines for you.
 
 ![Announcement paragraph](./images/acc16.png?raw=true "Worksheet notes turned into a ready-to-send paragraph (sample notes)")
 
