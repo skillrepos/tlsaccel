@@ -197,7 +197,7 @@
     <li><b>Keep your work:</b> each worksheet ends with a button that saves it as a PDF with your answers, and a blank fill-in PDF to download. Save your PDFs before you leave today: until then your answers live only in this browser, on this device.</li>
   </ol>
   <div id="nosave" role="alert">This browser is not saving what you type (a private window does this). Your answers will be gone when you close or refresh the page. Open the page in a normal window, or save each worksheet as a PDF before you close it.</div>
-  <div class="rule">One rule on data: use non-confidential examples from your own work, or the examples on this page. Treat today’s AI tools as public.</div>
+  <div class="rule">One rule on data: keep what you write general and non-confidential. Job titles or made-up names instead of real names; the kind of data, not the data; rounded or made-up figures. Treat today’s AI tools as public: only paste into a chat what you would say in public. If you have nothing you can share, use the examples on this page.</div>
   <div class="tools">
     <button class="ghost" data-act="print">Save all three as one PDF, or print</button>
     <button class="ghost" data-act="copy">Copy my answers</button>
@@ -364,10 +364,10 @@
   <input type="text" id="usecase" data-k="w2.usecase" data-label="Use case" data-ex="Triage inbound support tickets" data-req="1">
   <button class="ghost small noprint" id="usewin" style="margin-top:6px" disabled>Use my Worksheet 1 winner</button>
   <label class="f" for="owner">Workflow owner <span class="tag req">Required</span></label>
-  <p class="what">The one person who will run the pilot day to day. One person, not a team: a name or a job title.</p>
+  <p class="what">The one person who will run the pilot day to day. One person, not a team: a job title, or a name (a made-up one is fine).</p>
   <input type="text" id="owner" data-k="w2.owner" data-label="Workflow owner" data-ex="Dana Ruiz, Support Operations" data-req="1">
   <label class="f" for="sponsor">Sponsor <span class="tag req">Required</span></label>
-  <p class="what">The one person who pays for the pilot and can clear roadblocks, often the workflow owner’s manager: a name or a job title.</p>
+  <p class="what">The one person who pays for the pilot and can clear roadblocks, often the workflow owner’s manager: a job title, or a name (a made-up one is fine).</p>
   <input type="text" id="sponsor" data-k="w2.sponsor" data-label="Sponsor" data-ex="Priya Shah, who runs Customer Service" data-req="1">
   <label class="f" for="team">Pilot team <span class="tag req">Required</span></label>
   <p class="what">The one group of people who will use the AI tool during the pilot, and about how many they are. No names needed.</p>
@@ -432,10 +432,14 @@
   <h3 data-h="Finance red-team findings (Lab 6, steps 8–9)"><span class="step">Lab 6, steps 8–9</span>Finance red-team findings</h3>
   <p>A red-team is a deliberate attack on your own plan, to find its weak spots before someone else does. In step 8 an AI reviewer plays a skeptic from finance and names three weak spots, each with a fix. In step 9 you write down the two that matter most.</p>
   <div class="noprint">
-    <button class="ghost small" data-act="copyplan">Copy my plan to paste into the step 8 prompt</button>
-    <div class="saved" id="planmsg" role="status"></div>
-    <textarea class="copybox" id="planbox" readonly aria-label="My plan, to paste into the step 8 prompt"></textarea>
+    <button class="ghost small" data-act="copyplan">Show my plan for the step 8 prompt</button>
     <div id="planissues"></div>
+    <div id="planwrap" hidden>
+      <p class="redwarn">This text goes into an AI chat. Before you copy it, take out anything confidential: names of people, customers or your company, and any figure you would not share outside.</p>
+      <textarea id="planbox" rows="6" aria-label="My plan, to check and then paste into the step 8 prompt"></textarea>
+      <button class="small" data-copybox="planbox" data-done="Copied. Paste it into the step 8 prompt in place of the square brackets." style="margin-top:6px">Copy this text</button>
+    </div>
+    <div class="saved" id="planmsg" role="status"></div>
   </div>
   <label class="f" for="game">Most gameable part and the fix <span class="tag req">Required</span></label>
   <p class="what">“Gameable” means the primary metric could look better without the work getting better. Write the weak spot the AI reviewer found in your plan, and how you will close it.</p>
@@ -526,6 +530,7 @@
 
   <h4 data-h="Box 1 — Inventory (where is AI used today?) (Lab 7, step 8)"><span class="step">Lab 7, step 8</span>Box 1 — Inventory (where is AI used today?)</h4>
   <p><b>Required: at least two tools.</b> List two or three AI tools already in use where you work. For each one, give the <b>tool and what it is used for</b>, its <b>owner</b> (the one person answerable for it; “nobody yet” is a real answer), and the <b>data it touches</b> (what information it can see). <b>Autonomy tier</b> is how much the tool does on its own. <b>1 assist:</b> AI drafts, a person does the work. <b>2 review:</b> AI prepares the action, a named person approves it. <b>3 autonomous:</b> AI acts, and people check afterwards.</p>
+  <p><b>Keep it general.</b> Give owners as job titles, not names. Describe the kind of data (“customer emails”), never the data itself. Describe unapproved use as a habit (“people paste customer emails into personal chatbots”), without saying who does it. No lab step asks you to paste this box into an AI tool, so do not.</p>
   <div id="inv"></div>
 
   <h4 data-h="Box 2 — Usage policy headlines (three rules you&#x27;d publish this week) (Lab 7, step 9)"><span class="step">Lab 7, step 9</span>Box 2 — Usage policy headlines (three rules you’d publish this week)</h4>
@@ -583,7 +588,7 @@
   <p class="what">The date by which the review group will be named.</p>
   <input type="text" id="d6" data-k="w3.d6" data-label="Box 6: decide by" data-ex="December 18, 2026" data-req="1">
   <label class="f" for="group">Review group <span class="tag opt">Optional</span></label>
-  <p class="what">Three to five people from different parts of the organization: names or job titles.</p>
+  <p class="what">Three to five people from different parts of the organization: job titles are enough.</p>
   <input type="text" id="group" data-k="w3.group" data-label="Review group" data-ex="Dana Ruiz (Support Ops), plus one person each from IT, Finance and HR">
 
   <h3 data-h="My call on the PayFast proposal (Lab 7, step 6)"><span class="step">Lab 7, step 6</span>My call on the PayFast proposal</h3>
@@ -621,7 +626,7 @@
   <h4 data-h="Days 31–60 — SCOPE (Lab 8, step 3)"><span class="step">Lab 8, step 3</span>Days 31–60 — SCOPE</h4>
   <div class="hint" id="range-scope"></div>
   <label class="f" for="chby">Pilot charter signed by owner <span class="tag req">Required</span></label>
-  <p class="what">The pilot charter is Worksheet 2. Write the workflow owner who will sign it off.</p>
+  <p class="what">The pilot charter is Worksheet 2. Write the workflow owner who will sign it off: the same job title or name as on Worksheet 2.</p>
   <input type="text" id="chby" data-k="w3.chby" data-label="Pilot charter signed by owner" data-ex="Dana Ruiz" data-req="1">
   <label class="f" for="chon">Charter signed on (date) <span class="tag opt">Optional</span></label>
   <p class="what">The date the workflow owner signs the charter.</p>
@@ -666,9 +671,13 @@
   <h3 data-h="The announcement paragraph (Lab 8, steps 6–8)"><span class="step">Lab 8, steps 6–8</span>The announcement paragraph</h3>
   <p>The short message that tells your manager and team about the pilot. An AI assistant drafts it from your notes in step 6 and tightens it in step 7.</p>
   <div class="noprint">
-    <button class="ghost small" data-act="copynotes">Copy my notes to paste into the step 6 prompt</button>
+    <button class="ghost small" data-act="copynotes">Show my notes for the step 6 prompt</button>
+    <div id="noteswrap" hidden>
+      <p class="redwarn">This text goes into an AI chat. Before you copy it, take out anything confidential: names of people, customers or your company, and any figure you would not share outside.</p>
+      <textarea id="notesbox" rows="8" aria-label="My notes, to check and then paste into the step 6 prompt"></textarea>
+      <button class="small" data-copybox="notesbox" data-done="Copied. Paste it after “Notes:” in the step 6 prompt." style="margin-top:6px">Copy this text</button>
+    </div>
     <div class="saved" id="notesmsg" role="status"></div>
-    <textarea class="copybox" id="notesbox" readonly aria-label="My notes, to paste into the step 6 prompt"></textarea>
   </div>
   <label class="f" for="ann">My announcement paragraph <span class="tag req">Required</span></label>
   <p class="what">Paste the final paragraph from the AI chat here, after the rewrite in step 7. The lab shows a finished one.</p>
@@ -772,9 +781,9 @@ $('cands').innerHTML = [1, 2, 3].map((n) => `
 
 const TIERS = '<option value="">–</option><option>1 assist</option><option>2 review</option><option>3 autonomous</option><option>Not sure</option>';
 const INV = [
-  ['r1', 'Tool / use 1', ['Microsoft 365 Copilot, for email and documents', 'IT', 'Email, files, calendar', '1 assist']],
+  ['r1', 'Tool / use 1', ['Microsoft 365 Copilot, for email and documents', 'The head of IT', 'Email, files, calendar', '1 assist']],
   ['r2', 'Tool / use 2', ['Meeting note-taker in video calls', 'Nobody named yet', 'Everything said in the meeting', '1 assist']],
-  ['r3', 'Tool / use 3', ['Helpdesk AI add-on (the pilot)', 'Dana Ruiz, Support Ops', 'Customer tickets', '1 assist']],
+  ['r3', 'Tool / use 3', ['Helpdesk AI add-on (the pilot)', 'The support operations manager', 'Customer tickets', '1 assist']],
   ['shadow', 'Suspected shadow use', ['Personal ChatGPT accounts used for customer emails', 'No owner', 'Possibly customer names and prices', 'Not sure']],
 ];
 $('inv').innerHTML = INV.map(([k, title, ex]) => `
@@ -1127,6 +1136,11 @@ document.addEventListener('click', async (e) => {
   }
   if (t.dataset.showex) { const id = t.dataset.showex, on = !$(id).classList.contains('showex'); store['_show.' + id] = on; persist(); setShowEx(id, on); return; }
   if (t.dataset.fill) { const id = t.dataset.fill; $('ex' + id.slice(2) + 'msg').textContent = fillExample(id); return; }
+  if (t.dataset.copybox) {
+    const ok = await copyText($(t.dataset.copybox).value);
+    t.parentElement.parentElement.querySelector('.saved').textContent = ok ? t.dataset.done : 'Could not copy automatically. Select the text in the box and copy it.';
+    return;
+  }
   if (t.dataset.check) {
     const ws = t.dataset.check, issues = ws === 'ws2' ? charterIssues() : missingByStep(ws);
     showIssues(t.parentElement.querySelector('.checkout'), issues, 'Required boxes to look at:', ws === 'ws2' ? 'All the Required boxes are filled in, and they agree with each other.' : 'All the Required boxes are filled in.');
@@ -1144,11 +1158,13 @@ document.addEventListener('click', async (e) => {
     const d = val('w1.generic');
     await copyInto(d && (act === 'copystress' ? STEP4 + d : d), 'stressbox', 'stressmsg', 'Describe your use case in the box first.',
       act === 'copystress' ? 'Copied. Paste it into a new chat as it is.' : 'Copied. Paste it after “Use case:” in the step 4 prompt.');
-  } else if (act === 'copyplan') {
-    await copyInto(planText(), 'planbox', 'planmsg', 'Nothing to copy yet. Fill in the boxes above first.', 'Copied. Paste it into the step 8 prompt in place of the square brackets.');
-    showIssues('planissues', planText() ? charterIssues() : [], 'Before you paste, worth a look:', '');
-  } else if (act === 'copynotes') {
-    await copyInto(notesText(), 'notesbox', 'notesmsg', 'Nothing to copy yet. Fill in Worksheet 2 and the plan above first.', 'Copied. Paste it after “Notes:” in the step 6 prompt.');
+  } else if (act === 'copyplan' || act === 'copynotes') {
+    // show the text to be checked and edited; the "Copy this text" button under it does the copying
+    const plan = act === 'copyplan', text = plan ? planText() : notesText();
+    const wrap = $(plan ? 'planwrap' : 'noteswrap'), box = $(plan ? 'planbox' : 'notesbox'), msg = $(plan ? 'planmsg' : 'notesmsg');
+    wrap.hidden = !text; msg.textContent = text ? '' : (plan ? 'Nothing to show yet. Fill in the boxes above first.' : 'Nothing to show yet. Fill in Worksheet 2 and the plan above first.');
+    if (text) { box.value = text; grow(box); }
+    if (plan) showIssues('planissues', text ? charterIssues() : [], 'Before you paste, worth a look:', '');
   } else if (act === 'copy') {
     const text = answersAsText();
     if (!text) { $('status').textContent = 'There are no answers to copy yet.'; $('status').scrollIntoView({ block: 'center' }); return; }
@@ -1166,6 +1182,7 @@ document.addEventListener('click', async (e) => {
     store = {}; try { localStorage.removeItem(KEY); } catch { /* nothing to remove */ }
     restore();
     document.querySelectorAll('.copybox').forEach((b) => { b.style.display = 'none'; b.value = ''; });
+    ['planwrap', 'noteswrap'].forEach((w) => { $(w).hidden = true; });
     document.querySelectorAll('.exmsg, #planmsg, #notesmsg, #stressmsg, #planissues, .checkout').forEach((m) => { m.textContent = ''; });
     $('status').textContent = 'All answers cleared.';
   }

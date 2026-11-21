@@ -13,6 +13,8 @@ Fill in Boxes 1–2 in Lab 7. In Lab 8, put a **decide-by date** on Boxes 3–6:
 
 **Required: at least two tools.** List two or three AI tools already in use where you work. For each one, give the **tool and what it is used for**, its **owner** (the one person answerable for it; "nobody yet" is a real answer), and the **data it touches** (what information it can see). **Autonomy tier** is how much the tool does on its own. **1 assist:** AI drafts, a person does the work. **2 review:** AI prepares the action, a named person approves it. **3 autonomous:** AI acts, and people check afterwards.
 
+**Keep it general.** Give owners as job titles, not names. Describe the kind of data ("customer emails"), never the data itself. Describe unapproved use as a habit ("people paste customer emails into personal chatbots"), without saying who does it. No lab step asks you to paste this box into an AI tool, so do not.
+
 | Tool / use | Owner | Data it touches | Autonomy tier (1 assist / 2 review / 3 autonomous) |
 |---|---|---|---|
 | | | | |
@@ -26,9 +28,9 @@ Examples of a filled-in row:
 
 | Tool / use | Owner | Data it touches | Autonomy tier (1 assist / 2 review / 3 autonomous) |
 |---|---|---|---|
-| Microsoft 365 Copilot, for email and documents | IT | Email, files, calendar | 1 assist |
+| Microsoft 365 Copilot, for email and documents | The head of IT | Email, files, calendar | 1 assist |
 | Meeting note-taker in video calls | Nobody named yet | Everything said in the meeting | 1 assist |
-| Helpdesk AI add-on (the pilot) | Dana Ruiz, Support Ops | Customer tickets | 1 assist |
+| Helpdesk AI add-on (the pilot) | The support operations manager | Customer tickets | 1 assist |
 | Personal ChatGPT accounts used for customer emails | No owner | Possibly customer names and prices | Not sure |
 
 ### Lab 7, step 9: Box 2 — Usage policy headlines (three rules you'd publish this week)
@@ -82,7 +84,7 @@ Who looks after AI use: a small review group that approves new AI ideas and keep
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
 | **Box 6: decide by** | Required | The date by which the review group will be named | December 18, 2026 | |
-| **Review group** | Optional | Three to five people from different parts of the organization: names or job titles | Dana Ruiz (Support Ops), plus one person each from IT, Finance and HR | |
+| **Review group** | Optional | Three to five people from different parts of the organization: job titles are enough | Dana Ruiz (Support Ops), plus one person each from IT, Finance and HR | |
 
 ## Lab 7, step 6: My call on the PayFast proposal
 
@@ -112,7 +114,7 @@ Three blocks of 30 days, counted from today. **See** what AI is already doing, *
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
-| **Pilot charter signed by owner** | Required | The pilot charter is Worksheet 2. Write the workflow owner who will sign it off | Dana Ruiz | |
+| **Pilot charter signed by owner** | Required | The pilot charter is Worksheet 2. Write the workflow owner who will sign it off: the same job title or name as on Worksheet 2 | Dana Ruiz | |
 | **Charter signed on (date)** | Optional | The date the workflow owner signs the charter | December 11, 2026 | |
 | **Baseline collection, from** | Required | The first day of the two weeks in which you measure your primary metric before AI (the baseline plan on Worksheet 2) | December 14, 2026 | |
 | **Baseline collection, to** | Required | The last day of those two weeks | December 28, 2026 | |

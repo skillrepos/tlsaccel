@@ -10,8 +10,8 @@ Fill it in on the worksheets page, which saves what you type on your own device:
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
 | **Use case** | Required | The use case you picked as your winner on Worksheet 1 | Triage inbound support tickets | |
-| **Workflow owner** | Required | The one person who will run the pilot day to day. One person, not a team: a name or a job title | Dana Ruiz, Support Operations | |
-| **Sponsor** | Required | The one person who pays for the pilot and can clear roadblocks, often the workflow owner's manager: a name or a job title | Priya Shah, who runs Customer Service | |
+| **Workflow owner** | Required | The one person who will run the pilot day to day. One person, not a team: a job title, or a name (a made-up one is fine) | Dana Ruiz, Support Operations | |
+| **Sponsor** | Required | The one person who pays for the pilot and can clear roadblocks, often the workflow owner's manager: a job title, or a name (a made-up one is fine) | Priya Shah, who runs Customer Service | |
 | **Pilot team** | Required | The one group of people who will use the AI tool during the pilot, and about how many they are. No names needed | One support shift: 12 of the 45 agents, plus the helpdesk administrator | |
 | **Start date** | Required | The first day the pilot team uses the AI tool in real work | January 5, 2027 | |
 | **Day-90 date** | Required | The last day of the pilot: 89 days after the start date (the start date is day 1). On the worksheets page this is worked out for you; change it if your pilot must end on another day | March 31, 2027 (this team chose the end of the quarter, a few days short of 90) | |

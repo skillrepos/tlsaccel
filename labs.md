@@ -472,7 +472,7 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 <br><br>
 
-2. Fill in the header: your winning use case from Lab 5, the workflow owner and the sponsor (one person each, often two different people — a name or a job title such as "Head of HR" is fine), the pilot team, and the start date. The worksheet works out day 90.
+2. Fill in the header: your winning use case from Lab 5, the workflow owner and the sponsor (one person each, often two different people — a job title such as "Head of HR" or a made-up name is fine), the pilot team, and the start date. The worksheet works out day 90.
 
 <br><br>
 
@@ -511,7 +511,7 @@ likely to show a result the AI didn't cause. Give the smallest fix for each.
 Under 150 words.
 ```
 
-**Copy my plan** on the worksheet gathers those lines for you. The screenshot uses a sample plan (median handling time 11 → 8 minutes, first-contact resolution as the guardrail).
+**Show my plan** on the worksheet gathers those lines for you to check and copy. The screenshot uses a sample plan (median handling time 11 → 8 minutes, first-contact resolution as the guardrail).
 
 ![Finance red-team](./images/acc14.png?raw=true "The reviewer finds where the sample plan is gameable")
 
@@ -593,15 +593,15 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 <br><br>
 
-7. Keep your decision to yourself until the poll is run again. When the room splits, listen for what the other side gave more weight to than you did.
+7. When the instructor opens the poll, vote again on the question from before this segment's teaching: should an AI agent pay supplier invoices up to $5,000 with no person approving each one? Approve, approve with conditions, or reject: enter your decision from step 6. If others chose differently from you, listen for one reason you had not thought of.
 
 <br><br>
 
-8. Stay on **Worksheet 3: Governance Playbook**. In Box 1 (Inventory), list two or three AI tools already in use where you work — including shadow use you suspect. For each one the worksheet asks for its owner, the data it touches, and its autonomy tier.
+8. Stay on **Worksheet 3**. In Box 1 (Inventory), list two or three AI tools already in use where you work, including shadow use you suspect. Keep it general: owners as job titles, kinds of data rather than the data, and no names of who does what. Do not paste this box into an AI tool.
 
 <br><br>
 
-9. In Box 2 (Usage policy headlines), write three rules you'd publish this week: one line each, plain enough to follow without asking anyone.
+9. In Box 2 (Usage policy headlines), write three rules you'd publish this week, one line each.
 
 <br><br>
 
@@ -609,7 +609,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 - A proposal that sounds efficient held all three legs of the lethal trifecta plus Tier-3 autonomy, day one.
 - The fix pattern is standard: narrow access, insert human approval on consequential actions, log everything, scope the pilot.
-- You made a decision, not just a list of risks — and others in the room made a different one. That is what an approval meeting is.
+- You made a decision, not just a list of risks, and saw how the room decided on the same facts. That comparison is what an approval meeting is.
 - Your playbook now has its first two boxes — the other four get decide-by dates in Lab 8.
 
 <p align="center">**[END OF LAB]**</p></br></br>
@@ -652,7 +652,7 @@ Confident, no hype.
 Notes: [paste the key lines from your worksheets]
 ```
 
-**Copy my notes** on the worksheet gathers those lines for you.
+**Show my notes** on the worksheet gathers those lines for you to check and copy. Take out names and anything confidential before you paste.
 
 ![Announcement paragraph](./images/acc16.png?raw=true "Worksheet notes turned into a ready-to-send paragraph (sample notes)")
 
