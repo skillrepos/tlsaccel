@@ -17,6 +17,20 @@
   nav.pages { background:#fff; border-bottom:1px solid var(--line); padding:8px 12px; font-size:15px; display:flex; gap:6px 16px; flex-wrap:wrap; position:sticky; top:0; z-index:5; }
   nav.pages a { color:var(--blue); text-decoration:none; padding:4px 0; font-weight:600; }
   nav.pages a.out { font-weight:400; }
+  nav.pages a[aria-current="page"] { background:var(--blue); color:#fff; border-radius:8px; padding:4px 10px; }
+  /* one worksheet on screen at a time (the script adds "paged"; without it everything shows) */
+  body.paged section.ws, body.paged .homeonly { display:none; }
+  body.paged.view-home .homeonly, body.paged.view-ws1 #ws1, body.paged.view-ws2 #ws2, body.paged.view-ws3 #ws3, body.paged.view-ws4 #ws4 { display:block; }
+  .picks { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:10px; margin-top:8px; }
+  a.pick { display:block; border:1.5px solid var(--blue); border-radius:10px; padding:12px 14px; text-decoration:none; color:var(--navy); background:#fff; }
+  a.pick b { display:block; font-size:18px; } a.pick span { display:block; } a.pick i { display:block; font-style:normal; color:var(--grey); font-size:14px; }
+  .pager { display:flex; justify-content:space-between; gap:10px 16px; flex-wrap:wrap; margin-top:18px; padding-top:12px; border-top:1px solid var(--line); }
+  .pager a { font-weight:600; color:var(--blue); text-decoration:none; }
+  details.later { border:1px solid var(--line); border-radius:10px; padding:10px 12px; margin:20px 0 4px; }
+  details.later > summary { cursor:pointer; font-weight:700; color:var(--navy); font-size:18px; }
+  details.later > summary .open { font-weight:400; color:var(--grey); font-size:14px; } details.later[open] > summary .open { display:none; }
+  .carry { background:#f4f7fb; border:1px solid var(--line); border-radius:8px; padding:10px 12px; margin:6px 0 4px; }
+  .carry div { margin:3px 0; } .carry .from { color:var(--grey); font-size:13px; }
   nav.pages .navlabel { display:none; color:var(--grey); padding:4px 0; }
   main { max-width:780px; margin:0 auto; padding:4px 12px 80px; }
   .card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px; margin:16px 0; }
@@ -157,8 +171,9 @@
     .start { display:none; }
     section.ws { break-before:page; } section.ws.first { break-before:auto; }
     /* "Save this worksheet as a PDF": only that worksheet goes on paper */
-    body.only-ws1 section.ws:not(#ws1), body.only-ws2 section.ws:not(#ws2), body.only-ws3 section.ws:not(#ws3) { display:none !important; }
-    body.only-ws1 section.ws, body.only-ws2 section.ws, body.only-ws3 section.ws { break-before:auto; }
+    body.printall section.ws { display:block; }
+    body.only-ws1 section.ws:not(#ws1), body.only-ws2 section.ws:not(#ws2), body.only-ws3 section.ws:not(#ws3), body.only-ws4 section.ws:not(#ws4) { display:none !important; }
+    body.only-ws1 section.ws, body.only-ws2 section.ws, body.only-ws3 section.ws, body.only-ws4 section.ws { break-before:auto; }
     #savedpill, #nosave { display:none !important; }
     header.top { background:none; color:#000; padding:0 0 6pt; } header.top h1 { color:var(--navy); }
     .item, table, .crit, .row, .checks, h3 + * { break-inside:avoid; } h3, h4, label.f, h3 + p { break-after:avoid; }
@@ -175,31 +190,45 @@
 <body>
 <header class="top">
   <h1>Enterprise Leader AI Accelerator — Worksheets</h1>
-  <p>Tech Leader Summit · the three worksheets for Labs 5 to 8 · type straight into the boxes</p>
+  <p>Tech Leader Summit · the four worksheets for Labs 5 to 8 · type straight into the boxes</p>
 </header>
 <nav class="pages">
+  <a href="#home" aria-label="Start: all four worksheets">Start</a>
   <span class="navlabel">Worksheet</span>
   <a href="#ws1" aria-label="Worksheet 1, Lab 5"><span class="wide">Worksheet </span>1<span class="wide"> · Lab 5</span></a>
   <a href="#ws2" aria-label="Worksheet 2, Lab 6"><span class="wide">Worksheet </span>2<span class="wide"> · Lab 6</span></a>
-  <a href="#ws3" aria-label="Worksheet 3, Labs 7 and 8"><span class="wide">Worksheet </span>3<span class="wide"> · Labs 7–8</span></a>
+  <a href="#ws3" aria-label="Worksheet 3, Lab 7"><span class="wide">Worksheet </span>3<span class="wide"> · Lab 7</span></a>
+  <a href="#ws4" aria-label="Worksheet 4, Lab 8"><span class="wide">Worksheet </span>4<span class="wide"> · Lab 8</span></a>
   <a class="out" href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md" target="_blank" rel="noopener">Lab steps ↗</a>
   <a class="out" href="https://github.com/skillrepos/tlsaccel/blob/main/worksheets/leader-reference-sheet.md" target="_blank" rel="noopener">Reference sheet ↗</a>
 </nav>
 <main>
 
-<div class="card start">
-  <h2>Start here</h2>
+<div class="card homeonly noprint" id="home">
+  <h2>Open a worksheet</h2>
+  <p class="hint">One worksheet per lab. Each opens on its own; the bar at the top of the page takes you from one to another. What you type stays saved when you switch.</p>
+  <div class="picks">
+    <a class="pick" href="#ws1"><i>Lab 5</i><b>Worksheet 1</b><span>Use-case scorecard</span></a>
+    <a class="pick" href="#ws2"><i>Lab 6</i><b>Worksheet 2</b><span>Pilot metrics charter</span></a>
+    <a class="pick" href="#ws3"><i>Lab 7</i><b>Worksheet 3</b><span>Governance playbook</span></a>
+    <a class="pick" href="#ws4"><i>Lab 8</i><b>Worksheet 4</b><span>Your 90-day plan</span></a>
+  </div>
+</div>
+
+<div class="card start homeonly">
+  <h2>How this page works</h2>
   <p>The lab steps are in <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md" target="_blank" rel="noopener">labs.md</a>. This page is where you write your answers for Labs 5 to 8. It works on a phone or a laptop.</p>
   <ol>
     <li><b>Type your answers into the boxes.</b> They are saved on this device as you type, so refreshing the page does not lose them. Neither does closing it, unless you are in a private (incognito) window. Nothing you type here is sent anywhere, and there is no sign-in.</li>
     <li><b>Required or optional:</b> boxes marked <span class="tag req">Required</span> are the ones the lab asks you to fill in today. Boxes marked <span class="tag opt">Optional</span> are for back at work. Each worksheet has a <b>Check for required info</b> button that lists what is still missing.</li>
     <li><b>No example of your own?</b> Each worksheet has a yellow <b>“Need an example?”</b> box. It gives you ideas to start from, or a made-up company to use instead, so you can still do every step.</li>
+    <li><b>One worksheet at a time:</b> pick one below, or use the numbers in the bar at the top. Each has its own address, so a link in the lab steps opens the right one.</li>
     <li><b>Keep your work:</b> each worksheet ends with a button that saves it as a PDF with your answers, and a blank fill-in PDF to download. Save your PDFs before you leave today: until then your answers live only in this browser, on this device.</li>
   </ol>
   <div id="nosave" role="alert">This browser is not saving what you type (a private window does this). Your answers will be gone when you close or refresh the page. Open the page in a normal window, or save each worksheet as a PDF before you close it.</div>
   <div class="rule">One rule on data: keep what you write general and non-confidential. Job titles or made-up names instead of real names; the kind of data, not the data; rounded or made-up figures. Treat today’s AI tools as public: only paste into a chat what you would say in public. If you have nothing you can share, use the examples on this page.</div>
   <div class="tools">
-    <button class="ghost" data-act="print">Save all three as one PDF, or print</button>
+    <button class="ghost" data-act="print">Save all four as one PDF, or print</button>
     <button class="ghost" data-act="copy">Copy my answers</button>
   </div>
 </div>
@@ -332,6 +361,10 @@
       <a class="btn ghost" href="worksheets/worksheet1-use-case-scorecard.pdf" download>Download a blank fill-in PDF</a>
     </div>
     <p class="hint">The first button opens your device’s print screen: choose <b>Save as PDF</b> there. On an iPhone, tap the Share button on the print preview, then <b>Save to Files</b>. The blank fill-in PDF is for working away from this page; it does not bring along what you typed here.</p>
+  </div>
+  <div class="pager noprint">
+    <a href="#home">← All worksheets</a>
+    <a href="#ws2">Next: Worksheet 2 (Lab 6) →</a>
   </div>
 </section>
 
@@ -500,14 +533,18 @@
     </div>
     <p class="hint">The first button opens your device’s print screen: choose <b>Save as PDF</b> there. On an iPhone, tap the Share button on the print preview, then <b>Save to Files</b>. The blank fill-in PDF is for working away from this page; it does not bring along what you typed here.</p>
   </div>
+  <div class="pager noprint">
+    <a href="#home">← All worksheets</a>
+    <a href="#ws3">Next: Worksheet 3 (Lab 7) →</a>
+  </div>
 </section>
 
 <!-- ============================ WORKSHEET 3 ============================ -->
-<section class="card ws" id="ws3" data-ws="Worksheet 3: Governance playbook + 30/60/90 (Labs 7–8)">
-  <div class="labhead"><span class="badge">Labs 7–8</span><h2>Worksheet 3: One-page governance playbook + 30/60/90</h2></div>
-  <p class="meta">Goes with <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab7" target="_blank" rel="noopener">Lab 7: Governance gut-check</a> and <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab8" target="_blank" rel="noopener">Lab 8: Your 90-day AI plan</a>.</p>
+<section class="card ws" id="ws3" data-ws="Worksheet 3: Governance playbook (Lab 7)">
+  <div class="labhead"><span class="badge">Lab 7</span><h2>Worksheet 3: One-page governance playbook</h2></div>
+  <p class="meta">Goes with <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab7" target="_blank" rel="noopener">Lab 7: Governance gut-check</a>.</p>
 
-  <div class="why"><b>What this is:</b> two things on one sheet. A <b>governance playbook</b>: six boxes that set out how AI is used where you work — what is in use, what is allowed, who approves new ideas, and who gets the call when something goes wrong. And a <b>30 / 60 / 90</b>: what you will do in the next 90 days, with dates. You start both today and finish them back at work. Each box says what goes in it and gives an example from a made-up company. Boxes marked <b>Required</b> are the ones Labs 7 and 8 ask for today; <b>Optional</b> ones are for back at work.</div>
+  <div class="why"><b>What this is:</b> a one-page <b>governance playbook</b>: seven boxes that say how AI is used where you work, from what is in use today to what is kept on record. In Lab 7 you make one decision and fill in Boxes 1 and 2. Boxes 3–7 are for back at work; in Lab 8 you give each of them a date, on Worksheet 4. Each box says what goes in it and gives an example from a made-up company. Boxes marked <b>Required</b> are the ones Lab 7 asks for today; <b>Optional</b> ones are for back at work.</div>
   <div class="noprint checkrow">
     <button class="ghost small" data-check="ws3">Check for required info</button>
     <span class="hint">Use it at any point: it lists the Required boxes still empty, step by step.</span>
@@ -516,7 +553,7 @@
 
   <details class="ex noprint" id="ex3" open>
     <summary>The examples under each box, and what to do if you are stuck</summary>
-    <p>Under each box is an example from the made-up company, Brightline Logistics: its playbook, and its 90-day plan for the support-ticket pilot from Worksheet 2. This team moved fast: it measured its “before” numbers in December and started the pilot on January 5. Your dates can follow the 30 / 60 / 90 headings.</p>
+    <p>Under each box is an example from the made-up company, Brightline Logistics: the playbook it wrote for its own AI use.</p>
     <p>Stuck, or nothing of your own to use? Fill your empty boxes with the example and carry on with the lab. Filling never changes a box you have already written in. Boxes filled from the example are shaded yellow until you edit them.</p>
     <div class="exbtns">
       <button class="small" data-fill="ws3">Fill my empty boxes with the example</button>
@@ -525,8 +562,19 @@
     <div class="exmsg" id="ex3msg" role="status"></div>
   </details>
 
-  <h3 data-h="The six boxes">The six boxes</h3>
-  <p>Fill in Boxes 1–2 in Lab 7. In Lab 8, put a <b>decide-by date</b> on Boxes 3–6: the date by which you will have settled that box back at work. You leave with a started playbook and a date on every open decision.</p>
+  <h3 data-h="My call on the PayFast proposal (Lab 7, step 6)"><span class="step">Lab 7, step 6</span>My call on the PayFast proposal</h3>
+  <p><b>Required.</b> PayFast is the invoice agent proposed in Lab 7. Decide as if the proposal were on your desk. There is no example here: this one is your call.</p>
+  <div class="seg" data-label="My call on PayFast">
+    <label><input type="radio" name="w3.call" value="Approve"><span>Approve</span></label>
+    <label><input type="radio" name="w3.call" value="Approve with conditions"><span>Approve with conditions</span></label>
+    <label><input type="radio" name="w3.call" value="Reject"><span>Reject</span></label>
+  </div>
+  <label class="f" for="callwhy">Because <span class="tag req">Required</span></label>
+  <p class="what">Two sentences on why. If you chose “approve with conditions”, name the conditions: what must change before the agent runs.</p>
+  <textarea rows="3" id="callwhy" data-k="w3.callwhy" data-label="Because" data-req="1"></textarea>
+
+  <h3 data-h="The seven boxes">The seven boxes</h3>
+  <p>Fill in Boxes 1 and 2 in Lab 7. Boxes 3–7 come after them, for back at work. You leave today with a started playbook, and (after Lab 8) a date on every box that is still open.</p>
 
   <h4 data-h="Box 1 — Inventory (where is AI used today?) (Lab 7, step 8)"><span class="step">Lab 7, step 8</span>Box 1 — Inventory (where is AI used today?)</h4>
   <p><b>Required: at least two tools.</b> List two or three AI tools already in use where you work. For each one, give the <b>tool and what it is used for</b>, its <b>owner</b> (the one person answerable for it; “nobody yet” is a real answer), and the <b>data it touches</b> (what information it can see). <b>Autonomy tier</b> is how much the tool does on its own. <b>1 assist:</b> AI drafts, a person does the work. <b>2 review:</b> AI prepares the action, a named person approves it. <b>3 autonomous:</b> AI acts, and people check afterwards.</p>
@@ -545,11 +593,18 @@
   <p class="what">One rule in one line, for example about who checks AI work before it is used.</p>
   <input type="text" id="p3" data-k="w3.p3" data-label="Rule 3" data-ex="You own what you send. Check every name, number and date before it goes out." data-req="1">
 
-  <h4 data-h="Box 3 — Approval path (Lab 8, step 5)"><span class="step">Lab 8, step 5</span>Box 3 — Approval path</h4>
+  <div class="noprint" style="margin-top:14px">
+    <button data-check="ws3">Check for required info</button>
+    <p class="hint" style="margin-top:6px">Use it at any point. It lists the Required boxes that are still empty, step by step. Lab 7 ends here; everything below is for back at work.</p>
+    <div class="checkout" role="status"></div>
+  </div>
+
+  <details class="later">
+  <summary data-h="Boxes 3–7: the rest of the playbook (back at work)"><span class="step">back at work</span>Boxes 3–7: the rest of the playbook <span class="open">(tap to open)</span></summary>
+  <p>No lab step asks you to fill these in today. In Lab 8 you give each of these five boxes a <b>decide-by date</b> on Worksheet 4: the date by which you will have settled it. Fill in the rest back at work.</p>
+
+  <h4 data-h="Box 3 — Approval path (back at work)"><span class="step">back at work</span>Box 3 — Approval path</h4>
   <p>The approval path is how a new AI idea gets a yes or a no: it is scored on Worksheet 1, someone checks it for risk, and an answer comes back within a set number of days.</p>
-  <label class="f" for="d3">Box 3: decide by <span class="tag req">Required</span></label>
-  <p class="what">The date by which you will have agreed this approval path back at work.</p>
-  <input type="text" id="d3" data-k="w3.d3" data-label="Box 3: decide by" data-ex="January 15, 2027" data-req="1">
   <label class="f" for="riskby">Risk check by <span class="tag opt">Optional</span></label>
   <p class="what">Who looks at a new AI idea for risk before it is approved: one person or a small group.</p>
   <input type="text" id="riskby" data-k="w3.riskby" data-label="Risk check by" data-ex="The review group (Box 6)">
@@ -557,24 +612,17 @@
   <p class="what">How many days someone with a new AI idea should wait for a yes or a no.</p>
   <input type="text" id="turn" data-k="w3.turn" data-label="Target turnaround (days)" data-ex="5">
 
-  <h4 data-h="Box 4 — Standard vendor questions (Lab 8, step 5)"><span class="step">Lab 8, step 5</span>Box 4 — Standard vendor questions</h4>
-  <p>The questions you will put to every company that sells you an AI tool. Tick the ones you want on your standard list. The ticks are optional today.</p>
-  <label class="f" for="d4">Box 4: decide by <span class="tag req">Required</span></label>
-  <p class="what">The date by which your standard list of vendor questions will be agreed.</p>
-  <input type="text" id="d4" data-k="w3.d4" data-label="Box 4: decide by" data-ex="December 9, 2026" data-req="1">
+  <h4 data-h="Box 4 — Vendor checks (back at work)"><span class="step">back at work</span>Box 4 — Vendor checks</h4>
+  <p>The questions you will put to every company that sells you an AI tool. Tick the ones you want on your standard list.</p>
   <div class="checks">
-    <label><input type="checkbox" data-k="w3.v1" data-label="   vendor question ticked: train on our data"><span>Do you train on our data?</span></label>
-    <label><input type="checkbox" data-k="w3.v2" data-label="   vendor question ticked: where data lives"><span>Where does data live?</span></label>
-    <label><input type="checkbox" data-k="w3.v3" data-label="   vendor question ticked: what is logged"><span>What’s logged and can we export it?</span></label>
-    <label><input type="checkbox" data-k="w3.v4" data-label="   vendor question ticked: MCP / standard integration"><span>Do you support MCP / standard integration? (MCP is the common standard for connecting AI tools to your systems)</span></label>
-    <label><input type="checkbox" data-k="w3.v5" data-label="   vendor question ticked: exit path"><span>What’s our exit path? (how we get our data out and stop using the tool)</span></label>
+    <label><input type="checkbox" data-k="w3.v1" data-label="   vendor check ticked: train on our data"><span>Do you train on our data?</span></label>
+    <label><input type="checkbox" data-k="w3.v2" data-label="   vendor check ticked: where data is stored"><span>Where is our data stored?</span></label>
+    <label><input type="checkbox" data-k="w3.v5" data-label="   vendor check ticked: how we leave"><span>How do we leave? (how we get our data out and stop using the tool)</span></label>
+    <label><input type="checkbox" data-k="w3.v4" data-label="   vendor check ticked: MCP / standard integration"><span>Do you support MCP / standard integration? (MCP is the common standard for connecting AI tools to your systems)</span></label>
   </div>
 
-  <h4 data-h="Box 5 — Incident path (Lab 8, step 5)"><span class="step">Lab 8, step 5</span>Box 5 — Incident path</h4>
+  <h4 data-h="Box 5 — Incident path (back at work)"><span class="step">back at work</span>Box 5 — Incident path</h4>
   <p>An incident is AI going wrong: it leaks information, makes something up that gets used, or takes a wrong action. The incident path says who gets the first call.</p>
-  <label class="f" for="d5">Box 5: decide by <span class="tag req">Required</span></label>
-  <p class="what">The date by which the incident path will be agreed.</p>
-  <input type="text" id="d5" data-k="w3.d5" data-label="Box 5: decide by" data-ex="January 29, 2027" data-req="1">
   <label class="f" for="first">First call goes to <span class="tag opt">Optional</span></label>
   <p class="what">The one person or desk anyone can call the moment AI leaks, makes things up or misfires.</p>
   <input type="text" id="first" data-k="w3.first" data-label="First call goes to" data-ex="The IT help desk">
@@ -582,27 +630,67 @@
   <p class="what">The date you will walk through a made-up incident to test the path.</p>
   <input type="text" id="reh" data-k="w3.reh" data-label="Rehearsed on (date)" data-ex="February 12, 2027">
 
-  <h4 data-h="Box 6 — Roles (Lab 8, step 5)"><span class="step">Lab 8, step 5</span>Box 6 — Roles</h4>
-  <p>Who looks after AI use: a small review group that approves new AI ideas and keeps this playbook up to date.</p>
-  <label class="f" for="d6">Box 6: decide by <span class="tag req">Required</span></label>
-  <p class="what">The date by which the review group will be named.</p>
-  <input type="text" id="d6" data-k="w3.d6" data-label="Box 6: decide by" data-ex="December 18, 2026" data-req="1">
+  <h4 data-h="Box 6 — Roles (back at work)"><span class="step">back at work</span>Box 6 — Roles</h4>
+  <p>Who looks after AI use: a named owner for each use, plus a small review group that approves new AI ideas and keeps this playbook up to date.</p>
   <label class="f" for="group">Review group <span class="tag opt">Optional</span></label>
   <p class="what">Three to five people from different parts of the organization: job titles are enough.</p>
   <input type="text" id="group" data-k="w3.group" data-label="Review group" data-ex="Dana Ruiz (Support Ops), plus one person each from IT, Finance and HR">
 
-  <h3 data-h="My call on the PayFast proposal (Lab 7, step 6)"><span class="step">Lab 7, step 6</span>My call on the PayFast proposal</h3>
-  <p><b>Required.</b> PayFast is the invoice agent proposed in Lab 7. Decide as if the proposal were on your desk. There is no example here: this one is your call.</p>
-  <div class="seg" data-label="My call on PayFast">
-    <label><input type="radio" name="w3.call" value="Approve"><span>Approve</span></label>
-    <label><input type="radio" name="w3.call" value="Approve with conditions"><span>Approve with conditions</span></label>
-    <label><input type="radio" name="w3.call" value="Reject"><span>Reject</span></label>
-  </div>
-  <label class="f" for="callwhy">Because <span class="tag req">Required</span></label>
-  <p class="what">Two sentences on why. If you chose “approve with conditions”, name the conditions: what must change before the agent runs.</p>
-  <textarea rows="3" id="callwhy" data-k="w3.callwhy" data-label="Because" data-req="1"></textarea>
+  <h4 data-h="Box 7 — Audit trail (back at work)"><span class="step">back at work</span>Box 7 — Audit trail</h4>
+  <p>The audit trail is the record of what your AI tools did, kept so that someone can check afterwards: what gets logged, who reviews it, and how long the logs are kept.</p>
+  <label class="f" for="logwhat">What gets logged <span class="tag opt">Optional</span></label>
+  <p class="what">What each AI tool records about its own use: for example who used it, when, and what action it took.</p>
+  <input type="text" id="logwhat" data-k="w3.logwhat" data-label="What gets logged" data-ex="Who used the helpdesk add-on, on which ticket, and whether its draft was sent or changed">
+  <label class="f" for="logwho">Who reviews the logs, and how often <span class="tag opt">Optional</span></label>
+  <p class="what">The person or group that looks at those records, and how often.</p>
+  <input type="text" id="logwho" data-k="w3.logwho" data-label="Who reviews the logs, and how often" data-ex="The support operations manager, on the first Monday of each month">
+  <label class="f" for="logkeep">How long logs are kept <span class="tag opt">Optional</span></label>
+  <p class="what">How long the records are kept before they are deleted.</p>
+  <input type="text" id="logkeep" data-k="w3.logkeep" data-label="How long logs are kept" data-ex="12 months">
+  </details>
 
-  <h3 data-h="Your 30 / 60 / 90 (Lab 8, steps 1–4)"><span class="step">Lab 8, steps 1–4</span>Your 30 / 60 / 90</h3>
+  <div class="keep noprint">
+    <b>Keep Worksheet 3</b>
+    <div class="tools">
+      <button data-printws="ws3">Save Worksheet 3 as a PDF, with my answers</button>
+      <a class="btn ghost" href="worksheets/worksheet3-governance-playbook.pdf" download>Download a blank fill-in PDF</a>
+    </div>
+    <p class="hint">The first button opens your device’s print screen: choose <b>Save as PDF</b> there. On an iPhone, tap the Share button on the print preview, then <b>Save to Files</b>. The blank fill-in PDF is for working away from this page; it does not bring along what you typed here.</p>
+  </div>
+  <div class="pager noprint">
+    <a href="#home">← All worksheets</a>
+    <a href="#ws4">Next: Worksheet 4 (Lab 8) →</a>
+  </div>
+</section>
+
+<!-- ============================ WORKSHEET 4 ============================ -->
+<section class="card ws" id="ws4" data-ws="Worksheet 4: Your 90-day plan (Lab 8)">
+  <div class="labhead"><span class="badge">Lab 8</span><h2>Worksheet 4: Your 90-day plan</h2></div>
+  <p class="meta">Goes with <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab8" target="_blank" rel="noopener">Lab 8: Your 90-day AI plan</a>.</p>
+
+  <div class="why"><b>What this is:</b> your plan for the next 90 days, with dates. Three parts: a <b>30 / 60 / 90</b> (what you will do in each of the next three months), a <b>decide-by date</b> for each open box of your governance playbook, and the <b>short message</b> that tells your manager and team about the pilot. It builds on Worksheet 2 (your pilot) and Worksheet 3 (your playbook). Each box says what goes in it and gives an example from a made-up company. Boxes marked <b>Required</b> are the ones Lab 8 asks for today; <b>Optional</b> ones are for back at work.</div>
+  <div class="noprint checkrow">
+    <button class="ghost small" data-check="ws4">Check for required info</button>
+    <span class="hint">Use it at any point: it lists the Required boxes still empty, step by step.</span>
+    <div class="checkout" role="status"></div>
+  </div>
+
+  <details class="ex noprint" id="ex4" open>
+    <summary>The examples under each box, and what to do if you are stuck</summary>
+    <p>Under each box is an example from the made-up company, Brightline Logistics: its 90-day plan for the support-ticket pilot from Worksheet 2. This team moved fast: it measured its “before” numbers in December and started the pilot on January 5. Your dates can follow the 30 / 60 / 90 headings.</p>
+    <p>Stuck, or nothing of your own to use? Fill your empty boxes with the example and carry on with the lab. Filling never changes a box you have already written in. Boxes filled from the example are shaded yellow until you edit them.</p>
+    <div class="exbtns">
+      <button class="small" data-fill="ws4">Fill my empty boxes with the example</button>
+      <button class="ghost small" data-showex="ws4">Show an example under each box</button>
+    </div>
+    <div class="exmsg" id="ex4msg" role="status"></div>
+  </details>
+
+  <h3 data-h="From your earlier worksheets (Lab 8, step 1)"><span class="step">Lab 8, step 1</span>From your earlier worksheets</h3>
+  <p>What you already wrote on Worksheets 2 and 3, so you do not have to look it up or type it again. To change a line, change it on its own worksheet.</p>
+  <div class="carry" id="carry"></div>
+
+  <h3 data-h="Your 30 / 60 / 90 (Lab 8, steps 2–4)"><span class="step">Lab 8, steps 2–4</span>Your 30 / 60 / 90</h3>
   <p>Three blocks of 30 days, counted from today. <b>See</b> what AI is already doing, <b>scope</b> one pilot, then <b>ship</b> it: start the pilot in real work. Boxes marked Required are the ones Lab 8 asks for today; the rest are for back at work.</p>
 
   <h4 data-h="Days 1–30 — SEE (Lab 8, step 2)"><span class="step">Lab 8, step 2</span>Days 1–30 — SEE</h4>
@@ -611,13 +699,13 @@
   <p class="what">One task of your own that you will do with AI every working day, and the tool you will use.</p>
   <input type="text" id="habit" data-k="w3.habit" data-label="Daily AI habit" data-ex="Summarize my weekly status reports in our approved assistant" data-req="1">
   <label class="f" for="invby">Inventory started by (date) <span class="tag opt">Optional</span></label>
-  <p class="what">The date someone starts listing every AI tool in use: Box 1, done properly.</p>
+  <p class="what">The date someone starts listing every AI tool in use: Box 1 of your playbook, done properly.</p>
   <input type="text" id="invby" data-k="w3.invby" data-label="Inventory started by (date)" data-ex="December 11, 2026">
   <label class="f" for="invown">Inventory owner <span class="tag opt">Optional</span></label>
   <p class="what">The one person who will put that list together.</p>
   <input type="text" id="invown" data-k="w3.invown" data-label="Inventory owner" data-ex="The IT service desk lead">
   <label class="f" for="polship">One-page policy ships on <span class="tag req">Required</span></label>
-  <p class="what">The date your usage policy (Box 2, written out on one page) goes to everyone.</p>
+  <p class="what">The date your usage policy (Box 2 of your playbook, written out on one page) goes to everyone.</p>
   <input type="text" id="polship" data-k="w3.polship" data-label="One-page policy ships on" data-ex="December 4, 2026" data-req="1">
   <label class="f" for="short">Shortlist shared with <span class="tag opt">Optional</span></label>
   <p class="what">Who will see your scored use cases from Worksheet 1.</p>
@@ -628,6 +716,7 @@
   <label class="f" for="chby">Pilot charter signed by owner <span class="tag req">Required</span></label>
   <p class="what">The pilot charter is Worksheet 2. Write the workflow owner who will sign it off: the same job title or name as on Worksheet 2.</p>
   <input type="text" id="chby" data-k="w3.chby" data-label="Pilot charter signed by owner" data-ex="Dana Ruiz" data-req="1">
+  <div class="hint" id="chbyhint"></div>
   <label class="f" for="chon">Charter signed on (date) <span class="tag opt">Optional</span></label>
   <p class="what">The date the workflow owner signs the charter.</p>
   <input type="text" id="chon" data-k="w3.chon" data-label="Charter signed on (date)" data-ex="December 11, 2026">
@@ -638,7 +727,7 @@
   <p class="what">The last day of those two weeks.</p>
   <input type="text" id="bto" data-k="w3.bto" data-label="Baseline collection, to" data-ex="December 28, 2026" data-req="1">
   <label class="f" for="live">Approval path + review group live on <span class="tag opt">Optional</span></label>
-  <p class="what">The date Boxes 3 and 6 are in use.</p>
+  <p class="what">The date Boxes 3 and 6 of your playbook are in use.</p>
   <input type="text" id="live" data-k="w3.live" data-label="Approval path + review group live on" data-ex="January 15, 2027">
   <label class="f" for="bpbby">Buy / partner / build decision by <span class="tag opt">Optional</span></label>
   <p class="what">The date you settle how you will get the AI tool for the pilot.</p>
@@ -668,6 +757,24 @@
     <label><input type="checkbox" data-k="w3.t4" data-label="Day-90 test ticked: someone owns it and the full-volume cost is known"><span>Someone owns it, and the cost at full volume is known</span></label>
   </div>
 
+  <h3 data-h="A date for each open box of your playbook (Lab 8, step 5)"><span class="step">Lab 8, step 5</span>A date for each open box of your playbook</h3>
+  <p>Boxes 3–7 of your governance playbook (Worksheet 3) are still open. Give each one a <b>decide-by date</b>: the date by which you will have settled that box back at work.</p>
+  <label class="f" for="d3">Box 3, Approval path: decide by <span class="tag req">Required</span></label>
+  <p class="what">The date by which you will have agreed how a new AI idea gets a yes or a no.</p>
+  <input type="text" id="d3" data-k="w3.d3" data-label="Box 3, Approval path: decide by" data-ex="January 15, 2027" data-req="1">
+  <label class="f" for="d4">Box 4, Vendor checks: decide by <span class="tag req">Required</span></label>
+  <p class="what">The date by which your standard list of questions for AI vendors will be agreed.</p>
+  <input type="text" id="d4" data-k="w3.d4" data-label="Box 4, Vendor checks: decide by" data-ex="December 9, 2026" data-req="1">
+  <label class="f" for="d5">Box 5, Incident path: decide by <span class="tag req">Required</span></label>
+  <p class="what">The date by which you will have agreed who gets the first call when AI goes wrong.</p>
+  <input type="text" id="d5" data-k="w3.d5" data-label="Box 5, Incident path: decide by" data-ex="January 29, 2027" data-req="1">
+  <label class="f" for="d6">Box 6, Roles: decide by <span class="tag req">Required</span></label>
+  <p class="what">The date by which the review group will be named.</p>
+  <input type="text" id="d6" data-k="w3.d6" data-label="Box 6, Roles: decide by" data-ex="December 18, 2026" data-req="1">
+  <label class="f" for="d7">Box 7, Audit trail: decide by <span class="tag req">Required</span></label>
+  <p class="what">The date by which you will have agreed what gets logged, who reviews it and how long logs are kept.</p>
+  <input type="text" id="d7" data-k="w3.d7" data-label="Box 7, Audit trail: decide by" data-ex="January 29, 2027" data-req="1">
+
   <h3 data-h="The announcement paragraph (Lab 8, steps 6–8)"><span class="step">Lab 8, steps 6–8</span>The announcement paragraph</h3>
   <p>The short message that tells your manager and team about the pilot. An AI assistant drafts it from your notes in step 6 and tightens it in step 7.</p>
   <div class="noprint">
@@ -693,26 +800,30 @@
   <input type="text" id="fb2" data-k="w3.fb2" data-label="One concern to deal with">
 
   <div class="noprint" style="margin-top:14px">
-    <button data-check="ws3">Check for required info</button>
+    <button data-check="ws4">Check for required info</button>
     <p class="hint" style="margin-top:6px">Use it at any point. It lists the Required boxes that are still empty, step by step. It cannot tell whether your dates are realistic.</p>
     <div class="checkout" role="status"></div>
   </div>
 
   <div class="keep noprint">
-    <b>Keep Worksheet 3</b>
+    <b>Keep Worksheet 4</b>
     <div class="tools">
-      <button data-printws="ws3">Save Worksheet 3 as a PDF, with my answers</button>
-      <a class="btn ghost" href="worksheets/worksheet3-governance-playbook.pdf" download>Download a blank fill-in PDF</a>
+      <button data-printws="ws4">Save Worksheet 4 as a PDF, with my answers</button>
+      <a class="btn ghost" href="worksheets/worksheet4-90-day-plan.pdf" download>Download a blank fill-in PDF</a>
     </div>
     <p class="hint">The first button opens your device’s print screen: choose <b>Save as PDF</b> there. On an iPhone, tap the Share button on the print preview, then <b>Save to Files</b>. The blank fill-in PDF is for working away from this page; it does not bring along what you typed here.</p>
   </div>
+  <div class="pager noprint">
+    <a href="#home">← All worksheets</a>
+    <a href="#home">Finished? Save your PDFs from the Start page →</a>
+  </div>
 </section>
 
-<div class="card noprint">
+<div class="card noprint homeonly">
   <b>Keep your work</b>
   <p class="hint">Your answers are saved in this browser on this device only. To take them with you, save the page as a PDF or copy your answers into an email to yourself.</p>
   <div class="tools">
-    <button data-act="print">Save all three as one PDF, or print</button>
+    <button data-act="print">Save all four as one PDF, or print</button>
     <button class="ghost" data-act="copy">Copy my answers</button>
     <button class="quiet" data-act="clear">Clear my answers</button>
   </div>
@@ -824,7 +935,18 @@ function persist() {
 }
 const fields = () => [...document.querySelectorAll('[data-k]')];
 const radios = () => [...document.querySelectorAll('input[type=radio]')];
-function grow(t) { if (t.tagName === 'TEXTAREA') { t.style.height = 'auto'; t.style.height = (t.scrollHeight + 2) + 'px'; } }
+// a box on a worksheet that is not on screen has no height to measure; it is sized when its worksheet is shown
+function grow(t) { if (t.tagName === 'TEXTAREA' && t.offsetParent) { t.style.height = 'auto'; t.style.height = (t.scrollHeight + 2) + 'px'; } }
+// a box that repeats an answer from an earlier worksheet follows it until the person types their own
+function follow(k, src, mark) {
+  if (!src) return;
+  const f = document.querySelector('[data-k="' + k + '"]'), cur = store[k] || '';
+  const untouched = !cur.trim() ? document.activeElement !== f : cur === store[mark];
+  if (untouched && (cur !== src || store[mark] !== src)) {
+    f.value = src; store[k] = src; store[mark] = src;
+    try { localStorage.setItem(KEY, JSON.stringify(store)); } catch { /* shown elsewhere */ }
+  }
+}
 const fromEx = () => (store._ex = store._ex || {});
 
 function restore() {
@@ -905,7 +1027,22 @@ function refresh() {
       try { localStorage.setItem(KEY, JSON.stringify(store)); } catch { /* shown elsewhere */ }
     }
   }
-  // Worksheet 3: the dates Worksheet 2 already holds, shown beside the boxes that repeat them
+  // Worksheet 4: what the earlier worksheets already hold. Shown at the top; the owner and the start date are filled in from Worksheet 2.
+  follow('w3.chby', val('w2.owner'), '_w3chby');
+  follow('w3.runs', sd ? fmtDate(sd) : '', '_w3runs');
+  $('chbyhint').textContent = val('w2.owner') ? 'Your Worksheet 2 workflow owner: ' + val('w2.owner') + '.' : '';
+  const carried = [
+    ['Use case', val('w2.usecase') || winnerName(), val('w2.usecase') ? 'Worksheet 2' : 'Worksheet 1'],
+    ['Workflow owner', val('w2.owner'), 'Worksheet 2'],
+    ['Primary metric', [val('w2.metric'), val('w2.bval') && 'from ' + val('w2.bval'), val('w2.target') && 'to ' + val('w2.target')].filter(Boolean).join(' '), 'Worksheet 2'],
+    ['Pilot start date', sd ? fmtDate(sd) : '', 'Worksheet 2'],
+    ['Day-90 date', val('w2.day90') ? plainDay90() : '', 'Worksheet 2'],
+    ['Stop rule: we stop if we see', val('w2.stopsee'), 'Worksheet 2'],
+    ['Usage policy headlines', [val('w3.p1'), val('w3.p2'), val('w3.p3')].filter(Boolean).join(' / '), 'Worksheet 3'],
+  ].filter(([, v]) => v);
+  $('carry').innerHTML = carried.length
+    ? carried.map(([l, v, w]) => '<div><b>' + l + ':</b> ' + esc(v) + ' <span class="from">(' + w + ')</span></div>').join('')
+    : '<div class="hint">Nothing yet. This fills in as you complete Worksheets 2 and 3.</div>';
   $('runshint').textContent = sd ? 'Your Worksheet 2 start date: ' + fmtDate(sd) + '.' : '';
   $('d90hint').textContent = val('w2.day90') ? 'Your Worksheet 2 day-90 date: ' + plainDay90() + '.' : '';
   const sn = parseInt(store['w2.stopday'], 10);
@@ -1103,8 +1240,8 @@ function answersAsText() {
 
 // Printing: a text box cannot wrap or grow on paper, so show each typed answer as plain text instead.
 const pageTitle = document.title;
-function clearPrint() { document.body.classList.remove('printing'); document.querySelectorAll('.printval').forEach((d) => d.remove()); }
-function clearOnly() { document.body.classList.remove('only-ws1', 'only-ws2', 'only-ws3'); document.title = pageTitle; }
+function clearPrint() { document.body.classList.remove('printing'); document.querySelectorAll('details.later[data-shut]').forEach((d) => { d.open = false; delete d.dataset.shut; }); document.querySelectorAll('.printval').forEach((d) => d.remove()); }
+function clearOnly() { document.body.classList.remove('only-ws1', 'only-ws2', 'only-ws3', 'only-ws4', 'printall'); document.title = pageTitle; }
 // One worksheet on its own. The page title becomes the suggested file name for the PDF.
 function prepOnly(id) {
   clearOnly(); document.body.classList.add('only-' + id);
@@ -1112,6 +1249,8 @@ function prepOnly(id) {
 }
 function prepPrint() {
   clearPrint();
+  // a folded-away part does not print, so open each one for the paper copy
+  document.querySelectorAll('details.later').forEach((d) => { if (!d.open) { d.open = true; d.dataset.shut = '1'; } });
   for (const f of document.querySelectorAll('input[type=text][data-k], input[type=date][data-k], textarea[data-k]')) {
     const d = document.createElement('div');
     d.className = 'printval' + (f.value.trim() ? '' : ' empty') + (f.tagName === 'TEXTAREA' && f.rows > 1 ? ' tall' : '');
@@ -1120,7 +1259,12 @@ function prepPrint() {
   }
   document.body.classList.add('printing');
 }
-window.addEventListener('beforeprint', prepPrint);
+window.addEventListener('beforeprint', () => {
+  // printing from the Start page with no single worksheet chosen means all four
+  const b = document.body;
+  if (b.classList.contains('view-home') && ![...b.classList].some((c) => c.startsWith('only-'))) b.classList.add('printall');
+  prepPrint();
+});
 window.addEventListener('afterprint', () => { clearPrint(); clearOnly(); });
 
 let clearArmed = null;
@@ -1153,7 +1297,7 @@ document.addEventListener('click', async (e) => {
 
   const act = t.dataset.act; if (!act) return;
   if (act === 'print') {
-    clearOnly(); window.print();
+    clearOnly(); document.body.classList.add('printall'); window.print();
   } else if (act === 'copystress' || act === 'copygeneric') {
     const d = val('w1.generic');
     await copyInto(d && (act === 'copystress' ? STEP4 + d : d), 'stressbox', 'stressmsg', 'Describe your use case in the box first.',
@@ -1188,7 +1332,7 @@ document.addEventListener('click', async (e) => {
   }
 });
 
-// Worksheet 3: the three 30-day blocks as dates, counted from today
+// Worksheet 4: the three 30-day blocks as dates, counted from today
 (() => {
   const today = new Date(); today.setHours(12, 0, 0, 0);
   const md = (d) => d.toLocaleDateString('en-US', { month: 'long', day: 'numeric' });
@@ -1196,7 +1340,23 @@ document.addEventListener('click', async (e) => {
     $('range-' + id).textContent = 'Counting from today: ' + md(dayN(today, a)) + ' to ' + fmtDate(dayN(today, b)) + '.';
   });
 })();
+// ---------- one worksheet on screen at a time ----------
+// "#ws2" shows Worksheet 2 only; no "#" (or "#home") shows the Start page. Any other "#id" shows the worksheet that id is in.
+function route() {
+  let h = ''; try { h = decodeURIComponent(location.hash.slice(1)); } catch { /* not an id */ }
+  const el = h ? document.getElementById(h) : null, sec = el ? el.closest('section.ws') : null;
+  const view = sec ? sec.id : 'home', b = document.body;
+  [...b.classList].filter((c) => c.startsWith('view-')).forEach((c) => b.classList.remove(c));
+  b.classList.add('paged', 'view-' + view);
+  for (const a of document.querySelectorAll('nav.pages a[href^="#"]')) {
+    if (a.getAttribute('href') === '#' + (sec ? view : 'home')) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+  }
+  if (sec) sec.querySelectorAll('textarea').forEach(grow);
+  if (sec && el !== sec) el.scrollIntoView({ behavior: 'instant' }); else window.scrollTo({ top: 0, behavior: 'instant' });
+}
+window.addEventListener('hashchange', route);
 restore();
+route();
 showSaveState(false);
 if (canSave) $('status').textContent = '';
 </script>

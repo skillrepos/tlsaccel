@@ -10,7 +10,7 @@ The essential one-day leader's playbook for understanding and applying AI — fo
 | File / folder | What it is |
 |---|---|
 | `labs.md` | All 9 hands-on labs, step by step, with prompts to copy and screenshots |
-| [Worksheets page](https://skillrepos.github.io/tlsaccel/) | The 3 worksheets for Labs 5–8 (use-case scorecard, pilot metrics charter, governance playbook + 30/60/90) to fill in on your phone or laptop, with examples built in |
+| [Worksheets page](https://skillrepos.github.io/tlsaccel/) | The 4 worksheets for Labs 5–8, one per lab (use-case scorecard, pilot metrics charter, governance playbook, 90-day plan), to fill in on your phone or laptop, with examples built in. It shows one worksheet at a time |
 | `worksheets/` | The same worksheets as plain files, and a one-page reference sheet to keep |
 | `codespace-lab/` | Files for the optional Lab 9 (runs in GitHub Codespaces) |
 | `images/` | Screenshots used in labs.md |

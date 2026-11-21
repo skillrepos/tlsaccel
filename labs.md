@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.15 - 11/20/26
+## Revision 1.16 - 11/20/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
@@ -11,7 +11,7 @@ The screenshots show Claude. Other assistants look different and word their answ
 
 **Also good to know:** if your assistant remembers your earlier chats, it may bring your own work into some answers. That is fine for today's labs. If you'd rather keep it out, use a chat that ignores your history: in ChatGPT, click **Temporary chat** (top right) and set the menu beside it to **Unpersonalized**; in Claude, click **Use incognito** (the ghost icon, top right).
 
-Labs 5–8 also use three worksheets. Fill them in on the **[worksheets page](https://skillrepos.github.io/tlsaccel/)**: you type into the boxes on your phone or laptop, and your answers are saved on your own device. Boxes marked **Required** are the ones the labs ask you to fill in; boxes marked **Optional** are for back at work. At any point, press **Check for required info** on a worksheet to see which Required boxes are still empty, listed by lab step. No use case of your own ready? Each worksheet there has examples you can use instead. The `worksheets/` folder has a one-page reference sheet to keep.
+Labs 5–8 each use a worksheet: Worksheet 1 for Lab 5, 2 for Lab 6, 3 for Lab 7 and 4 for Lab 8. Fill them in on the **[worksheets page](https://skillrepos.github.io/tlsaccel/)**, which shows one worksheet at a time: you type into the boxes on your phone or laptop, and your answers are saved on your own device. Boxes marked **Required** are the ones the labs ask you to fill in; boxes marked **Optional** are for back at work. At any point, press **Check for required info** on a worksheet to see which Required boxes are still empty, listed by lab step. No use case of your own ready? Each worksheet there has examples you can use instead. The `worksheets/` folder has a one-page reference sheet to keep.
 
 **Lab contents**
 
@@ -593,7 +593,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 <br><br>
 
-7. When the instructor opens the poll, vote again on the question from before this segment's teaching: should an AI agent pay supplier invoices up to $5,000 with no person approving each one? Approve, approve with conditions, or reject: enter your decision from step 6. If others chose differently from you, listen for one reason you had not thought of.
+7. When the instructor opens the new poll (Vote 2), vote on the same question as Vote 1: should an AI agent pay supplier invoices up to $5,000 with no person approving each one? Enter your decision from step 6. Your first vote stays as it was. If others chose differently, listen for one reason you had not thought of.
 
 <br><br>
 
@@ -610,7 +610,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 - A proposal that sounds efficient held all three legs of the lethal trifecta plus Tier-3 autonomy, day one.
 - The fix pattern is standard: narrow access, insert human approval on consequential actions, log everything, scope the pilot.
 - You made a decision, not just a list of risks, and saw how the room decided on the same facts. That comparison is what an approval meeting is.
-- Your playbook now has its first two boxes — the other four get decide-by dates in Lab 8.
+- Your playbook now has its first two boxes — the other five get decide-by dates in Lab 8.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
@@ -620,7 +620,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 **Purpose: Leave with a concrete 30/60/90 plan and the paragraph you'll send your manager or team. (12 minutes)**
 
-1. Open the 30/60/90 section of **[Worksheet 3](https://skillrepos.github.io/tlsaccel/#ws3)**. Have your Lab 5 scorecard and Lab 6 charter beside you. Every box says what goes in it; this lab asks for the ones marked **Required**.
+1. Open **[Worksheet 4](https://skillrepos.github.io/tlsaccel/#ws4)**. Its first section shows what you already wrote on Worksheets 2 and 3, so you do not need them beside you. Every box says what goes in it; this lab asks for the ones marked **Required**.
 
 <br><br>
 
@@ -628,7 +628,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 <br><br>
 
-3. Fill in two lines of Days 31–60 (SCOPE): your pilot's owner and the baseline collection dates (the two weeks in which you measure your primary metric before AI).
+3. Fill in two lines of Days 31–60 (SCOPE): your pilot's owner (already filled in from Worksheet 2; change it if you need to) and the baseline collection dates (the two weeks in which you measure your primary metric before AI).
 
 <br><br>
 
@@ -636,7 +636,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 <br><br>
 
-5. Turn back to the six boxes at the top of Worksheet 3. In Boxes 3–6, fill in **decide by**: the date by which you will have settled that box back at work.
+5. Go to **A date for each open box of your playbook**, further down Worksheet 4. Give each of Boxes 3–7 a **decide by** date: the date by which you will have settled that box back at work.
 
 <br><br>
 
@@ -711,7 +711,16 @@ https://github.com/skillrepos/tlsaccel
 
 <br><br>
 
-4. When setup is done (the terminal shows **Ollama is running.**), click into the terminal, type (or copy) this, and press Enter:
+4. While setup runs, read what you are about to start: one small program (`codespace-lab/agent/leader_demo_agent.py`) that gives an AI model a goal and four tools, then lets the model choose each next step until it is done.
+
+- **The model:** Llama 3.2, a small open model running inside your Codespace. Nothing goes to an outside AI service.
+- **The data:** all made up: three short support tickets (in `codespace-lab/agent/tickets/`; click one in the file list on the left to read it) and three sample customer records.
+- **The four tools, all it can do:** list the tickets, read one, look up a customer, save a draft email. It cannot send email, change records or reach the internet.
+- **Two built-in limits:** it reads all three tickets before answering, and it stops after 8 steps.
+
+<br><br>
+
+5. When setup is done (the terminal shows **Ollama is running.**), click into the terminal, type (or copy) this, and press Enter:
 
 ```
 python codespace-lab/agent/leader_demo_agent.py
@@ -719,7 +728,7 @@ python codespace-lab/agent/leader_demo_agent.py
 
 <br><br>
 
-5. The agent's goal: *find the most urgent of three sample support tickets, check that customer's record, and draft a reply.* Watch the loop scroll by:
+6. The agent's goal: *find the most urgent of three sample support tickets, check that customer's record, and draft a reply.* Watch the loop scroll by:
 
 - **THINK** — the model decides its next step
 - **ACT** — a tool call: reading a ticket, looking up the (sample) customer database
@@ -731,13 +740,13 @@ Each step takes a few seconds — longer on a busy machine. That wait is what "A
 
 <br><br>
 
-6. When it finishes, read the summary at the bottom: the tools the agent was ALLOWED to use, and the email draft waiting for a human to approve (sending is a Tier 2 action). Read the draft closely — does it promise anything nobody approved, such as a fix by a certain time?
+7. When it finishes, read the summary at the bottom: the tools the agent was ALLOWED to use, and the email draft waiting for a human to approve (sending is a Tier 2 action). Read the draft closely — does it promise anything nobody approved, such as a fix by a certain time?
 
 ![Governance summary and draft](./images/acc19.png?raw=true "Allowed tools, one draft awaiting human approval")
 
 <br><br>
 
-7. Run it once more with a different goal:
+8. Run it once more with a different goal:
 
 ```
 python codespace-lab/agent/leader_demo_agent.py --goal "Summarize all three tickets for an executive"
@@ -747,15 +756,15 @@ Same loop, different tool choices — this time it has no reason to look up a cu
 
 <br><br>
 
-8. Connect it back: this loop — with real tools, real credentials, and real autonomy decisions — is what your team proposes when it says "agent." The tool list and the Tier 2 approval you just saw are the governance surface you control.
+9. Connect it back: this loop — with real tools, real credentials, and real autonomy decisions — is what your team proposes when it says "agent." The tool list and the Tier 2 approval you just saw are the governance surface you control.
 
 <br><br>
 
-9. Answer four questions as the sponsor: What was the agent allowed to touch? Which action needed approval? What could have gone wrong? Would you authorize this agent in your organization?
+10. Answer four questions as the sponsor: What was the agent allowed to touch? Which action needed approval? What could have gone wrong? Would you authorize this agent in your organization?
 
 <br><br>
 
-10. When done, close the browser tab. Codespaces stop on their own when idle.
+11. When done, close the browser tab. Codespaces stop on their own when idle.
 
 <br><br>
 
