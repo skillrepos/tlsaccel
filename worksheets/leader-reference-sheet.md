@@ -9,6 +9,8 @@
 | **Assistant** — a chat product built on a model | **RAG** — retrieving your documents so answers use your data | **Token** — the word-chunks AI reads, writes, and bills by |
 | **Copilot** — AI built into a tool you already use | **Fine-tuning** — extra training to specialize a model | **Hallucination** — fluent, confident, and wrong |
 
+Also: **Inference** — running the model: each question or task you send it. Training is done once by the vendor; inference is what you pay for every time it is used.
+
 ## Brief it like a capable new hire
 
 **Role** (who it should be) · **Context** (what it needs to know) · **Task** (exactly what you want) · **Format** (what good looks like).
@@ -37,7 +39,7 @@ Ask: "What did the AI write, and what did you check?" · Redo one number yoursel
 | Multi-step tasks that need tools and choices | AI agent, with a person approving what matters |
 | High-stakes decisions about people, money, safety | A person leads; AI assists under tight controls |
 
-## Seven questions before you fund a pilot
+## Seven questions to ask your technical team before you fund a pilot
 
 1. What business problem are we solving — and who has it?
 2. Why does this need AI? Would simpler automation do?
@@ -48,6 +50,11 @@ Ask: "What did the AI write, and what did you check?" · Redo one number yoursel
 7. What will it cost to run and to scale — not just to pilot?
 
 *On question 7:* ask what one task costs — measured, not estimated — and ask again whenever the model changes. The price list is not the bill.
+
+## Working with your technical team
+
+**What they need from you:** a named problem in one workflow · access to the data and to the people who do the work today · one owner who can decide · the yardstick (baseline, target, guardrail, stop rule) agreed before the build · room to say "it doesn't need AI".
+**Who decides what:** you decide the problem, the metric, the risk you accept, and whether to scale or stop. They decide how it is built and tested, and which model and tools. Decide together: buy, partner or build; what it may do alone; what it costs to run.
 
 ## A pilot that can prove value
 

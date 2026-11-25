@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator
-**Tech Leader Summit · Wednesday, December 2, 2026 · Workshop (4 × 90 min) · Revision 1.3**
+**Tech Leader Summit · Wednesday, December 2, 2026 · Workshop (4 × 90 min) · Revision 1.4**
 
 The essential one-day leader's playbook for understanding and applying AI — for managers, project leaders, and business stakeholders who make AI decisions without doing the implementation.
 
@@ -21,6 +21,8 @@ The essential one-day leader's playbook for understanding and applying AI — fo
 
 You need **one free account** for Labs 1–8. Lab 9 is optional and meant for after the workshop; you need a second free account **only if** you want to run it. **No API keys, credit cards, or software installs are needed.**
 
+**What to bring:** a laptop if you can. Every lab runs in a web browser, and copying prompts and typing into the worksheets is easier with a keyboard. A phone or tablet works too. Bring your phone either way: the polls and the codes on the slides use it.
+
 ### 1. An AI assistant account (required, Labs 1–8)
 
 The screenshots in labs.md use **Claude**, so that's the simplest choice. ChatGPT, Microsoft Copilot, or Gemini work too. If your company provides an approved AI tool, use that one.
@@ -36,7 +38,7 @@ To set up a free Claude account:
 4. Complete the short profile questions Claude asks. It may also ask you to verify a phone number.
 5. You're in when you see a chat box. Send `Hello` to confirm it answers.
 
-**About the free plan:** there is no fixed message count; usage limits reset in 5-hour windows. A full day of labs may hit the limit. If it does, switch to a different assistant for the rest of that lab — every lab works in any of them.
+**About the free plan:** there is no fixed message count; usage limits reset in 5-hour windows. A full day of labs may hit the limit. If it does, switch to a different assistant for the rest of that lab — every lab works in any of them. To save time on the day, consider signing up now for a second free assistant (ChatGPT, Gemini, or Copilot) as a backup.
 
 ### 2. A GitHub account (optional, Lab 9 only)
 
@@ -49,20 +51,23 @@ In Lab 9 a real AI agent runs in a browser-based workspace called a Codespace. I
 
 If you already have a GitHub account, sign in and you're ready.
 
-### 3. Check your laptop (2 minutes)
+### 3. Check the device you'll bring (2 minutes)
 
-Company laptops sometimes block AI sites or Codespaces. Before the workshop, make sure these load on the laptop you'll bring:
+Company laptops sometimes block AI sites and other sites the labs use. Before the workshop, make sure these load on the device you'll bring:
 
 - **https://claude.ai** (or your chosen assistant)
+- **https://github.com/skillrepos/tlsaccel** (the lab steps)
+- **https://skillrepos.github.io/tlsaccel/** (the worksheets for Labs 5–8)
+- **https://www.menti.com** (the polls; your phone works for these too)
 - **https://github.com/codespaces** (Lab 9 only)
 
-If either is blocked, bring a personal laptop or tablet, or ask your IT team before the event.
+If any of these is blocked, bring a personal laptop or tablet, or ask your IT team before the event.
 
 ---
 
 ## During the workshop
 
-- Open **labs.md** in this repo (or the printed copy) and follow along. Every prompt is written out for you to copy.
+- Open **labs.md** in this repo and follow along. Every prompt is written out for you to copy.
 - Keep the **[worksheets page](https://skillrepos.github.io/tlsaccel/)** open — Labs 5–8 fill it in. You type into the boxes, and your answers are saved on your own device. At the end, save the page as a PDF or copy your answers into an email to yourself; they're yours to keep, along with the one-page `leader-reference-sheet.md`.
 - **One rule on data:** use the sample scenarios in the labs, or non-confidential examples from your own work. Treat the tools as public for the day.
 

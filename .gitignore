@@ -9,3 +9,8 @@ review-response-*.md
 facilitation-pack.md
 lab-drafts-*.md
 _qa/
+
+# instructor-only media (deck animations, demo recording projects)
+animations/
+recordings/
+~$*

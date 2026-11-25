@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.16 - 11/20/26
+## Revision 1.17 - 11/25/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
@@ -360,12 +360,15 @@ likelihood, two sentences each.
 
 <br><br>
 
-4. Turn the premortem into protection:
+4. Turn the premortem into a plan:
 
 ```
-For each of those three causes, give one concrete safeguard we could put
-in place on day one of this decision. One line each.
+Turn those three causes into a plan for the first 30 days of this
+decision. As a table of at most 8 rows: the step, the cause it guards
+against, who does it (a role, not a name), and the week. Under 150 words.
 ```
+
+Check the plan the way you would check one from your team: does every cause have at least one step, and does every step have one owner and a week?
 
 <br><br>
 
@@ -384,7 +387,8 @@ toughest critic would — no softening. Under 150 words.
 
 **What just happened**
 
-- AI produced an options analysis, a premortem, safeguards, and a counter-argument in minutes — work that usually waits for a staff meeting.
+- AI produced an options analysis, a premortem, a 30-day plan, and a counter-argument in minutes — work that usually waits for a staff meeting.
+- Step 4 is AI as a planner: a fast first draft of steps, owners and weeks. Whether each step has one owner and a real date is still your check.
 - Asking for assumptions, failure modes, and the opposing case removes the model's agreeable default.
 - Length limits ("under 250 words," "one line each") keep the output short enough to actually read — without them, this lab produces several thousand words.
 - The comparison still left costs out. "2 engineers, 1 quarter, then upkeep" hides the other work those engineers won't do, security review, training, usage fees, and support. Ask "what costs are missing?" of every AI business case.
@@ -609,6 +613,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 - A proposal that sounds efficient held all three legs of the lethal trifecta plus Tier-3 autonomy, day one.
 - The fix pattern is standard: narrow access, insert human approval on consequential actions, log everything, scope the pilot.
+- This is how you work with a technical team without being technical: you did not need to know how PayFast is built to ask what it reads, what it can reach, what it can do alone, and what gets logged.
 - You made a decision, not just a list of risks, and saw how the room decided on the same facts. That comparison is what an approval meeting is.
 - Your playbook now has its first two boxes — the other five get decide-by dates in Lab 8.
 
@@ -632,7 +637,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 <br><br>
 
-4. Fill in one line of Days 61–90 (SHIP): the day-90 decision meeting, where you decide to scale the pilot up, change it, or stop it. Put a real date on it.
+4. Fill in one line of Days 61–90 (SHIP): the date of the day-90 decision meeting. The pilot starts in these 30 days; the meeting is 90 days after it starts (on or just after the day-90 date on Worksheet 2), so it falls after this plan ends. That is where you decide to scale the pilot up, change it, or stop it, using the four tests on Worksheet 4. Book it now and put a real date on it.
 
 <br><br>
 
@@ -645,8 +650,9 @@ changes that matter most for a safe 90-day pilot, one line each.
 ```
 Turn these notes into one tight paragraph (under 120 words) I can send my
 manager and team: we are piloting AI deliberately. Include: the use case,
-the owner, the 90-day window with baseline and metric, the stop rule, and
-one sentence on governance (approved tools + usage policy shipping now).
+the owner, the 90-day window with baseline and metric, the stop rule, the
+weekly check on use, metric and guardrail, and one sentence on governance
+(approved tools + usage policy shipping now).
 Confident, no hype.
 
 Notes: [paste the key lines from your worksheets]
@@ -670,7 +676,11 @@ Critique this paragraph as a skeptical reader in three bullets, then rewrite it.
 
 <br><br>
 
-9. If you're willing: pitch your pilot in the review round that follows — thirty seconds covering the workflow, owner, metric, and stop rule. The room gives one strength and one concern.
+9. Save your work before you leave. Your answers are kept only in this browser on this device. At the bottom of Worksheet 4, press **Save all four as one PDF, or print**, and save the PDF (or press **Copy my answers** and email them to yourself).
+
+<br><br>
+
+10. If you're willing: pitch your pilot in the review round that follows — thirty seconds covering the workflow, owner, metric, and stop rule. The room gives one strength and one concern.
 
 <br><br>
 
@@ -678,7 +688,7 @@ Critique this paragraph as a skeptical reader in three bullets, then rewrite it.
 
 - The 30/60/90 turned today's material into named owners and dated commitments.
 - The announcement paragraph is the real test: if it names a workflow, metric, owner, and stop rule in 120 words, your plan is coherent.
-- Putting the day-90 decision meeting on calendars now is what turns the plan into a commitment.
+- Putting the day-90 decision meeting on calendars now is what turns the plan into a commitment. At that meeting the four tests on Worksheet 4 decide: scale, change, or stop.
 - Every open box of your governance playbook now has a date: a started playbook, not a blank one.
 
 <p align="center">**[END OF LAB]**</p></br></br>

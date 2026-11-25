@@ -38,7 +38,7 @@ Three blocks of 30 days, counted from today. **See** what AI is already doing, *
 |---|---|---|---|---|
 | **Pilot runs in the real workflow from** | Optional | The start date on Worksheet 2: the first day the pilot team uses the AI tool in real work | January 5, 2027 | |
 | **Weekly review slot** | Optional | The day and time each week when you look at the primary metric, the guardrail and how many people are using the tool | Tuesdays at 9:00, 30 minutes | |
-| **Day-90 decision meeting (on calendars now)** | Required | The date of the meeting where you decide to scale the pilot up, change it, or stop it: on or just after the day-90 date on Worksheet 2. Book it now | April 2, 2027 | |
+| **Day-90 decision meeting (on calendars now)** | Required | The date of the meeting where you decide to scale the pilot up, change it, or stop it: on or just after the day-90 date on Worksheet 2. The pilot starts in Days 61–90, so this meeting falls after them. Book it now | April 2, 2027 | |
 | **Scale / iterate / stop: story told with numbers to** | Optional | Who will hear the result, good or bad, with the numbers | My manager, my team and Finance | |
 
 **Day-90 test before you scale** — all four must be true. Nothing to tick today: this is the test you apply at that meeting.
