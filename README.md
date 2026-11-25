@@ -62,7 +62,7 @@ Free accounts include 120 Codespaces hours a month; Lab 9 uses about 1 of them. 
 | A site won't load (often on company laptops) | The labs use claude.ai (or your chosen assistant), github.com, skillrepos.github.io and menti.com. If one is blocked, switch to a personal device or your phone |
 | "You've reached your usage limit" | Switch to another assistant (ChatGPT, Gemini, Copilot) for the rest of the lab |
 | The assistant uses your files or email in an answer | Turn off connected apps in the chat menu, or use a new chat |
-| The assistant brings in your own work or past chats | Fine for the labs. To keep it out: ChatGPT — **Temporary chat**, with the menu beside it set to **Unpersonalized**; Claude — **Use incognito** (ghost icon), with connectors off |
+| The assistant brings in your own work or past chats | Fine for the labs. To keep it out: ChatGPT — **Temporary chat**, with the menu beside it set to **Unpersonalized** (set it again in every new chat); Claude — **Use incognito** (ghost icon), with connectors off |
 | Your answers look different from the screenshots | Normal — AI answers vary. Check that the *pattern* the step describes is there |
 | Lab 9: VS Code asks "Do you trust the authors…?" | Click **Trust Folder & Continue** |
 | Lab 9: "connection refused" when running the agent | Run `bash codespace-lab/scripts/startOllama.sh`. When it prints **Ollama is running.**, try again. If it says Ollama is not installed, run the command it shows (about 2 minutes) |

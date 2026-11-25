@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.23 - 11/25/26
+## Revision 1.24 - 11/25/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
@@ -11,7 +11,7 @@ The screenshots show Claude. Other assistants look different and word their answ
 
 **Before Lab 1:** if your assistant is connected to your email, files, or calendar, turn those connections off for today. In Claude: click the **+** button under the chat box, then **Plugins**, and switch off Gmail, Google Drive and any other email or file apps. Otherwise some prompts will search your own mail and documents, even in an incognito chat.
 
-**Also good to know:** if your assistant remembers your earlier chats, it may bring your own work into some answers. That is fine for today's labs. If you'd rather keep it out, use a chat that ignores your history: in ChatGPT, click **Temporary chat** (top right) and set the menu beside it to **Unpersonalized**; in Claude, click **Use incognito** (the ghost icon, top right).
+**Also good to know:** if your assistant remembers your earlier chats, it may bring your own work into some answers. That is fine for today's labs. If you'd rather keep it out, use a chat that ignores your history: in ChatGPT, click **Temporary chat** (top right) and set the menu beside it to **Unpersonalized**. ChatGPT switches that menu back each time you start a new chat, so set it again whenever a step says to start a new chat. In Claude, click **Use incognito** (the ghost icon, top right).
 
 Labs 5–8 each use a worksheet: Worksheet 1 for Lab 5, 2 for Lab 6, 3 for Lab 7 and 4 for Lab 8. Fill them in on the **[worksheets page](https://skillrepos.github.io/tlsaccel/)**, which shows one worksheet at a time: you type into the boxes on your phone or laptop, and your answers are saved on your own device. Boxes marked **Required** are the ones the labs ask you to fill in; boxes marked **Optional** are for back at work. At any point, press **Check for required info** on a worksheet to see which Required boxes are still empty, listed by lab step. No use case of your own ready? Each worksheet there has examples you can use instead. The `worksheets/` folder has a one-page reference sheet to keep.
 
@@ -357,8 +357,7 @@ Scenario: Our 300-person company needs AI-assisted summarization of customer
 support tickets (8,000/month). Options on the table: (A) buy the add-on from
 our existing helpdesk vendor at $18/agent/month for 45 agents, (B) have our
 platform team build it on an AI model rented from a vendor (~2 engineers,
-1 quarter, then upkeep),
-(C) wait 6 months and re-evaluate.
+1 quarter, then upkeep), (C) wait 6 months and re-evaluate.
 
 Task: Compare A, B, and C with costs, risks, time to value, and the key
 assumptions behind each. Then recommend one and justify it.
@@ -603,6 +602,7 @@ List every risk in the proposal. For each one say which part of the
 trifecta it belongs to (if any) and which tier that action should run at.
 Answer as a table (risk | trifecta part | tier), at most 6 rows. Then list
 the three changes that matter most for a safe 90-day pilot, one line each.
+Under 200 words in total.
 
 PROPOSAL: "PayFast" invoice agent (from our finance systems team)
 
