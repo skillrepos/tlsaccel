@@ -54,7 +54,7 @@ Ask: "What did the AI write, and what did you check?" · Redo one number yoursel
 ## Working with your technical team
 
 **What they need from you:** a named problem in one workflow · access to the data and to the people who do the work today · one owner who can decide · the yardstick (baseline, target, guardrail, stop rule) agreed before the build · room to say "it doesn't need AI".
-**Who decides what:** you decide the problem, the metric, the risk you accept, and whether to scale or stop. They decide how it is built and tested, and which model and tools. Decide together: buy, partner or build; what it may do alone; what it costs to run.
+**Who decides what:** you (or your sponsor) decide the problem, the metric, the risk you accept, and whether to scale or stop. They decide how it is built and tested, and which model and tools. Decide together: buy, partner or build; what it may do alone; what it costs to run.
 
 ## A pilot that can prove value
 

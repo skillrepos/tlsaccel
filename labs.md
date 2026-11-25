@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.17 - 11/25/26
+## Revision 1.18 - 11/25/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
@@ -107,7 +107,7 @@ Rewrite the update fixing those issues. Keep it under 200 words. Do not invent f
 
 <br><br>
 
-8. Read the final version. Every [NEED: …] is a question only you can answer. Without that last sentence in the prompt, models fill the gaps the critique found with made-up specifics — dates, percentages, names — that read as fact. Also check that nothing invented in the first draft survived into this one. Then pick the one [NEED] whose answer would improve the update most — that is business context only you can supply.
+8. Read the final version. Every [NEED: …] marks a fact the AI does not have. You may know the answer yourself, or you may have to get it from someone else, such as a team lead or the vendor. Either way, a person has to supply it. Without that last sentence in the prompt, models fill the gaps the critique found with made-up specifics — dates, percentages, names — that read as fact. Also check that nothing invented in the first draft survived into this one. Then pick the one [NEED] whose answer would improve the update most, and note who you would ask for it.
 
 <br><br>
 
@@ -441,7 +441,7 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 <br><br>
 
-5. Answer its questions honestly (to yourself or in the chat). Adjust any score the questions changed, then fill in **Notes from the AI stress-test** on the worksheet: the score you changed, and the hardest question you could not answer.
+5. Answer its questions honestly (to yourself or in the chat). Adjust any score the questions changed, then fill in **Notes from the AI stress-test** on the worksheet: the score you changed, the hardest question you could not answer, and (if you know) who could answer it.
 
 <br><br>
 
