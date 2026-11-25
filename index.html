@@ -145,6 +145,35 @@
   .printval { display:none; }
   .dod { background:#f7f8fa; border:1px solid var(--line); border-left:4px solid var(--navy); border-radius:8px; padding:10px 12px; margin:8px 0; font-size:15.5px; }
 
+  /* the grey bar on each worksheet: buttons that act on the whole worksheet, not on one step */
+  .wsbar { background:#F3F5F8; border:1px solid var(--line); border-radius:10px; padding:9px 12px 10px; margin:12px 0 4px; }
+  .wsbar .cap { display:block; font-size:12.5px; font-weight:700; letter-spacing:.03em; text-transform:uppercase; color:var(--grey); margin-bottom:6px; }
+  .wsbar button { margin:0 6px 6px 0; }
+  .wsbar .hint { display:block; }
+  /* Worksheet 1, step 2: the three candidate boxes and the examples that fill them */
+  .namerow { margin:10px 0; }
+  .namehead { display:flex; justify-content:space-between; align-items:baseline; gap:10px; }
+  .namehead label.f { margin:0 0 3px; }
+  .namehead button.quiet { padding:0 4px; }
+  .fromnote { color:var(--exink); font-size:14px; margin-top:3px; }
+  .unnamed { font-weight:400; font-style:italic; color:var(--grey); }
+  .exnow { position:sticky; top:48px; z-index:2; background:#fff; border:1.5px dashed var(--exline); border-radius:8px; padding:6px 10px; font-size:14.5px; margin:8px 0 2px; }
+  .chips button.on { background:var(--exink); color:#fff; border-color:var(--exink); }
+  details.ex .item.on { border-color:var(--green); box-shadow:0 0 0 2px #cfe6d0; }
+  details.ex .item button.on { background:var(--green) !important; }
+  /* Worksheet 1, step 7: choose the winner */
+  .winpick label { display:flex; gap:9px; align-items:flex-start; margin:7px 0; cursor:pointer; border:1.5px solid var(--field); border-radius:8px; padding:8px 11px; background:#fff; }
+  .winpick input { width:20px; height:20px; margin-top:2px; flex:none; accent-color:var(--green); }
+  .winpick.fampick span i { display:block; font-style:normal; font-weight:400; color:var(--grey); font-size:14.5px; }
+  .chips.plain button { color:var(--blue); border-color:var(--blue); }
+  .chips.plain button.on { background:var(--blue); color:#fff; border-color:var(--blue); }
+  .chips.plain .hint { align-self:center; }
+  .autonote { color:#12305a; background:var(--pale); border-left:4px solid var(--blue); border-radius:6px; padding:4px 9px; font-size:14.5px; font-weight:600; margin:2px 0 5px; }
+  .waitbox { border:1.5px dashed var(--field); border-radius:8px; padding:8px 11px; color:#333; font-size:15.5px; background:#fafbfc; }
+  .winpick label:has(input:checked) { border-color:var(--green); box-shadow:0 0 0 2px #cfe6d0; font-weight:600; }
+  #toast { position:fixed; left:50%; transform:translateX(-50%); bottom:54px; z-index:7; background:var(--navy); color:#fff; font-size:15px; font-weight:600; border-radius:10px; padding:9px 14px; opacity:0; transition:opacity .25s; pointer-events:none; width:max-content; max-width:92vw; text-align:center; }
+  #toast.on { opacity:.97; }
+
   @media (max-width:640px) {
     .labhead h2 { font-size:19px; } .scores label { font-size:11.5px; }
     nav.pages { flex-wrap:nowrap; align-items:center; gap:8px; overflow-x:auto; white-space:nowrap; }
@@ -174,7 +203,7 @@
     body.printall section.ws { display:block; }
     body.only-ws1 section.ws:not(#ws1), body.only-ws2 section.ws:not(#ws2), body.only-ws3 section.ws:not(#ws3), body.only-ws4 section.ws:not(#ws4) { display:none !important; }
     body.only-ws1 section.ws, body.only-ws2 section.ws, body.only-ws3 section.ws, body.only-ws4 section.ws { break-before:auto; }
-    #savedpill, #nosave { display:none !important; }
+    #savedpill, #nosave, #toast { display:none !important; }
     header.top { background:none; color:#000; padding:0 0 6pt; } header.top h1 { color:var(--navy); }
     .item, table, .crit, .row, .checks, h3 + * { break-inside:avoid; } h3, h4, label.f, h3 + p { break-after:avoid; }
     input, textarea, select { border:1px solid #888 !important; }
@@ -215,15 +244,29 @@
   </div>
 </div>
 
+<div class="card homeonly conf" data-ws="Confidence score (start and end of the day)">
+  <div class="labhead"><span class="badge">All day</span><h2>Your confidence score</h2></div>
+  <p class="meta">Not part of a lab. The instructor asks for this number twice: at the start of the day, and again at the close.</p>
+  <p>How confident am I today that I could sponsor an AI pilot and defend it to finance? (1 = not at all, 5 = fully)</p>
+  <div class="row">
+    <div class="narrow" style="flex-basis:210px"><label class="f" for="confS">At the start of the day</label>
+      <select id="confS" data-k="w1.conf.start" data-label="Confidence, start of day"><option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+    <div class="narrow" style="flex-basis:210px"><label class="f" for="confE">At the close of the day</label>
+      <select id="confE" data-k="w1.conf.end" data-label="Confidence, end of day"><option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
+  </div>
+</div>
+
 <div class="card start homeonly">
   <h2>How this page works</h2>
   <p>The lab steps are in <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md" target="_blank" rel="noopener">labs.md</a>. This page is where you write your answers for Labs 5 to 8. It works on a phone or a laptop.</p>
   <ol>
     <li><b>Type your answers into the boxes.</b> They are saved on this device as you type, so refreshing the page does not lose them. Neither does closing it, unless you are in a private (incognito) window. Nothing you type here is sent anywhere, and there is no sign-in.</li>
     <li><b>Required or optional:</b> boxes marked <span class="tag req">Required</span> are the ones the lab asks you to fill in today. Boxes marked <span class="tag opt">Optional</span> are for back at work. Each worksheet has a <b>Check for required info</b> button that lists what is still missing.</li>
-    <li><b>No example of your own?</b> Each worksheet has a yellow <b>“Need an example?”</b> box. It gives you ideas to start from, or a made-up company to use instead, so you can still do every step.</li>
+    <li><b>Every box starts empty.</b> A yellow <b>“Example:”</b> line under a box is a sample to read, not your answer. The page fills a box for you only from something you entered earlier (for example, Worksheet 2 starts with your Worksheet 1 winner), and a blue note above that box says so.</li>
+    <li><b>No example of your own?</b> Each worksheet has a yellow examples box: ideas to pick from, or a made-up company to use instead, so you can still do every step. A box shaded yellow holds an example you chose to put there; type over it to make it your own.</li>
     <li><b>One worksheet at a time:</b> pick one below, or use the numbers in the bar at the top. Each has its own address, so a link in the lab steps opens the right one.</li>
     <li><b>Keep your work:</b> each worksheet ends with a button that saves it as a PDF with your answers, and a blank fill-in PDF to download. Save your PDFs before you leave today: until then your answers live only in this browser, on this device.</li>
+    <li><b>Start over:</b> each worksheet has a <b>Clear Worksheet</b> button, in the grey bar at its top and again at its end. It empties that worksheet only. <b>Clear all my answers</b>, at the bottom of this screen, empties all four.</li>
   </ol>
   <div id="nosave" role="alert">This browser is not saving what you type (a private window does this). Your answers will be gone when you close or refresh the page. Open the page in a normal window, or save each worksheet as a PDF before you close it.</div>
   <div class="rule">One rule on data: keep what you write general and non-confidential. Job titles or made-up names instead of real names; the kind of data, not the data; rounded or made-up figures. Treat today’s AI tools as public: only paste into a chat what you would say in public. If you have nothing you can share, use the examples on this page.</div>
@@ -238,47 +281,33 @@
   <div class="labhead"><span class="badge">Lab 5</span><h2>Worksheet 1: Use-case scorecard</h2></div>
   <p class="meta">Goes with <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab5" target="_blank" rel="noopener">Lab 5: Score your use cases</a>.</p>
 
-  <p><b>Before we start (write this first):</b> How confident am I today that I could sponsor an AI pilot and defend it to finance? (1 = not at all, 5 = fully)</p>
-  <div class="row">
-    <div class="narrow"><label class="f" for="confS">Start of day <span class="tag req">Required</span></label>
-      <select id="confS" data-req="1" data-k="w1.conf.start" data-label="Confidence, start of day"><option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
-    <div class="narrow"><label class="f" for="confE">End of day <span class="tag opt">At the close</span></label>
-      <select id="confE" data-k="w1.conf.end" data-label="Confidence, end of day"><option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>
-  </div>
-
-  <div class="noprint checkrow">
+  <div class="why"><b>What this is:</b> a scorecard for choosing a first AI pilot. <b>The sections below follow Lab 5’s steps in order</b>; the dark label above each one says which step it is for. <b>Every box starts empty: nothing is filled in for you.</b> A yellow “Example:” line under a box is a sample to read, not your answer.</div>
+  <div class="noprint wsbar">
+    <span class="cap">For the whole worksheet, not one step</span>
     <button class="ghost small" data-check="ws1">Check for required info</button>
-    <span class="hint">Use it at any point: it lists the Required boxes still empty, step by step.</span>
+    <button class="ghost small" data-showex="ws1">Hide the examples under each box</button>
+    <button class="ghost small" data-clearws="ws1">Clear Worksheet 1</button>
+    <span class="hint">Use these at any point. <b>Check</b> lists the Required boxes still empty, step by step. <b>Clear</b> empties this worksheet only, and asks you to press twice.</span>
     <div class="checkout" role="status"></div>
   </div>
+
+  <h3 data-h="Your three candidates (Lab 5, step 2)"><span class="step">Lab 5, step 2</span>Your three candidates <span class="tag req">Required</span></h3>
+  <p>Type three ways your organization could use AI, one in each box below. Name each one as a workflow: “triage inbound support tickets,” not “use AI in support.” No scores yet: those come in step 3.</p>
+  <div id="names"></div>
   <details class="ex noprint" id="ex1">
-    <summary>Need an example? Ideas to start from, or a made-up company to use</summary>
+    <summary>Need an example for step 2? Open this for ideas to pick from, or a made-up company to use</summary>
+    <p class="exnow" id="exnow" role="status"></p>
     <h4>Ideas to start from</h4>
-    <p>Common first use cases. Tap one that happens in your organization to add it to your list, then score it for your own situation.</p>
+    <p>Common first use cases. <b>Tap one and it goes into your next empty candidate box, above.</b> The idea is then marked ✓ to show which box it is in; tap it again to take it back out. You score it for your own organization in step 3.</p>
     <div class="chips" id="ideas"></div>
     <h4>Or use a made-up company: Brightline Logistics</h4>
-    <p>The company from Lab 2. About 300 people; it moves freight for other businesses. Tap <b>Add</b> on three of these. The line under each one gives you enough to score it.</p>
+    <p>The company from Lab 2. About 300 people; it moves freight for other businesses. <b>Tap Add on three of these, and each goes into a candidate box, above.</b> The line under each one gives you enough to score it in step 3.</p>
     <div id="bright"></div>
-    <details>
-      <summary>See one use case scored, with reasons</summary>
-      <p><b>Triage inbound support tickets</b> (Brightline)</p>
-      <div class="scroll"><table>
-        <tr><th>Criterion</th><th>Score</th><th>Why</th></tr>
-        <tr><td>Value</td><td>4</td><td>Handling time is a number the head of support is measured on.</td></tr>
-        <tr><td>Data readiness</td><td>4</td><td>The helpdesk already holds every ticket and how long it took.</td></tr>
-        <tr><td>Feasibility</td><td>5</td><td>The helpdesk vendor sells this as an add-on, and one team owns it.</td></tr>
-        <tr><td>Risk (5 = low)</td><td>4</td><td>Replies go to customers, but an agent reviews every draft first.</td></tr>
-        <tr><td>Measurability</td><td>5</td><td>Handling time is recorded today; a result shows inside 90 days.</td></tr>
-        <tr><td><b>Total</b></td><td><b>22</b></td><td>Risk and Measurability are both 4 or more, so it passes the first-pilot rule.</td></tr>
-      </table></div>
-    </details>
-    <div class="exbtns"><button class="ghost small" data-showex="ws1">Show an example under each box</button></div>
-    <p class="hint">The boxes lower down (the winner and your notes) each show an example from the same made-up company.</p>
     <div class="exmsg" id="ex1msg" role="status"></div>
   </details>
 
-  <h3 data-h="The five criteria (Lab 5, step 3)"><span class="step">Lab 5, step 3</span>The five criteria</h3>
-  <p>List <b>three</b> candidates, then score each <b>1–5</b> on every criterion. Higher is better. <b>Risk is scored in reverse: 5 = low risk.</b></p>
+  <h3 data-h="Score each candidate (Lab 5, step 3)"><span class="step">Lab 5, step 3</span>Score each candidate <span class="tag req">Required</span></h3>
+  <p>Give each of your three candidates a score from <b>1 to 5</b> on each of the five criteria below. Higher is better. <b>Risk is scored in reverse: 5 = low risk.</b> Gut scores are fine.</p>
   <div class="crit">
     <div><b class="n">Value</b> — Which business number it improves (time, cost, quality or revenue), and whether the budget owner cares about that number.
       <span class="ends"><i>5:</i> A number the budget owner is measured on moves · <i>1:</i> “It would be innovative”</span></div>
@@ -292,14 +321,27 @@
       <span class="ends"><i>5:</i> Baseline exists; result visible in 90 days · <i>1:</i> No baseline; benefits “strategic”</span></div>
   </div>
 
-  <h3 data-h="Candidates (Lab 5, steps 2–5)"><span class="step">Lab 5, steps 2–5</span>Candidates <span class="tag req">Required</span></h3>
-  <p class="hint">Three candidates, each with all five scores. Name each one as a workflow: “triage inbound support tickets,” not “use AI in support.”</p>
+  <details class="ex noprint">
+    <summary>Need an example for step 3? See one use case scored, with reasons</summary>
+    <p><b>Triage inbound support tickets</b> (Brightline)</p>
+    <div class="scroll"><table>
+      <tr><th>Criterion</th><th>Score</th><th>Why</th></tr>
+      <tr><td>Value</td><td>4</td><td>Handling time is a number the head of support is measured on.</td></tr>
+      <tr><td>Data readiness</td><td>4</td><td>The helpdesk already holds every ticket and how long it took.</td></tr>
+      <tr><td>Feasibility</td><td>5</td><td>The helpdesk vendor sells this as an add-on, and one team owns it.</td></tr>
+      <tr><td>Risk (5 = low)</td><td>4</td><td>Replies go to customers, but an agent reviews every draft first.</td></tr>
+      <tr><td>Measurability</td><td>5</td><td>Handling time is recorded today; a result shows inside 90 days.</td></tr>
+      <tr><td><b>Total</b></td><td><b>22</b></td><td>Risk and Measurability are both 4 or more, so it passes the first-pilot rule.</td></tr>
+    </table></div>
+  </details>
   <div id="cands"></div>
   <p><b>First-pilot rule:</b> a first pilot needs <b>4+ on Risk and 4+ on Measurability</b>, whatever its total.</p>
   <p class="hint"><b>Quick version, for judging one proposal someone brings you:</b> ask four questions instead of five (fold Data readiness into Feasibility). The rule is the same: Risk and Measurability must pass, however good the Value story is.</p>
 
+  <h3 data-h="Stress-test with AI (Lab 5, step 4)"><span class="step">Lab 5, step 4</span>Stress-test with AI <span class="tag opt">Optional helper</span></h3>
+  <p>In step 4 you paste a prompt into an AI chat, with your top-scored candidate in it. This section writes that prompt for you to copy. (You can also copy the prompt from the lab steps and type your use case into it yourself.)</p>
+  <p class="waitbox" id="stresswait"></p>
   <div id="stress" hidden>
-    <h3 data-h="Stress-test with AI (Lab 5, step 4)"><span class="step">Lab 5, step 4</span>Stress-test with AI <span class="tag opt">Optional helper</span></h3>
     <p id="stresswho"></p>
     <label class="f" for="generic">My use case, described in general terms <span class="hint">— edit this until it says enough and gives nothing away</span></label>
     <textarea id="generic" rows="3" data-k="w1.generic" data-label="Use case description for the AI" placeholder="What the work is, how often it happens, and who checks the result"></textarea>
@@ -314,6 +356,18 @@
     <textarea class="copybox" id="stressbox" readonly aria-label="The text that was copied"></textarea>
   </div>
 
+  <h3 data-h="Notes from the AI’s questions (Lab 5, step 5)"><span class="step">Lab 5, step 5</span>Notes from the AI’s questions</h3>
+  <p>The AI reviewer in step 4 asks five hard questions about your top candidate. These boxes hold what you learned from them.</p>
+  <label class="f" for="changed">Score I changed and why <span class="tag req">Required</span></label>
+  <p class="what">If the AI’s questions made you change one of your five scores: which score, from what to what, and why. Nothing changed? Write “none”.</p>
+  <input type="text" id="changed" data-req="1" data-k="w1.changed" data-label="Score I changed and why" data-ex="Data readiness, 4 down to 3: agents do not all label tickets the same way.">
+  <label class="f" for="hardest">Hardest question I couldn’t answer yet <span class="tag req">Required</span></label>
+  <p class="what">The one question from the AI reviewer that you could not answer today.</p>
+  <input type="text" id="hardest" data-req="1" data-k="w1.hardest" data-label="Hardest question I couldn't answer yet" data-ex="What does one AI-drafted reply cost at 8,000 tickets a month?">
+  <label class="f" for="who">Who in my org can answer it <span class="tag opt">Optional</span></label>
+  <p class="what">The person who could answer that question: a name or a job title.</p>
+  <input type="text" id="who" data-k="w1.who" data-label="Who can answer it" data-ex="The helpdesk administrator, and the vendor’s account manager.">
+
   <h3 data-h="Blocker check (Lab 5, step 6)"><span class="step">Lab 5, step 6</span>Blocker check <span class="tag req">Required</span></h3>
   <p>A blocker is something that rules a use case out for now, however well it scores. <b>A high score never overrides a blocker.</b> For your top-scored candidate, tick anything that is true. Reading the list is the required part; a tick is only for something that is true:</p>
   <div class="checks" id="blockers">
@@ -325,23 +379,17 @@
   </div>
   <div class="note warn" id="blockmsg" hidden>Any box ticked → fix that first, or move to your next candidate.</div>
 
-  <h3 data-h="The winner (Lab 5, step 7)"><span class="step">Lab 5, step 7</span>The winner <span class="tag req">Required</span></h3>
-  <p id="winline" class="hint">Press <b>My winner</b> on one of your candidates above.</p>
+  <h3 data-h="The winner (Lab 5, step 7)"><span class="step">Lab 5, step 7</span>The winner</h3>
+  <label class="f">My winner <span class="tag req">Required</span></label>
+  <p class="what">The candidate you choose as your first pilot: your top-scored one, unless the blocker check in step 6 ruled it out.</p>
+  <div class="winpick" id="winpick" data-label="My winner (candidate number)"></div>
+  <p id="winline" class="hint"></p>
   <label class="f" for="because">…wins because (one sentence) <span class="tag req">Required</span></label>
   <p class="what">Why this use case should be your first pilot: one sentence that says what makes it a safe bet.</p>
   <textarea id="because" rows="2" data-req="1" data-k="w1.because" data-label="Wins because" data-ex="It is high-volume, an agent checks every draft, and handling time is already measured."></textarea>
 
-  <h3 data-h="Notes from the AI stress-test (Lab 5, steps 4–5 and 8)"><span class="step">Lab 5, steps 4–5 and 8</span>Notes from the AI stress-test</h3>
-  <p>The AI reviewer in step 4 asks five hard questions about your top candidate. These boxes hold what you learned from them.</p>
-  <label class="f" for="changed">Score I changed and why <span class="tag req">Required</span></label>
-  <p class="what">If the AI’s questions made you change one of your five scores: which score, from what to what, and why. Nothing changed? Write “none”.</p>
-  <input type="text" id="changed" data-req="1" data-k="w1.changed" data-label="Score I changed and why" data-ex="Data readiness, 4 down to 3: agents do not all label tickets the same way.">
-  <label class="f" for="hardest">Hardest question I couldn’t answer yet <span class="tag req">Required</span></label>
-  <p class="what">The one question from the AI reviewer that you could not answer today.</p>
-  <input type="text" id="hardest" data-req="1" data-k="w1.hardest" data-label="Hardest question I couldn't answer yet" data-ex="What does one AI-drafted reply cost at 8,000 tickets a month?">
-  <label class="f" for="who">Who in my org can answer it <span class="tag opt">Optional</span></label>
-  <p class="what">The person who could answer that question: a name or a job title.</p>
-  <input type="text" id="who" data-k="w1.who" data-label="Who can answer it" data-ex="The helpdesk administrator, and the vendor’s account manager.">
+  <h3 data-h="The score you are least sure of (Lab 5, step 8)"><span class="step">Lab 5, step 8</span>The score you are least sure of</h3>
+  <p>Look back at your winner’s five scores in step 3.</p>
   <label class="f" for="unsure">Score I am least sure of <span class="tag req">Required</span></label>
   <p class="what">Of your winner’s five scores, the one you trust least. You will enter this one in the poll on your phone.</p>
   <select id="unsure" data-req="1" data-k="w1.unsure" data-label="Score I am least sure of" data-ex="Data readiness"><option value="">–</option><option>Value</option><option>Data readiness</option><option>Feasibility</option><option>Risk</option><option>Measurability</option><option>I’m sure of all five</option></select>
@@ -359,6 +407,7 @@
     <div class="tools">
       <button data-printws="ws1">Save Worksheet 1 as a PDF, with my answers</button>
       <a class="btn ghost" href="worksheets/worksheet1-use-case-scorecard.pdf" download>Download a blank fill-in PDF</a>
+      <button class="quiet" data-clearws="ws1">Clear Worksheet 1</button>
     </div>
     <p class="hint">The first button opens your device’s print screen: choose <b>Save as PDF</b> there. On an iPhone, tap the Share button on the print preview, then <b>Save to Files</b>. The blank fill-in PDF is for working away from this page; it does not bring along what you typed here.</p>
   </div>
@@ -373,15 +422,17 @@
   <div class="labhead"><span class="badge">Lab 6</span><h2>Worksheet 2: Pilot metrics charter</h2></div>
   <p class="meta">Goes with <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab6" target="_blank" rel="noopener">Lab 6: Define pilot metrics</a>.</p>
 
-  <div class="why"><b>What this is:</b> a one-page plan for your pilot. It says who runs it, which one measurement should improve, what must not get worse, and when you would stop. Each box says what goes in it and gives an example from a made-up company. Boxes marked <b>Required</b> are the ones the lab asks for today; <b>Optional</b> ones are for back at work. Nothing has to be exact today: a best guess, marked “guess”, is a good answer.</div>
-  <div class="noprint checkrow">
+  <div class="why"><b>What this is:</b> a short plan for your pilot: who runs it, which one measurement should improve, what must not get worse, and when you would stop. <b>The sections below follow Lab 6’s steps in order.</b> Most answers are a tap on a list. Where a number is asked for, a best guess, marked “guess”, is a good answer.</div>
+  <div class="noprint wsbar">
+    <span class="cap">For the whole worksheet, not one step</span>
     <button class="ghost small" data-check="ws2">Check for required info</button>
-    <span class="hint">Use it at any point: it lists the Required boxes still empty, step by step.</span>
+    <button class="ghost small" data-clearws="ws2">Clear Worksheet 2</button>
+    <span class="hint">Use these at any point. <b>Check</b> lists the Required boxes still empty, step by step. <b>Clear</b> empties this worksheet only, and asks you to press twice.</span>
     <div class="checkout" role="status"></div>
   </div>
 
-  <details class="ex noprint" id="ex2" open>
-    <summary>The examples under each box, and what to do if you are stuck</summary>
+  <details class="ex noprint" id="ex2">
+    <summary>Stuck? Open this to use a made-up company’s pilot as your example</summary>
     <p>Under each box is an example from a made-up company, Brightline Logistics. Its pilot is <b>support-ticket triage</b>, the same one shown in the lab screenshots: AI sorts each ticket and drafts a reply, and an agent reviews every draft.</p>
     <p>Stuck, or nothing of your own to use? Fill your empty boxes with the example and carry on with the lab. Filling never changes a box you have already written in. Boxes filled from the example are shaded yellow until you edit them.</p>
     <div class="exbtns">
@@ -391,44 +442,36 @@
     <div class="exmsg" id="ex2msg" role="status"></div>
   </details>
 
-  <h3 data-h="Pilot header (Lab 6, step 2)"><span class="step">Lab 6, step 2</span>Pilot header</h3>
+  <h3 data-h="Your use case (Lab 6, step 1)"><span class="step">Lab 6, step 1</span>Your use case</h3>
   <label class="f" for="usecase">Use case <span class="tag req">Required</span></label>
-  <p class="what">The use case you picked as your winner on Worksheet 1.</p>
+  <p class="what">The use case you picked as your winner on Worksheet 1. The worksheets page copies it here from Worksheet 1; change it if you want.</p>
+  <div class="autonote noprint" data-auto="w2.usecase" data-mark="_w2uc" hidden>Copied from your Worksheet 1 winner. Change it if you want.</div>
   <input type="text" id="usecase" data-k="w2.usecase" data-label="Use case" data-ex="Triage inbound support tickets" data-req="1">
-  <button class="ghost small noprint" id="usewin" style="margin-top:6px" disabled>Use my Worksheet 1 winner</button>
+
+  <h3 data-h="Owner and sponsor (Lab 6, step 2)"><span class="step">Lab 6, step 2</span>Owner and sponsor</h3>
   <label class="f" for="owner">Workflow owner <span class="tag req">Required</span></label>
   <p class="what">The one person who will run the pilot day to day. One person, not a team: a job title, or a name (a made-up one is fine).</p>
   <input type="text" id="owner" data-k="w2.owner" data-label="Workflow owner" data-ex="Dana Ruiz, Support Operations" data-req="1">
   <label class="f" for="sponsor">Sponsor <span class="tag req">Required</span></label>
   <p class="what">The one person who pays for the pilot and can clear roadblocks, often the workflow owner’s manager: a job title, or a name (a made-up one is fine).</p>
   <input type="text" id="sponsor" data-k="w2.sponsor" data-label="Sponsor" data-ex="Priya Shah, who runs Customer Service" data-req="1">
-  <label class="f" for="team">Pilot team <span class="tag req">Required</span></label>
-  <p class="what">The one group of people who will use the AI tool during the pilot, and about how many they are. No names needed.</p>
-  <input type="text" id="team" data-k="w2.team" data-label="Pilot team" data-ex="One support shift: 12 of the 45 agents, plus the helpdesk administrator" data-req="1">
-  <label class="f" for="start">Start date <span class="tag req">Required</span></label>
-  <p class="what">The first day the pilot team uses the AI tool in real work.</p>
-  <input type="date" id="start" data-k="w2.start" data-label="Start date" data-ex="2027-01-05" data-exshow="January 5, 2027" data-req="1">
-  <label class="f" for="day90">Day-90 date <span class="tag req">Required</span></label>
-  <p class="what">The last day of the pilot: 89 days after the start date (the start date is day 1). On the worksheets page this is worked out for you; change it if your pilot must end on another day.</p>
-  <input type="text" id="day90" data-k="w2.day90" data-label="Day-90 date" data-ex="March 31, 2027 (this team chose the end of the quarter, a few days short of 90)" data-req="1">
-  <label class="f" for="bpb">Buy / partner / build <span class="tag opt">Optional</span></label>
-  <p class="what">How you will get the AI tool. Buy: a product that already does this job. Partner: a vendor fits a tool to your data and way of working. Build: your own engineers make it. Most first pilots buy.</p>
-  <input type="text" id="bpb" data-k="w2.bpb" data-label="Buy / partner / build" data-ex="Buy: the add-on our helpdesk vendor sells">
 
-  <h3 data-h="Primary metric (pick ONE) (Lab 6, steps 3–4)"><span class="step">Lab 6, steps 3–4</span>Primary metric (pick ONE)</h3>
-  <div class="scroll"><table>
-    <tr><th>Family</th><th>Example metrics</th></tr>
-    <tr><td>Time</td><td>hours per task, cycle time, backlog age</td></tr>
-    <tr><td>Cost</td><td>cost per ticket/document/case, contractor spend</td></tr>
-    <tr><td>Quality</td><td>error/rework rate, first-pass acceptance</td></tr>
-    <tr><td>Adoption</td><td>weekly active users, % of volume through the tool</td></tr>
-  </table></div>
+  <h3 data-h="Primary metric (pick ONE) (Lab 6, step 3)"><span class="step">Lab 6, step 3</span>Primary metric (pick ONE)</h3>
+  <p>The one measurement that should improve if the pilot works. First choose which kind it is:</p>
+  <div class="winpick fampick" data-label="Kind of metric">
+    <label><input type="radio" name="w2.family" value="Time"><span><b>Time</b> <i>hours per task, cycle time, backlog age</i></span></label>
+    <label><input type="radio" name="w2.family" value="Cost"><span><b>Cost</b> <i>cost per ticket/document/case, contractor spend</i></span></label>
+    <label><input type="radio" name="w2.family" value="Quality"><span><b>Quality</b> <i>error/rework rate, first-pass acceptance</i></span></label>
+    <label><input type="radio" name="w2.family" value="Adoption"><span><b>Adoption</b> <i>weekly active users, % of volume through the tool</i></span></label>
+  </div>
+  <p class="noprint">Then tap the measurement closest to yours. It goes into the box below, where you can change the wording. Or type your own.</p>
+  <div class="chips plain noprint" id="mchips"></div>
   <label class="f" for="metric">My primary metric <span class="tag req">Required</span></label>
   <p class="what">The one measurement that should improve if the pilot works. Say what is measured and in what unit (minutes, dollars, percent or a count).</p>
   <input type="text" id="metric" data-k="w2.metric" data-label="My primary metric" data-ex="Median handling time per support ticket (minutes)" data-req="1">
-  <label class="f" for="bplan">Baseline plan <span class="tag req">Required</span></label>
-  <p class="what">How you will find out what your primary metric is today, before AI: who looks it up, from where, and for which two weeks.</p>
-  <textarea rows="2" id="bplan" data-k="w2.bplan" data-label="Baseline plan" data-ex="The helpdesk administrator pulls handling times for the pilot shift from the helpdesk, for two weeks in December" data-req="1"></textarea>
+
+  <h3 data-h="Two numbers: today and day 90 (Lab 6, step 4)"><span class="step">Lab 6, step 4</span>Two numbers: today and day 90</h3>
+  <p>Your primary metric as it is today, and where you want it after 90 days of the pilot. Nobody has exact numbers in the room: write your best guess and add “guess”.</p>
   <label class="f" for="bval">Baseline value <span class="tag req">Required</span></label>
   <p class="what">What your primary metric is today, before AI. Not sure? Write your best guess and add “guess”: measuring it is the pilot’s first job.</p>
   <input type="text" id="bval" data-k="w2.bval" data-label="Baseline value" data-ex="11 minutes (handling time per ticket today)" data-req="1">
@@ -437,58 +480,94 @@
   <input type="text" id="target" data-k="w2.target" data-label="90-day target" data-ex="8 minutes (down from 11)" data-req="1">
 
   <h3 data-h="Quality guardrail (Lab 6, step 5)"><span class="step">Lab 6, step 5</span>Quality guardrail</h3>
-  <p>The number that must NOT get worse while the primary metric improves:</p>
+  <p>The number that must NOT get worse while the primary metric improves. <span class="noprint">Tap one and it goes into the box below, or type your own.</span></p>
+  <div class="chips plain noprint" id="gchips"></div>
   <label class="f" for="guard">Guardrail <span class="tag req">Required</span></label>
   <p class="what">A second measurement, one that shows quality. It must not get worse while your primary metric improves.</p>
   <input type="text" id="guard" data-k="w2.guard" data-label="Guardrail" data-ex="First-contact resolution (the share of tickets solved in one reply)" data-req="1">
-  <label class="f" for="gval">Current value <span class="tag opt">Optional</span></label>
-  <p class="what">What your guardrail is today. A guess is fine if you mark it.</p>
-  <input type="text" id="gval" data-k="w2.gval" data-label="Current value" data-ex="72% (of tickets are solved in one reply today)">
 
-  <h3 data-h="Definition of done (Lab 6, step 6)"><span class="step">Lab 6, step 6</span>Definition of done</h3>
-  <div class="dod">“By <b>[date]</b>, <b>[workflow]</b> handled with AI assistance shows <b>[metric]</b> moving from <b>[baseline]</b> to <b>[target]</b>, with <b>[guardrail]</b> maintained — or we stop and write down what we learned.”</div>
-  <button class="ghost small noprint" id="builddod">Build the sentence from my boxes</button>
+  <h3 data-h="Definition of done and stop rule (Lab 6, step 6)"><span class="step">Lab 6, step 6</span>Definition of done and stop rule</h3>
+  <p class="noprint">The worksheets page writes both of these for you, from your answers in steps 1 to 5. Read them, and change anything that does not fit.</p>
+  <div class="dod">“By <b>day 90</b>, <b>[workflow]</b> handled with AI assistance shows <b>[metric]</b> moving from <b>[baseline]</b> to <b>[target]</b>, with <b>[guardrail]</b> maintained — or we stop and write down what we learned.”</div>
+  <p class="waitbox noprint" id="dodwait" hidden></p>
   <label class="f" for="dod">My definition of done <span class="tag req">Required</span></label>
-  <p class="what">One sentence built from the boxes above: the day-90 date, the use case, the primary metric with its baseline value and 90-day target, and the guardrail.</p>
-  <textarea rows="3" id="dod" data-k="w2.dod" data-label="My definition of done" data-ex="By March 31, 2027, support-ticket triage handled with AI assistance shows median handling time per support ticket moving from 11 minutes to 8 minutes, with first-contact resolution held at or above 72% — or we stop and write down what we learned." data-req="1"></textarea>
-
-  <h3 data-h="Stop rule (Lab 6, step 7)"><span class="step">Lab 6, step 7</span>Stop rule</h3>
-  <p>A stop rule is the result that would make you end the pilot early, decided before you start.</p>
+  <p class="what">One sentence built from your answers above: the use case, the primary metric with its baseline value and 90-day target, and the guardrail.</p>
+  <div class="autonote noprint" data-auto="w2.dod" data-mark="_w2dod" hidden>Written for you from your answers in steps 1 to 5. Edit it if you want.</div>
+  <textarea rows="3" id="dod" data-k="w2.dod" data-label="My definition of done" data-ex="By day 90, support-ticket triage handled with AI assistance shows median handling time per support ticket moving from 11 minutes to 8 minutes, with first-contact resolution held at or above 72% — or we stop and write down what we learned." data-req="1"></textarea>
+  <button class="ghost small noprint" id="builddod" style="margin-top:6px">Write it again from my boxes</button>
+  <p style="margin-top:14px">A stop rule is the result that would make you end the pilot early, decided before you start.</p>
   <label class="f" for="stopday">Stop check on day <span class="tag req">Required</span></label>
-  <p class="what">The day of the pilot, about halfway through, when you look at the primary metric and the guardrail and decide whether to carry on. A number from 1 to 89.</p>
+  <p class="what">The day of the pilot when you look at the primary metric and the guardrail and decide whether to carry on. The worksheets page suggests day 45, halfway through; any number from 1 to 89 works.</p>
+  <div class="autonote noprint" data-auto="w2.stopday" data-mark="_w2sd" hidden>Suggested for you: day 45 is halfway. Change it if you want.</div>
   <input type="text" id="stopday" data-k="w2.stopday" data-label="Stop check on day" data-ex="42" data-req="1">
   <div class="calc hint" id="stopdate" data-label="   that day is"></div>
   <label class="f" for="stopsee">We stop early if we see <span class="tag req">Required</span></label>
   <p class="what">What the primary metric or the guardrail would have to show on that day for you to stop the pilot early.</p>
-  <input type="text" id="stopsee" data-k="w2.stopsee" data-label="We stop early if we see" data-ex="Handling time is still 11 minutes or more, or fewer than 72% of tickets are solved in one reply for two weeks running" data-req="1">
+  <div class="autonote noprint" data-auto="w2.stopsee" data-mark="_w2ss" hidden>Written for you from your metric and guardrail. Edit it if you want.</div>
+  <textarea rows="2" id="stopsee" data-k="w2.stopsee" data-label="We stop early if we see" data-ex="Handling time is still 11 minutes or more, or fewer than 72% of tickets are solved in one reply for two weeks running" data-req="1"></textarea>
 
-  <h3 data-h="Finance red-team findings (Lab 6, steps 8–9)"><span class="step">Lab 6, steps 8–9</span>Finance red-team findings</h3>
-  <p>A red-team is a deliberate attack on your own plan, to find its weak spots before someone else does. In step 8 an AI reviewer plays a skeptic from finance and names three weak spots, each with a fix. In step 9 you write down the two that matter most.</p>
+  <h3 data-h="Finance red-team finding (Lab 6, step 7)"><span class="step">Lab 6, step 7</span>Finance red-team finding</h3>
+  <p>A red-team is a deliberate attack on your own plan, to find its weak spots before someone else does. In step 7 an AI reviewer plays a skeptic from finance and names three weak spots, each with a fix. You write down the one that matters most.</p>
   <div class="noprint">
-    <button class="ghost small" data-act="copyplan">Show my plan for the step 8 prompt</button>
+    <button class="ghost small" data-act="copyplan">Show my plan for the step 7 prompt</button>
     <div id="planissues"></div>
     <div id="planwrap" hidden>
       <p class="redwarn">This text goes into an AI chat. Before you copy it, take out anything confidential: names of people, customers or your company, and any figure you would not share outside.</p>
-      <textarea id="planbox" rows="6" aria-label="My plan, to check and then paste into the step 8 prompt"></textarea>
-      <button class="small" data-copybox="planbox" data-done="Copied. Paste it into the step 8 prompt in place of the square brackets." style="margin-top:6px">Copy this text</button>
+      <textarea id="planbox" rows="6" aria-label="My plan, to check and then paste into the step 7 prompt"></textarea>
+      <button class="small" data-copybox="planbox" data-wrap="STEP7" data-done="Copied: the whole step 7 prompt, with your plan in it. Paste it into a new chat as it is." style="margin-top:6px">Copy the step 7 prompt with my plan in it</button>
+      <button class="ghost small" data-copybox="planbox" data-done="Copied: your plan only. Paste it into the step 7 prompt in place of the square brackets." style="margin-top:6px">Copy my plan only</button>
     </div>
     <div class="saved" id="planmsg" role="status"></div>
   </div>
-  <label class="f" for="game">Most gameable part and the fix <span class="tag req">Required</span></label>
-  <p class="what">“Gameable” means the primary metric could look better without the work getting better. Write the weak spot the AI reviewer found in your plan, and how you will close it.</p>
-  <textarea rows="2" id="game" data-k="w2.game" data-label="Most gameable part and the fix" data-ex="Agents can look faster by splitting one problem into two tickets. Fix: also count reopened tickets and tickets per customer problem." data-req="1"></textarea>
-  <label class="f" for="attr">Attribution risk and the fix <span class="tag req">Required</span></label>
-  <p class="what">Would the primary metric have improved anyway, without the AI? Write why it might, and how you will tell the difference.</p>
-  <textarea rows="2" id="attr" data-k="w2.attr" data-label="Attribution risk and the fix" data-ex="Ticket volume dips every January, so handling times fall anyway. Fix: compare the pilot shift with a shift that does not use the tool." data-req="1"></textarea>
+  <label class="f" for="game">Biggest weak spot and the fix <span class="tag req">Required</span></label>
+  <p class="what">Of the three weak spots the AI reviewer named, the one that worries you most, and what you will change to close it.</p>
+  <textarea rows="2" id="game" data-k="w2.game" data-label="Biggest weak spot and the fix" data-ex="Agents can look faster by splitting one problem into two tickets. Fix: also count reopened tickets and tickets per customer problem." data-req="1"></textarea>
 
-  <h3 data-h="What the pilot needs (Lab 6, step 10)"><span class="step">Lab 6, step 10</span>What the pilot needs</h3>
-  <p><b>For step 10 of Lab 6, after the AI review.</b> What it will take to run the pilot for 90 days: money, people, and a limit on what the AI tool may spend. Rough answers are fine.</p>
-  <label class="f" for="money">Money <span class="tag req">Required</span></label>
+  <div class="noprint" style="margin-top:14px">
+    <button data-check="ws2">Check for required info</button>
+    <p class="hint" style="margin-top:6px">Use it at any point. It lists the Required boxes that are still empty, step by step, and boxes that do not agree with each other. It cannot tell whether your numbers are true: the AI reviewer in step 7, and your own team, are the test of that.</p>
+    <div class="checkout" role="status"></div>
+  </div>
+
+  <details class="later">
+  <summary data-h="The rest of the charter (back at work)"><span class="step">back at work</span>The rest of the charter <span class="open">(tap to open)</span></summary>
+  <p>No lab step asks you to fill these in today. They finish the charter: fill them in back at work, with the people who have the numbers.</p>
+
+  <h4 data-h="Pilot team and dates (back at work)"><span class="step">back at work</span>Pilot team and dates</h4>
+  <label class="f" for="team">Pilot team <span class="tag opt">Optional</span></label>
+  <p class="what">The one group of people who will use the AI tool during the pilot, and about how many they are. No names needed.</p>
+  <input type="text" id="team" data-k="w2.team" data-label="Pilot team" data-ex="One support shift: 12 of the 45 agents, plus the helpdesk administrator">
+  <label class="f" for="start">Start date <span class="tag opt">Optional</span></label>
+  <p class="what">The first day the pilot team uses the AI tool in real work.</p>
+  <input type="date" id="start" data-k="w2.start" data-label="Start date" data-ex="2027-01-05" data-exshow="January 5, 2027">
+  <label class="f" for="day90">Day-90 date <span class="tag opt">Optional</span></label>
+  <p class="what">The last day of the pilot: 89 days after the start date (the start date is day 1). On the worksheets page this is worked out for you; change it if your pilot must end on another day.</p>
+  <input type="text" id="day90" data-k="w2.day90" data-label="Day-90 date" data-ex="March 31, 2027 (this team chose the end of the quarter, a few days short of 90)">
+  <label class="f" for="bpb">Buy / partner / build <span class="tag opt">Optional</span></label>
+  <p class="what">How you will get the AI tool. Buy: a product that already does this job. Partner: a vendor fits a tool to your data and way of working. Build: your own engineers make it. Most first pilots buy.</p>
+  <input type="text" id="bpb" data-k="w2.bpb" data-label="Buy / partner / build" data-ex="Buy: the add-on our helpdesk vendor sells">
+
+  <h4 data-h="Measuring it (back at work)"><span class="step">back at work</span>Measuring it</h4>
+  <label class="f" for="bplan">Baseline plan <span class="tag opt">Optional</span></label>
+  <p class="what">How you will find out what your primary metric is today, before AI: who looks it up, from where, and for which two weeks.</p>
+  <textarea rows="2" id="bplan" data-k="w2.bplan" data-label="Baseline plan" data-ex="The helpdesk administrator pulls handling times for the pilot shift from the helpdesk, for two weeks in December"></textarea>
+  <label class="f" for="gval">Guardrail’s current value <span class="tag opt">Optional</span></label>
+  <p class="what">What your guardrail is today. A guess is fine if you mark it.</p>
+  <input type="text" id="gval" data-k="w2.gval" data-label="Guardrail’s current value" data-ex="72% (of tickets are solved in one reply today)">
+
+  <h4 data-h="A second weak spot (back at work)"><span class="step">back at work</span>A second weak spot</h4>
+  <label class="f" for="attr">Attribution risk and the fix <span class="tag opt">Optional</span></label>
+  <p class="what">Would the primary metric have improved anyway, without the AI? Write why it might, and how you will tell the difference.</p>
+  <textarea rows="2" id="attr" data-k="w2.attr" data-label="Attribution risk and the fix" data-ex="Ticket volume dips every January, so handling times fall anyway. Fix: compare the pilot shift with a shift that does not use the tool."></textarea>
+
+  <h4 data-h="What the pilot needs (back at work)"><span class="step">back at work</span>What the pilot needs</h4>
+  <p>What it will take to run the pilot for 90 days: money, people, and a limit on what the AI tool may spend. Rough answers are fine.</p>
+  <label class="f" for="money">Money <span class="tag opt">Optional</span></label>
   <p class="what">What the pilot will cost in money over the 90 days: licenses, usage fees, vendor help. A rough figure is fine.</p>
-  <input type="text" id="money" data-k="w2.money" data-label="Money" data-ex="$18 per agent per month × 12 agents = $216 a month" data-req="1">
-  <label class="f" for="people">People and time <span class="tag req">Required</span></label>
+  <input type="text" id="money" data-k="w2.money" data-label="Money" data-ex="$18 per agent per month × 12 agents = $216 a month">
+  <label class="f" for="people">People and time <span class="tag opt">Optional</span></label>
   <p class="what">Who will work on the pilot, and about how many hours a week each.</p>
-  <input type="text" id="people" data-k="w2.people" data-label="People and time" data-ex="Dana, 4 hours a week; each pilot agent, one hour of training" data-req="1">
+  <input type="text" id="people" data-k="w2.people" data-label="People and time" data-ex="Dana, 4 hours a week; each pilot agent, one hour of training">
   <label class="f" for="cpt">AI running cost per task <span class="tag opt">Optional</span></label>
   <p class="what">What the AI tool charges to do the job once, for example one ticket or one document. “Not measured yet” is a fine answer today: it is your first question for the team.</p>
   <input type="text" id="cpt" data-k="w2.cpt" data-label="AI running cost per task" data-ex="Not measured yet: first question for the vendor">
@@ -499,22 +578,16 @@
   <p class="what">The one person who is told when the month’s spending gets close to the cap.</p>
   <input type="text" id="alert" data-k="w2.alert" data-label="Who gets the alert" data-ex="Dana Ruiz">
 
-  <h3 data-h="If it succeeds (Lab 6, step 10)"><span class="step">Lab 6, step 10</span>If it succeeds</h3>
-  <p><b>Also for step 10 of Lab 6.</b> What happens after day 90 if the pilot works: who keeps it going, and what it costs once everyone uses it.</p>
-  <label class="f" for="after">Who runs it after day 90 <span class="tag req">Required</span></label>
+  <h4 data-h="If it succeeds (back at work)"><span class="step">back at work</span>If it succeeds</h4>
+  <p>What happens after day 90 if the pilot works: who keeps it going, and what it costs once everyone uses it.</p>
+  <label class="f" for="after">Who runs it after day 90 <span class="tag opt">Optional</span></label>
   <p class="what">Who keeps the AI tool running once the pilot is over.</p>
-  <input type="text" id="after" data-k="w2.after" data-label="Who runs it after day 90" data-ex="Support Operations, under Dana Ruiz" data-req="1">
-  <label class="f" for="fullcost">Rough cost at full volume, and who pays <span class="tag req">Required</span></label>
+  <input type="text" id="after" data-k="w2.after" data-label="Who runs it after day 90" data-ex="Support Operations, under Dana Ruiz">
+  <label class="f" for="fullcost">Rough cost at full volume, and who pays <span class="tag opt">Optional</span></label>
   <p class="what">What the AI tool will cost when everyone who should use it does, and whose budget covers it.</p>
-  <input type="text" id="fullcost" data-k="w2.fullcost" data-label="Rough cost at full volume, and who pays" data-ex="$18 × 45 agents = $810 a month, about $9,700 a year, from the Customer Service budget" data-req="1">
+  <input type="text" id="fullcost" data-k="w2.fullcost" data-label="Rough cost at full volume, and who pays" data-ex="$18 × 45 agents = $810 a month, about $9,700 a year, from the Customer Service budget">
 
-  <div class="noprint" style="margin-top:14px">
-    <button data-check="ws2">Check for required info</button>
-    <p class="hint" style="margin-top:6px">Use it at any point. It lists the Required boxes that are still empty, step by step, and boxes that do not agree with each other. It cannot tell whether your numbers are true: the AI reviewer in step 8, and your own team, are the test of that.</p>
-    <div class="checkout" role="status"></div>
-  </div>
-
-  <h3 data-h="Seven questions for the team proposing the pilot (take-home)"><span class="step">take-home</span>Seven questions for the team proposing the pilot <span class="tag opt">Optional</span></h3>
+  <h4 data-h="Seven questions for the team proposing the pilot (back at work)"><span class="step">back at work</span>Seven questions for the team proposing the pilot <span class="tag opt">Optional</span></h4>
   <p>Tick each one you already have a clear answer to. The unticked ones are your next conversation.</p>
   <div class="checks">
     <label><input type="checkbox" data-k="w2.q1" data-label="Clear answer to question 1 (the business problem)"><span>1. What business problem are we solving — and who has it?</span></label>
@@ -525,11 +598,14 @@
     <label><input type="checkbox" data-k="w2.q6" data-label="Clear answer to question 6 (how we know it worked)"><span>6. How will we know it worked — baseline, target, guardrail?</span></label>
     <label><input type="checkbox" data-k="w2.q7" data-label="Clear answer to question 7 (cost to run and scale)"><span>7. What will it cost to run and to scale — not just to pilot?</span></label>
   </div>
+  </details>
+
   <div class="keep noprint">
     <b>Keep Worksheet 2</b>
     <div class="tools">
       <button data-printws="ws2">Save Worksheet 2 as a PDF, with my answers</button>
       <a class="btn ghost" href="worksheets/worksheet2-pilot-metrics.pdf" download>Download a blank fill-in PDF</a>
+      <button class="quiet" data-clearws="ws2">Clear Worksheet 2</button>
     </div>
     <p class="hint">The first button opens your device’s print screen: choose <b>Save as PDF</b> there. On an iPhone, tap the Share button on the print preview, then <b>Save to Files</b>. The blank fill-in PDF is for working away from this page; it does not bring along what you typed here.</p>
   </div>
@@ -545,9 +621,11 @@
   <p class="meta">Goes with <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab7" target="_blank" rel="noopener">Lab 7: Governance gut-check</a>.</p>
 
   <div class="why"><b>What this is:</b> a one-page <b>governance playbook</b>: seven boxes that say how AI is used where you work, from what is in use today to what is kept on record. In Lab 7 you make one decision and fill in Boxes 1 and 2. Boxes 3–7 are for back at work; in Lab 8 you give each of them a date, on Worksheet 4. Each box says what goes in it and gives an example from a made-up company. Boxes marked <b>Required</b> are the ones Lab 7 asks for today; <b>Optional</b> ones are for back at work.</div>
-  <div class="noprint checkrow">
+  <div class="noprint wsbar">
+    <span class="cap">For the whole worksheet, not one step</span>
     <button class="ghost small" data-check="ws3">Check for required info</button>
-    <span class="hint">Use it at any point: it lists the Required boxes still empty, step by step.</span>
+    <button class="ghost small" data-clearws="ws3">Clear Worksheet 3</button>
+    <span class="hint">Use these at any point. <b>Check</b> lists the Required boxes still empty, step by step. <b>Clear</b> empties this worksheet only, and asks you to press twice.</span>
     <div class="checkout" role="status"></div>
   </div>
 
@@ -654,6 +732,7 @@
     <div class="tools">
       <button data-printws="ws3">Save Worksheet 3 as a PDF, with my answers</button>
       <a class="btn ghost" href="worksheets/worksheet3-governance-playbook.pdf" download>Download a blank fill-in PDF</a>
+      <button class="quiet" data-clearws="ws3">Clear Worksheet 3</button>
     </div>
     <p class="hint">The first button opens your device’s print screen: choose <b>Save as PDF</b> there. On an iPhone, tap the Share button on the print preview, then <b>Save to Files</b>. The blank fill-in PDF is for working away from this page; it does not bring along what you typed here.</p>
   </div>
@@ -669,9 +748,11 @@
   <p class="meta">Goes with <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab8" target="_blank" rel="noopener">Lab 8: Your 90-day AI plan</a>.</p>
 
   <div class="why"><b>What this is:</b> your plan for the next 90 days, with dates. Three parts: a <b>30 / 60 / 90</b> (what you will do in each of the next three months), a <b>decide-by date</b> for each open box of your governance playbook, and the <b>short message</b> that tells your manager and team about the pilot. It builds on Worksheet 2 (your pilot) and Worksheet 3 (your playbook). Each box says what goes in it and gives an example from a made-up company. Boxes marked <b>Required</b> are the ones Lab 8 asks for today; <b>Optional</b> ones are for back at work.</div>
-  <div class="noprint checkrow">
+  <div class="noprint wsbar">
+    <span class="cap">For the whole worksheet, not one step</span>
     <button class="ghost small" data-check="ws4">Check for required info</button>
-    <span class="hint">Use it at any point: it lists the Required boxes still empty, step by step.</span>
+    <button class="ghost small" data-clearws="ws4">Clear Worksheet 4</button>
+    <span class="hint">Use these at any point. <b>Check</b> lists the Required boxes still empty, step by step. <b>Clear</b> empties this worksheet only, and asks you to press twice.</span>
     <div class="checkout" role="status"></div>
   </div>
 
@@ -782,7 +863,8 @@
     <div id="noteswrap" hidden>
       <p class="redwarn">This text goes into an AI chat. Before you copy it, take out anything confidential: names of people, customers or your company, and any figure you would not share outside.</p>
       <textarea id="notesbox" rows="8" aria-label="My notes, to check and then paste into the step 6 prompt"></textarea>
-      <button class="small" data-copybox="notesbox" data-done="Copied. Paste it after “Notes:” in the step 6 prompt." style="margin-top:6px">Copy this text</button>
+      <button class="small" data-copybox="notesbox" data-wrap="STEP6" data-done="Copied: the whole step 6 prompt, with your notes in it. Paste it into a new chat as it is." style="margin-top:6px">Copy the step 6 prompt with my notes in it</button>
+      <button class="ghost small" data-copybox="notesbox" data-done="Copied: your notes only. Paste them after “Notes:” in the step 6 prompt." style="margin-top:6px">Copy my notes only</button>
     </div>
     <div class="saved" id="notesmsg" role="status"></div>
   </div>
@@ -810,6 +892,7 @@
     <div class="tools">
       <button data-printws="ws4">Save Worksheet 4 as a PDF, with my answers</button>
       <a class="btn ghost" href="worksheets/worksheet4-90-day-plan.pdf" download>Download a blank fill-in PDF</a>
+      <button class="quiet" data-clearws="ws4">Clear Worksheet 4</button>
     </div>
     <p class="hint">The first button opens your device’s print screen: choose <b>Save as PDF</b> there. On an iPhone, tap the Share button on the print preview, then <b>Save to Files</b>. The blank fill-in PDF is for working away from this page; it does not bring along what you typed here.</p>
   </div>
@@ -825,13 +908,14 @@
   <div class="tools">
     <button data-act="print">Save all four as one PDF, or print</button>
     <button class="ghost" data-act="copy">Copy my answers</button>
-    <button class="quiet" data-act="clear">Clear my answers</button>
+    <button class="quiet" data-act="clear">Clear all my answers</button>
   </div>
   <div class="saved" id="status" role="status"></div>
   <textarea class="copybox" id="copyBox" readonly aria-label="My answers as text"></textarea>
 </div>
 
 <div id="savedpill" class="noprint" aria-hidden="true">✓ Saved on this device</div>
+<div id="toast" class="noprint" role="status" aria-live="polite"></div>
 <footer>(c) 2026 Tech Skills Transformations and Brent C. Laster. All rights reserved.</footer>
 </main>
 
@@ -873,22 +957,41 @@ const CRIT = [['v', 'Value'], ['d', 'Data'], ['f', 'Feas.'], ['r', 'Risk'], ['m'
 const CRITFULL = { v: 'Value', d: 'Data readiness', f: 'Feasibility', r: 'Risk (5 = low risk)', m: 'Measurability' };
 const CRITLONG = { v: 'Value', d: 'Data readiness', f: 'Feasibility', r: 'Risk (5 = low)', m: 'Measurability' };
 const opts = '<option value="">–</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option>';
+// Worksheet 1, step 2: the three candidate boxes
+$('names').innerHTML = [1, 2, 3].map((n) => `
+  <div class="namerow" data-name="${n}">
+    <div class="namehead"><label class="f" for="c${n}name">Candidate ${n}</label>
+      <button type="button" class="quiet noprint" data-clearcand="${n}" aria-label="Clear candidate ${n} and its scores">clear</button></div>
+    <textarea rows="1" id="c${n}name" data-k="w1.c${n}.name" data-label="Candidate ${n}" placeholder="Type a use case here"></textarea>
+    <div class="fromnote noprint" hidden>Added from the examples. Type over it to make it your own.</div>
+  </div>`).join('');
+// step 3: a score card for each candidate, headed by the name typed in step 2
 $('cands').innerHTML = [1, 2, 3].map((n) => `
   <div class="item" data-cand="${n}">
-    <label class="f" for="c${n}name" style="margin-top:0">Candidate ${n}</label>
-    <textarea rows="1" id="c${n}name" data-k="w1.c${n}.name" data-label="Candidate ${n}" placeholder="Name it as a workflow"></textarea>
+    <div class="t">Candidate ${n}: <span class="cname"></span></div>
     <div class="facts" hidden></div>
     <div class="scores">${CRIT.map(([k, short]) => `
       <div><label for="c${n}${k}" title="${CRITFULL[k]}"><span class="wide">${CRITLONG[k]}</span><span class="narrowonly">${short}</span></label>
-        <select id="c${n}${k}" aria-label="${CRITFULL[k]}, candidate ${n}" data-k="w1.c${n}.${k}" data-label="   ${CRITFULL[k]}">${opts}</select></div>`).join('')}
+        <select id="c${n}${k}" aria-label="${CRITFULL[k]}, candidate ${n}" data-k="w1.c${n}.${k}" data-label="Candidate ${n} · ${CRITFULL[k]}">${opts}</select></div>`).join('')}
     </div>
     <div class="candfoot">
-      <span class="total calc" data-label="   Total"></span>
+      <span class="total calc" data-label="Candidate ${n} total"></span>
       <span class="rulemsg"></span>
-      <span class="seg" data-label="My winner (candidate number)"><label><input type="radio" name="w1.winner" value="${n}"><span>My winner</span></label></span>
-      <button type="button" class="quiet noprint" data-clearcand="${n}">clear</button>
     </div>
   </div>`).join('');
+// step 7: one line per candidate, to choose the winner from
+$('winpick').innerHTML = [1, 2, 3].map((n) => `
+  <label data-win="${n}" hidden><input type="radio" name="w1.winner" value="${n}"><span class="wn"></span></label>`).join('');
+
+// Worksheet 2: measurements to tap, by kind of metric, and common guardrails
+const FAMILY = {
+  Time: ['Hours per task', 'Cycle time (days from start to finish)', 'Backlog age (days)'],
+  Cost: ['Cost per ticket, document or case ($)', 'Contractor spend ($ per month)'],
+  Quality: ['Error or rework rate (%)', 'First-pass acceptance (%)'],
+  Adoption: ['Weekly active users', 'Share of the work that goes through the tool (%)'],
+};
+const GUARDS = ['Error or rework rate (%)', 'Customer satisfaction score', 'First-pass acceptance (%)', 'Complaints or escalations per month', 'First-contact resolution (%)'];
+$('gchips').innerHTML = GUARDS.map((t) => `<button type="button" data-pick="w2.guard" data-v="${esc(t)}">${esc(t)}</button>`).join('');
 
 const TIERS = '<option value="">–</option><option>1 assist</option><option>2 review</option><option>3 autonomous</option><option>Not sure</option>';
 const INV = [
@@ -970,6 +1073,7 @@ function candName(n) { return (store['w1.c' + n + '.name'] || '').trim(); }
 // Lab 5, step 4: the prompt as it is written in labs.md, up to the part the attendee fills in
 const STEP4 = "You are a skeptical AI program reviewer. For the use case below, ask me the\nfive hardest questions you'd ask before funding it, one line each, covering:\nbusiness value, data readiness, buy-vs-build, risk, and measurability.\n\nUse case: ";
 // the candidate step 4 is about: the declared winner, or until then the fully scored candidate with the highest total
+let stressReady;   // not known until the page has loaded its saved answers
 function topCandidate() {
   const w = store['w1.winner']; if (w && candName(w)) return w;
   let best = null, bestTotal = -1;
@@ -987,23 +1091,52 @@ function refresh() {
   // boxes filled from the example stay shaded until edited
   const ex = store._ex || {};
   for (const f of fields()) f.classList.toggle('fromex', !!ex[f.dataset.k]);
-  // Worksheet 1: totals, the first-pilot rule, the winner
+  // Worksheet 1: each candidate's name beside its scores, the totals, the first-pilot rule, the winner list
   for (const item of document.querySelectorAll('[data-cand]')) {
-    const n = item.dataset.cand;
+    const n = item.dataset.cand, name = candName(n);
     const s = CRIT.map(([k]) => parseInt(store['w1.c' + n + '.' + k], 10));
     const done = s.filter((x) => x >= 1);
-    item.querySelector('.total').textContent = done.length ? 'Total: ' + done.reduce((a, b) => a + b, 0) + (done.length < 5 ? ' so far' : ' of 25') : '';
+    const total = done.length ? 'Total: ' + done.reduce((a, b) => a + b, 0) + (done.length < 5 ? ' so far' : ' of 25') : '';
+    item.querySelector('.total').textContent = total;
+    item.querySelector('.cname').innerHTML = name ? esc(name) : '<span class="unnamed">not named yet. Type it in step 2, above.</span>';
     const r = s[3], m = s[4], msg = item.querySelector('.rulemsg');
     if (r >= 1 && m >= 1) {
       msg.innerHTML = (r >= 4 && m >= 4) ? '<span class="ok">Passes the first-pilot rule</span>' : '<span class="no">Not a first pilot: Risk and Measurability both need 4+</span>';
     } else msg.textContent = '';
     const facts = item.querySelector('.facts'), note = store['w1.c' + n + '.note'];
-    facts.hidden = !note; facts.textContent = note || '';
+    facts.hidden = !note; facts.innerHTML = note ? '<b>Facts to score from:</b> ' + esc(note) : '';
     item.classList.toggle('win', store['w1.winner'] === n);
+    // step 2: say so when a box holds an example
+    document.querySelector('[data-name="' + n + '"] .fromnote').hidden = !(name && ex['w1.c' + n + '.name']);
+    // step 7: a line to choose, for each candidate that has a name
+    const win = document.querySelector('[data-win="' + n + '"]');
+    win.hidden = !name;
+    win.querySelector('.wn').textContent = name ? 'Candidate ' + n + ': ' + name + (total ? ' (' + total.toLowerCase() + ')' : '') : '';
   }
+  // step 2: each example shows whether it is in a candidate box, and which one
+  const inBox = (t) => ['1', '2', '3'].find((n) => candName(n) === t);
+  for (const b of document.querySelectorAll('[data-idea]')) {
+    const n = inBox(b.dataset.idea);
+    b.classList.toggle('on', !!n); b.setAttribute('aria-pressed', n ? 'true' : 'false');
+    b.textContent = n ? '✓ In Candidate ' + n + ' · ' + b.dataset.idea : '+ ' + b.dataset.idea;
+  }
+  for (const b of document.querySelectorAll('[data-bright]')) {
+    const n = inBox(BRIGHT[+b.dataset.bright][0]);
+    b.classList.toggle('on', !!n); b.closest('.item').classList.toggle('on', !!n); b.setAttribute('aria-pressed', n ? 'true' : 'false');
+    b.textContent = n ? '✓ In Candidate ' + n + ' · tap to take out' : 'Add';
+  }
+  $('exnow').innerHTML = '<b>Your candidate boxes (step 2, above):</b> ' + ['1', '2', '3'].map((n) => n + '. ' + (candName(n) ? esc(candName(n)) : '<i>empty</i>')).join(' &nbsp;·&nbsp; ');
   // Lab 5, step 4: a description to check and copy, once there is a winner or a fully scored front-runner
   const top = topCandidate(), g = $('generic');
-  $('stress').hidden = !top;
+  $('stress').hidden = !top; $('stresswait').hidden = !!top;
+  if (!top) {   // say what is still missing, so nobody waits for a box that is not going to appear
+    const sofar = ['1', '2', '3'].map((n) => {
+      const k = CRIT.filter(([c]) => parseInt(store['w1.c' + n + '.' + c], 10) >= 1).length;
+      return candName(n) ? 'Candidate ' + n + ' has ' + k + ' of its 5 scores' : (k ? 'Candidate ' + n + ' has scores but no name' : '');
+    }).filter(Boolean);
+    $('stresswait').innerHTML = '<b>Nothing to copy yet.</b> The prompt appears here as soon as one candidate has a name (step 2) and all five scores (step 3). So far: ' + (sofar.length ? esc(sofar.join('; ')) : 'no candidate has a name') + '.';
+  } else if (stressReady === false) toast('Step 4 is ready: your prompt is written in the “Lab 5, step 4” section.');
+  stressReady = !!top;
   if (top) {
     const start = startText(top), cur = store['w1.generic'] || '';
     const untouched = !cur.trim() ? document.activeElement !== g : cur === store['_w1start'];
@@ -1013,7 +1146,7 @@ function refresh() {
       try { localStorage.setItem(KEY, JSON.stringify(store)); } catch { /* shown elsewhere */ }
     }
     $('stale').hidden = untouched || !store['_w1for'] || store['_w1for'] === top;
-    $('stresswho').innerHTML = (store['w1.winner'] === top ? 'Your winner: ' : 'Your top-scored candidate so far: ') + '<b>' + esc(candName(top)) + '</b>';
+    $('stresswho').innerHTML = (store['w1.winner'] === top ? 'Your winner: ' : 'Your top-scored candidate so far: ') + '<b>' + esc(candName(top)) + '</b>. The box below was started for you from its name. Edit it before you copy.';
     $('regen').hidden = (store['w1.generic'] || '') === start;
     grow(g);
   }
@@ -1049,8 +1182,25 @@ function refresh() {
   $('stopdate').textContent = sd && sn >= 1 && sn <= 366 ? 'Day ' + sn + ' is ' + fmtDate(dayN(sd, sn)) + '.' : '';
   const w = winnerName();
   $('winline').className = w ? '' : 'hint';
-  $('winline').innerHTML = w ? 'My winner: <b>' + esc(w) + '</b>' : 'Press <b>My winner</b> on one of your candidates above.';
-  $('usewin').disabled = !w || (store['w2.usecase'] || '').trim() === w;
+  $('winline').innerHTML = w ? 'My winner: <b>' + esc(w) + '</b>' : (['1', '2', '3'].some((n) => candName(n)) ? 'Choose one of your candidates above.' : 'Your candidates are listed here once you have named them in step 2.');
+  // Worksheet 2: the use case repeats the Worksheet 1 winner; the kind of metric decides which measurements are offered
+  follow('w2.usecase', w, '_w2uc');
+  const fam = store['w2.family'] || '', mc = $('mchips');
+  if (mc.dataset.fam !== fam) {
+    mc.dataset.fam = fam;
+    mc.innerHTML = fam ? FAMILY[fam].map((t) => `<button type="button" data-pick="w2.metric" data-v="${esc(t)}">${esc(t)}</button>`).join('')
+      : '<span class="hint">Choose a kind of metric above, and the measurements to tap appear here.</span>';
+  }
+  for (const b of document.querySelectorAll('[data-pick]')) { const on = val(b.dataset.pick) === b.dataset.v; b.classList.toggle('on', on); b.setAttribute('aria-pressed', on ? 'true' : 'false'); }
+  // step 6: the definition of done and the stop rule are written from steps 1 to 5, until the person edits them
+  const need = [['w2.usecase', 'the use case (step 1)'], ['w2.metric', 'your primary metric (step 3)'], ['w2.bval', 'the baseline value (step 4)'], ['w2.target', 'the 90-day target (step 4)'], ['w2.guard', 'the guardrail (step 5)']].filter(([k]) => !val(k)).map(([, t]) => t);
+  if (!need.length) follow('w2.dod', buildDod(), '_w2dod');
+  $('dodwait').hidden = !need.length || !!val('w2.dod');
+  $('dodwait').innerHTML = '<b>Nothing written yet.</b> Your definition of done appears in the box below once these are filled in: ' + esc(need.join('; ')) + '.';
+  if (val('w2.metric') && val('w2.guard')) follow('w2.stopday', '45', '_w2sd');
+  if (val('w2.metric') && val('w2.bval') && val('w2.guard')) follow('w2.stopsee', 'No improvement in ' + lowFirst(noBrackets(val('w2.metric'))) + ' (still ' + noBrackets(val('w2.bval')) + ' or worse), or ' + lowFirst(noBrackets(val('w2.guard'))) + ' has got worse', '_w2ss');
+  for (const a of document.querySelectorAll('[data-auto]')) a.hidden = !(val(a.dataset.auto) && store[a.dataset.auto] === store[a.dataset.mark]);
+  for (const f of document.querySelectorAll('#dod, #stopsee, #usecase')) grow(f);
   $('blockmsg').hidden = !document.querySelector('#blockers input:checked');
 }
 
@@ -1078,16 +1228,40 @@ function setField(k, v, isExample) {
   return true;
 }
 function addCandidate(name, note) {
-  for (const n of [1, 2, 3]) if (candName(n) === name) return 'That one is already Candidate ' + n + '.';
+  for (const n of ['1', '2', '3']) if (candName(n) === name) {   // a second tap takes it back out
+    for (const k of Object.keys(store)) if (k.startsWith('w1.c' + n + '.')) delete store[k];
+    delete fromEx()['w1.c' + n + '.name'];
+    if (store['w1.winner'] === n) delete store['w1.winner'];
+    persist(); restore();
+    return 'Taken out of Candidate ' + n + '.';
+  }
   for (const n of [1, 2, 3]) {
     if (!candName(n)) {
-      setField('w1.c' + n + '.name', name, false);
+      setField('w1.c' + n + '.name', name, true);
       if (note) store['w1.c' + n + '.note'] = note; else delete store['w1.c' + n + '.note'];
       persist(); refresh();
-      return 'Added as Candidate ' + n + '. ' + (note ? 'Now score it from the facts shown under its name.' : 'Now score it for your own organization.');
+      return 'Added to Candidate ' + n + ', in step 2. ' + (note ? 'Score it in step 3, from the facts shown there.' : 'Score it for your own organization in step 3.');
     }
   }
-  return 'Your three rows are full. Press “clear” on one to make room.';
+  return 'Your three candidate boxes are full. Press “clear” beside one in step 2 to make room.';
+}
+let toastTimer = null;
+function toast(text) { const p = $('toast'); p.textContent = text; p.classList.add('on'); clearTimeout(toastTimer); toastTimer = setTimeout(() => p.classList.remove('on'), 3500); }
+// "Clear Worksheet N": empties that worksheet's boxes and leaves the other worksheets alone
+const WSMARKS = { ws1: ['_w1start', '_w1for'], ws2: ['_w2d90', '_w2uc', '_w2dod', '_w2sd', '_w2ss'], ws4: ['_w3chby', '_w3runs'] };
+function clearWorksheet(id) {
+  const sec = $(id), ex = fromEx();
+  for (const f of sec.querySelectorAll('[data-k]')) { delete store[f.dataset.k]; delete ex[f.dataset.k]; }
+  for (const r of sec.querySelectorAll('input[type=radio]')) delete store[r.name];
+  if (id === 'ws1') for (const k of Object.keys(store)) if (/^w1\.c\d\./.test(k)) delete store[k];
+  (WSMARKS[id] || []).forEach((k) => delete store[k]);
+  persist(); restore();
+  sec.querySelectorAll('.copybox').forEach((b) => { b.style.display = 'none'; b.value = ''; });
+  sec.querySelectorAll('#planwrap, #noteswrap').forEach((w) => { w.hidden = true; });
+  sec.querySelectorAll('.exmsg, #planmsg, #notesmsg, #stressmsg, #planissues, .checkout').forEach((m) => { m.textContent = ''; });
+  sec.querySelector('.wsbar .checkout').innerHTML = '<div class="issues ok">Worksheet ' + id.slice(2) + ' is cleared. Your other worksheets were not changed.' +
+    (id === 'ws4' ? ' Boxes that repeat an answer from Worksheet 2 have filled themselves in again.' : '') + (id === 'ws2' && val('w2.usecase') ? ' The use case has been copied in again from Worksheet 1.' : '') + '</div>';
+  sec.scrollIntoView({ behavior: 'instant' });
 }
 function setShowEx(id, on) {
   const s = $(id); s.classList.toggle('showex', on);
@@ -1099,7 +1273,8 @@ function fillExample(id) {
     if (f.type === 'checkbox' || String(f.value).trim()) continue;
     if (setField(f.dataset.k, f.dataset.ex, true)) n++;
   }
-  persist(); refresh();
+  if (id === 'ws2' && !store['w2.family']) store['w2.family'] = 'Time';
+  persist(); restore();
   return n ? 'Filled ' + n + ' empty ' + (n === 1 ? 'box' : 'boxes') + ' with the example. Boxes you had already written in were not changed.' : 'No empty boxes to fill. Your own answers were not changed.';
 }
 
@@ -1123,12 +1298,12 @@ function planText() {
 // Boxes carry data-req; headings carry data-h, e.g. "Pilot header (Lab 6, step 2)".
 const EXTRA = {
   ws1: () => {
-    const c = [];
+    const names = [], scores = [];
     for (const n of ['1', '2', '3']) {
-      if (!candName(n)) c.push('Candidate ' + n);
-      else if (CRIT.some(([k]) => !(parseInt(store['w1.c' + n + '.' + k], 10) >= 1))) c.push('all five scores for Candidate ' + n);
+      if (!candName(n)) names.push('Candidate ' + n);
+      else if (CRIT.some(([k]) => !(parseInt(store['w1.c' + n + '.' + k], 10) >= 1))) scores.push('all five scores for Candidate ' + n);
     }
-    return { 'Candidates': c, 'The winner': winnerName() ? [] : ['My winner (press the button on a candidate)'] };
+    return { 'Your three candidates': names, 'Score each candidate': scores, 'The winner': winnerName() ? [] : ['My winner (choose one of your candidates)'] };
   },
   ws3: () => {
     const tools = ['r1', 'r2', 'r3', 'shadow'].filter((r) => val('w3.' + r + '.tool')).length;
@@ -1187,16 +1362,21 @@ function notesText() {
   ].filter(([, v]) => v);
   return lines.map(([l, v]) => l + ': ' + v).join('\n');
 }
+// mid-sentence, so "Median handling time" reads "median handling time" (but "HR questions" stays as typed)
+const lowFirst = (t) => /^[A-Z][a-z]/.test(t) ? t[0].toLowerCase() + t.slice(1) : t;
+const noBrackets = (v) => v.replace(/\s*\([^)]*\)/g, '').trim();   // "11 minutes (guess)" goes in as "11 minutes"
 function buildDod() {
-  // mid-sentence, so "Median handling time" reads "median handling time" (but "HR questions" stays as typed)
-  const low = (t) => /^[A-Z][a-z]/.test(t) ? t[0].toLowerCase() + t.slice(1) : t;
-  const plain = (v) => v.replace(/\s*\([^)]*\)/g, '').trim();   // "11 minutes (guess)" goes in as "11 minutes"
-  const b = (k, name) => (k === 'w2.day90' ? plainDay90() : low(plain(val(k)))) || '[' + name + ']';
-  return 'By ' + b('w2.day90', 'date') + ', ' + b('w2.usecase', 'workflow') + ' handled with AI assistance shows ' + b('w2.metric', 'metric') +
+  const b = (k, name) => lowFirst(noBrackets(val(k))) || '[' + name + ']';
+  return 'By ' + (plainDay90() || 'day 90') + ', ' + b('w2.usecase', 'workflow') + ' handled with AI assistance shows ' + b('w2.metric', 'metric') +
     ' moving from ' + b('w2.bval', 'baseline') + ' to ' + b('w2.target', 'target') + ', with ' + b('w2.guard', 'guardrail') +
     ' maintained — or we stop and write down what we learned.';
 }
 
+// the prompts as they are written in labs.md, so one button can copy the whole prompt with the person's text in it
+const WRAP = {
+  STEP7: ["You are a skeptical finance reviewer. Here is a pilot metrics plan:\n\n", "\n\nAttack it: name the three biggest ways it is gameable, unmeasurable, or\nlikely to show a result the AI didn't cause. Give the smallest fix for each.\nUnder 150 words."],
+  STEP6: ["Turn these notes into one tight paragraph (under 120 words) I can send my\nmanager and team: we are piloting AI deliberately. Include: the use case,\nthe owner, the 90-day window with baseline and metric, the stop rule, the\nweekly check on use, metric and guardrail, and one sentence on governance\n(approved tools + usage policy shipping now).\nConfident, no hype.\n\nNotes: ", ""],
+};
 async function copyText(text) {
   try { await navigator.clipboard.writeText(text); return true; }
   catch {
@@ -1216,15 +1396,16 @@ async function copyInto(text, boxId, msgId, empty, okMsg) {
 function answersAsText() {
   const out = ['Enterprise Leader AI Accelerator — my worksheets', ''];
   const ex = store._ex || {};
-  for (const ws of document.querySelectorAll('section.ws')) {
+  for (const ws of document.querySelectorAll('[data-ws]')) {
     const lines = [];
     const seen = new Set();
-    for (const el of ws.querySelectorAll('[data-k][data-label], .seg[data-label], .calc[data-label]')) {
+    for (const el of ws.querySelectorAll('[data-k][data-label], .seg[data-label], .winpick[data-label], .calc[data-label]')) {
       if (el.dataset.k) {
         if (el.type === 'checkbox') { if (el.checked) lines.push(el.dataset.label); }
         else if (String(el.value).trim()) lines.push(el.dataset.label + ': ' + shownValue(el).trim().replace(/\n/g, '; ') + (ex[el.dataset.k] ? '  [example]' : ''));
       } else if (el.classList.contains('calc')) {
-        if (el.textContent.trim()) lines.push('   ' + el.textContent.trim());
+        const c = el.textContent.trim();   // "Total: 22 of 25" is copied as "Candidate 1 total: 22 of 25"
+        if (c) lines.push(/^Total/.test(c) ? el.dataset.label + c.slice(5) : '   ' + c);
       } else {
         const r = el.querySelector('input[type=radio]:checked');
         if (r && !seen.has(r.name)) {
@@ -1270,18 +1451,30 @@ window.addEventListener('afterprint', () => { clearPrint(); clearOnly(); });
 let clearArmed = null;
 document.addEventListener('click', async (e) => {
   const t = e.target.closest('button'); if (!t) return;
-  if (t.dataset.idea) { $('ex1msg').textContent = addCandidate(t.dataset.idea, ''); return; }
-  if (t.dataset.bright) { const [name, note] = BRIGHT[+t.dataset.bright]; $('ex1msg').textContent = addCandidate(name, note); return; }
+  if (t.dataset.idea) { const msg = addCandidate(t.dataset.idea, ''); $('ex1msg').textContent = msg; toast(msg); return; }
+  if (t.dataset.bright) { const [name, note] = BRIGHT[+t.dataset.bright], msg = addCandidate(name, note); $('ex1msg').textContent = msg; toast(msg); return; }
   if (t.dataset.clearcand) {
     const n = t.dataset.clearcand;
     for (const k of Object.keys(store)) if (k.startsWith('w1.c' + n + '.')) delete store[k];
+    delete fromEx()['w1.c' + n + '.name'];
     if (store['w1.winner'] === n) delete store['w1.winner'];
     persist(); restore(); return;
+  }
+  if (t.dataset.clearws) {
+    const id = t.dataset.clearws, label = 'Clear Worksheet ' + id.slice(2);
+    if (clearArmed !== t) {
+      clearArmed = t; t.textContent = 'Press again to empty every box on Worksheet ' + id.slice(2);
+      setTimeout(() => { if (clearArmed === t) { clearArmed = null; t.textContent = label; } }, 5000);
+      return;
+    }
+    clearArmed = null; t.textContent = label;
+    clearWorksheet(id); return;
   }
   if (t.dataset.showex) { const id = t.dataset.showex, on = !$(id).classList.contains('showex'); store['_show.' + id] = on; persist(); setShowEx(id, on); return; }
   if (t.dataset.fill) { const id = t.dataset.fill; $('ex' + id.slice(2) + 'msg').textContent = fillExample(id); return; }
   if (t.dataset.copybox) {
-    const ok = await copyText($(t.dataset.copybox).value);
+    const body = $(t.dataset.copybox).value, w = WRAP[t.dataset.wrap];
+    const ok = await copyText(w ? w[0] + body + w[1] : body);
     t.parentElement.parentElement.querySelector('.saved').textContent = ok ? t.dataset.done : 'Could not copy automatically. Select the text in the box and copy it.';
     return;
   }
@@ -1292,8 +1485,8 @@ document.addEventListener('click', async (e) => {
   }
   if (t.dataset.printws) { prepOnly(t.dataset.printws); window.print(); return; }
   if (t.id === 'regen') { const n = topCandidate(); if (n) { store['w1.generic'] = store['_w1start'] = startText(n); store['_w1for'] = n; persist(); restore(); } return; }
-  if (t.id === 'usewin') { setField('w2.usecase', winnerName(), false); delete fromEx()['w2.usecase']; persist(); refresh(); return; }
-  if (t.id === 'builddod') { setField('w2.dod', buildDod(), false); delete fromEx()['w2.dod']; persist(); refresh(); return; }
+  if (t.id === 'builddod') { const d = buildDod(); setField('w2.dod', d, false); store['_w2dod'] = d; delete fromEx()['w2.dod']; persist(); refresh(); return; }
+  if (t.dataset.pick) { setField(t.dataset.pick, t.dataset.v, false); delete fromEx()[t.dataset.pick]; persist(); refresh(); toast('“' + t.dataset.v + '” is in the box below. Change the wording there if you want.'); return; }
 
   const act = t.dataset.act; if (!act) return;
   if (act === 'print') {
@@ -1319,10 +1512,10 @@ document.addEventListener('click', async (e) => {
   } else if (act === 'clear') {
     if (clearArmed !== t) {
       clearArmed = t; t.textContent = 'Press again to erase every answer on this page';
-      setTimeout(() => { if (clearArmed === t) { clearArmed = null; t.textContent = 'Clear my answers'; } }, 5000);
+      setTimeout(() => { if (clearArmed === t) { clearArmed = null; t.textContent = 'Clear all my answers'; } }, 5000);
       return;
     }
-    clearArmed = null; t.textContent = 'Clear my answers';
+    clearArmed = null; t.textContent = 'Clear all my answers';
     store = {}; try { localStorage.removeItem(KEY); } catch { /* nothing to remove */ }
     restore();
     document.querySelectorAll('.copybox').forEach((b) => { b.style.display = 'none'; b.value = ''; });

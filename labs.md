@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.18 - 11/25/26
+## Revision 1.19 - 11/25/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
@@ -238,7 +238,7 @@ The vendor's 20% discount ends Friday, so we need a decision this week.
 
 <br><br>
 
-3. Start a new chat. Send the prompt below with the memo pasted under it:
+3. Start a new chat and send the prompt below. The memo is already in it, so it is one copy and paste:
 
 ```
 I am about to forward the recommendation below to our leadership
@@ -250,7 +250,26 @@ line. Then list what is missing that finance would ask for, three lines
 at most. Do not invent facts: if you cannot tell, say so. Under 250
 words in total.
 
-[paste the memo here]
+TO: You        FROM: Jordan, Sales Operations
+RE: Roll out DraftPilot to all 400 sales reps
+
+Recommendation: approve a company-wide rollout this month.
+
+Results: Our pilot ran for six weeks with 40 volunteer reps. All 12
+pilot participants said DraftPilot saved them about 3 hours a week on
+emails and proposals. Industry research shows 73% of sales teams win
+more deals with AI drafting.
+
+Value: 400 reps x 3 hours x 48 weeks x $60 an hour = $5.2 million a
+year in time saved.
+
+Cost: $30 per rep per month, or $144,000 a year. There are no other
+costs.
+
+Risk: There is no data risk, because the vendor has passed a security
+audit.
+
+The vendor's 20% discount ends Friday, so we need a decision this week.
 ```
 
 <br><br>
@@ -402,15 +421,15 @@ toughest critic would — no softening. Under 150 words.
 
 **Purpose: Turn vague AI ideas from your organization into a scored, comparable shortlist. (12 minutes)**
 
-1. Open **[Worksheet 1: Use-Case Scorecard](https://skillrepos.github.io/tlsaccel/#ws1)**. Keep this page open too — you will switch between the two.
+1. Open **[Worksheet 1: Use-Case Scorecard](https://skillrepos.github.io/tlsaccel/#ws1)**. Keep this page open too — you will switch between the two. The worksheet's sections are in the same order as the steps below, and each section is labelled with its step: **Lab 5, step 2**, **Lab 5, step 3**, and so on.
 
 <br><br>
 
-2. On your own (no AI yet), list 3 candidate AI use cases from your organization. Use the green-flag pattern from the deck: high-volume, repetitive, verifiable work. One line each, named as a workflow: "triage inbound support tickets," not "use AI in support." Nothing comes to mind, or nothing you can share? Open the yellow **Need an example?** box on the worksheet.
+2. On your own (no AI yet), think of 3 candidate AI use cases from your organization. Type one into each of the three boxes under **Lab 5, step 2: Your three candidates** on the worksheet. Use the green-flag pattern from the deck: high-volume, repetitive, verifiable work. Name each one as a workflow: "triage inbound support tickets," not "use AI in support." Nothing comes to mind, or nothing you can share? Open the yellow **Need an example for step 2?** box just under those three boxes and tap an idea: it goes into your next empty box.
 
 <br><br>
 
-3. Score each candidate 1–5 on the five criteria below. Higher is better. Gut scores are fine; speed over precision.
+3. Under **Lab 5, step 3: Score each candidate** on the worksheet, give each of your candidates a score from 1 to 5 on each of the five criteria below. Higher is better. Gut scores are fine; speed over precision.
 
 | Criterion | What it means |
 |---|---|
@@ -433,7 +452,7 @@ Use case: [paste your top-scored candidate — generic description only,
 no confidential details]
 ```
 
-The worksheet builds this prompt for you: once a candidate has all five scores, a **Stress-test with AI** box appears under your candidates. Check its description for confidential details, then copy it.
+You do not have to type this prompt. The worksheet writes it for you under **Lab 5, step 4: Stress-test with AI**, as soon as one candidate has a name and all five scores. (Until then, that section says what is still missing.) Check the description there for confidential details, press **Copy the step 4 prompt with my use case in it**, and paste it into the new chat.
 
 The screenshot uses a sample use case ("triage inbound support tickets"); yours will differ.
 
@@ -441,19 +460,19 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 <br><br>
 
-5. Answer its questions honestly (to yourself or in the chat). Adjust any score the questions changed, then fill in **Notes from the AI stress-test** on the worksheet: the score you changed, the hardest question you could not answer, and (if you know) who could answer it.
+5. Answer its questions honestly (to yourself or in the chat). Adjust any score the questions changed, then fill in the boxes under **Lab 5, step 5: Notes from the AI's questions** on the worksheet: the score you changed, the hardest question you could not answer, and (if you know) who could answer it.
 
 <br><br>
 
-6. Run the **blocker check** on the worksheet for your top-scored candidate. A blocker rules a use case out for now, however well it scores: if any box is ticked, move to your next candidate.
+6. Run the **blocker check** on the worksheet (under **Lab 5, step 6**) for your top-scored candidate. A blocker rules a use case out for now, however well it scores: if any box is ticked, move to your next candidate.
 
 <br><br>
 
-7. Press **My winner** on your top candidate and complete the line below it: "**[Use case]** wins because **[one sentence]**."
+7. Under **Lab 5, step 7: The winner** on the worksheet, choose your winner from the list of your three candidates, and complete the line below it: "**[Use case]** wins because **[one sentence]**."
 
 <br><br>
 
-8. Look back at your winner's five scores. Mark the one you are least sure of, and write down what you would need to find out to settle it. You will enter which of the five it was in a poll on your phone.
+8. Look back at your winner's five scores. Under **Lab 5, step 8** on the worksheet, choose the one you are least sure of, and write down what you would need to find out to settle it. You will enter which of the five it was in a poll on your phone.
 
 <br><br>
 
@@ -472,64 +491,47 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 **Purpose: Give your winning use case metrics finance would accept — baseline, target, guardrail, stop rule. (12 minutes)**
 
-1. Open **[Worksheet 2: Pilot Metrics Charter](https://skillrepos.github.io/tlsaccel/#ws2)**. Every box says what goes in it and shows an example. Stuck? **Fill my empty boxes with the example** gives you a sample pilot to work with.
+1. Open **[Worksheet 2: Pilot Metrics Charter](https://skillrepos.github.io/tlsaccel/#ws2)**. Its sections follow the steps below, each labelled with its step. Under **Lab 6, step 1**, your winning use case from Lab 5 is already filled in. Nothing of your own to work with? Open the yellow **Stuck?** box on the worksheet and press **Fill my empty boxes with the example**.
 
 <br><br>
 
-2. Fill in the header: your winning use case from Lab 5, the workflow owner and the sponsor (one person each, often two different people — a job title such as "Head of HR" or a made-up name is fine), the pilot team, and the start date. The worksheet works out day 90.
+2. Under **Lab 6, step 2**, name the workflow owner and the sponsor: one person each. A job title or a made-up name is fine.
 
 <br><br>
 
-3. Choose ONE primary metric from the four families (time, cost, quality, adoption): the one number that should improve if the pilot works.
+3. Under **Lab 6, step 3**, pick ONE primary metric — the one number that should improve if the pilot works. Choose which kind it is (time, cost, quality or adoption), then tap the measurement closest to yours.
 
 <br><br>
 
-4. Fill in the baseline — that number as it is today, before AI. Write how you'll measure it for two weeks, today's value, and the 90-day target in the same unit. Not sure of today's value? Write your best guess and mark it "guess".
+4. Under **Lab 6, step 4**, write two numbers for that metric, in the same unit: what it is today (the baseline) and your 90-day target. No exact numbers? Write your best guess and add "guess".
 
 <br><br>
 
-5. Add one quality guardrail — the number that must NOT get worse while the primary metric improves.
+5. Under **Lab 6, step 5**, tap one quality guardrail — the number that must NOT get worse while the primary metric improves.
 
 <br><br>
 
-6. Draft your definition-of-done sentence on the worksheet. **Build the sentence from my boxes** gives you a first version to edit:
+6. Under **Lab 6, step 6**, read the two things the worksheet has written from your answers, and change anything that does not fit: your **definition of done** and your **stop rule** (a check on day 45, and what you would have to see that day to stop early). The definition of done has this shape:
 
-> "By [date], [workflow] handled with AI assistance shows [metric] moving from [baseline] to [target], with [guardrail] maintained — or we stop and write down what we learned."
-
-<br><br>
-
-7. Fill in the stop rule: a check day about halfway through, and what you would have to see on that day to stop early.
+> "By day 90, [workflow] handled with AI assistance shows [metric] moving from [baseline] to [target], with [guardrail] maintained — or we stop and write down what we learned."
 
 <br><br>
 
-8. Now have an AI reviewer attack your plan the way a skeptic in finance would (a "red-team"). Start a new chat:
+7. Now have an AI reviewer attack your plan the way a skeptic in finance would (a "red-team"). Under **Lab 6, step 7**, press **Show my plan for the step 7 prompt**, take out anything confidential, then press **Copy the step 7 prompt with my plan in it**. Paste it into a new chat. This is what it copies:
 
 ```
 You are a skeptical finance reviewer. Here is a pilot metrics plan:
 
-[paste your definition-of-done sentence and your primary metric, baseline
-plan, target, and guardrail]
+[the worksheet puts your plan here]
 
 Attack it: name the three biggest ways it is gameable, unmeasurable, or
 likely to show a result the AI didn't cause. Give the smallest fix for each.
 Under 150 words.
 ```
 
-**Show my plan** on the worksheet gathers those lines for you to check and copy. The screenshot uses a sample plan (median handling time 11 → 8 minutes, first-contact resolution as the guardrail).
+The reviewer names three weak spots, each with a fix. Where you agree, change the matching box. Then write the one that worries you most in **Biggest weak spot and the fix**. (The screenshot uses a sample plan.)
 
 ![Finance red-team](./images/acc14.png?raw=true "The reviewer finds where the sample plan is gameable")
-
-<br><br>
-
-9. Read the reviewer's answer: three weak spots in your plan, each with a fix. Where you agree, change the matching box on the worksheet. Then fill in **Finance red-team findings**: where your number could look better without the work getting better, and where it might have improved anyway, each with your fix.
-
-<br><br>
-
-10. Fill in the two short sections near the bottom of the worksheet, both labelled **Lab 6, step 10**: **What the pilot needs** and **If it succeeds**. Rough answers are fine.
-
-<br><br>
-
-11. Read your final definition-of-done out loud once. If it names a workflow, a number, a date, an owner, and a stop rule — you are ahead of most funded AI pilots.
 
 <br><br>
 
@@ -539,7 +541,7 @@ Under 150 words.
 - The guardrail stops the classic trap: speed up, quality down, "success."
 - The stop rule makes killing a failed pilot a planned outcome, not an embarrassment.
 - The finance red-team caught the gameable parts while fixing them was still free.
-- A sponsor, a resource estimate, and a plan for success are what separate a pilot from an experiment nobody picks up afterward.
+- **The rest of the charter**, folded at the bottom of the worksheet (team, dates, costs, what happens if it succeeds), is for back at work.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
@@ -549,7 +551,7 @@ Under 150 words.
 
 **Purpose: Apply the injection questions and autonomy tiers to a realistic agent proposal, make the approval call, and start your governance playbook. (12 minutes)**
 
-1. Read this proposal, which contains several planted red flags:
+1. Open **[Worksheet 3: Governance Playbook](https://skillrepos.github.io/tlsaccel/#ws3)** and keep it open beside these steps. It is a one-page governance playbook: seven boxes that say how AI is used where you work. In this lab you write one decision on it (step 6) and start its first two boxes (steps 8 and 9). Then read this proposal, which contains several planted red flags:
 
 ```
 PROPOSAL: "PayFast" invoice agent (from our finance systems team)
@@ -569,31 +571,50 @@ added in phase 2. Pilot on all suppliers for 6 months.
 
 <br><br>
 
-3. Apply the three injection questions from the deck: What untrusted content does it read? What private data can it reach? Can it send anything out? Count the trifecta legs.
+3. Apply the three injection questions from the deck: What untrusted content does it read? What private data can it reach? Can it send anything out? Count how many of the three you answer "yes" to. An agent with a yes to all three has what the deck calls the **lethal trifecta**: instructions hidden in something it reads can make it send your private data out.
 
 <br><br>
 
-4. Check your findings with AI:
+4. Check your findings with AI. Start a new chat and send the prompt below. It explains its own terms and the proposal is already in it, so it is one copy and paste:
 
 ```
-Review this AI agent proposal as a security-minded AI governance reviewer.
-List every risk, map each to (a) the prompt-injection "lethal trifecta" and
-(b) an autonomy tier decision (assist / review / autonomous). Answer as a
-table (risk | trifecta leg | tier), at most 6 rows. Then list the three
-changes that matter most for a safe 90-day pilot, one line each.
+Review the AI agent proposal below as a security-minded AI governance
+reviewer. Check it against two things:
 
-[paste the proposal]
+(a) The prompt-injection "lethal trifecta". An AI agent is dangerous when
+it has all three of these: it reads untrusted content (such as outside
+email, attachments or web pages), it can reach private data, and it can
+send things out.
+
+(b) Three autonomy tiers. Assist: the AI drafts and a person does the
+action. Review: the AI prepares the action and a named person approves it.
+Autonomous: the AI acts on its own and people audit afterward.
+
+List every risk in the proposal. For each one say which part of the
+trifecta it belongs to (if any) and which tier that action should run at.
+Answer as a table (risk | trifecta part | tier), at most 6 rows. Then list
+the three changes that matter most for a safe 90-day pilot, one line each.
+
+PROPOSAL: "PayFast" invoice agent (from our finance systems team)
+
+The agent monitors the shared accounts-payable inbox, reads each incoming
+email and any attached invoice, looks up the supplier in our purchasing and
+accounting systems using an admin service account, SENDS emails to
+suppliers automatically about anything it classifies as routine, and pays
+invoices up to $5,000 without approval to shorten payment time. It can also
+browse supplier websites to confirm bank and contact details. Logging to be
+added in phase 2. Pilot on all suppliers for 6 months.
 ```
 
-![Governance review of PayFast](./images/acc15.png?raw=true "The review finds all three trifecta legs and maps each risk")
+![Governance review of PayFast](./images/acc15.png?raw=true "The review finds all three parts of the lethal trifecta and maps each risk")
 
 <br><br>
 
-5. Compare its list with yours. Key flags: all three trifecta legs present (reads external email/attachments/web + purchasing and accounting access + sends email and payments), admin service account instead of least privilege, auto-send and auto-pay at Tier 3 autonomy on day one, bank details taken from websites an outsider controls, logging deferred, all suppliers instead of a scoped pilot, 6 months instead of 90 days.
+5. Compare its list with yours. Key flags: a yes to all three injection questions, so the lethal trifecta is complete (it reads outside email, attachments and web pages; it can reach the purchasing and accounting systems; it sends email and payments), admin service account instead of least privilege, auto-send and auto-pay at Tier 3 autonomy on day one, bank details taken from websites an outsider controls, logging deferred, all suppliers instead of a scoped pilot, 6 months instead of 90 days.
 
 <br><br>
 
-6. Make the call: **approve, approve with conditions, or reject**. Write it on **[Worksheet 3](https://skillrepos.github.io/tlsaccel/#ws3)** with two sentences on why. If you chose conditions, name them — for example which actions move to Tier 2 (human approves), what access gets narrowed, what gets logged from day one.
+6. Make the call: **approve, approve with conditions, or reject**. On **[Worksheet 3](https://skillrepos.github.io/tlsaccel/#ws3)**, under **Lab 7, step 6**, choose your call and write two sentences on why. If you chose conditions, name them — for example which actions move to Tier 2 (human approves), what access gets narrowed, what gets logged from day one.
 
 <br><br>
 
@@ -611,7 +632,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 **What just happened**
 
-- A proposal that sounds efficient held all three legs of the lethal trifecta plus Tier-3 autonomy, day one.
+- A proposal that sounds efficient held all three parts of the lethal trifecta plus Tier-3 autonomy, day one.
 - The fix pattern is standard: narrow access, insert human approval on consequential actions, log everything, scope the pilot.
 - This is how you work with a technical team without being technical: you did not need to know how PayFast is built to ask what it reads, what it can reach, what it can do alone, and what gets logged.
 - You made a decision, not just a list of risks, and saw how the room decided on the same facts. That comparison is what an approval meeting is.
@@ -637,7 +658,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 <br><br>
 
-4. Fill in one line of Days 61–90 (SHIP): the date of the day-90 decision meeting. The pilot starts in these 30 days; the meeting is 90 days after it starts (on or just after the day-90 date on Worksheet 2), so it falls after this plan ends. That is where you decide to scale the pilot up, change it, or stop it, using the four tests on Worksheet 4. Book it now and put a real date on it.
+4. Fill in one line of Days 61–90 (SHIP): the date of the day-90 decision meeting. The pilot starts in these 30 days; the meeting is 90 days after it starts (if you put a day-90 date on Worksheet 2, on or just after it), so it falls after this plan ends. That is where you decide to scale the pilot up, change it, or stop it, using the four tests on Worksheet 4. Book it now and put a real date on it.
 
 <br><br>
 
@@ -645,7 +666,7 @@ changes that matter most for a safe 90-day pilot, one line each.
 
 <br><br>
 
-6. Draft the announcement. Start a new chat:
+6. Draft the announcement. On the worksheet, under **Lab 8, steps 6–8**, press **Show my notes for the step 6 prompt**, take out names and anything confidential, then press **Copy the step 6 prompt with my notes in it**. Start a new chat and paste. This is the prompt it copies:
 
 ```
 Turn these notes into one tight paragraph (under 120 words) I can send my
@@ -655,10 +676,8 @@ weekly check on use, metric and guardrail, and one sentence on governance
 (approved tools + usage policy shipping now).
 Confident, no hype.
 
-Notes: [paste the key lines from your worksheets]
+Notes: [the key lines from your worksheets: the worksheet puts them here]
 ```
-
-**Show my notes** on the worksheet gathers those lines for you to check and copy. Take out names and anything confidential before you paste.
 
 ![Announcement paragraph](./images/acc16.png?raw=true "Worksheet notes turned into a ready-to-send paragraph (sample notes)")
 
