@@ -620,7 +620,7 @@
   <div class="labhead"><span class="badge">Lab 7</span><h2>Worksheet 3: One-page governance playbook</h2></div>
   <p class="meta">Goes with <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab7" target="_blank" rel="noopener">Lab 7: Governance gut-check</a>.</p>
 
-  <div class="why"><b>What this is:</b> a one-page <b>governance playbook</b>: seven boxes that say how AI is used where you work, from what is in use today to what is kept on record. In Lab 7 you make one decision and fill in Box 2. Box 1 and Boxes 3–7 are for back at work; in Lab 8 you give each of them a date, on Worksheet 4. Each box says what goes in it and gives an example from a made-up company. Boxes marked <b>Required</b> are the ones Lab 7 asks for today; <b>Optional</b> ones are for back at work.</div>
+  <div class="why"><b>What this is:</b> a one-page <b>governance playbook</b>: seven boxes that say how AI is used where you work, from what is in use today to what is kept on record. In Lab 7 you make one decision and fill in Box 2. Box 1 and Boxes 3–7 are for back at work. In Lab 8, if you have time, you give Boxes 3–7 a decide-by date on Worksheet 4. Each box says what goes in it and gives an example from a made-up company. Boxes marked <b>Required</b> are the ones Lab 7 asks for today; <b>Optional</b> ones are for back at work.</div>
   <div class="noprint wsbar">
     <span class="cap">For the whole worksheet, not one step</span>
     <button class="ghost small" data-check="ws3">Check for required info</button>
@@ -652,7 +652,7 @@
   <textarea rows="3" id="callwhy" data-k="w3.callwhy" data-label="Because" data-req="1"></textarea>
 
   <h3 data-h="The seven boxes">The seven boxes</h3>
-  <p>Fill in Box 2 in Lab 7. Box 1 and Boxes 3–7 are for back at work. You leave today with a started playbook, and (after Lab 8) a date on every box that is still open.</p>
+  <p>Fill in Box 2 in Lab 7. Box 1 and Boxes 3–7 are for back at work. You leave today with a started playbook: three usage rules, and (in Lab 8) the date they go out. If you have time in Lab 8, you also give Boxes 3–7 a decide-by date.</p>
 
   <h4 data-h="Box 1 — Inventory (where is AI used today?) (back at work)"><span class="step">back at work</span>Box 1 — Inventory (where is AI used today?)</h4>
   <p><b>Optional, for back at work.</b> List two or three AI tools already in use where you work. For each one, give the <b>tool and what it is used for</b>, its <b>owner</b> (the one person answerable for it; “nobody yet” is a real answer), and the <b>data it touches</b> (what information it can see). <b>Autonomy tier</b> is how much the tool does on its own. <b>1 assist:</b> AI drafts, a person does the work. <b>2 review:</b> AI prepares the action, a named person approves it. <b>3 autonomous:</b> AI acts, and people check afterwards.</p>
@@ -679,7 +679,7 @@
 
   <details class="later">
   <summary data-h="Boxes 3–7: the rest of the playbook (back at work)"><span class="step">back at work</span>Boxes 3–7: the rest of the playbook <span class="open">(tap to open)</span></summary>
-  <p>No lab step asks you to fill these in today. In Lab 8 you give each of these five boxes a <b>decide-by date</b> on Worksheet 4: the date by which you will have settled it. Fill in the rest back at work.</p>
+  <p>No lab step asks you to fill these in today. In Lab 8, if you have time, you give each of these five boxes a <b>decide-by date</b> on Worksheet 4: the date by which you will have settled it. Fill in the rest back at work.</p>
 
   <h4 data-h="Box 3 — Approval path (back at work)"><span class="step">back at work</span>Box 3 — Approval path</h4>
   <p>The approval path is how a new AI idea gets a yes or a no: it is scored on Worksheet 1, someone checks it for risk, and an answer comes back within a set number of days.</p>
@@ -816,9 +816,9 @@
 
   <h4 data-h="Days 61–90 — SHIP: start the pilot (Lab 8, step 4)"><span class="step">Lab 8, step 4</span>Days 61–90 — SHIP: start the pilot</h4>
   <div class="hint" id="range-ship"></div>
-  <label class="f" for="runs">Pilot runs in the real workflow from <span class="tag opt">Optional</span></label>
-  <p class="what">The start date on Worksheet 2: the first day the pilot team uses the AI tool in real work.</p>
-  <input type="text" id="runs" data-k="w3.runs" data-label="Pilot runs in the real workflow from" data-ex="January 5, 2027">
+  <label class="f" for="runs">Pilot runs in the real workflow from <span class="tag req">Required</span></label>
+  <p class="what">The first day the pilot team uses the AI tool in real work: the start date on Worksheet 2, if you set one. A best guess is fine.</p>
+  <input type="text" id="runs" data-k="w3.runs" data-label="Pilot runs in the real workflow from" data-ex="January 5, 2027" data-req="1">
   <div class="hint" id="runshint"></div>
   <label class="f" for="slot">Weekly review slot <span class="tag opt">Optional</span></label>
   <p class="what">The day and time each week when you look at the primary metric, the guardrail and how many people are using the tool.</p>

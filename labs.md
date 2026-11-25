@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.22 - 11/25/26
+## Revision 1.23 - 11/25/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
@@ -488,7 +488,7 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 - Five scores forced the five conversations that decide pilot success — before any money moves.
 - The AI's skeptical-reviewer questions exposed soft scores (data readiness is usually the one that drops).
 - The blocker check catches what a total hides: one unusable data source or one missing owner outweighs four good scores.
-- You now have a ranked shortlist — the input for Lab 6.
+- You now have a scored shortlist, with totals you can compare, and a winner — the input for Lab 6.
 - Other scorecards may ask four questions instead of five, or score from 1 to 3 (the worksheet's quick version folds Data readiness into Feasibility). The conversations underneath are the same, and Risk and Measurability still have to pass.
 
 <p align="center">**[END OF LAB]**</p></br></br>
@@ -643,7 +643,7 @@ Box 1 (Inventory: the AI tools already in use where you work, including shadow A
 - The fix pattern is standard: narrow access, insert human approval on consequential actions, log everything, scope the pilot.
 - This is how you work with a technical team without being technical: you did not need to know how PayFast is built to ask what it reads, what it can reach, what it can do alone, and what gets logged.
 - You made a decision, not just a list of risks, and saw how the room decided on the same facts. That comparison is what an approval meeting is.
-- Your playbook now has its usage-policy headlines (Box 2). The inventory (Box 1) and Boxes 3–7 are for back at work; Lab 8 lets you put dates on them.
+- Your playbook now has its usage-policy headlines (Box 2). The inventory (Box 1) and Boxes 3–7 are for back at work. In Lab 8 you set the date the policy goes out and, if you have time, a decide-by date for each of Boxes 3–7.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
@@ -665,7 +665,7 @@ Box 1 (Inventory: the AI tools already in use where you work, including shadow A
 
 <br><br>
 
-4. Fill in one line of Days 61–90 (SHIP: start the pilot in real work): the date of your **day-90 decision meeting**, where you decide whether to scale the pilot up, change it, or stop it, using the four tests on Worksheet 4. Pick a date about 90 days after the pilot starts (on or just after the day-90 date on Worksheet 2, if you set one). That is after this 90-day plan ends, which is fine. Book it now.
+4. Fill in two lines of Days 61–90 (SHIP: start the pilot in real work): the date the pilot starts in the real workflow (already filled in if you set a start date on Worksheet 2; a best guess is fine), and the date of your **day-90 decision meeting**, where you decide whether to scale the pilot up, change it, or stop it, using the four tests on Worksheet 4. Pick a date about 90 days after the pilot starts (on or just after the day-90 date on Worksheet 2, if you set one). That is after this 90-day plan ends, which is fine. Book it now.
 
 <br><br>
 
@@ -698,7 +698,7 @@ Critique this paragraph as a skeptical reader in three bullets, then rewrite it.
 
 <br><br>
 
-8. Copy the final paragraph onto the worksheet (or email it to yourself right now — that's better).
+8. Paste the final paragraph into **My announcement paragraph** on the worksheet. Emailing it to yourself as well is even better.
 
 <br><br>
 

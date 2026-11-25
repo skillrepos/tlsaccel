@@ -1,7 +1,7 @@
 # Worksheet 3 — One-Page Governance Playbook
 *Enterprise Leader AI Accelerator · Lab 7*
 
-**What this is:** a one-page **governance playbook**: seven boxes that say how AI is used where you work, from what is in use today to what is kept on record. In Lab 7 you make one decision and fill in Box 2. Box 1 and Boxes 3–7 are for back at work; in Lab 8 you give each of them a date, on Worksheet 4. Each box says what goes in it and gives an example from a made-up company. Boxes marked **Required** are the ones Lab 7 asks for today; **Optional** ones are for back at work.
+**What this is:** a one-page **governance playbook**: seven boxes that say how AI is used where you work, from what is in use today to what is kept on record. In Lab 7 you make one decision and fill in Box 2. Box 1 and Boxes 3–7 are for back at work. In Lab 8, if you have time, you give Boxes 3–7 a decide-by date on Worksheet 4. Each box says what goes in it and gives an example from a made-up company. Boxes marked **Required** are the ones Lab 7 asks for today; **Optional** ones are for back at work.
 
 Fill it in on the worksheets page, which saves what you type on your own device: https://skillrepos.github.io/tlsaccel/#ws3
 
@@ -17,7 +17,7 @@ Fill it in on the worksheets page, which saves what you type on your own device:
 
 ## The seven boxes
 
-Fill in Box 2 in Lab 7. Box 1 and Boxes 3–7 are for back at work. You leave today with a started playbook, and (after Lab 8) a date on every box that is still open.
+Fill in Box 2 in Lab 7. Box 1 and Boxes 3–7 are for back at work. You leave today with a started playbook: three usage rules, and (in Lab 8) the date they go out. If you have time in Lab 8, you also give Boxes 3–7 a decide-by date.
 
 ### Back at work: Box 1 — Inventory (where is AI used today?)
 
@@ -55,7 +55,7 @@ A usage policy is the short list of rules for using AI at work. Write three of t
 
 ## Back at work: Boxes 3–7: the rest of the playbook
 
-No lab step asks you to fill these in today. In Lab 8 you give each of these five boxes a **decide-by date** on Worksheet 4: the date by which you will have settled it. Fill in the rest back at work.
+No lab step asks you to fill these in today. In Lab 8, if you have time, you give each of these five boxes a **decide-by date** on Worksheet 4: the date by which you will have settled it. Fill in the rest back at work.
 
 ### Back at work: Box 3 — Approval path
 
