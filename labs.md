@@ -1,11 +1,13 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.20 - 11/25/26
+## Revision 1.22 - 11/25/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
 The screenshots show Claude. Other assistants look different and word their answers differently — what matters is the pattern each step teaches, not an exact match.
 
 **One rule on data:** use the scenarios provided here or non-confidential examples from your own work. Treat today's tools as public.
+
+**Writing things down:** Labs 1–4 have no worksheet. Where a step asks you to write, mark or tick something, use paper or a notes app.
 
 **Before Lab 1:** if your assistant is connected to your email, files, or calendar, turn those connections off for today. In Claude: click the **+** button under the chat box, then **Plugins**, and switch off Gmail, Google Drive and any other email or file apps. Otherwise some prompts will search your own mail and documents, even in an incognito chat.
 
@@ -15,17 +17,17 @@ Labs 5–8 each use a worksheet: Worksheet 1 for Lab 5, 2 for Lab 6, 3 for Lab 7
 
 **Lab contents**
 
-| Lab | Title | Time |
-|-----|-------|------|
-| 1 | [Giving AI the context it needs](#lab1) | 12 min |
-| 2 | [Ground it and verify](#lab2) | 12 min |
-| 3 | [Review AI work before you sign it](#lab3) | 12 min |
-| 4 | [Decision support and premortem](#lab4) | 12 min |
-| 5 | [Score your use cases](#lab5) | 12 min |
-| 6 | [Define pilot metrics](#lab6) | 12 min |
-| 7 | [Governance gut-check](#lab7) | 12 min |
-| 8 | [Your 90-day AI plan](#lab8) | 12 min |
-| 9 | [(Optional — for after the workshop) See an agent run in real code](#lab9) | 12 min |
+| Lab | Title |
+|-----|-------|
+| 1 | [Giving AI the context it needs](#lab1) |
+| 2 | [Ground it and verify](#lab2) |
+| 3 | [Review AI work before you sign it](#lab3) |
+| 4 | [Decision support and premortem](#lab4) |
+| 5 | [Score your use cases](#lab5) |
+| 6 | [Define pilot metrics](#lab6) |
+| 7 | [Governance gut-check](#lab7) |
+| 8 | [Your 90-day AI plan](#lab8) |
+| 9 | [(Optional — for after the workshop) See an agent run in real code](#lab9) |
 
 <br><br>
 
@@ -33,7 +35,7 @@ Labs 5–8 each use a worksheet: Worksheet 1 for Lab 5, 2 for Lab 6, 3 for Lab 7
 
 **Lab 1 — Giving AI the context it needs**
 
-**Purpose: See for yourself how much output quality depends on how you ask. (12 minutes)**
+**Purpose: See for yourself how much output quality depends on how you ask.**
 
 1. Open your AI assistant in a browser and start a new chat.
 
@@ -107,7 +109,11 @@ Rewrite the update fixing those issues. Keep it under 200 words. Do not invent f
 
 <br><br>
 
-8. Read the final version. Every [NEED: …] marks a fact the AI does not have. You may know the answer yourself, or you may have to get it from someone else, such as a team lead or the vendor. Either way, a person has to supply it. Without that last sentence in the prompt, models fill the gaps the critique found with made-up specifics — dates, percentages, names — that read as fact. Also check that nothing invented in the first draft survived into this one. Then pick the one [NEED] whose answer would improve the update most, and note who you would ask for it.
+8. Read the final version. Every [NEED: …] marks a fact the AI does not have, which a person (you, a team lead, the vendor) has to supply. Without the last sentence of that prompt, models fill those gaps with made-up dates, percentages and names that read as fact. Also check that nothing invented in the first draft survived into this one.
+
+<br><br>
+
+9. Pick the one [NEED] whose answer would improve the update most, and note who you would ask for it.
 
 <br><br>
 
@@ -125,9 +131,9 @@ Rewrite the update fixing those issues. Keep it under 200 words. Do not invent f
 
 **Lab 2 — Ground it and verify**
 
-**Purpose: See what an assistant does when it doesn't have the facts, then fix it with grounding and citations. (12 minutes)**
+**Purpose: See what an assistant does when it doesn't have the facts, then fix it by giving it the source document ("grounding") and asking it to cite the section for each claim.**
 
-1. Start a new chat and ask — without giving it any documents — about a specific company, as if facts were on file:
+1. Start a new chat and ask about a specific company's policy without giving it any documents, as if it already had them:
 
 ```
 What is the exact parental leave policy at Brightline Logistics Inc.?
@@ -197,7 +203,7 @@ as a checklist I can verify against the document.
 - Ungrounded questions about your organization produce guesses dressed as answers.
 - Grounding ("using only this… cite the section") turned trust into verification.
 - The eligibility trap shows why citations matter: checkable answers fail loudly instead of silently.
-- Company-scale grounding is RAG — the same idea, automated across thousands of documents.
+- At company scale this is called RAG: software finds the right passages among thousands of documents and hands them to the AI, the way you pasted the policy here.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
@@ -205,7 +211,7 @@ as a checklist I can verify against the document.
 
 **Lab 3 — Review AI work before you sign it**
 
-**Purpose: Check an AI-drafted recommendation the way you check any work that goes out under your name. (12 minutes)**
+**Purpose: Check an AI-drafted recommendation the way you check any work that goes out under your name.**
 
 1. Read this memo. Someone on your team drafted it with AI and wants you to forward it to leadership under your name.
 
@@ -307,7 +313,7 @@ what I need to see. Direct and respectful. No lecture.
 
 <br><br>
 
-9. Read the note and change one line so it sounds like you.
+9. (Optional — if you have time.) Read the note and change one line so it sounds like you.
 
 <br><br>
 
@@ -340,7 +346,7 @@ Compare it with the original: less impressive, and far more useful.
 
 **Lab 4 — Decision support and premortem**
 
-**Purpose: Use AI to widen your options and stress-test a decision — without delegating the decision. (12 minutes)**
+**Purpose: Use AI to widen your options and stress-test a decision — without delegating the decision.**
 
 1. Start a new chat and paste the scenario:
 
@@ -350,7 +356,8 @@ You are an analytical advisor to a department head. Be direct and expose your as
 Scenario: Our 300-person company needs AI-assisted summarization of customer
 support tickets (8,000/month). Options on the table: (A) buy the add-on from
 our existing helpdesk vendor at $18/agent/month for 45 agents, (B) have our
-platform team build it with an LLM API (~2 engineers, 1 quarter, then upkeep),
+platform team build it on an AI model rented from a vendor (~2 engineers,
+1 quarter, then upkeep),
 (C) wait 6 months and re-evaluate.
 
 Task: Compare A, B, and C with costs, risks, time to value, and the key
@@ -367,7 +374,7 @@ then the three assumptions that matter most.
 
 <br><br>
 
-3. Run the premortem on the recommendation:
+3. Run a premortem on the recommendation: imagine it has already failed, and ask why. Send:
 
 ```
 It is six months later and we followed your recommendation. It failed badly.
@@ -419,17 +426,17 @@ toughest critic would — no softening. Under 150 words.
 
 **Lab 5 — Score your use cases**
 
-**Purpose: Turn vague AI ideas from your organization into a scored, comparable shortlist. (12 minutes)**
+**Purpose: Turn vague AI ideas from your organization into a scored, comparable shortlist.**
 
 1. Open **[Worksheet 1: Use-Case Scorecard](https://skillrepos.github.io/tlsaccel/#ws1)**. Keep this page open too — you will switch between the two. The worksheet's sections are in the same order as the steps below, and each section is labelled with its step: **Lab 5, step 2**, **Lab 5, step 3**, and so on.
 
 <br><br>
 
-2. On your own (no AI yet), think of 3 candidate AI use cases from your organization. Type one into each of the three boxes under **Lab 5, step 2: Your three candidates** on the worksheet. Use the green-flag pattern from the deck: high-volume, repetitive, verifiable work. Name each one as a workflow: "triage inbound support tickets," not "use AI in support." Nothing comes to mind, or nothing you can share? Open the yellow **Need an example for step 2?** box just under those three boxes and tap an idea: it goes into your next empty box.
+2. On your own (no AI yet), think of two or three candidate AI use cases from your organization. Two is enough. Type one into each box under **Lab 5, step 2: Your candidates** on the worksheet. Look for the green-flag pattern: high-volume, repetitive work whose results are easy to check. Name each one as a workflow: "triage inbound support tickets," not "use AI in support." Nothing comes to mind, or nothing you can share? Open the yellow **Need an example for step 2?** box just under those three boxes and tap an idea: it goes into your next empty box.
 
 <br><br>
 
-3. Under **Lab 5, step 3: Score each candidate** on the worksheet, give each of your candidates a score from 1 to 5 on each of the five criteria below. Higher is better. Gut scores are fine; speed over precision.
+3. Under **Lab 5, step 3: Score each candidate** on the worksheet, give each of your candidates a score from 1 to 5 on each of the five criteria below. Higher is better, including for Risk: **for Risk, 5 means low risk and 1 means high risk.** Gut scores are fine; speed over precision.
 
 | Criterion | What it means |
 |---|---|
@@ -460,7 +467,7 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 <br><br>
 
-5. Answer its questions honestly (to yourself or in the chat). Adjust any score the questions changed, then fill in the boxes under **Lab 5, step 5: Notes from the AI's questions** on the worksheet: the score you changed, the hardest question you could not answer, and (if you know) who could answer it.
+5. Think through an honest answer to each question. You do not need to type your answers into the chat. Adjust any score the questions changed, then fill in the boxes under **Lab 5, step 5: Notes from the AI's questions** on the worksheet: the score you changed, the hardest question you could not answer, and (if you know) who could answer it.
 
 <br><br>
 
@@ -468,7 +475,7 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 <br><br>
 
-7. Under **Lab 5, step 7: The winner** on the worksheet, choose your winner from the list of your three candidates, and complete the line below it: "**[Use case]** wins because **[one sentence]**."
+7. Under **Lab 5, step 7: The winner** on the worksheet, choose your winner from the list of your candidates, and complete the line below it: "**[Use case]** wins because **[one sentence]**."
 
 <br><br>
 
@@ -482,6 +489,7 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 - The AI's skeptical-reviewer questions exposed soft scores (data readiness is usually the one that drops).
 - The blocker check catches what a total hides: one unusable data source or one missing owner outweighs four good scores.
 - You now have a ranked shortlist — the input for Lab 6.
+- Other scorecards may ask four questions instead of five, or score from 1 to 3 (the worksheet's quick version folds Data readiness into Feasibility). The conversations underneath are the same, and Risk and Measurability still have to pass.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
@@ -489,7 +497,7 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 **Lab 6 — Define pilot metrics**
 
-**Purpose: Give your winning use case metrics built for a finance review — baseline, target, guardrail, stop rule. (12 minutes)**
+**Purpose: Give your winning use case metrics built for a finance review — baseline, target, guardrail, stop rule.**
 
 1. Open **[Worksheet 2: Pilot Metrics Charter](https://skillrepos.github.io/tlsaccel/#ws2)**. Its sections follow the steps below, each labelled with its step. Under **Lab 6, step 1**, your winning use case from Lab 5 is already filled in. Nothing of your own to work with? Open the yellow **Stuck?** box on the worksheet and press **Fill my empty boxes with the example**.
 
@@ -511,27 +519,27 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 <br><br>
 
-6. Under **Lab 6, step 6**, read the two things the worksheet has written from your answers, and change anything that does not fit: your **definition of done** and your **stop rule** (a check on day 45, and what you would have to see that day to stop early). The definition of done has this shape:
+6. Under **Lab 6, step 6**, read the two things the worksheet has written from your answers, and change anything that does not fit: your **definition of done** (one sentence that says what success looks like on day 90) and your **stop rule** (a check on day 45, and what you would have to see that day to stop early). The definition of done has this shape:
 
 > "By day 90, [workflow] handled with AI assistance shows [metric] moving from [baseline] to [target], with [guardrail] maintained — or we stop and write down what we learned."
 
 <br><br>
 
-7. Now have an AI reviewer attack your plan the way a skeptic in finance would (a "red-team"). Under **Lab 6, step 7**, press **Show my plan for the step 7 prompt**, take out anything confidential, then press **Copy the step 7 prompt with my plan in it**. Paste it into a new chat. This is what it copies:
+7. Now have an AI reviewer attack your plan the way a skeptic in finance would (a "red-team": a deliberate attack on your own plan, to find its weak spots first). Under **Lab 6, step 7**, press **Show my plan for the step 7 prompt**, take out anything confidential, then press **Copy the step 7 prompt with my plan in it**. Paste it into a new chat. This is what it copies:
 
 ```
 You are a skeptical finance reviewer. Here is a pilot metrics plan:
 
 [the worksheet puts your plan here]
 
-Attack it: name the three biggest ways it is gameable, unmeasurable, or
-likely to show a result the AI didn't cause. Give the smallest fix for each.
+Attack it: name the three biggest ways it could look good without real
+improvement, be impossible to measure, or show a result the AI didn't cause. Give the smallest fix for each.
 Under 150 words.
 ```
 
 The reviewer names three weak spots, each with a fix. Where you agree, change the matching box. Then write the one that worries you most in **Biggest weak spot and the fix**. (The screenshot uses a sample plan.)
 
-![Finance red-team](./images/acc14.png?raw=true "The reviewer finds where the sample plan is gameable")
+![Finance red-team](./images/acc14.png?raw=true "The reviewer finds where the sample plan could look good without real improvement")
 
 <br><br>
 
@@ -540,7 +548,7 @@ The reviewer names three weak spots, each with a fix. Where you agree, change th
 - Baseline-first design makes the result provable either way — the missing piece in most failed pilots.
 - The guardrail stops the classic trap: speed up, quality down, "success."
 - The stop rule makes killing a failed pilot a planned outcome, not an embarrassment.
-- The AI reviewer looks for the gameable parts while fixing them is still free.
+- The AI reviewer looks for the parts that could look good without real improvement, while fixing them is still free.
 - **The rest of the charter**, folded at the bottom of the worksheet (team, dates, costs, what happens if it succeeds), is for back at work.
 
 <p align="center">**[END OF LAB]**</p></br></br>
@@ -549,9 +557,9 @@ The reviewer names three weak spots, each with a fix. Where you agree, change th
 
 **Lab 7 — Governance gut-check**
 
-**Purpose: Apply the injection questions and autonomy tiers to a realistic agent proposal, make the approval call, and start your governance playbook. (12 minutes)**
+**Purpose: Apply the injection questions and autonomy tiers to a realistic agent proposal, make the approval call, and start your governance playbook.**
 
-1. Open **[Worksheet 3: Governance Playbook](https://skillrepos.github.io/tlsaccel/#ws3)** and keep it open beside these steps. It is a one-page governance playbook: seven boxes that say how AI is used where you work. In this lab you write one decision on it (step 6) and start its first two boxes (steps 8 and 9). Then read this proposal, which contains several planted red flags:
+1. Open **[Worksheet 3: Governance Playbook](https://skillrepos.github.io/tlsaccel/#ws3)** and keep it open beside these steps. It is a one-page governance playbook: seven boxes that say how AI is used where you work. In this lab you write one decision on it (step 6) and its usage-policy headlines (step 8). Then read this proposal, which contains several planted red flags:
 
 ```
 PROPOSAL: "PayFast" invoice agent (from our finance systems team)
@@ -586,9 +594,10 @@ it has all three of these: it reads untrusted content (such as outside
 email, attachments or web pages), it can reach private data, and it can
 send things out.
 
-(b) Three autonomy tiers. Assist: the AI drafts and a person does the
-action. Review: the AI prepares the action and a named person approves it.
-Autonomous: the AI acts on its own and people audit afterward.
+(b) Three autonomy tiers. Tier 1, Assist: the AI drafts and a person does
+the action. Tier 2, Review: the AI prepares the action and a named person
+approves it. Tier 3, Autonomous: the AI acts on its own and people audit
+afterward.
 
 List every risk in the proposal. For each one say which part of the
 trifecta it belongs to (if any) and which tier that action should run at.
@@ -610,33 +619,31 @@ added in phase 2. Pilot on all suppliers for 6 months.
 
 <br><br>
 
-5. Compare its list with yours. Key flags: a yes to all three injection questions, so the lethal trifecta is complete (it reads outside email, attachments and web pages; it can reach the purchasing and accounting systems; it sends email and payments), admin service account instead of least privilege, auto-send and auto-pay at Tier 3 autonomy on day one, bank details taken from websites an outsider controls, logging deferred, all suppliers instead of a scoped pilot, 6 months instead of 90 days.
+5. Compare its list with yours. Key flags: a yes to all three injection questions, so the lethal trifecta is complete (it reads outside email, attachments and web pages; it can reach the purchasing and accounting systems; it sends email and payments), an admin account that can reach everything instead of only the access it needs, auto-send and auto-pay at Tier 3 (autonomous) on day one, bank details taken from websites an outsider controls, logging deferred, all suppliers instead of a scoped pilot, 6 months instead of 90 days.
 
 <br><br>
 
-6. Make the call: **approve, approve with conditions, or reject**. On **[Worksheet 3](https://skillrepos.github.io/tlsaccel/#ws3)**, under **Lab 7, step 6**, choose your call and write two sentences on why. If you chose conditions, name them — for example which actions move to Tier 2 (human approves), what access gets narrowed, what gets logged from day one.
+6. Make the call: **approve, approve with conditions, or reject**. On **[Worksheet 3](https://skillrepos.github.io/tlsaccel/#ws3)**, under **Lab 7, step 6**, choose your call and write two sentences on why. If you chose conditions, name them — for example which actions move to Tier 2 (review: a named person approves), what access gets narrowed, what gets logged from day one.
 
 <br><br>
 
-7. When the instructor opens the new poll (Vote 2), vote on the same question as Vote 1: should an AI agent pay supplier invoices up to $5,000 with no person approving each one? Enter your decision from step 6. Your first vote stays as it was. If others chose differently, listen for one reason you had not thought of.
+7. When the instructor opens the new poll (Vote 2), vote on the same question as Vote 1 (the poll at the start of this part of the day): should an AI agent pay supplier invoices up to $5,000 with no person approving each one? Enter your decision from step 6. Your first vote stays as it was. If others chose differently, listen for one reason you had not thought of.
 
 <br><br>
 
-8. Stay on **Worksheet 3**. In Box 1 (Inventory), list two or three AI tools already in use where you work, including shadow use you suspect. Keep it general: owners as job titles, kinds of data rather than the data, and no names of who does what. Do not paste this box into an AI tool.
+8. Stay on **Worksheet 3**. In Box 2 (Usage policy headlines), write three rules you'd publish this week, one line each.
 
-<br><br>
-
-9. In Box 2 (Usage policy headlines), write three rules you'd publish this week, one line each.
+Box 1 (Inventory: the AI tools already in use where you work, including shadow AI, meaning tools people use for work without approval) is for back at work.
 
 <br><br>
 
 **What just happened**
 
-- A proposal that sounds efficient held all three parts of the lethal trifecta plus Tier-3 autonomy, day one.
+- A proposal that sounds efficient held all three parts of the lethal trifecta plus Tier 3 (autonomous) actions, day one.
 - The fix pattern is standard: narrow access, insert human approval on consequential actions, log everything, scope the pilot.
 - This is how you work with a technical team without being technical: you did not need to know how PayFast is built to ask what it reads, what it can reach, what it can do alone, and what gets logged.
 - You made a decision, not just a list of risks, and saw how the room decided on the same facts. That comparison is what an approval meeting is.
-- Your playbook now has its first two boxes — the other five get decide-by dates in Lab 8.
+- Your playbook now has its usage-policy headlines (Box 2). The inventory (Box 1) and Boxes 3–7 are for back at work; Lab 8 lets you put dates on them.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
@@ -644,25 +651,25 @@ added in phase 2. Pilot on all suppliers for 6 months.
 
 **Lab 8 — Your 90-day AI plan**
 
-**Purpose: Leave with a concrete 30/60/90 plan and the paragraph you'll send your manager or team. (12 minutes)**
+**Purpose: Leave with a concrete 30/60/90 plan and the paragraph you'll send your manager or team.**
 
 1. Open **[Worksheet 4](https://skillrepos.github.io/tlsaccel/#ws4)**. Its first section shows what you already wrote on Worksheets 2 and 3, so you do not need them beside you. Every box says what goes in it; this lab asks for the ones marked **Required**.
 
 <br><br>
 
-2. Fill in two lines of Days 1–30 (SEE): your daily AI habit (one task you will do with AI every working day) and the date the one-page policy ships.
+2. Fill in two lines of Days 1–30 (SEE: find out what AI is already doing): your daily AI habit (one task you will do with AI every working day) and the date the one-page policy ships.
 
 <br><br>
 
-3. Fill in two lines of Days 31–60 (SCOPE): your pilot's owner (already filled in from Worksheet 2; change it if you need to) and the baseline collection dates (the two weeks in which you measure your primary metric before AI).
+3. Fill in two lines of Days 31–60 (SCOPE: pick and plan one pilot): your pilot's owner (already filled in from Worksheet 2; change it if you need to) and the baseline collection dates (the two weeks in which you measure your primary metric before AI).
 
 <br><br>
 
-4. Fill in one line of Days 61–90 (SHIP): the date of the day-90 decision meeting. The pilot starts in these 30 days; the meeting is 90 days after it starts (if you put a day-90 date on Worksheet 2, on or just after it), so it falls after this plan ends. That is where you decide to scale the pilot up, change it, or stop it, using the four tests on Worksheet 4. Book it now and put a real date on it.
+4. Fill in one line of Days 61–90 (SHIP: start the pilot in real work): the date of your **day-90 decision meeting**, where you decide whether to scale the pilot up, change it, or stop it, using the four tests on Worksheet 4. Pick a date about 90 days after the pilot starts (on or just after the day-90 date on Worksheet 2, if you set one). That is after this 90-day plan ends, which is fine. Book it now.
 
 <br><br>
 
-5. Go to **A date for each open box of your playbook**, further down Worksheet 4. Give each of Boxes 3–7 a **decide by** date: the date by which you will have settled that box back at work.
+5. (Optional — if you have time; otherwise back at work.) Go to **A date for each open box of your playbook**, further down Worksheet 4, and give each of Boxes 3–7 a **decide by** date: the date by which you will have settled that box.
 
 <br><br>
 
@@ -708,7 +715,7 @@ Critique this paragraph as a skeptical reader in three bullets, then rewrite it.
 - The 30/60/90 turned today's material into named owners and dated commitments.
 - The announcement paragraph is the real test: if it names a workflow, metric, owner, and stop rule in 120 words, your plan is coherent.
 - Putting the day-90 decision meeting on calendars now is what turns the plan into a commitment. At that meeting the four tests on Worksheet 4 decide: scale, change, or stop.
-- Every open box of your governance playbook now has a date: a started playbook, not a blank one.
+- If you dated the open boxes of your governance playbook, it is a started playbook, not a blank one. If not, dating them is your first job back at work.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
@@ -716,7 +723,7 @@ Critique this paragraph as a skeptical reader in three bullets, then rewrite it.
 
 **Lab 9 (Optional) — See an agent run in real code**
 
-**Purpose: Watch a real AI agent run its think → act → observe loop in a live dev environment — no coding. (12 minutes)**
+**Purpose: Watch a real AI agent run its think → act → observe loop in a live dev environment — no coding.**
 
 > This lab is for after the workshop. In the session your instructor shows a different agent live, just before Lab 7. To watch one run step by step in real code, follow the steps below in your own time.
 
@@ -769,7 +776,7 @@ Each step takes a few seconds — longer on a busy machine. That wait is what "A
 
 <br><br>
 
-7. When it finishes, read the summary at the bottom: the tools the agent was ALLOWED to use, and the email draft waiting for a human to approve (sending is a Tier 2 action). Read the draft closely — does it promise anything nobody approved, such as a fix by a certain time?
+7. When it finishes, read the summary at the bottom: the tools the agent was ALLOWED to use, and the email draft waiting for a human to approve (sending is a Tier 2, review, action). Read the draft closely — does it promise anything nobody approved, such as a fix by a certain time?
 
 ![Governance summary and draft](./images/acc19.png?raw=true "Allowed tools, one draft awaiting human approval")
 

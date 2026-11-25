@@ -1,7 +1,7 @@
 # Worksheet 3 — One-Page Governance Playbook
 *Enterprise Leader AI Accelerator · Lab 7*
 
-**What this is:** a one-page **governance playbook**: seven boxes that say how AI is used where you work, from what is in use today to what is kept on record. In Lab 7 you make one decision and fill in Boxes 1 and 2. Boxes 3–7 are for back at work; in Lab 8 you give each of them a date, on Worksheet 4. Each box says what goes in it and gives an example from a made-up company. Boxes marked **Required** are the ones Lab 7 asks for today; **Optional** ones are for back at work.
+**What this is:** a one-page **governance playbook**: seven boxes that say how AI is used where you work, from what is in use today to what is kept on record. In Lab 7 you make one decision and fill in Box 2. Box 1 and Boxes 3–7 are for back at work; in Lab 8 you give each of them a date, on Worksheet 4. Each box says what goes in it and gives an example from a made-up company. Boxes marked **Required** are the ones Lab 7 asks for today; **Optional** ones are for back at work.
 
 Fill it in on the worksheets page, which saves what you type on your own device: https://skillrepos.github.io/tlsaccel/#ws3
 
@@ -17,11 +17,11 @@ Fill it in on the worksheets page, which saves what you type on your own device:
 
 ## The seven boxes
 
-Fill in Boxes 1 and 2 in Lab 7. Boxes 3–7 come after them, for back at work. You leave today with a started playbook, and (after Lab 8) a date on every box that is still open.
+Fill in Box 2 in Lab 7. Box 1 and Boxes 3–7 are for back at work. You leave today with a started playbook, and (after Lab 8) a date on every box that is still open.
 
-### Lab 7, step 8: Box 1 — Inventory (where is AI used today?)
+### Back at work: Box 1 — Inventory (where is AI used today?)
 
-**Required: at least two tools.** List two or three AI tools already in use where you work. For each one, give the **tool and what it is used for**, its **owner** (the one person answerable for it; "nobody yet" is a real answer), and the **data it touches** (what information it can see). **Autonomy tier** is how much the tool does on its own. **1 assist:** AI drafts, a person does the work. **2 review:** AI prepares the action, a named person approves it. **3 autonomous:** AI acts, and people check afterwards.
+**Optional, for back at work.** List two or three AI tools already in use where you work. For each one, give the **tool and what it is used for**, its **owner** (the one person answerable for it; "nobody yet" is a real answer), and the **data it touches** (what information it can see). **Autonomy tier** is how much the tool does on its own. **1 assist:** AI drafts, a person does the work. **2 review:** AI prepares the action, a named person approves it. **3 autonomous:** AI acts, and people check afterwards.
 
 **Keep it general.** Give owners as job titles, not names. Describe the kind of data ("customer emails"), never the data itself. Describe unapproved use as a habit ("people paste customer emails into personal chatbots"), without saying who does it. No lab step asks you to paste this box into an AI tool, so do not.
 
@@ -30,9 +30,9 @@ Fill in Boxes 1 and 2 in Lab 7. Boxes 3–7 come after them, for back at work. Y
 | | | | |
 | | | | |
 | | | | |
-| *Suspected shadow use:* | | | |
+| *Suspected shadow AI:* | | | |
 
-Shadow use means AI tools people use for work without approval.
+Shadow AI means AI tools people use for work without approval.
 
 Examples of a filled-in row:
 
@@ -43,7 +43,7 @@ Examples of a filled-in row:
 | Helpdesk AI add-on (the pilot) | The support operations manager | Customer tickets | 1 assist |
 | Personal ChatGPT accounts used for customer emails | No owner | Possibly customer names and prices | Not sure |
 
-### Lab 7, step 9: Box 2 — Usage policy headlines (three rules you'd publish this week)
+### Lab 7, step 8: Box 2 — Usage policy headlines (three rules you'd publish this week)
 
 A usage policy is the short list of rules for using AI at work. Write three of those rules as headlines: one line each, plain enough to follow without asking anyone.
 

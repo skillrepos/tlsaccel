@@ -32,7 +32,7 @@ Three blocks of 30 days, counted from today. **See** what AI is already doing, *
 | **Approval path + review group live on** | Optional | The date Boxes 3 and 6 of your playbook are in use | January 15, 2027 | |
 | **Buy / partner / build decision by** | Optional | The date you settle how you will get the AI tool for the pilot | December 11, 2026 | |
 
-### Lab 8, step 4: Days 61–90 — SHIP
+### Lab 8, step 4: Days 61–90 — SHIP: start the pilot
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
@@ -50,15 +50,15 @@ Three blocks of 30 days, counted from today. **See** what AI is already doing, *
 
 ## Lab 8, step 5: A date for each open box of your playbook
 
-Boxes 3–7 of your governance playbook (Worksheet 3) are still open. Give each one a **decide-by date**: the date by which you will have settled that box back at work.
+Boxes 3–7 of your governance playbook (Worksheet 3) are still open. If you have time today, give each one a **decide-by date**: the date by which you will have settled that box back at work. If not, date them back at work.
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
-| **Box 3, Approval path: decide by** | Required | The date by which you will have agreed how a new AI idea gets a yes or a no | January 15, 2027 | |
-| **Box 4, Vendor checks: decide by** | Required | The date by which your standard list of questions for AI vendors will be agreed | December 9, 2026 | |
-| **Box 5, Incident path: decide by** | Required | The date by which you will have agreed who gets the first call when AI goes wrong | January 29, 2027 | |
-| **Box 6, Roles: decide by** | Required | The date by which the review group will be named | December 18, 2026 | |
-| **Box 7, Audit trail: decide by** | Required | The date by which you will have agreed what gets logged, who reviews it and how long logs are kept | January 29, 2027 | |
+| **Box 3, Approval path: decide by** | Optional | The date by which you will have agreed how a new AI idea gets a yes or a no | January 15, 2027 | |
+| **Box 4, Vendor checks: decide by** | Optional | The date by which your standard list of questions for AI vendors will be agreed | December 9, 2026 | |
+| **Box 5, Incident path: decide by** | Optional | The date by which you will have agreed who gets the first call when AI goes wrong | January 29, 2027 | |
+| **Box 6, Roles: decide by** | Optional | The date by which the review group will be named | December 18, 2026 | |
+| **Box 7, Audit trail: decide by** | Optional | The date by which you will have agreed what gets logged, who reviews it and how long logs are kept | January 29, 2027 | |
 
 ## Lab 8, steps 6–8: The announcement paragraph
 

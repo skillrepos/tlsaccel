@@ -3,9 +3,9 @@
 
 The sections below follow Lab 5's steps in order. Every box starts empty.
 
-## Lab 5, step 2: Your three candidates (required)
+## Lab 5, step 2: Your candidates, two or three (required)
 
-Three ways your organization could use AI, one per line. Name each one as a workflow: "triage inbound support tickets," not "use AI in support." No scores yet: those come in step 3.
+Two or three ways your organization could use AI, one per line. Two is enough; the third is optional. Name each one as a workflow: "triage inbound support tickets," not "use AI in support." No scores yet: those come in step 3.
 
 | # | Use case (name it as a workflow) |
 |---|----------------------------------|
@@ -17,7 +17,7 @@ Three ways your organization could use AI, one per line. Name each one as a work
 
 ## Lab 5, step 3: Score each candidate (required)
 
-Give each of your three candidates a score from **1 to 5** on each of the five criteria below. Higher is better. **Risk is scored in reverse: 5 = low risk.** Gut scores are fine.
+Give each of your candidates a score from **1 to 5** on each of the five criteria below. Higher is better. **Risk is scored in reverse: 5 = low risk.** Gut scores are fine.
 
 | Criterion | What it means | What a 5 looks like | What a 1 looks like |
 |---|---|---|---|
