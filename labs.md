@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.19 - 11/25/26
+## Revision 1.20 - 11/25/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
@@ -25,7 +25,7 @@ Labs 5–8 each use a worksheet: Worksheet 1 for Lab 5, 2 for Lab 6, 3 for Lab 7
 | 6 | [Define pilot metrics](#lab6) | 12 min |
 | 7 | [Governance gut-check](#lab7) | 12 min |
 | 8 | [Your 90-day AI plan](#lab8) | 12 min |
-| 9 | [(Optional — for after the workshop) See what your team sees](#lab9) | 12 min |
+| 9 | [(Optional — for after the workshop) See an agent run in real code](#lab9) | 12 min |
 
 <br><br>
 
@@ -481,7 +481,7 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 - Five scores forced the five conversations that decide pilot success — before any money moves.
 - The AI's skeptical-reviewer questions exposed soft scores (data readiness is usually the one that drops).
 - The blocker check catches what a total hides: one unusable data source or one missing owner outweighs four good scores.
-- You now hold a ranked shortlist grounded in your own organization — the input for Lab 6.
+- You now have a ranked shortlist — the input for Lab 6.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
@@ -489,7 +489,7 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 **Lab 6 — Define pilot metrics**
 
-**Purpose: Give your winning use case metrics finance would accept — baseline, target, guardrail, stop rule. (12 minutes)**
+**Purpose: Give your winning use case metrics built for a finance review — baseline, target, guardrail, stop rule. (12 minutes)**
 
 1. Open **[Worksheet 2: Pilot Metrics Charter](https://skillrepos.github.io/tlsaccel/#ws2)**. Its sections follow the steps below, each labelled with its step. Under **Lab 6, step 1**, your winning use case from Lab 5 is already filled in. Nothing of your own to work with? Open the yellow **Stuck?** box on the worksheet and press **Fill my empty boxes with the example**.
 
@@ -540,7 +540,7 @@ The reviewer names three weak spots, each with a fix. Where you agree, change th
 - Baseline-first design makes the result provable either way — the missing piece in most failed pilots.
 - The guardrail stops the classic trap: speed up, quality down, "success."
 - The stop rule makes killing a failed pilot a planned outcome, not an embarrassment.
-- The finance red-team caught the gameable parts while fixing them was still free.
+- The AI reviewer looks for the gameable parts while fixing them is still free.
 - **The rest of the charter**, folded at the bottom of the worksheet (team, dates, costs, what happens if it succeeds), is for back at work.
 
 <p align="center">**[END OF LAB]**</p></br></br>
@@ -714,7 +714,7 @@ Critique this paragraph as a skeptical reader in three bullets, then rewrite it.
 
 <a name="lab9"></a>
 
-**Lab 9 (Optional) — See what your team sees**
+**Lab 9 (Optional) — See an agent run in real code**
 
 **Purpose: Watch a real AI agent run its think → act → observe loop in a live dev environment — no coding. (12 minutes)**
 
@@ -785,7 +785,7 @@ Same loop, different tool choices — this time it has no reason to look up a cu
 
 <br><br>
 
-9. Connect it back: this loop — with real tools, real credentials, and real autonomy decisions — is what your team proposes when it says "agent." The tool list and the Tier 2 approval you just saw are the governance surface you control.
+9. Connect it back: this loop — with real tools, real credentials, and real autonomy decisions — is what a technical team means when it says "agent." The tool list and the Tier 2 approval you just saw are the controls a leader can ask about.
 
 <br><br>
 
