@@ -226,8 +226,8 @@
   <span class="navlabel">Worksheet</span>
   <a href="#ws1" aria-label="Worksheet 1, Lab 5"><span class="wide">Worksheet </span>1<span class="wide"> · Lab 5</span></a>
   <a href="#ws2" aria-label="Worksheet 2, Lab 6"><span class="wide">Worksheet </span>2<span class="wide"> · Lab 6</span></a>
-  <a href="#ws3" aria-label="Worksheet 3, Lab 7"><span class="wide">Worksheet </span>3<span class="wide"> · Lab 7</span></a>
-  <a href="#ws4" aria-label="Worksheet 4, Lab 8"><span class="wide">Worksheet </span>4<span class="wide"> · Lab 8</span></a>
+  <a href="#ws4" aria-label="Worksheet 4, Labs 7 and 8"><span class="wide">Worksheet </span>4<span class="wide"> · Labs 7–8</span></a>
+  <a href="#ws3" aria-label="Worksheet 3, take-home playbook"><span class="wide">Worksheet </span>3<span class="wide"> · take-home</span></a>
   <a class="out" href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md" target="_blank" rel="noopener">Lab steps ↗</a>
   <a class="out" href="https://github.com/skillrepos/tlsaccel/blob/main/worksheets/leader-reference-sheet.md" target="_blank" rel="noopener">Reference sheet ↗</a>
 </nav>
@@ -235,12 +235,12 @@
 
 <div class="card homeonly noprint" id="home">
   <h2>Open a worksheet</h2>
-  <p class="hint">One worksheet per lab. Each opens on its own; the bar at the top of the page takes you from one to another. What you type stays saved when you switch.</p>
+  <p class="hint">Labs 5 and 6 each have a worksheet; Labs 7 and 8 share Worksheet 4. Worksheet 3, the governance playbook, is a take-home sheet: no lab asks you to fill it in. Each opens on its own; the bar at the top of the page takes you from one to another. What you type stays saved when you switch.</p>
   <div class="picks">
     <a class="pick" href="#ws1"><i>Lab 5</i><b>Worksheet 1</b><span>Use-case scorecard</span></a>
     <a class="pick" href="#ws2"><i>Lab 6</i><b>Worksheet 2</b><span>Pilot metrics charter</span></a>
-    <a class="pick" href="#ws3"><i>Lab 7</i><b>Worksheet 3</b><span>Governance playbook</span></a>
-    <a class="pick" href="#ws4"><i>Lab 8</i><b>Worksheet 4</b><span>Your 90-day plan</span></a>
+    <a class="pick" href="#ws4"><i>Labs 7–8</i><b>Worksheet 4</b><span>Your PayFast call and your 90-day plan</span></a>
+    <a class="pick" href="#ws3"><i>Take-home</i><b>Worksheet 3</b><span>Governance playbook</span></a>
   </div>
 </div>
 
@@ -611,16 +611,16 @@
   </div>
   <div class="pager noprint">
     <a href="#home">← All worksheets</a>
-    <a href="#ws3">Next: Worksheet 3 (Lab 7) →</a>
+    <a href="#ws4">Next: Worksheet 4 (Labs 7–8) →</a>
   </div>
 </section>
 
 <!-- ============================ WORKSHEET 3 ============================ -->
-<section class="card ws" id="ws3" data-ws="Worksheet 3: Governance playbook (Lab 7)">
-  <div class="labhead"><span class="badge">Lab 7</span><h2>Worksheet 3: One-page governance playbook</h2></div>
-  <p class="meta">Goes with <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab7" target="_blank" rel="noopener">Lab 7: Governance gut-check</a>.</p>
+<section class="card ws" id="ws3" data-ws="Worksheet 3: Governance playbook (take-home)">
+  <div class="labhead"><span class="badge">Take-home</span><h2>Worksheet 3: One-page governance playbook</h2></div>
+  <p class="meta">A take-home sheet. No lab step asks you to fill it in. In Lab 8 you can give each box a date on Worksheet 4.</p>
 
-  <div class="why"><b>What this is:</b> a one-page <b>governance playbook</b>: seven boxes that say how AI is used where you work, from what is in use today to what is kept on record. In Lab 7 you make one decision and fill in Box 2. Box 1 and Boxes 3–7 are for back at work. In Lab 8, if you have time, you give Boxes 3–7 a decide-by date on Worksheet 4. Each box says what goes in it and gives an example from a made-up company. Boxes marked <b>Required</b> are the ones Lab 7 asks for today; <b>Optional</b> ones are for back at work.</div>
+  <div class="why"><b>What this is:</b> a one-page <b>governance playbook</b>: seven boxes that say how AI is used where you work, from what is in use today to what is kept on record. It is for back at work: every box is <b>Optional</b>, and no lab step asks you to fill it in. On Worksheet 4 (Lab 8) you set the date your usage policy (Box 2) goes out and, if you have time, a decide-by date for Boxes 3–7. Each box says what goes in it and gives an example from a made-up company.</div>
   <div class="noprint wsbar">
     <span class="cap">For the whole worksheet, not one step</span>
     <button class="ghost small" data-check="ws3">Check for required info</button>
@@ -640,46 +640,35 @@
     <div class="exmsg" id="ex3msg" role="status"></div>
   </details>
 
-  <h3 data-h="My call on the PayFast proposal (Lab 7, step 6)"><span class="step">Lab 7, step 6</span>My call on the PayFast proposal</h3>
-  <p><b>Required.</b> PayFast is the invoice agent proposed in Lab 7. Decide as if the proposal were on your desk. There is no example here: this one is your call.</p>
-  <div class="seg" data-label="My call on PayFast">
-    <label><input type="radio" name="w3.call" value="Approve"><span>Approve</span></label>
-    <label><input type="radio" name="w3.call" value="Approve with conditions"><span>Approve with conditions</span></label>
-    <label><input type="radio" name="w3.call" value="Reject"><span>Reject</span></label>
-  </div>
-  <label class="f" for="callwhy">Because <span class="tag req">Required</span></label>
-  <p class="what">Two sentences on why. If you chose “approve with conditions”, name the conditions: what must change before the agent runs.</p>
-  <textarea rows="3" id="callwhy" data-k="w3.callwhy" data-label="Because" data-req="1"></textarea>
-
   <h3 data-h="The seven boxes">The seven boxes</h3>
-  <p>Fill in Box 2 in Lab 7. Box 1 and Boxes 3–7 are for back at work. You leave today with a started playbook: three usage rules, and (in Lab 8) the date they go out. If you have time in Lab 8, you also give Boxes 3–7 a decide-by date.</p>
+  <p>All seven boxes are for back at work. Worksheet 4 holds the dates: when the inventory (Box 1) starts, when the usage policy (Box 2) goes out, and a decide-by date for each of Boxes 3–7.</p>
 
   <h4 data-h="Box 1 — Inventory (where is AI used today?) (back at work)"><span class="step">back at work</span>Box 1 — Inventory (where is AI used today?)</h4>
   <p><b>Optional, for back at work.</b> List two or three AI tools already in use where you work. For each one, give the <b>tool and what it is used for</b>, its <b>owner</b> (the one person answerable for it; “nobody yet” is a real answer), and the <b>data it touches</b> (what information it can see). <b>Autonomy tier</b> is how much the tool does on its own. <b>1 assist:</b> AI drafts, a person does the work. <b>2 review:</b> AI prepares the action, a named person approves it. <b>3 autonomous:</b> AI acts, and people check afterwards.</p>
   <p><b>Keep it general.</b> Give owners as job titles, not names. Describe the kind of data (“customer emails”), never the data itself. Describe unapproved use as a habit (“people paste customer emails into personal chatbots”), without saying who does it. No lab step asks you to paste this box into an AI tool, so do not.</p>
   <div id="inv"></div>
 
-  <h4 data-h="Box 2 — Usage policy headlines (three rules you&#x27;d publish this week) (Lab 7, step 8)"><span class="step">Lab 7, step 8</span>Box 2 — Usage policy headlines (three rules you’d publish this week)</h4>
+  <h4 data-h="Box 2 — Usage policy headlines (three rules you&#x27;d publish this week) (back at work)"><span class="step">back at work</span>Box 2 — Usage policy headlines (three rules you’d publish this week)</h4>
   <p>A usage policy is the short list of rules for using AI at work. Write three of those rules as headlines: one line each, plain enough to follow without asking anyone.</p>
-  <label class="f" for="p1">Rule 1 <span class="tag req">Required</span></label>
+  <label class="f" for="p1">Rule 1 <span class="tag opt">Optional</span></label>
   <p class="what">One rule in one line, for example about which AI tools people may use.</p>
-  <input type="text" id="p1" data-k="w3.p1" data-label="Rule 1" data-ex="Use the tools on the approved list. Anything else needs a yes from the review group first." data-req="1">
-  <label class="f" for="p2">Rule 2 <span class="tag req">Required</span></label>
+  <input type="text" id="p1" data-k="w3.p1" data-label="Rule 1" data-ex="Use the tools on the approved list. Anything else needs a yes from the review group first.">
+  <label class="f" for="p2">Rule 2 <span class="tag opt">Optional</span></label>
   <p class="what">One rule in one line, for example about what information must never go into an AI tool.</p>
-  <input type="text" id="p2" data-k="w3.p2" data-label="Rule 2" data-ex="No customer, employee or financial data in a personal AI account." data-req="1">
-  <label class="f" for="p3">Rule 3 <span class="tag req">Required</span></label>
+  <input type="text" id="p2" data-k="w3.p2" data-label="Rule 2" data-ex="No customer, employee or financial data in a personal AI account.">
+  <label class="f" for="p3">Rule 3 <span class="tag opt">Optional</span></label>
   <p class="what">One rule in one line, for example about who checks AI work before it is used.</p>
-  <input type="text" id="p3" data-k="w3.p3" data-label="Rule 3" data-ex="You own what you send. Check every name, number and date before it goes out." data-req="1">
+  <input type="text" id="p3" data-k="w3.p3" data-label="Rule 3" data-ex="You own what you send. Check every name, number and date before it goes out.">
 
   <div class="noprint" style="margin-top:14px">
     <button data-check="ws3">Check for required info</button>
-    <p class="hint" style="margin-top:6px">Use it at any point. It lists the Required boxes that are still empty, step by step. Lab 7 ends here; everything below is for back at work.</p>
+    <p class="hint" style="margin-top:6px">Every box on this worksheet is Optional, so there is nothing it has to find. Boxes 3–7 follow.</p>
     <div class="checkout" role="status"></div>
   </div>
 
   <details class="later">
   <summary data-h="Boxes 3–7: the rest of the playbook (back at work)"><span class="step">back at work</span>Boxes 3–7: the rest of the playbook <span class="open">(tap to open)</span></summary>
-  <p>No lab step asks you to fill these in today. In Lab 8, if you have time, you give each of these five boxes a <b>decide-by date</b> on Worksheet 4: the date by which you will have settled it. Fill in the rest back at work.</p>
+  <p>In Lab 8, if you have time, you give each of these five boxes a <b>decide-by date</b> on Worksheet 4: the date by which you will have settled it. Fill in the boxes themselves back at work.</p>
 
   <h4 data-h="Box 3 — Approval path (back at work)"><span class="step">back at work</span>Box 3 — Approval path</h4>
   <p>The approval path is how a new AI idea gets a yes or a no: it is scored on Worksheet 1, someone checks it for risk, and an answer comes back within a set number of days.</p>
@@ -738,16 +727,16 @@
   </div>
   <div class="pager noprint">
     <a href="#home">← All worksheets</a>
-    <a href="#ws4">Next: Worksheet 4 (Lab 8) →</a>
+    <a href="#ws4">Back to Worksheet 4 (Labs 7–8) →</a>
   </div>
 </section>
 
 <!-- ============================ WORKSHEET 4 ============================ -->
-<section class="card ws" id="ws4" data-ws="Worksheet 4: Your 90-day plan (Lab 8)">
-  <div class="labhead"><span class="badge">Lab 8</span><h2>Worksheet 4: Your 90-day plan</h2></div>
-  <p class="meta">Goes with <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab8" target="_blank" rel="noopener">Lab 8: Your 90-day AI plan</a>.</p>
+<section class="card ws" id="ws4" data-ws="Worksheet 4: Your PayFast call and your 90-day plan (Labs 7–8)">
+  <div class="labhead"><span class="badge">Labs 7–8</span><h2>Worksheet 4: Your PayFast call and your 90-day plan</h2></div>
+  <p class="meta">Goes with <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab7" target="_blank" rel="noopener">Lab 7: Governance gut-check</a> (the first section) and <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab8" target="_blank" rel="noopener">Lab 8: Your 90-day AI plan</a> (the rest).</p>
 
-  <div class="why"><b>What this is:</b> your plan for the next 90 days, with dates. Three parts: a <b>30 / 60 / 90</b> (what you will do in each of the next three months), a <b>decide-by date</b> for each open box of your governance playbook, and the <b>short message</b> that tells your manager and team about the pilot. It builds on Worksheet 2 (your pilot) and Worksheet 3 (your playbook). Each box says what goes in it and gives an example from a made-up company. Boxes marked <b>Required</b> are the ones Lab 8 asks for today; <b>Optional</b> ones are for back at work.</div>
+  <div class="why"><b>What this is:</b> first, your call on the PayFast proposal from Lab 7. Then your plan for the next 90 days, with dates, in three parts: a <b>30 / 60 / 90</b> (what you will do in each of the next three months), a <b>decide-by date</b> for each open box of your governance playbook, and the <b>short message</b> that tells your manager and team about the pilot. It builds on Worksheet 2 (your pilot); the playbook it dates is Worksheet 3, the take-home sheet. Each box says what goes in it and gives an example from a made-up company. Boxes marked <b>Required</b> are the ones Labs 7 and 8 ask for today; <b>Optional</b> ones are for back at work.</div>
   <div class="noprint wsbar">
     <span class="cap">For the whole worksheet, not one step</span>
     <button class="ghost small" data-check="ws4">Check for required info</button>
@@ -767,8 +756,19 @@
     <div class="exmsg" id="ex4msg" role="status"></div>
   </details>
 
+  <h3 data-h="My call on the PayFast proposal (Lab 7, step 6)"><span class="step">Lab 7, step 6</span>My call on the PayFast proposal</h3>
+  <p><b>Required, in Lab 7.</b> PayFast is the invoice agent proposed in Lab 7. Decide as if the proposal were on your desk. There is no example here: this one is your call.</p>
+  <div class="seg" data-label="My call on PayFast">
+    <label><input type="radio" name="w3.call" value="Approve"><span>Approve</span></label>
+    <label><input type="radio" name="w3.call" value="Approve with conditions"><span>Approve with conditions</span></label>
+    <label><input type="radio" name="w3.call" value="Reject"><span>Reject</span></label>
+  </div>
+  <label class="f" for="callwhy">Because <span class="tag req">Required</span></label>
+  <p class="what">Two sentences on why. If you chose “approve with conditions”, name the conditions: what must change before the agent runs.</p>
+  <textarea rows="3" id="callwhy" data-k="w3.callwhy" data-label="Because" data-req="1"></textarea>
+
   <h3 data-h="From your earlier worksheets (Lab 8, step 1)"><span class="step">Lab 8, step 1</span>From your earlier worksheets</h3>
-  <p>What you already wrote on Worksheets 2 and 3, so you do not have to look it up or type it again. To change a line, change it on its own worksheet.</p>
+  <p>What you already wrote on Worksheet 2, so you do not have to look it up or type it again. To change a line, change it on its own worksheet.</p>
   <div class="carry" id="carry"></div>
 
   <h3 data-h="Your 30 / 60 / 90 (Lab 8, steps 2–4)"><span class="step">Lab 8, steps 2–4</span>Your 30 / 60 / 90</h3>
@@ -786,7 +786,7 @@
   <p class="what">The one person who will put that list together.</p>
   <input type="text" id="invown" data-k="w3.invown" data-label="Inventory owner" data-ex="The IT service desk lead">
   <label class="f" for="polship">One-page policy ships on <span class="tag req">Required</span></label>
-  <p class="what">The date your usage policy (Box 2 of your playbook, written out on one page) goes to everyone.</p>
+  <p class="what">The date your one-page usage policy (Box 2 of the take-home playbook, Worksheet 3) goes to everyone.</p>
   <input type="text" id="polship" data-k="w3.polship" data-label="One-page policy ships on" data-ex="December 4, 2026" data-req="1">
   <label class="f" for="short">Shortlist shared with <span class="tag opt">Optional</span></label>
   <p class="what">Who will see your scored use cases from Worksheet 1.</p>
@@ -839,7 +839,7 @@
   </div>
 
   <h3 data-h="A date for each open box of your playbook (Lab 8, step 5)"><span class="step">Lab 8, step 5</span>A date for each open box of your playbook</h3>
-  <p>Boxes 3–7 of your governance playbook (Worksheet 3) are still open. If you have time today, give each one a <b>decide-by date</b>: the date by which you will have settled that box back at work. If not, date them back at work.</p>
+  <p>Your governance playbook (Worksheet 3, the take-home sheet) has seven boxes. Boxes 1 and 2 already have dates above: when the inventory starts and when the policy goes out. For Boxes 3–7, if you have time today, give each one a <b>decide-by date</b>: the date by which you will have settled that box back at work. If not, date them back at work.</p>
   <label class="f" for="d3">Box 3, Approval path: decide by <span class="tag opt">Optional</span></label>
   <p class="what">The date by which you will have agreed how a new AI idea gets a yes or a no.</p>
   <input type="text" id="d3" data-k="w3.d3" data-label="Box 3, Approval path: decide by" data-ex="January 15, 2027">
@@ -1171,11 +1171,10 @@ function refresh() {
     ['Pilot start date', sd ? fmtDate(sd) : '', 'Worksheet 2'],
     ['Day-90 date', val('w2.day90') ? plainDay90() : '', 'Worksheet 2'],
     ['Stop rule: we stop if we see', val('w2.stopsee'), 'Worksheet 2'],
-    ['Usage policy headlines', [val('w3.p1'), val('w3.p2'), val('w3.p3')].filter(Boolean).join(' / '), 'Worksheet 3'],
   ].filter(([, v]) => v);
   $('carry').innerHTML = carried.length
     ? carried.map(([l, v, w]) => '<div><b>' + l + ':</b> ' + esc(v) + ' <span class="from">(' + w + ')</span></div>').join('')
-    : '<div class="hint">Nothing yet. This fills in as you complete Worksheets 2 and 3.</div>';
+    : '<div class="hint">Nothing yet. This fills in as you complete Worksheet 2.</div>';
   $('runshint').textContent = sd ? 'Your Worksheet 2 start date: ' + fmtDate(sd) + '.' : '';
   $('d90hint').textContent = val('w2.day90') ? 'Your Worksheet 2 day-90 date: ' + plainDay90() + '.' : '';
   const sn = parseInt(store['w2.stopday'], 10);
@@ -1305,7 +1304,7 @@ const EXTRA = {
     }
     return { 'Your candidates': names, 'Score each candidate': scores, 'The winner': winnerName() ? [] : ['My winner (choose one of your candidates)'] };
   },
-  ws3: () => {
+  ws4: () => {
     return { 'My call on the PayFast': val('w3.call') ? [] : ['Approve, approve with conditions, or reject'] };
   },
 };

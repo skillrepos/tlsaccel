@@ -1,23 +1,13 @@
 # Worksheet 3 — One-Page Governance Playbook
-*Enterprise Leader AI Accelerator · Lab 7*
+*Enterprise Leader AI Accelerator · take-home (no lab fills it in)*
 
-**What this is:** a one-page **governance playbook**: seven boxes that say how AI is used where you work, from what is in use today to what is kept on record. In Lab 7 you make one decision and fill in Box 2. Box 1 and Boxes 3–7 are for back at work. In Lab 8, if you have time, you give Boxes 3–7 a decide-by date on Worksheet 4. Each box says what goes in it and gives an example from a made-up company. Boxes marked **Required** are the ones Lab 7 asks for today; **Optional** ones are for back at work.
+**What this is:** a one-page **governance playbook**: seven boxes that say how AI is used where you work, from what is in use today to what is kept on record. It is for back at work: every box is **Optional**, and no lab step asks you to fill it in. On Worksheet 4 (Lab 8) you set the date your usage policy (Box 2) goes out and, if you have time, a decide-by date for Boxes 3–7. Each box says what goes in it and gives an example from a made-up company.
 
 Fill it in on the worksheets page, which saves what you type on your own device: https://skillrepos.github.io/tlsaccel/#ws3
 
-## Lab 7, step 6: My call on the PayFast proposal
-
-**Required.** PayFast is the invoice agent proposed in Lab 7. Decide as if the proposal were on your desk. There is no example here: this one is your call.
-
-☐ Approve ☐ Approve with conditions ☐ Reject
-
-| Box | Needed in the lab? | What goes in it | Example | Your answer |
-|---|---|---|---|---|
-| **Because** | Required | Two sentences on why. If you chose "approve with conditions", name the conditions: what must change before the agent runs | — | |
-
 ## The seven boxes
 
-Fill in Box 2 in Lab 7. Box 1 and Boxes 3–7 are for back at work. You leave today with a started playbook: three usage rules, and (in Lab 8) the date they go out. If you have time in Lab 8, you also give Boxes 3–7 a decide-by date.
+All seven boxes are for back at work. Worksheet 4 holds the dates: when the inventory (Box 1) starts, when the usage policy (Box 2) goes out, and a decide-by date for each of Boxes 3–7.
 
 ### Back at work: Box 1 — Inventory (where is AI used today?)
 
@@ -43,19 +33,19 @@ Examples of a filled-in row:
 | Helpdesk AI add-on (the pilot) | The support operations manager | Customer tickets | 1 assist |
 | Personal ChatGPT accounts used for customer emails | No owner | Possibly customer names and prices | Not sure |
 
-### Lab 7, step 8: Box 2 — Usage policy headlines (three rules you'd publish this week)
+### Back at work: Box 2 — Usage policy headlines (three rules you'd publish this week)
 
 A usage policy is the short list of rules for using AI at work. Write three of those rules as headlines: one line each, plain enough to follow without asking anyone.
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
-| **Rule 1** | Required | One rule in one line, for example about which AI tools people may use | Use the tools on the approved list. Anything else needs a yes from the review group first. | |
-| **Rule 2** | Required | One rule in one line, for example about what information must never go into an AI tool | No customer, employee or financial data in a personal AI account. | |
-| **Rule 3** | Required | One rule in one line, for example about who checks AI work before it is used | You own what you send. Check every name, number and date before it goes out. | |
+| **Rule 1** | Optional | One rule in one line, for example about which AI tools people may use | Use the tools on the approved list. Anything else needs a yes from the review group first. | |
+| **Rule 2** | Optional | One rule in one line, for example about what information must never go into an AI tool | No customer, employee or financial data in a personal AI account. | |
+| **Rule 3** | Optional | One rule in one line, for example about who checks AI work before it is used | You own what you send. Check every name, number and date before it goes out. | |
 
 ## Back at work: Boxes 3–7: the rest of the playbook
 
-No lab step asks you to fill these in today. In Lab 8, if you have time, you give each of these five boxes a **decide-by date** on Worksheet 4: the date by which you will have settled it. Fill in the rest back at work.
+In Lab 8, if you have time, you give each of these five boxes a **decide-by date** on Worksheet 4: the date by which you will have settled it. Fill in the boxes themselves back at work.
 
 ### Back at work: Box 3 — Approval path
 

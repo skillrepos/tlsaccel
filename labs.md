@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.24 - 11/25/26
+## Revision 1.25 - 11/25/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
@@ -13,7 +13,7 @@ The screenshots show Claude. Other assistants look different and word their answ
 
 **Also good to know:** if your assistant remembers your earlier chats, it may bring your own work into some answers. That is fine for today's labs. If you'd rather keep it out, use a chat that ignores your history: in ChatGPT, click **Temporary chat** (top right) and set the menu beside it to **Unpersonalized**. ChatGPT switches that menu back each time you start a new chat, so set it again whenever a step says to start a new chat. In Claude, click **Use incognito** (the ghost icon, top right).
 
-Labs 5–8 each use a worksheet: Worksheet 1 for Lab 5, 2 for Lab 6, 3 for Lab 7 and 4 for Lab 8. Fill them in on the **[worksheets page](https://skillrepos.github.io/tlsaccel/)**, which shows one worksheet at a time: you type into the boxes on your phone or laptop, and your answers are saved on your own device. Boxes marked **Required** are the ones the labs ask you to fill in; boxes marked **Optional** are for back at work. At any point, press **Check for required info** on a worksheet to see which Required boxes are still empty, listed by lab step. No use case of your own ready? Each worksheet there has examples you can use instead. The `worksheets/` folder has a one-page reference sheet to keep.
+Labs 5–8 use worksheets: Worksheet 1 for Lab 5, Worksheet 2 for Lab 6, and Worksheet 4 for Labs 7 and 8. Worksheet 3, a one-page governance playbook, is a take-home sheet: no lab asks you to fill it in. Fill them in on the **[worksheets page](https://skillrepos.github.io/tlsaccel/)**, which shows one worksheet at a time: you type into the boxes on your phone or laptop, and your answers are saved on your own device. Boxes marked **Required** are the ones the labs ask you to fill in; boxes marked **Optional** are for back at work. At any point, press **Check for required info** on a worksheet to see which Required boxes are still empty, listed by lab step. No use case of your own ready? Each worksheet there has examples you can use instead. The `worksheets/` folder has a one-page reference sheet to keep.
 
 **Lab contents**
 
@@ -556,9 +556,9 @@ The reviewer names three weak spots, each with a fix. Where you agree, change th
 
 **Lab 7 — Governance gut-check**
 
-**Purpose: Apply the injection questions and autonomy tiers to a realistic agent proposal, make the approval call, and start your governance playbook.**
+**Purpose: Apply the injection questions and autonomy tiers to a realistic agent proposal, and make the approval call.**
 
-1. Open **[Worksheet 3: Governance Playbook](https://skillrepos.github.io/tlsaccel/#ws3)** and keep it open beside these steps. It is a one-page governance playbook: seven boxes that say how AI is used where you work. In this lab you write one decision on it (step 6) and its usage-policy headlines (step 8). Then read this proposal, which contains several planted red flags:
+1. Open **[Worksheet 4](https://skillrepos.github.io/tlsaccel/#ws4)** and keep it open beside these steps. In this lab you use only its first section, **Lab 7, step 6**, to write down your call (step 6); the rest of Worksheet 4 is for Lab 8. Then read this proposal, which contains several planted red flags:
 
 ```
 PROPOSAL: "PayFast" invoice agent (from our finance systems team)
@@ -623,17 +623,11 @@ added in phase 2. Pilot on all suppliers for 6 months.
 
 <br><br>
 
-6. Make the call: **approve, approve with conditions, or reject**. On **[Worksheet 3](https://skillrepos.github.io/tlsaccel/#ws3)**, under **Lab 7, step 6**, choose your call and write two sentences on why. If you chose conditions, name them — for example which actions move to Tier 2 (review: a named person approves), what access gets narrowed, what gets logged from day one.
+6. Make the call: **approve, approve with conditions, or reject**. On **[Worksheet 4](https://skillrepos.github.io/tlsaccel/#ws4)**, under **Lab 7, step 6**, choose your call and write two sentences on why. If you chose conditions, name them — for example which actions move to Tier 2 (review: a named person approves), what access gets narrowed, what gets logged from day one.
 
 <br><br>
 
 7. When the instructor opens the new poll (Vote 2), vote on the same question as Vote 1 (the poll at the start of this part of the day): should an AI agent pay supplier invoices up to $5,000 with no person approving each one? Enter your decision from step 6. Your first vote stays as it was. If others chose differently, listen for one reason you had not thought of.
-
-<br><br>
-
-8. Stay on **Worksheet 3**. In Box 2 (Usage policy headlines), write three rules you'd publish this week, one line each.
-
-Box 1 (Inventory: the AI tools already in use where you work, including shadow AI, meaning tools people use for work without approval) is for back at work.
 
 <br><br>
 
@@ -643,7 +637,7 @@ Box 1 (Inventory: the AI tools already in use where you work, including shadow A
 - The fix pattern is standard: narrow access, insert human approval on consequential actions, log everything, scope the pilot.
 - This is how you work with a technical team without being technical: you did not need to know how PayFast is built to ask what it reads, what it can reach, what it can do alone, and what gets logged.
 - You made a decision, not just a list of risks, and saw how the room decided on the same facts. That comparison is what an approval meeting is.
-- Your playbook now has its usage-policy headlines (Box 2). The inventory (Box 1) and Boxes 3–7 are for back at work. In Lab 8 you set the date the policy goes out and, if you have time, a decide-by date for each of Boxes 3–7.
+- The questions you asked of PayFast are the ones a governance playbook writes down for every AI tool. [Worksheet 3](https://skillrepos.github.io/tlsaccel/#ws3) is that playbook on one page (seven boxes), to take home. In Lab 8 you set the date your usage policy goes out and, if you have time, a decide-by date for each of Boxes 3–7.
 
 <p align="center">**[END OF LAB]**</p></br></br>
 
@@ -653,11 +647,11 @@ Box 1 (Inventory: the AI tools already in use where you work, including shadow A
 
 **Purpose: Leave with a concrete 30/60/90 plan and the paragraph you'll send your manager or team.**
 
-1. Open **[Worksheet 4](https://skillrepos.github.io/tlsaccel/#ws4)**. Its first section shows what you already wrote on Worksheets 2 and 3, so you do not need them beside you. Every box says what goes in it; this lab asks for the ones marked **Required**.
+1. Go back to **[Worksheet 4](https://skillrepos.github.io/tlsaccel/#ws4)**, below your PayFast call. The section **Lab 8, step 1** shows what you already wrote on Worksheet 2, so you do not need it beside you. Every box says what goes in it; this lab asks for the ones marked **Required**.
 
 <br><br>
 
-2. Fill in two lines of Days 1–30 (SEE: find out what AI is already doing): your daily AI habit (one task you will do with AI every working day) and the date the one-page policy ships.
+2. Fill in two lines of Days 1–30 (SEE: find out what AI is already doing): your daily AI habit (one task you will do with AI every working day) and the date the one-page policy ships (your usage policy: Box 2 of the take-home playbook, Worksheet 3).
 
 <br><br>
 

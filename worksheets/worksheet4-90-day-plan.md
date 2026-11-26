@@ -1,11 +1,21 @@
-# Worksheet 4 — Your 90-Day Plan
-*Enterprise Leader AI Accelerator · Lab 8*
+# Worksheet 4 — Your PayFast Call and Your 90-Day Plan
+*Enterprise Leader AI Accelerator · Labs 7 and 8*
 
-**What this is:** your plan for the next 90 days, with dates. Three parts: a **30 / 60 / 90** (what you will do in each of the next three months), a **decide-by date** for each open box of your governance playbook, and the **short message** that tells your manager and team about the pilot. It builds on Worksheet 2 (your pilot) and Worksheet 3 (your playbook). Each box says what goes in it and gives an example from a made-up company. Boxes marked **Required** are the ones Lab 8 asks for today; **Optional** ones are for back at work.
+**What this is:** first, your call on the PayFast proposal from Lab 7. Then your plan for the next 90 days, with dates, in three parts: a **30 / 60 / 90** (what you will do in each of the next three months), a **decide-by date** for each open box of your governance playbook, and the **short message** that tells your manager and team about the pilot. It builds on Worksheet 2 (your pilot); the playbook it dates is Worksheet 3, the take-home sheet. Each box says what goes in it and gives an example from a made-up company. Boxes marked **Required** are the ones Labs 7 and 8 ask for today; **Optional** ones are for back at work.
 
 Fill it in on the worksheets page, which saves what you type on your own device: https://skillrepos.github.io/tlsaccel/#ws4
 
-Keep Worksheet 2 (your pilot) and Worksheet 3 (your playbook) beside you. On the web page, what you wrote there is shown at the top of this worksheet.
+Keep Worksheet 2 (your pilot) beside you. On the web page, what you wrote there is shown above the 30 / 60 / 90.
+
+## Lab 7, step 6: My call on the PayFast proposal
+
+**Required, in Lab 7.** PayFast is the invoice agent proposed in Lab 7. Decide as if the proposal were on your desk. There is no example here: this one is your call.
+
+☐ Approve ☐ Approve with conditions ☐ Reject
+
+| Box | Needed in the lab? | What goes in it | Example | Your answer |
+|---|---|---|---|---|
+| **Because** | Required | Two sentences on why. If you chose "approve with conditions", name the conditions: what must change before the agent runs | — | |
 
 ## Lab 8, steps 2–4: Your 30 / 60 / 90
 
@@ -18,7 +28,7 @@ Three blocks of 30 days, counted from today. **See** what AI is already doing, *
 | **Daily AI habit** | Required | One task of your own that you will do with AI every working day, and the tool you will use | Summarize my weekly status reports in our approved assistant | |
 | **Inventory started by (date)** | Optional | The date someone starts listing every AI tool in use: Box 1 of your playbook, done properly | December 11, 2026 | |
 | **Inventory owner** | Optional | The one person who will put that list together | The IT service desk lead | |
-| **One-page policy ships on** | Required | The date your usage policy (Box 2 of your playbook, written out on one page) goes to everyone | December 4, 2026 | |
+| **One-page policy ships on** | Required | The date your one-page usage policy (Box 2 of the take-home playbook, Worksheet 3) goes to everyone | December 4, 2026 | |
 | **Shortlist shared with** | Optional | Who will see your scored use cases from Worksheet 1 | My manager and my team | |
 
 ### Lab 8, step 3: Days 31–60 — SCOPE
@@ -50,7 +60,7 @@ Three blocks of 30 days, counted from today. **See** what AI is already doing, *
 
 ## Lab 8, step 5: A date for each open box of your playbook
 
-Boxes 3–7 of your governance playbook (Worksheet 3) are still open. If you have time today, give each one a **decide-by date**: the date by which you will have settled that box back at work. If not, date them back at work.
+Your governance playbook (Worksheet 3, the take-home sheet) has seven boxes. Boxes 1 and 2 already have dates above: when the inventory starts and when the policy goes out. For Boxes 3–7, if you have time today, give each one a **decide-by date**: the date by which you will have settled that box back at work. If not, date them back at work.
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
