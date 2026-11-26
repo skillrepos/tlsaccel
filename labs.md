@@ -1,5 +1,5 @@
 # Enterprise Leader AI Accelerator — Labs
-## Revision 1.25 - 11/25/26
+## Revision 1.26 - 11/25/26
 
 These labs run in **any AI assistant** — Claude, ChatGPT, Microsoft Copilot, or Gemini — in a browser. A free account works. If your organization provides a sanctioned AI tool, use that one. Account setup is covered in the README's **Before you arrive** section.
 
@@ -427,7 +427,7 @@ toughest critic would — no softening. Under 150 words.
 
 **Purpose: Turn vague AI ideas from your organization into a scored, comparable shortlist.**
 
-1. Open **[Worksheet 1: Use-Case Scorecard](https://skillrepos.github.io/tlsaccel/#ws1)**. Keep this page open too — you will switch between the two. The worksheet's sections are in the same order as the steps below, and each section is labelled with its step: **Lab 5, step 2**, **Lab 5, step 3**, and so on.
+1. Open **[Worksheet 1: Use-Case Scorecard](https://skillrepos.github.io/tlsaccel/#ws1)**. Keep this page open too — you will switch between the two. The worksheet's sections are in the same order as the steps below, and each section is labelled with its step: **Lab 5, step 2**, **Lab 5, step 3**, and so on. Under each box is a yellow **Example:** line from a made-up company, so you can see what kind of answer is wanted.
 
 <br><br>
 
@@ -498,7 +498,7 @@ The screenshot uses a sample use case ("triage inbound support tickets"); yours 
 
 **Purpose: Give your winning use case metrics built for a finance review — baseline, target, guardrail, stop rule.**
 
-1. Open **[Worksheet 2: Pilot Metrics Charter](https://skillrepos.github.io/tlsaccel/#ws2)**. Its sections follow the steps below, each labelled with its step. Under **Lab 6, step 1**, your winning use case from Lab 5 is already filled in. Nothing of your own to work with? Open the yellow **Stuck?** box on the worksheet and press **Fill my empty boxes with the example**.
+1. Open **[Worksheet 2: Pilot Metrics Charter](https://skillrepos.github.io/tlsaccel/#ws2)**. Its sections follow the steps below, each labelled with its step. Under **Lab 6, step 1**, your winning use case from Lab 5 is already filled in. Under each box is a yellow **Example:** line. Nothing of your own to work with? Open the yellow **Stuck?** box on the worksheet and press **Fill my empty boxes with the example**.
 
 <br><br>
 
@@ -647,23 +647,31 @@ added in phase 2. Pilot on all suppliers for 6 months.
 
 **Purpose: Leave with a concrete 30/60/90 plan and the paragraph you'll send your manager or team.**
 
-1. Go back to **[Worksheet 4](https://skillrepos.github.io/tlsaccel/#ws4)**, below your PayFast call. The section **Lab 8, step 1** shows what you already wrote on Worksheet 2, so you do not need it beside you. Every box says what goes in it; this lab asks for the ones marked **Required**.
+1. Go back to **[Worksheet 4](https://skillrepos.github.io/tlsaccel/#ws4)**, below your PayFast call. The section **Lab 8, step 1** shows what you already wrote on Worksheet 2, so you do not need it beside you. Every box says what goes in it and has a yellow **Example:** line under it; this lab asks for the ones marked **Required**.
 
 <br><br>
 
 2. Fill in two lines of Days 1–30 (SEE: find out what AI is already doing): your daily AI habit (one task you will do with AI every working day) and the date the one-page policy ships (your usage policy: Box 2 of the take-home playbook, Worksheet 3).
 
+*Example: daily habit "Summarize my weekly status reports in our approved assistant"; policy ships December 4, 2026.*
+
 <br><br>
 
 3. Fill in two lines of Days 31–60 (SCOPE: pick and plan one pilot): your pilot's owner (already filled in from Worksheet 2; change it if you need to) and the baseline collection dates (the two weeks in which you measure your primary metric before AI).
+
+*Example: owner Dana Ruiz; baseline December 14 to December 28, 2026.*
 
 <br><br>
 
 4. Fill in two lines of Days 61–90 (SHIP: start the pilot in real work): the date the pilot starts in the real workflow (already filled in if you set a start date on Worksheet 2; a best guess is fine), and the date of your **day-90 decision meeting**, where you decide whether to scale the pilot up, change it, or stop it, using the four tests on Worksheet 4. Pick a date about 90 days after the pilot starts (on or just after the day-90 date on Worksheet 2, if you set one). That is after this 90-day plan ends, which is fine. Book it now.
 
+*Example: pilot starts January 5, 2027; day-90 decision meeting April 2, 2027.*
+
 <br><br>
 
 5. (Optional — if you have time; otherwise back at work.) Go to **A date for each open box of your playbook**, further down Worksheet 4, and give each of Boxes 3–7 a **decide by** date: the date by which you will have settled that box.
+
+*Example: Box 4, Vendor checks: decide by December 9, 2026.*
 
 <br><br>
 
