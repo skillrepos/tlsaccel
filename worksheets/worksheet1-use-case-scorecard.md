@@ -45,17 +45,17 @@ Paste the step 4 prompt from the lab steps into a new AI chat, with your top-sco
 
 ## Lab 5, step 5: Notes from the AI's questions
 
-The AI reviewer in step 4 asks five hard questions about your top candidate. These boxes hold what you learned from them.
+The AI reviewer in step 4 asks five hard questions about your top candidate. Write down the one you could not answer today.
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
-| **Score I changed and why** | Required | If the AI's questions made you change one of your five scores: which score, from what to what, and why. Nothing changed? Write "none" | Data readiness, 4 down to 3: agents do not all label tickets the same way. | |
 | **Hardest question I couldn't answer yet** | Required | The one question from the AI reviewer that you could not answer today | What does one AI-drafted reply cost at 8,000 tickets a month? | |
-| **Who in my org can answer it** | Optional | The person who could answer that question: a name or a job title | The helpdesk administrator, and the vendor's account manager. | |
+| **Score I changed and why** | Optional | If the AI's questions made you change one of your five scores: which score, from what to what, and why. | Data readiness, 4 down to 3: agents do not all label tickets the same way. | |
+| **Who in my org can answer it** | Optional | The person who could answer your hardest question from step 5: a name or a job title | The helpdesk administrator, and the vendor's account manager. | |
 
 ## Lab 5, step 6: Blocker check
 
-A blocker is something that rules a use case out for now, however well it scores. **A high score never overrides a blocker.** For your top-scored candidate, tick anything that is true. Reading the list is the required part; a tick is only for something that is true:
+A blocker rules a use case out for now, however well it scores. For your top-scored candidate, tick anything that is true. Reading the list is the required part:
 
 - ☐ We cannot legally or contractually use the data it needs
 - ☐ Nobody in the business would be accountable for it
@@ -70,7 +70,7 @@ Any box ticked → fix that first, or move to your next candidate.
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
 | **My winner** | Required | The candidate you choose as your first pilot: your top-scored one, unless the blocker check in step 6 ruled it out | Triage inbound support tickets | |
-| **…wins because (one sentence)** | Required | Why this use case should be your first pilot: one sentence that says what makes it a safe bet | It is high-volume, an agent checks every draft, and handling time is already measured. | |
+| **…wins because (one sentence)** | Optional | Why this use case should be your first pilot: one sentence that says what makes it a safe bet | It is high-volume, an agent checks every draft, and handling time is already measured. | |
 
 ## Lab 5, step 8: The score you are least sure of
 
@@ -79,7 +79,7 @@ Look back at your winner's five scores in step 3.
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
 | **Score I am least sure of** | Required | Of your winner's five scores, the one you trust least. You will enter this one in the poll on your phone | Data readiness | |
-| **What I would need to find out to settle it** | Required | What you would have to check or measure to be sure of that score | Pull 200 past tickets and count how many carry the right label. | |
+| **What I would need to find out to settle it** | Optional | What you would have to check or measure to be sure of the score you picked in step 8 | Pull 200 past tickets and count how many carry the right label. | |
 
 ---
 

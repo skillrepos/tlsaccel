@@ -9,7 +9,7 @@ Fill it in on the worksheets page, which saves what you type on your own device,
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
-| **Use case** | Required | The use case you picked as your winner on Worksheet 1. The worksheets page copies it here from Worksheet 1; change it if you want | Triage inbound support tickets | |
+| **Use case** | Required | The use case you picked as your winner on Worksheet 1 | Triage inbound support tickets | |
 
 ## Lab 6, step 2: Owner and sponsor
 
@@ -35,7 +35,7 @@ The one measurement that should improve if the pilot works. First choose which k
 
 ## Lab 6, step 4: Two numbers: today and day 90
 
-Your primary metric as it is today, and where you want it after 90 days of the pilot. Nobody has exact numbers in the room: write your best guess and add "guess".
+Nobody has exact numbers in the room: write your best guess and add "guess".
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
@@ -62,12 +62,12 @@ A stop rule is the result that would make you end the pilot early, decided befor
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|
-| **Stop check on day** | Required | The day of the pilot when you look at the primary metric and the guardrail and decide whether to carry on. The worksheets page suggests day 45, halfway through; any number from 1 to 89 works | 42 | |
+| **Stop check on day** | Required | The day of the pilot when you look at the primary metric and the guardrail and decide whether to carry on: any number from 1 to 89 | 42 | |
 | **We stop early if we see** | Required | What the primary metric or the guardrail would have to show on that day for you to stop the pilot early | Handling time is still 11 minutes or more, or fewer than 72% of tickets are solved in one reply for two weeks running | |
 
 ## Lab 6, step 7: Finance red-team finding
 
-A red-team is a deliberate attack on your own plan, to find its weak spots before someone else does. In step 7 an AI reviewer plays a skeptic from finance and names three weak spots, each with a fix. You write down the one that matters most.
+A red-team is a deliberate attack on your own plan, to find its weak spots first. The AI reviewer names three, each with a fix. You write down the one that matters most.
 
 | Box | Needed in the lab? | What goes in it | Example | Your answer |
 |---|---|---|---|---|

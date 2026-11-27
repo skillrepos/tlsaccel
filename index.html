@@ -281,18 +281,18 @@
   <div class="labhead"><span class="badge">Lab 5</span><h2>Worksheet 1: Use-case scorecard</h2></div>
   <p class="meta">Goes with <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab5" target="_blank" rel="noopener">Lab 5: Score your use cases</a>.</p>
 
-  <div class="why"><b>What this is:</b> a scorecard for choosing a first AI pilot. <b>The sections below follow Lab 5’s steps in order</b>; the dark label above each one says which step it is for. <b>Every box starts empty: nothing is filled in for you.</b> A yellow “Example:” line under a box is a sample to read, not your answer.</div>
+  <div class="why"><b>What this is:</b> a scorecard for choosing a first AI pilot. <b>The dark label above each section says which Lab 5 step it is for.</b> Every box starts empty; a yellow “Example:” line under a box is a sample to read, not your answer.</div>
   <div class="noprint wsbar">
     <span class="cap">For the whole worksheet, not one step</span>
     <button class="ghost small" data-check="ws1">Check for required info</button>
     <button class="ghost small" data-showex="ws1">Hide the examples under each box</button>
     <button class="ghost small" data-clearws="ws1">Clear Worksheet 1</button>
-    <span class="hint">Use these at any point. <b>Check</b> lists the Required boxes still empty, step by step. <b>Clear</b> empties this worksheet only, and asks you to press twice.</span>
+    <span class="hint"><b>Check</b> lists the Required boxes still empty. <b>Clear</b> empties this worksheet only.</span>
     <div class="checkout" role="status"></div>
   </div>
 
   <h3 data-h="Your candidates (Lab 5, step 2)"><span class="step">Lab 5, step 2</span>Your candidates (two or three) <span class="tag req">Required</span></h3>
-  <p>Type two or three ways your organization could use AI, one in each box below. Two is enough; the third box is optional. Name each one as a workflow: “triage inbound support tickets,” not “use AI in support.” No scores yet: those come in step 3.</p>
+  <p>Type one way your organization could use AI into each box. Two is enough; the third box is optional. Name each one as a workflow: “triage inbound support tickets,” not “use AI in support.”</p>
   <div id="names"></div>
   <details class="ex noprint" id="ex1">
     <summary>Need an example for step 2? Open this for ideas to pick from, or a made-up company to use</summary>
@@ -336,10 +336,9 @@
   </details>
   <div id="cands"></div>
   <p><b>First-pilot rule:</b> a first pilot needs <b>4+ on Risk and 4+ on Measurability</b>, whatever its total.</p>
-  <p class="hint"><b>Quick version, for judging one proposal someone brings you:</b> ask four questions instead of five (fold Data readiness into Feasibility). The rule is the same: Risk and Measurability must pass, however good the Value story is.</p>
 
   <h3 data-h="Stress-test with AI (Lab 5, step 4)"><span class="step">Lab 5, step 4</span>Stress-test with AI <span class="tag opt">Optional helper</span></h3>
-  <p>In step 4 you paste a prompt into an AI chat, with your top-scored candidate in it. This section writes that prompt for you to copy. (You can also copy the prompt from the lab steps and type your use case into it yourself.)</p>
+  <p>This section writes the step 4 prompt for you, with your top-scored candidate in it, ready to copy into an AI chat.</p>
   <p class="waitbox" id="stresswait"></p>
   <div id="stress" hidden>
     <p id="stresswho"></p>
@@ -357,19 +356,13 @@
   </div>
 
   <h3 data-h="Notes from the AI’s questions (Lab 5, step 5)"><span class="step">Lab 5, step 5</span>Notes from the AI’s questions</h3>
-  <p>The AI reviewer in step 4 asks five hard questions about your top candidate. These boxes hold what you learned from them.</p>
-  <label class="f" for="changed">Score I changed and why <span class="tag req">Required</span></label>
-  <p class="what">If the AI’s questions made you change one of your five scores: which score, from what to what, and why. Nothing changed? Write “none”.</p>
-  <input type="text" id="changed" data-req="1" data-k="w1.changed" data-label="Score I changed and why" data-ex="Data readiness, 4 down to 3: agents do not all label tickets the same way.">
+  <p>The AI reviewer in step 4 asks five hard questions about your top candidate. Write down the one you could not answer today.</p>
   <label class="f" for="hardest">Hardest question I couldn’t answer yet <span class="tag req">Required</span></label>
   <p class="what">The one question from the AI reviewer that you could not answer today.</p>
   <input type="text" id="hardest" data-req="1" data-k="w1.hardest" data-label="Hardest question I couldn't answer yet" data-ex="What does one AI-drafted reply cost at 8,000 tickets a month?">
-  <label class="f" for="who">Who in my org can answer it <span class="tag opt">Optional</span></label>
-  <p class="what">The person who could answer that question: a name or a job title.</p>
-  <input type="text" id="who" data-k="w1.who" data-label="Who can answer it" data-ex="The helpdesk administrator, and the vendor’s account manager.">
 
   <h3 data-h="Blocker check (Lab 5, step 6)"><span class="step">Lab 5, step 6</span>Blocker check <span class="tag req">Required</span></h3>
-  <p>A blocker is something that rules a use case out for now, however well it scores. <b>A high score never overrides a blocker.</b> For your top-scored candidate, tick anything that is true. Reading the list is the required part; a tick is only for something that is true:</p>
+  <p>A blocker rules a use case out for now, however well it scores. For your top-scored candidate, tick anything that is true. Reading the list is the required part:</p>
   <div class="checks" id="blockers">
     <label><input type="checkbox" data-k="w1.b1" data-label="Blocker ticked: we cannot legally or contractually use the data"><span>We cannot legally or contractually use the data it needs</span></label>
     <label><input type="checkbox" data-k="w1.b2" data-label="Blocker ticked: nobody would be accountable for it"><span>Nobody in the business would be accountable for it</span></label>
@@ -384,23 +377,35 @@
   <p class="what">The candidate you choose as your first pilot: your top-scored one, unless the blocker check in step 6 ruled it out.</p>
   <div class="winpick" id="winpick" data-label="My winner (candidate number)"></div>
   <p id="winline" class="hint"></p>
-  <label class="f" for="because">…wins because (one sentence) <span class="tag req">Required</span></label>
-  <p class="what">Why this use case should be your first pilot: one sentence that says what makes it a safe bet.</p>
-  <textarea id="because" rows="2" data-req="1" data-k="w1.because" data-label="Wins because" data-ex="It is high-volume, an agent checks every draft, and handling time is already measured."></textarea>
 
   <h3 data-h="The score you are least sure of (Lab 5, step 8)"><span class="step">Lab 5, step 8</span>The score you are least sure of</h3>
   <p>Look back at your winner’s five scores in step 3.</p>
   <label class="f" for="unsure">Score I am least sure of <span class="tag req">Required</span></label>
   <p class="what">Of your winner’s five scores, the one you trust least. You will enter this one in the poll on your phone.</p>
   <select id="unsure" data-req="1" data-k="w1.unsure" data-label="Score I am least sure of" data-ex="Data readiness"><option value="">–</option><option>Value</option><option>Data readiness</option><option>Feasibility</option><option>Risk</option><option>Measurability</option><option>I’m sure of all five</option></select>
-  <label class="f" for="findout">What I would need to find out to settle it <span class="tag req">Required</span></label>
-  <p class="what">What you would have to check or measure to be sure of that score.</p>
-  <input type="text" id="findout" data-req="1" data-k="w1.findout" data-label="What I need to find out" data-ex="Pull 200 past tickets and count how many carry the right label.">
   <div class="noprint" style="margin-top:14px">
     <button data-check="ws1">Check for required info</button>
-    <p class="hint" style="margin-top:6px">Use it at any point. It lists the Required boxes that are still empty, step by step. It cannot tell whether your scores are right: the AI reviewer in step 4 is the test of that.</p>
+    <p class="hint" style="margin-top:6px">It lists the Required boxes that are still empty. It cannot tell whether your scores are right: the AI reviewer in step 4 is the test of that.</p>
     <div class="checkout" role="status"></div>
   </div>
+
+  <details class="later">
+  <summary data-h="More notes on your shortlist (back at work)"><span class="step">back at work</span>More notes on your shortlist <span class="open">(tap to open)</span></summary>
+  <p>No lab step asks you to fill these in today. They are for back at work.</p>
+  <label class="f" for="changed">Score I changed and why <span class="tag opt">Optional</span></label>
+  <p class="what">If the AI’s questions made you change one of your five scores: which score, from what to what, and why.</p>
+  <input type="text" id="changed" data-k="w1.changed" data-label="Score I changed and why" data-ex="Data readiness, 4 down to 3: agents do not all label tickets the same way.">
+  <label class="f" for="who">Who in my org can answer it <span class="tag opt">Optional</span></label>
+  <p class="what">The person who could answer your hardest question from step 5: a name or a job title.</p>
+  <input type="text" id="who" data-k="w1.who" data-label="Who can answer it" data-ex="The helpdesk administrator, and the vendor’s account manager.">
+  <label class="f" for="because">…wins because (one sentence) <span class="tag opt">Optional</span></label>
+  <p class="what">Why this use case should be your first pilot: one sentence that says what makes it a safe bet.</p>
+  <textarea id="because" rows="2" data-k="w1.because" data-label="Wins because" data-ex="It is high-volume, an agent checks every draft, and handling time is already measured."></textarea>
+  <label class="f" for="findout">What I would need to find out to settle it <span class="tag opt">Optional</span></label>
+  <p class="what">What you would have to check or measure to be sure of the score you picked in step 8.</p>
+  <input type="text" id="findout" data-k="w1.findout" data-label="What I need to find out" data-ex="Pull 200 past tickets and count how many carry the right label.">
+  <p class="hint"><b>Quick version, for judging one proposal someone brings you:</b> ask four questions instead of five (fold Data readiness into Feasibility). The rule is the same: Risk and Measurability must pass, however good the Value story is.</p>
+  </details>
 
   <div class="keep noprint">
     <b>Keep Worksheet 1</b>
@@ -422,12 +427,12 @@
   <div class="labhead"><span class="badge">Lab 6</span><h2>Worksheet 2: Pilot metrics charter</h2></div>
   <p class="meta">Goes with <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab6" target="_blank" rel="noopener">Lab 6: Define pilot metrics</a>.</p>
 
-  <div class="why"><b>What this is:</b> a short plan for your pilot: who runs it, which one measurement should improve, what must not get worse, and when you would stop. <b>The sections below follow Lab 6’s steps in order.</b> Most answers are a tap on a list. Where a number is asked for, a best guess, marked “guess”, is a good answer.</div>
+  <div class="why"><b>What this is:</b> a short plan for your pilot: who runs it, which one measurement should improve, what must not get worse, and when you would stop. <b>The dark label above each section says which Lab 6 step it is for.</b> Where a number is asked for, a best guess, marked “guess”, is a good answer.</div>
   <div class="noprint wsbar">
     <span class="cap">For the whole worksheet, not one step</span>
     <button class="ghost small" data-check="ws2">Check for required info</button>
     <button class="ghost small" data-clearws="ws2">Clear Worksheet 2</button>
-    <span class="hint">Use these at any point. <b>Check</b> lists the Required boxes still empty, step by step. <b>Clear</b> empties this worksheet only, and asks you to press twice.</span>
+    <span class="hint"><b>Check</b> lists the Required boxes still empty. <b>Clear</b> empties this worksheet only.</span>
     <div class="checkout" role="status"></div>
   </div>
 
@@ -444,7 +449,7 @@
 
   <h3 data-h="Your use case (Lab 6, step 1)"><span class="step">Lab 6, step 1</span>Your use case</h3>
   <label class="f" for="usecase">Use case <span class="tag req">Required</span></label>
-  <p class="what">The use case you picked as your winner on Worksheet 1. The worksheets page copies it here from Worksheet 1; change it if you want.</p>
+  <p class="what">The use case you picked as your winner on Worksheet 1.</p>
   <div class="autonote noprint" data-auto="w2.usecase" data-mark="_w2uc" hidden>Copied from your Worksheet 1 winner. Change it if you want.</div>
   <input type="text" id="usecase" data-k="w2.usecase" data-label="Use case" data-ex="Triage inbound support tickets" data-req="1">
 
@@ -457,7 +462,7 @@
   <input type="text" id="sponsor" data-k="w2.sponsor" data-label="Sponsor" data-ex="Priya Shah, who runs Customer Service" data-req="1">
 
   <h3 data-h="Primary metric (pick ONE) (Lab 6, step 3)"><span class="step">Lab 6, step 3</span>Primary metric (pick ONE)</h3>
-  <p>The one measurement that should improve if the pilot works. First choose which kind it is:</p>
+  <p>First choose which kind of measurement it is:</p>
   <div class="winpick fampick" data-label="Kind of metric">
     <label><input type="radio" name="w2.family" value="Time"><span><b>Time</b> <i>hours per task, cycle time, backlog age</i></span></label>
     <label><input type="radio" name="w2.family" value="Cost"><span><b>Cost</b> <i>cost per ticket/document/case, contractor spend</i></span></label>
@@ -471,7 +476,7 @@
   <input type="text" id="metric" data-k="w2.metric" data-label="My primary metric" data-ex="Median handling time per support ticket (minutes)" data-req="1">
 
   <h3 data-h="Two numbers: today and day 90 (Lab 6, step 4)"><span class="step">Lab 6, step 4</span>Two numbers: today and day 90</h3>
-  <p>Your primary metric as it is today, and where you want it after 90 days of the pilot. Nobody has exact numbers in the room: write your best guess and add “guess”.</p>
+  <p>Nobody has exact numbers in the room: write your best guess and add “guess”.</p>
   <label class="f" for="bval">Baseline value <span class="tag req">Required</span></label>
   <p class="what">What your primary metric is today, before AI. Not sure? Write your best guess and add “guess”: measuring it is the pilot’s first job.</p>
   <input type="text" id="bval" data-k="w2.bval" data-label="Baseline value" data-ex="11 minutes (handling time per ticket today)" data-req="1">
@@ -493,21 +498,21 @@
   <label class="f" for="dod">My definition of done <span class="tag req">Required</span></label>
   <p class="what">One sentence built from your answers above: the use case, the primary metric with its baseline value and 90-day target, and the guardrail.</p>
   <div class="autonote noprint" data-auto="w2.dod" data-mark="_w2dod" hidden>Written for you from your answers in steps 1 to 5. Edit it if you want.</div>
-  <textarea rows="3" id="dod" data-k="w2.dod" data-label="My definition of done" data-ex="By day 90, support-ticket triage handled with AI assistance shows median handling time per support ticket moving from 11 minutes to 8 minutes, with first-contact resolution held at or above 72% — or we stop and write down what we learned." data-req="1"></textarea>
+  <textarea rows="3" id="dod" data-noexline data-k="w2.dod" data-label="My definition of done" data-ex="By day 90, support-ticket triage handled with AI assistance shows median handling time per support ticket moving from 11 minutes to 8 minutes, with first-contact resolution held at or above 72% — or we stop and write down what we learned." data-req="1"></textarea>
   <button class="ghost small noprint" id="builddod" style="margin-top:6px">Write it again from my boxes</button>
   <p style="margin-top:14px">A stop rule is the result that would make you end the pilot early, decided before you start.</p>
   <label class="f" for="stopday">Stop check on day <span class="tag req">Required</span></label>
-  <p class="what">The day of the pilot when you look at the primary metric and the guardrail and decide whether to carry on. The worksheets page suggests day 45, halfway through; any number from 1 to 89 works.</p>
+  <p class="what">The day of the pilot when you look at the primary metric and the guardrail and decide whether to carry on: any number from 1 to 89.</p>
   <div class="autonote noprint" data-auto="w2.stopday" data-mark="_w2sd" hidden>Suggested for you: day 45 is halfway. Change it if you want.</div>
-  <input type="text" id="stopday" data-k="w2.stopday" data-label="Stop check on day" data-ex="42" data-req="1">
+  <input type="text" id="stopday" data-noexline data-k="w2.stopday" data-label="Stop check on day" data-ex="42" data-req="1">
   <div class="calc hint" id="stopdate" data-label="   that day is"></div>
   <label class="f" for="stopsee">We stop early if we see <span class="tag req">Required</span></label>
   <p class="what">What the primary metric or the guardrail would have to show on that day for you to stop the pilot early.</p>
   <div class="autonote noprint" data-auto="w2.stopsee" data-mark="_w2ss" hidden>Written for you from your metric and guardrail. Edit it if you want.</div>
-  <textarea rows="2" id="stopsee" data-k="w2.stopsee" data-label="We stop early if we see" data-ex="Handling time is still 11 minutes or more, or fewer than 72% of tickets are solved in one reply for two weeks running" data-req="1"></textarea>
+  <textarea rows="2" id="stopsee" data-noexline data-k="w2.stopsee" data-label="We stop early if we see" data-ex="Handling time is still 11 minutes or more, or fewer than 72% of tickets are solved in one reply for two weeks running" data-req="1"></textarea>
 
   <h3 data-h="Finance red-team finding (Lab 6, step 7)"><span class="step">Lab 6, step 7</span>Finance red-team finding</h3>
-  <p>A red-team is a deliberate attack on your own plan, to find its weak spots before someone else does. In step 7 an AI reviewer plays a skeptic from finance and names three weak spots, each with a fix. You write down the one that matters most.</p>
+  <p>A red-team is a deliberate attack on your own plan, to find its weak spots first. The AI reviewer names three, each with a fix. You write down the one that matters most.</p>
   <div class="noprint">
     <button class="ghost small" data-act="copyplan">Show my plan for the step 7 prompt</button>
     <div id="planissues"></div>
@@ -525,7 +530,7 @@
 
   <div class="noprint" style="margin-top:14px">
     <button data-check="ws2">Check for required info</button>
-    <p class="hint" style="margin-top:6px">Use it at any point. It lists the Required boxes that are still empty, step by step, and boxes that do not agree with each other. It cannot tell whether your numbers are true: the AI reviewer in step 7, and your own team, are the test of that.</p>
+    <p class="hint" style="margin-top:6px">It lists the Required boxes that are still empty, and boxes that do not agree with each other. It cannot tell whether your numbers are true.</p>
     <div class="checkout" role="status"></div>
   </div>
 
@@ -625,7 +630,7 @@
     <span class="cap">For the whole worksheet, not one step</span>
     <button class="ghost small" data-check="ws3">Check for required info</button>
     <button class="ghost small" data-clearws="ws3">Clear Worksheet 3</button>
-    <span class="hint">Use these at any point. <b>Check</b> lists the Required boxes still empty, step by step. <b>Clear</b> empties this worksheet only, and asks you to press twice.</span>
+    <span class="hint"><b>Check</b> lists the Required boxes still empty. <b>Clear</b> empties this worksheet only.</span>
     <div class="checkout" role="status"></div>
   </div>
 
@@ -736,25 +741,14 @@
   <div class="labhead"><span class="badge">Labs 7–8</span><h2>Worksheet 4: Your PayFast call and your 90-day plan</h2></div>
   <p class="meta">Goes with <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab7" target="_blank" rel="noopener">Lab 7: Governance gut-check</a> (the first section) and <a href="https://github.com/skillrepos/tlsaccel/blob/main/labs.md#lab8" target="_blank" rel="noopener">Lab 8: Your 90-day AI plan</a> (the rest).</p>
 
-  <div class="why"><b>What this is:</b> first, your call on the PayFast proposal from Lab 7. Then your plan for the next 90 days, with dates, in three parts: a <b>30 / 60 / 90</b> (what you will do in each of the next three months), a <b>decide-by date</b> for each open box of your governance playbook, and the <b>short message</b> that tells your manager and team about the pilot. It builds on Worksheet 2 (your pilot); the playbook it dates is Worksheet 3, the take-home sheet. Each box says what goes in it and gives an example from a made-up company. Boxes marked <b>Required</b> are the ones Labs 7 and 8 ask for today; <b>Optional</b> ones are for back at work.</div>
+  <div class="why"><b>What this is:</b> first, your call on the PayFast proposal from Lab 7. Then, for Lab 8, your plan for the next 90 days: a <b>30 / 60 / 90</b> with dates, and the <b>short message</b> that tells your manager and team about the pilot. Boxes marked <b>Required</b> are the ones the labs ask for today; the rest are folded away, for back at work.</div>
   <div class="noprint wsbar">
     <span class="cap">For the whole worksheet, not one step</span>
     <button class="ghost small" data-check="ws4">Check for required info</button>
     <button class="ghost small" data-clearws="ws4">Clear Worksheet 4</button>
-    <span class="hint">Use these at any point. <b>Check</b> lists the Required boxes still empty, step by step. <b>Clear</b> empties this worksheet only, and asks you to press twice.</span>
+    <span class="hint"><b>Check</b> lists the Required boxes still empty. <b>Clear</b> empties this worksheet only.</span>
     <div class="checkout" role="status"></div>
   </div>
-
-  <details class="ex noprint" id="ex4" open>
-    <summary>The examples under each box, and what to do if you are stuck</summary>
-    <p>Under each box is an example from the made-up company, Brightline Logistics: its 90-day plan for the support-ticket pilot from Worksheet 2. This team moved fast: it measured its “before” numbers in December and started the pilot on January 5. Your dates can follow the 30 / 60 / 90 headings.</p>
-    <p>Stuck, or nothing of your own to use? Fill your empty boxes with the example and carry on with the lab. Filling never changes a box you have already written in. Boxes filled from the example are shaded yellow until you edit them.</p>
-    <div class="exbtns">
-      <button class="small" data-fill="ws4">Fill my empty boxes with the example</button>
-      <button class="ghost small" data-showex="ws4">Show an example under each box</button>
-    </div>
-    <div class="exmsg" id="ex4msg" role="status"></div>
-  </details>
 
   <h3 data-h="My call on the PayFast proposal (Lab 7, step 6)"><span class="step">Lab 7, step 6</span>My call on the PayFast proposal</h3>
   <p><b>Required, in Lab 7.</b> PayFast is the invoice agent proposed in Lab 7. Decide as if the proposal were on your desk. There is no example here: this one is your call.</p>
@@ -767,30 +761,44 @@
   <p class="what">Two sentences on why. If you chose “approve with conditions”, name the conditions: what must change before the agent runs.</p>
   <textarea rows="3" id="callwhy" data-k="w3.callwhy" data-label="Because" data-req="1"></textarea>
 
+  <details class="ex noprint" id="ex4">
+    <summary>Stuck in Lab 8? Open this to use a made-up company’s plan as your example</summary>
+    <p>Under each box is an example from the made-up company, Brightline Logistics: its 90-day plan for the support-ticket pilot from Worksheet 2. This team moved fast: it measured its “before” numbers in December and started the pilot on January 5. Your dates can follow the 30 / 60 / 90 headings.</p>
+    <p>Stuck, or nothing of your own to use? Fill your empty boxes with the example and carry on with the lab. Filling never changes a box you have already written in. Boxes filled from the example are shaded yellow until you edit them.</p>
+    <div class="exbtns">
+      <button class="small" data-fill="ws4">Fill my empty boxes with the example</button>
+      <button class="ghost small" data-showex="ws4">Show an example under each box</button>
+    </div>
+    <div class="exmsg" id="ex4msg" role="status"></div>
+  </details>
+
   <h3 data-h="From your earlier worksheets (Lab 8, step 1)"><span class="step">Lab 8, step 1</span>From your earlier worksheets</h3>
-  <p>What you already wrote on Worksheet 2, so you do not have to look it up or type it again. To change a line, change it on its own worksheet.</p>
+  <p>What you already wrote on Worksheet 2. To change a line, change it on its own worksheet.</p>
   <div class="carry" id="carry"></div>
 
   <h3 data-h="Your 30 / 60 / 90 (Lab 8, steps 2–4)"><span class="step">Lab 8, steps 2–4</span>Your 30 / 60 / 90</h3>
-  <p>Three blocks of 30 days, counted from today. <b>See</b> what AI is already doing, <b>scope</b> one pilot, then <b>ship</b> it: start the pilot in real work. Boxes marked Required are the ones Lab 8 asks for today; the rest are for back at work.</p>
+  <p>Three blocks of 30 days, counted from today. <b>See</b> what AI is already doing, <b>scope</b> one pilot, then <b>ship</b> it: start the pilot in real work. Lab 8 asks for the boxes shown. The rest are folded under each block, for back at work.</p>
 
   <h4 data-h="Days 1–30 — SEE (Lab 8, step 2)"><span class="step">Lab 8, step 2</span>Days 1–30 — SEE</h4>
   <div class="hint" id="range-see"></div>
   <label class="f" for="habit">Daily AI habit <span class="tag req">Required</span></label>
   <p class="what">One task of your own that you will do with AI every working day, and the tool you will use.</p>
   <input type="text" id="habit" data-k="w3.habit" data-label="Daily AI habit" data-ex="Summarize my weekly status reports in our approved assistant" data-req="1">
+  <label class="f" for="polship">One-page policy ships on <span class="tag req">Required</span></label>
+  <p class="what">The date your one-page usage policy (Box 2 of the take-home playbook, Worksheet 3) goes to everyone.</p>
+  <input type="text" id="polship" data-k="w3.polship" data-label="One-page policy ships on" data-ex="December 4, 2026" data-req="1">
+  <details class="later">
+  <summary><span class="step">back at work</span>More for Days 1–30 <span class="open">(tap to open)</span></summary>
   <label class="f" for="invby">Inventory started by (date) <span class="tag opt">Optional</span></label>
   <p class="what">The date someone starts listing every AI tool in use: Box 1 of your playbook, done properly.</p>
   <input type="text" id="invby" data-k="w3.invby" data-label="Inventory started by (date)" data-ex="December 11, 2026">
   <label class="f" for="invown">Inventory owner <span class="tag opt">Optional</span></label>
   <p class="what">The one person who will put that list together.</p>
   <input type="text" id="invown" data-k="w3.invown" data-label="Inventory owner" data-ex="The IT service desk lead">
-  <label class="f" for="polship">One-page policy ships on <span class="tag req">Required</span></label>
-  <p class="what">The date your one-page usage policy (Box 2 of the take-home playbook, Worksheet 3) goes to everyone.</p>
-  <input type="text" id="polship" data-k="w3.polship" data-label="One-page policy ships on" data-ex="December 4, 2026" data-req="1">
   <label class="f" for="short">Shortlist shared with <span class="tag opt">Optional</span></label>
   <p class="what">Who will see your scored use cases from Worksheet 1.</p>
   <input type="text" id="short" data-k="w3.short" data-label="Shortlist shared with" data-ex="My manager and my team">
+  </details>
 
   <h4 data-h="Days 31–60 — SCOPE (Lab 8, step 3)"><span class="step">Lab 8, step 3</span>Days 31–60 — SCOPE</h4>
   <div class="hint" id="range-scope"></div>
@@ -798,21 +806,24 @@
   <p class="what">The pilot charter is Worksheet 2. Write the workflow owner who will sign it off: the same job title or name as on Worksheet 2.</p>
   <input type="text" id="chby" data-k="w3.chby" data-label="Pilot charter signed by owner" data-ex="Dana Ruiz" data-req="1">
   <div class="hint" id="chbyhint"></div>
-  <label class="f" for="chon">Charter signed on (date) <span class="tag opt">Optional</span></label>
-  <p class="what">The date the workflow owner signs the charter.</p>
-  <input type="text" id="chon" data-k="w3.chon" data-label="Charter signed on (date)" data-ex="December 11, 2026">
   <label class="f" for="bfrom">Baseline collection, from <span class="tag req">Required</span></label>
   <p class="what">The first day of the two weeks in which you measure your primary metric before AI (the baseline plan on Worksheet 2).</p>
   <input type="text" id="bfrom" data-k="w3.bfrom" data-label="Baseline collection, from" data-ex="December 14, 2026" data-req="1">
   <label class="f" for="bto">Baseline collection, to <span class="tag req">Required</span></label>
   <p class="what">The last day of those two weeks.</p>
   <input type="text" id="bto" data-k="w3.bto" data-label="Baseline collection, to" data-ex="December 28, 2026" data-req="1">
+  <details class="later">
+  <summary><span class="step">back at work</span>More for Days 31–60 <span class="open">(tap to open)</span></summary>
+  <label class="f" for="chon">Charter signed on (date) <span class="tag opt">Optional</span></label>
+  <p class="what">The date the workflow owner signs the charter.</p>
+  <input type="text" id="chon" data-k="w3.chon" data-label="Charter signed on (date)" data-ex="December 11, 2026">
   <label class="f" for="live">Approval path + review group live on <span class="tag opt">Optional</span></label>
   <p class="what">The date Boxes 3 and 6 of your playbook are in use.</p>
   <input type="text" id="live" data-k="w3.live" data-label="Approval path + review group live on" data-ex="January 15, 2027">
   <label class="f" for="bpbby">Buy / partner / build decision by <span class="tag opt">Optional</span></label>
   <p class="what">The date you settle how you will get the AI tool for the pilot.</p>
   <input type="text" id="bpbby" data-k="w3.bpbby" data-label="Buy / partner / build decision by" data-ex="December 11, 2026">
+  </details>
 
   <h4 data-h="Days 61–90 — SHIP: start the pilot (Lab 8, step 4)"><span class="step">Lab 8, step 4</span>Days 61–90 — SHIP: start the pilot</h4>
   <div class="hint" id="range-ship"></div>
@@ -820,13 +831,15 @@
   <p class="what">The first day the pilot team uses the AI tool in real work: the start date on Worksheet 2, if you set one. A best guess is fine.</p>
   <input type="text" id="runs" data-k="w3.runs" data-label="Pilot runs in the real workflow from" data-ex="January 5, 2027" data-req="1">
   <div class="hint" id="runshint"></div>
-  <label class="f" for="slot">Weekly review slot <span class="tag opt">Optional</span></label>
-  <p class="what">The day and time each week when you look at the primary metric, the guardrail and how many people are using the tool.</p>
-  <input type="text" id="slot" data-k="w3.slot" data-label="Weekly review slot" data-ex="Tuesdays at 9:00, 30 minutes">
   <label class="f" for="d90m">Day-90 decision meeting (on calendars now) <span class="tag req">Required</span></label>
   <p class="what">The date of the meeting where you decide to scale the pilot up, change it, or stop it: on or just after the day-90 date on Worksheet 2. The pilot starts in Days 61–90, so this meeting falls after them. Book it now.</p>
   <input type="text" id="d90m" data-k="w3.d90m" data-label="Day-90 decision meeting (on calendars now)" data-ex="April 2, 2027" data-req="1">
   <div class="hint" id="d90hint"></div>
+  <details class="later">
+  <summary><span class="step">back at work</span>More for Days 61–90, and the day-90 test <span class="open">(tap to open)</span></summary>
+  <label class="f" for="slot">Weekly review slot <span class="tag opt">Optional</span></label>
+  <p class="what">The day and time each week when you look at the primary metric, the guardrail and how many people are using the tool.</p>
+  <input type="text" id="slot" data-k="w3.slot" data-label="Weekly review slot" data-ex="Tuesdays at 9:00, 30 minutes">
   <label class="f" for="story">Scale / iterate / stop: story told with numbers to <span class="tag opt">Optional</span></label>
   <p class="what">Who will hear the result, good or bad, with the numbers.</p>
   <input type="text" id="story" data-k="w3.story" data-label="Scale / iterate / stop: story told with numbers to" data-ex="My manager, my team and Finance">
@@ -837,9 +850,12 @@
     <label><input type="checkbox" data-k="w3.t3" data-label="Day-90 test ticked: the metric moved and the guardrail held"><span>The metric moved and the guardrail held</span></label>
     <label><input type="checkbox" data-k="w3.t4" data-label="Day-90 test ticked: someone owns it and the full-volume cost is known"><span>Someone owns it, and the cost at full volume is known</span></label>
   </div>
+  </details>
 
   <h3 data-h="A date for each open box of your playbook (Lab 8, step 5)"><span class="step">Lab 8, step 5</span>A date for each open box of your playbook</h3>
-  <p>Your governance playbook (Worksheet 3, the take-home sheet) has seven boxes. Boxes 1 and 2 already have dates above: when the inventory starts and when the policy goes out. For Boxes 3–7, if you have time today, give each one a <b>decide-by date</b>: the date by which you will have settled that box back at work. If not, date them back at work.</p>
+  <p><b>Optional.</b> If you have time today, give each of Boxes 3–7 of your governance playbook (Worksheet 3, the take-home sheet) a <b>decide-by date</b>: the date by which you will have settled that box. If not, date them back at work.</p>
+  <details class="later">
+  <summary><span class="step">if you have time</span>Boxes 3–7 <span class="open">(tap to open)</span></summary>
   <label class="f" for="d3">Box 3, Approval path: decide by <span class="tag opt">Optional</span></label>
   <p class="what">The date by which you will have agreed how a new AI idea gets a yes or a no.</p>
   <input type="text" id="d3" data-k="w3.d3" data-label="Box 3, Approval path: decide by" data-ex="January 15, 2027">
@@ -855,6 +871,7 @@
   <label class="f" for="d7">Box 7, Audit trail: decide by <span class="tag opt">Optional</span></label>
   <p class="what">The date by which you will have agreed what gets logged, who reviews it and how long logs are kept.</p>
   <input type="text" id="d7" data-k="w3.d7" data-label="Box 7, Audit trail: decide by" data-ex="January 29, 2027">
+  </details>
 
   <h3 data-h="The announcement paragraph (Lab 8, steps 6–8)"><span class="step">Lab 8, steps 6–8</span>The announcement paragraph</h3>
   <p>The short message that tells your manager and team about the pilot. An AI assistant drafts it from your notes in step 6 and tightens it in step 7.</p>
@@ -883,7 +900,7 @@
 
   <div class="noprint" style="margin-top:14px">
     <button data-check="ws4">Check for required info</button>
-    <p class="hint" style="margin-top:6px">Use it at any point. It lists the Required boxes that are still empty, step by step. It cannot tell whether your dates are realistic.</p>
+    <p class="hint" style="margin-top:6px">It lists the Required boxes that are still empty. It cannot tell whether your dates are realistic.</p>
     <div class="checkout" role="status"></div>
   </div>
 
@@ -1014,6 +1031,7 @@ $('inv').innerHTML = INV.map(([k, title, ex]) => `
 
 // an "Example:" line under every box that has one
 for (const f of document.querySelectorAll('[data-ex]')) {
+  if ('noexline' in f.dataset) continue;      // the page writes these boxes itself, so they get no example line
   const d = document.createElement('div'); d.className = 'exline';
   d.innerHTML = '<b>Example:</b> ' + esc(f.dataset.exshow || f.dataset.ex);
   f.insertAdjacentElement('afterend', d);
