@@ -21,7 +21,7 @@ Give each of your candidates a score from **1 to 5** on each of the five criteri
 
 | Criterion | What it means | What a 5 looks like | What a 1 looks like |
 |---|---|---|---|
-| **Value** | Which business number it improves (time, cost, quality or revenue), and whether the budget owner cares about that number | A number the budget owner is measured on moves | "It would be innovative" |
+| **Value** | How much it would move a metric the budget owner cares about, such as time, cost or quality. Just score it here; you pick the metric in Lab 6 | A metric the budget owner is measured on moves | "It would be innovative" |
 | **Data readiness** | Whether the data it needs exists, is clean, and is yours to use | Data exists, is clean, and we may use it | Data is scattered, dirty, or legally unclear |
 | **Feasibility** | How easy it is to put in place: can a bought tool do it, and can one team own it? | A bought tool does it, or one team can own it end to end | Needs custom build + three teams + new data pipelines |
 | **Risk** (5 = low) | What happens when it is wrong, and what sensitive data it touches | Internal, human-reviewed, reversible | Customer-facing, regulated, irreversible |

@@ -439,7 +439,7 @@ toughest critic would — no softening. Under 150 words.
 
 | Criterion | What it means |
 |---|---|
-| **Value** | Which business number it improves (time, cost, quality or revenue), and whether the budget owner cares about that number |
+| **Value** | How much it would move a metric the budget owner cares about, such as time, cost or quality. Just score it here; you pick the metric in Lab 6 |
 | **Data readiness** | Whether the data it needs exists, is clean, and is yours to use |
 | **Feasibility** | How easy it is to put in place: can a bought tool do it, and can one team own it? |
 | **Risk** | What happens when it is wrong, and what sensitive data it touches. **Scored in reverse: 5 = low risk** |
